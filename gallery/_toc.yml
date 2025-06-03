@@ -4,10 +4,10 @@
 format: jb-book
 root: intro
 chapters:
-- file: tutorials/minimal_demo_rect
-- file: tutorials/subset_global
-- file: tutorials/three_boundary
-- file: tutorials/three_boundary_from_t232
-- file: features/too_much_data
-- file: features/add_grids
-- file: features/search_data_products
+- file: notebooks/tutorials/minimal_demo_rect
+- file: notebooks/tutorials/subset_global
+- file: notebooks/tutorials/three_boundary
+- file: notebooks/tutorials/three_boundary_from_t232
+- file: notebooks/features/too_much_data
+- file: notebooks/features/add_grids
+- file: notebooks/features/search_data_products
