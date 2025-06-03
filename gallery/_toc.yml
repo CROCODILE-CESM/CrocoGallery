@@ -1,0 +1,13 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: tutorials/minimal_demo_rect
+- file: tutorials/subset_global
+- file: tutorials/three_boundary
+- file: tutorials/three_boundary_from_t232
+- file: features/too_much_data
+- file: features/add_grids
+- file: features/search_data_products
