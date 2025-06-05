@@ -37,6 +37,7 @@ jobs:
             repository: CROCODILE-CESM/CrocoDash
             submodules: recursive
             path: CrocoDash
+            fetch-depth: 0
       - name: Checkout submodule to specific branch
         run: |
             cd CrocoDash/CrocoDash/rm6
