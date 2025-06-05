@@ -41,6 +41,7 @@ jobs:
         run: |
             cd CrocoDash/CrocoDash/rm6
             git checkout main
+            git pull --all
             git checkout s3_zarr
       - uses: actions/setup-python@v5
       - uses: conda-incubator/setup-miniconda@v3
