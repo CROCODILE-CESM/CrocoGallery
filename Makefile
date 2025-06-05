@@ -1,10 +1,12 @@
-.PHONY: build clean data
+.PHONY: build clean setup
 
-build: data
+build: setup
 	jupyter-book build gallery
 
-data:
-	python code/generate_data.py
+setup:
+	python code/setup_env.py
+	python code/inject_paths.py
 
 clean:
+	python code/inject_paths.py --reverse
 	jupyter-book clean gallery --all
