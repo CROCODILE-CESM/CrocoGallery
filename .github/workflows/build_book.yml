@@ -40,6 +40,7 @@ jobs:
       - name: Checkout submodule to specific branch
         run: |
             cd CrocoDash/CrocoDash/rm6
+            git config pull.rebase false
             git pull --all
             git checkout s3_zarr
       - uses: actions/setup-python@v5
