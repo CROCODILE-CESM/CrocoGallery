@@ -68,8 +68,10 @@ jobs:
             "
       - name: Build book with Makefile
         run: |
-          cd CrocoGallery
-          make build
+            source $(conda info --base)/etc/profile.d/conda.sh
+            conda activate CrocoDash
+            cd CrocoGallery
+            make build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
