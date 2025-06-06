@@ -11,6 +11,10 @@ env:
   CIME_MACHINE: ubuntu-latest
   DIN_LOC_ROOT: ${{ github.workspace }}
   CIME_OUTPUT_ROOT: ${{ github.workspace }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  GLORYS_USERNAME: ${{ secrets.GLORYS_USERNAME }}
+  GLORYS_PASSWORD: ${{ secrets.GLORYS_PASSWORD }}
 
 jobs:
   build_book:
