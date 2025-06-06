@@ -4,7 +4,6 @@ This script generates all raw data files required for the notebooks
 import os
 import subprocess
 import copernicusmarine
-from CrocoDash.raw_data_access.datasets import gebco as gb
 from pathlib import Path
 import json 
 
