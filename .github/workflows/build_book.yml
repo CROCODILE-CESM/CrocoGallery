@@ -63,13 +63,7 @@ jobs:
           pip install -r CrocoGallery/requirements.txt
       - name: Update CESM path in data_paths.json
         run: |
-            python -c "
-            import json, os
-            f = 'CrocoGallery/code/data_paths.json'
-            with open(f) as j: d = json.load(j)
-            d['CESM'] = os.environ['CESMROOT']
-            with open(f, 'w') as j: json.dump(d, j, indent=2)
-            "
+            python CrocoGallery/code/set_cesm_path.py
       - name: Build book with Makefile
         run: |
             source $(conda info --base)/etc/profile.d/conda.sh

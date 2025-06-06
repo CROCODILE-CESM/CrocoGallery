@@ -1,6 +1,6 @@
 {
-    "GEBCO": "s3://crocodile-cesm/CrocoDash/data/gebco/GEBCO_2024.nc",
-    "TPXO_U": "s3://crocodile-cesm/CrocoDash/data/tpxo/u_tpxo9.v1.nc",
-    "TPXO_H": "s3://crocodile-cesm/CrocoDash/data/tpxo/h_tpxo9.v1.nc",
-    "CESM":"Checkout"
+  "GEBCO": "s3://crocodile-cesm/CrocoDash/data/gebco/GEBCO_2024.nc",
+  "TPXO_U": "s3://crocodile-cesm/CrocoDash/data/tpxo/u_tpxo9.v1.nc",
+  "TPXO_H": "s3://crocodile-cesm/CrocoDash/data/tpxo/h_tpxo9.v1.nc",
+  "CESM": "Checkout"
 }
