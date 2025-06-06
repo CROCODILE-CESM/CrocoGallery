@@ -17,7 +17,7 @@ def main():
     with open(Path(__file__).parent / "data_paths.json", "r") as f:
         paths = json.load(f)
 
-    # setup_glorys_credentials()
+    setup_glorys_credentials()
     setup_aws_credentials()
     if paths["CESM"] == "Checkout":
         checkout_cesm()
