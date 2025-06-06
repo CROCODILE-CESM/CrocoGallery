@@ -12,7 +12,10 @@ else:
     try:
         cesm_path = os.environ["CESMROOT"]
     except KeyError:
-        print("Error: No argument provided and CESMROOT environment variable is not set.", file=sys.stderr)
+        print(
+            "Error: No argument provided and CESMROOT environment variable is not set.",
+            file=sys.stderr,
+        )
         sys.exit(1)
 
 # Load existing JSON
