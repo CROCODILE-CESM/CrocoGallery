@@ -1,0 +1,15 @@
+name: Check Glade & S3 Paths
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  check_paths:
+    runs-on: ubuntu-latest
+    steps:
+
+        - name: Checkout repository
+          uses: actions/checkout@v4
+
+        - name: Search for '/glade' paths
+          run: |
+            code/quality_control.sh
