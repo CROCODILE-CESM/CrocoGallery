@@ -1,4 +1,4 @@
-name: Check Glade & S3 Paths
+name: Run Quality Control
 
 on: [push, pull_request, workflow_dispatch]
 
@@ -10,6 +10,6 @@ jobs:
         - name: Checkout repository
           uses: actions/checkout@v4
 
-        - name: Search for '/glade' paths
+        - name: Run Quality Control
           run: |
             code/quality_control.sh
