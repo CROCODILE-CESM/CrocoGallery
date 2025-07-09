@@ -54,4 +54,4 @@ if __name__ == "__main__":
         "--reverse", action="store_true", help="Reverse the path injection."
     )
     args = parser.parse_args()
-    main(reverse=args.reverse)
+    main(reverse=True)
