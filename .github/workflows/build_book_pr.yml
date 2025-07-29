@@ -19,7 +19,7 @@ env:
   GLORYS_PASSWORD: ${{ secrets.GLORYS_PASSWORD }}
 
 jobs:
-  build_book:
+  build_book_pr:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -78,9 +78,3 @@ jobs:
           publish_branch: gh-pages
           publish_dir: CrocoGallery/gallery/_build/html
           destination_dir: pr-${{ github.event.number }}
-      - name: Comment PR with preview link
-        uses: marocchino/sticky-pull-request-comment@v2
-        with:
-          message: |
-            📄 Preview your docs here:
-            👉 https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/pr-${{ github.event.number }}/index.html
