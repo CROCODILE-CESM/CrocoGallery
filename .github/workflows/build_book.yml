@@ -23,7 +23,7 @@ env:
   GLORYS_PASSWORD: ${{ secrets.GLORYS_PASSWORD }}
 
 jobs:
-  build_book_pr:
+  build_book:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
