@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Use Cases &#8212; CrocoDash Gallery</title>
+    <title>Add data runoff from GLOFAS to the Run &#8212; CrocoDash Gallery</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/use_cases/index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/features/add_rof';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Make a lowres domain for DA dev work!" href="three_boundary_from_t232.html" />
-    <link rel="prev" title="Add Boundary Tides to the Run" href="../features/add_tides.html" />
+    <link rel="next" title="Add Chlorophyll Files to the Run" href="add_chl.html" />
+    <link rel="prev" title="Use different data products w/ the CrocoDash Data Access Module" href="add_data_products.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -190,26 +190,26 @@
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/input_params.html">Input Parameters</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../features/index.html">Feature Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../features/add_bgc.html">Run a coupled biogeochemistry (MARBL) &amp; ocean (MOM6) model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../features/add_cice.html">Run a coupled sea ice (CICE) &amp; ocean (MOM6) model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../features/subset_global.html">Add Global Subset Grids</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../features/add_grids.html">Use Custom Pre-Generated Grids</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../features/too_much_data.html">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Feature Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="add_bgc.html">Run a coupled biogeochemistry (MARBL) &amp; ocean (MOM6) model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_cice.html">Run a coupled sea ice (CICE) &amp; ocean (MOM6) model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subset_global.html">Add Global Subset Grids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_grids.html">Use Custom Pre-Generated Grids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="too_much_data.html">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../features/add_data_products.html">Use different data products w/ the CrocoDash Data Access Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../features/add_rof.html">Add data runoff from GLOFAS to the Run</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../features/add_chl.html">Add Chlorophyll Files to the Run</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../features/add_tides.html">Add Boundary Tides to the Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_data_products.html">Use different data products w/ the CrocoDash Data Access Module</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Add data runoff from GLOFAS to the Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_chl.html">Add Chlorophyll Files to the Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_tides.html">Add Boundary Tides to the Run</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Use Cases Overview</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="three_boundary_from_t232.html">Make a lowres domain for DA dev work!</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../use_cases/index.html">Use Cases Overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../use_cases/three_boundary_from_t232.html">Make a lowres domain for DA dev work!</a></li>
 
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="three_boundary.html">Setup the NWA12 domain through CrocoDash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../use_cases/three_boundary.html">Setup the NWA12 domain through CrocoDash</a></li>
 
 
 
@@ -287,7 +287,7 @@
       
       
       
-      <li><a href="https://github.com/CROCODILE-CESM/CrocoGallery/issues/new?title=Issue%20on%20page%20%2Fnotebooks/use_cases/index.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/CROCODILE-CESM/CrocoGallery/issues/new?title=Issue%20on%20page%20%2Fnotebooks/features/add_rof.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -317,7 +317,7 @@
       
       
       
-      <li><a href="../../_sources/notebooks/use_cases/index.rst" target="_blank"
+      <li><a href="../../_sources/notebooks/features/add_rof.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -327,7 +327,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.rst</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -399,7 +399,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Use Cases</h1>
+    <h1>Add data runoff from GLOFAS to the Run</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -413,11 +413,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="use-cases">
-<h1>Use Cases<a class="headerlink" href="#use-cases" title="Link to this heading">#</a></h1>
-<p>Please check out the following use cases of CrocoDash. These are places where CrocoDash is being used in the wild!</p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="add-data-runoff-from-glofas-to-the-run">
+<h1>Add data runoff from GLOFAS to the Run<a class="headerlink" href="#add-data-runoff-from-glofas-to-the-run" title="Link to this heading">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -433,7 +430,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks/use_cases"
+            path: "./notebooks/features"
         },
         predefinedOutput: true
     }
@@ -451,20 +448,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../features/add_tides.html"
+       href="add_data_products.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Add Boundary Tides to the Run</p>
+        <p class="prev-next-title">Use different data products w/ the CrocoDash Data Access Module</p>
       </div>
     </a>
     <a class="right-next"
-       href="three_boundary_from_t232.html"
+       href="add_chl.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Make a lowres domain for DA dev work!</p>
+        <p class="prev-next-title">Add Chlorophyll Files to the Run</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
