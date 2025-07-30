@@ -14,10 +14,13 @@ parts:
       - file: notebooks/features/index 
         title: Feature Tutorials
         sections:
+        - file: notebooks/features/add_bgc
+        - file: notebooks/features/add_cice
         - file: notebooks/features/subset_global
-        - file: notebooks/features/too_much_data
         - file: notebooks/features/add_grids
+        - file: notebooks/features/too_much_data
         - file: notebooks/features/add_data_products
+        - file: notebooks/features/add_rof
         - file: notebooks/features/add_chl
         - file: notebooks/features/add_tides
       - file: notebooks/use_cases/index 
