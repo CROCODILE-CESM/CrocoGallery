@@ -13,6 +13,8 @@ def main(reverse=False):
 
     for root, dirs, files in os.walk(notebooks_path):
         for name in files:
+            if not name.endswith(".ipynb"):
+                continue  # Skip non-notebook files
             notebook_path = Path(root) / name
             print(f"Processing: {notebook_path}")
 
