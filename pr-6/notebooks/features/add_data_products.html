@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Try the CrocoDash Data Access Module &#8212; CrocoDash Gallery</title>
+    <title>Use different data products w/ the CrocoDash Data Access Module &#8212; CrocoDash Gallery</title>
   
   
   
@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Add Chlorophyll" href="add_chl.html" />
-    <link rel="prev" title="Add Custom Grids" href="add_grids.html" />
+    <link rel="prev" title="Use Custom Pre-Generated Grids" href="add_grids.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -192,12 +192,25 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Feature Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="subset_global.html">Add Global Subset Grids</a></li>
-<li class="toctree-l2"><a class="reference internal" href="too_much_data.html">Iterative OBC generation (for Long CESM-MOM6 runs) - Large Data Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="too_much_data.html">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="add_grids.html">Add Custom Grids</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Try the CrocoDash Data Access Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_grids.html">Use Custom Pre-Generated Grids</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Use different data products w/ the CrocoDash Data Access Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="add_chl.html">Add Chlorophyll</a></li>
-<li class="toctree-l2"><a class="reference internal" href="add_tides.html">Add Tides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_tides.html">Add Boundary Tides to the Run</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../use_cases/index.html">Use Cases Overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../use_cases/three_boundary_from_t232.html">Make a lowres domain for DA dev work!</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../use_cases/three_boundary.html">Setup the NWA12 domain through CrocoDash</a></li>
+
+
+
+
 </ul>
 </details></li>
 </ul>
@@ -383,7 +396,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Try the CrocoDash Data Access Module</h1>
+    <h1>Use different data products w/ the CrocoDash Data Access Module</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -397,79 +410,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="try-the-crocodash-data-access-module">
-<h1>Try the CrocoDash Data Access Module<a class="headerlink" href="#try-the-crocodash-data-access-module" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="use-different-data-products-w-the-crocodash-data-access-module">
+<h1>Use different data products w/ the CrocoDash Data Access Module<a class="headerlink" href="#use-different-data-products-w-the-crocodash-data-access-module" title="Link to this heading">#</a></h1>
 <p>This module can be used with case.configure_forcings to find different ways to access raw data from data sources. Just supply data product name and function name in the following manner:</p>
 <p>case.configure_forcing(…other_arguments…, product_name = “product_name”, function_name = “function_name”)</p>
-<p>Available products and functions can be found within the documentation and in raw_ata_access helper functions seen below and more. Please see the docs for all data_access functions.</p>
+<p>Available products and functions can be found in the <a class="reference external" href="https://crocodile-cesm.github.io/CrocoDash/tutorials/datasets.html">documentation</a> and in the <code class="docutils literal notranslate"><span class="pre">raw_data_access</span></code> helper functions shown below. Please see the <a class="reference external" href="https://crocodile-cesm.github.io/CrocoDash/tutorials/datasets.html">data_access functions</a> for the full list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.raw_data_access</span><span class="w"> </span><span class="kn">import</span> <span class="n">driver</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.raw_data_access</span><span class="w"> </span><span class="kn">import</span> <span class="n">config</span> <span class="k">as</span> <span class="n">tb</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/profiles.py:303: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-  if positive is &#39;down&#39;:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:1406: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-  if var_dict[&#39;Ztype&#39;] is &#39;Fixed&#39;:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:1516: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-  if var_dict[&#39;Z&#39;] is not None and var_dict[&#39;Ztype&#39;] is &#39;Fixed&#39; and self.interfaces is None:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:1539: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-  if var_dict[&#39;Z&#39;] is not None and var_dict[&#39;Ztype&#39;] is &#39;Fixed&#39; and self.interfaces is not None:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:1545: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-  if var_dict[&#39;Z&#39;] is not None and var_dict[&#39;Ztype&#39;] is &#39;Generalized&#39; and self.interfaces is not None:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:1780: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
-  if self.var_dict[field][&#39;Ztype&#39;] is not &#39;Fixed&#39;:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2034: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-  if self.var_dict[field][&#39;Ztype&#39;] is &#39;Fixed&#39;:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2091: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-  if var_dict[&#39;Ztype&#39;] is &#39;Fixed&#39;:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2147: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-  if var_dict[&#39;Ztype&#39;] is &#39;Fixed&#39;:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2205: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-  if var_dict[&#39;Ztype&#39;] is &#39;Fixed&#39; and var_dict[&#39;Z&#39;] is not None:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2253: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-  if self.var_dict[field][&#39;Ztype&#39;] is &#39;Fixed&#39; and self.var_dict[field][&#39;Z&#39;] is not None:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2319: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-  if self.var_dict[field][&#39;Ztype&#39;] is &#39;Fixed&#39;:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2363: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
-  if var_dict[&#39;Z&#39;] is not &#39;Fixed&#39;:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2385: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
-  if var_dict[&#39;Ztype&#39;] is not &#39;Fixed&#39;:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2399: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-  if var_dict[&#39;Ztype&#39;] is &#39;Fixed&#39;:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2409: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
-  if var_dict[&#39;Ztype&#39;] is not &#39;Fixed&#39;:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2417: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
-  if var_dict[&#39;Ztype&#39;] is not &#39;Fixed&#39;:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2504: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-  if self.var_dict[field][&#39;Ztype&#39;] is &#39;Fixed&#39;:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2555: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
-  if var_dict[&#39;Ztype&#39;] is not &#39;Fixed&#39; and var_dict[&#39;z_interfaces&#39;] is not None:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2581: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
-  if var_dict[&#39;Ztype&#39;] is not &#39;Fixed&#39; and var_dict[&#39;z_interfaces&#39;] is not None:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2586: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
-  if var_dict[&#39;Ztype&#39;] is not &#39;Fixed&#39; and var_dict[&#39;z_interfaces&#39;] is not None:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2592: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
-  if var_dict[&#39;Ztype&#39;] is not &#39;Fixed&#39;:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2596: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-  if self.var_dict[field][&#39;Ztype&#39;] is &#39;Fixed&#39;:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2679: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-  if self.var_dict[field][&#39;Ztype&#39;] is &#39;Fixed&#39;:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2813: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
-  if self.var_dict[temp_name][&#39;Ztype&#39;] is not &#39;Fixed&#39;:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:3254: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
-  if self.var_dict[field_x][&#39;Ztype&#39;] is not &#39;Fixed&#39;:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:3259: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
-  if self.var_dict[field][&#39;Ztype&#39;] is not &#39;Fixed&#39;:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:4481: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-  if  self.var_dict[field][&#39;stagger&#39;] is &#39;00&#39; and self.var_dict[field][&#39;Z&#39;] is not None:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:4529: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
-  if write_interfaces and self.var_dict[field][&#39;Ztype&#39;] is &#39;Fixed&#39; and p == 0:
-/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:4531: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
-  elif write_interfaces and self.var_dict[field][&#39;Ztype&#39;] is not &#39;Fixed&#39;:
 </pre></div>
 </div>
 </div>
@@ -483,13 +432,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;GLORYS&#39;: {&#39;get_glorys_data_from_cds_api&#39;: &lt;function CrocoDash.raw_data_access.datasets.glorys.get_glorys_data_from_cds_api(dates, lat_min, lat_max, lon_min, lon_max, output_dir=None, output_file=None, dataset_varnames=[&#39;zos&#39;, &#39;uo&#39;, &#39;vo&#39;, &#39;so&#39;, &#39;thetao&#39;])&gt;,
-  &#39;get_glorys_data_from_rda&#39;: &lt;function CrocoDash.raw_data_access.datasets.glorys.get_glorys_data_from_rda(dates: list, lat_min, lat_max, lon_min, lon_max, output_dir=PosixPath(&#39;.&#39;), output_file=&#39;raw_glorys.nc&#39;, dataset_varnames=[&#39;time&#39;, &#39;latitude&#39;, &#39;longitude&#39;, &#39;depth&#39;, &#39;zos&#39;, &#39;uo&#39;, &#39;vo&#39;, &#39;so&#39;, &#39;thetao&#39;]) -&gt; xarray.core.dataset.Dataset&gt;,
-  &#39;get_glorys_data_script_for_cli&#39;: &lt;function CrocoDash.raw_data_access.datasets.glorys.get_glorys_data_script_for_cli(dates: tuple, lat_min, lat_max, lon_min, lon_max, output_dir, output_file) -&gt; None&gt;},
- &#39;SEAWIFS&#39;: {&#39;get_global_seawifs_script_for_cli&#39;: &lt;function CrocoDash.raw_data_access.datasets.seawifs.get_global_seawifs_script_for_cli(dates=&#39;UNUSED&#39;, lat_min=&#39;UNUSED&#39;, lat_max=&#39;UNUSED&#39;, lon_min=&#39;UNUSED&#39;, lon_max=&#39;UNUSED&#39;, output_dir=None, output_file=&#39;UNUSED&#39;, username=&#39;&#39;)&gt;,
-  &#39;get_processed_global_seawifs_script_for_cli&#39;: &lt;function CrocoDash.raw_data_access.datasets.seawifs.get_processed_global_seawifs_script_for_cli(dates=&#39;UNUSED&#39;, lat_min=&#39;UNUSED&#39;, lat_max=&#39;UNUSED&#39;, lon_min=&#39;UNUSED&#39;, lon_max=&#39;UNUSED&#39;, output_dir=PosixPath(&#39;.&#39;), output_file=&#39;processed_seawifs.nc&#39;)&gt;},
- &#39;GEBCO&#39;: {&#39;get_gebco_data_with_python&#39;: &lt;function CrocoDash.raw_data_access.datasets.gebco.get_gebco_data_with_python(dates=&#39;UNUSED&#39;, lat_min=&#39;UNUSED&#39;, lat_max=&#39;UNUSED&#39;, lon_min=&#39;UNUSED&#39;, lon_max=&#39;UNUSED&#39;, output_dir=None, output_file=None)&gt;,
-  &#39;get_gebco_data_script&#39;: &lt;function CrocoDash.raw_data_access.datasets.gebco.get_gebco_data_script(dates=&#39;UNUSED&#39;, lat_min=&#39;UNUSED&#39;, lat_max=&#39;UNUSED&#39;, lon_min=&#39;UNUSED&#39;, lon_max=&#39;UNUSED&#39;, output_dir=None, output_file=None)&gt;}}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;GLORYS&#39;: {&#39;get_glorys_data_from_cds_api&#39;: &lt;function CrocoDash.data_access.glorys.get_glorys_data_from_cds_api(dates, lat_min, lat_max, lon_min, lon_max, output_dir=None, output_file=None)&gt;,
+  &#39;get_glorys_data_from_rda&#39;: &lt;function CrocoDash.data_access.glorys.get_glorys_data_from_rda(dates: list, lat_min, lat_max, lon_min, lon_max, output_dir=PosixPath(&#39;.&#39;), output_file=&#39;raw_glorys.nc&#39;) -&gt; xarray.core.dataset.Dataset&gt;,
+  &#39;get_glorys_data_script_for_cli&#39;: &lt;function CrocoDash.data_access.glorys.get_glorys_data_script_for_cli(dates: tuple, lat_min, lat_max, lon_min, lon_max, output_dir, output_file) -&gt; None&gt;}}
 </pre></div>
 </div>
 </div>
@@ -506,8 +451,7 @@ document.write(`
  &#39;TPXO&#39;,
  &#39;GLOFAS&#39;,
  &#39;CESM Inputdata Repo (Bathymetry)&#39;,
- &#39;CESM Inputdata Repo (Grids)&#39;,
- &#39;SEAWIFS&#39;]
+ &#39;CESM Inputdata Repo (Grids)&#39;]
 </pre></div>
 </div>
 </div>
@@ -543,18 +487,6 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="o">.</span><span class="n">configure_forcing</span><span class="p">(</span><span class="n">date_range</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;2020-01-01 00:00:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-01-09 00:00:00&quot;</span><span class="p">],</span> 
                        <span class="n">product_name</span> <span class="o">=</span> <span class="s2">&quot;product_name&quot;</span><span class="p">,</span> 
                        <span class="n">function_name</span> <span class="o">=</span> <span class="s2">&quot;function_name&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [6],</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">case</span><span class="o">.</span><span class="n">configure_forcing</span><span class="p">(</span><span class="n">date_range</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;2020-01-01 00:00:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-01-09 00:00:00&quot;</span><span class="p">],</span> 
-<span class="g g-Whitespace">      </span><span class="mi">2</span>                        <span class="n">product_name</span> <span class="o">=</span> <span class="s2">&quot;product_name&quot;</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                        <span class="n">function_name</span> <span class="o">=</span> <span class="s2">&quot;function_name&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;case&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -597,7 +529,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Add Custom Grids</p>
+        <p class="prev-next-title">Use Custom Pre-Generated Grids</p>
       </div>
     </a>
     <a class="right-next"

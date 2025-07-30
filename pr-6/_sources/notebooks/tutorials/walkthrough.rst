@@ -11,7 +11,7 @@ Getting Started
 Follow the steps in `Installation instructions <https://crocodile-cesm.github.io/CrocoDash/installation>`_ to set up CrocoDash on your local machine. We will be working through the basic demo (demos/gallery/notebooks/tutorials/minimal_demo_rect.ipynb), which is designed to help you familiarize yourself
 with the basic steps of using CrocoDash, no additional features. Please open up that demo in the CrocoDash environment to get started.
 
-Then, head to the :ref:`cesm` to setup the CESM. Once that is done, head the jupyter notebook demo or follow along below!
+Then, head to the :ref:`cesm` to setup the CESM. Once that is done, head to the jupyter notebook demo & follow along below!
 
 Basic Demo Overview
 ----------------------

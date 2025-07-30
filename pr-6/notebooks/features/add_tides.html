@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Add Tides &#8212; CrocoDash Gallery</title>
+    <title>Add Boundary Tides to the Run &#8212; CrocoDash Gallery</title>
   
   
   
@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/features/add_tides';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Use Cases" href="../use_cases/index.html" />
     <link rel="prev" title="Add Chlorophyll" href="add_chl.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -191,12 +192,25 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Feature Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="subset_global.html">Add Global Subset Grids</a></li>
-<li class="toctree-l2"><a class="reference internal" href="too_much_data.html">Iterative OBC generation (for Long CESM-MOM6 runs) - Large Data Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="too_much_data.html">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="add_grids.html">Add Custom Grids</a></li>
-<li class="toctree-l2"><a class="reference internal" href="add_data_products.html">Try the CrocoDash Data Access Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_grids.html">Use Custom Pre-Generated Grids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_data_products.html">Use different data products w/ the CrocoDash Data Access Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="add_chl.html">Add Chlorophyll</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Add Tides</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Add Boundary Tides to the Run</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../use_cases/index.html">Use Cases Overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../use_cases/three_boundary_from_t232.html">Make a lowres domain for DA dev work!</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../use_cases/three_boundary.html">Setup the NWA12 domain through CrocoDash</a></li>
+
+
+
+
 </ul>
 </details></li>
 </ul>
@@ -382,7 +396,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Add Tides</h1>
+    <h1>Add Boundary Tides to the Run</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -396,8 +410,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="add-tides">
-<h1>Add Tides<a class="headerlink" href="#add-tides" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="add-boundary-tides-to-the-run">
+<h1>Add Boundary Tides to the Run<a class="headerlink" href="#add-boundary-tides-to-the-run" title="Link to this heading">#</a></h1>
 <p>MOM6 can take tides data as a boundary condition in the regional domain. Many tides parameters are impacted by this and can be seen in case.process_forcings.</p>
 <p>In our workflow, we take data from the TPXO tidal model and regrid onto our grid.</p>
 <p>TPXO model data can be requested off of the TPXO website or is available on derecho.</p>
@@ -455,6 +469,15 @@ There are three parameters in configure forcings and many parameters adjusted in
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Add Chlorophyll</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../use_cases/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Use Cases</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

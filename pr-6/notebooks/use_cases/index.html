@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>CESM Setup &#8212; CrocoDash Gallery</title>
+    <title>Use Cases &#8212; CrocoDash Gallery</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tutorials/cesm_setup';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/use_cases/index';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Set up a rectangular regional CESM-MOM6 run" href="minimal_demo_rect.html" />
-    <link rel="prev" title="CrocoDash Basic Notebook Walkthrough" href="walkthrough.html" />
+    <link rel="next" title="Make a lowres domain for DA dev work!" href="three_boundary_from_t232.html" />
+    <link rel="prev" title="Add Boundary Tides to the Run" href="../features/add_tides.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,14 +180,14 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="walkthrough.html">Basic Tutorial</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">CESM Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="minimal_demo_rect.html">Set up a rectangular regional CESM-MOM6 run</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/walkthrough.html">Basic Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/cesm_setup.html">CESM Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/minimal_demo_rect.html">Set up a rectangular regional CESM-MOM6 run</a></li>
 
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="input_params.html">Input Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/input_params.html">Input Parameters</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../features/index.html">Feature Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -200,13 +200,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../features/add_tides.html">Add Boundary Tides to the Run</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../use_cases/index.html">Use Cases Overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../use_cases/three_boundary_from_t232.html">Make a lowres domain for DA dev work!</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Use Cases Overview</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="three_boundary_from_t232.html">Make a lowres domain for DA dev work!</a></li>
 
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="../use_cases/three_boundary.html">Setup the NWA12 domain through CrocoDash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="three_boundary.html">Setup the NWA12 domain through CrocoDash</a></li>
 
 
 
@@ -284,7 +284,7 @@
       
       
       
-      <li><a href="https://github.com/CROCODILE-CESM/CrocoGallery/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tutorials/cesm_setup.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/CROCODILE-CESM/CrocoGallery/issues/new?title=Issue%20on%20page%20%2Fnotebooks/use_cases/index.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -314,7 +314,7 @@
       
       
       
-      <li><a href="../../_sources/notebooks/tutorials/cesm_setup.rst" target="_blank"
+      <li><a href="../../_sources/notebooks/use_cases/index.rst" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -385,9 +385,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -398,21 +396,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>CESM Setup</h1>
+    <h1>Use Cases</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-clone-the-repo">Step 1: Clone the repo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-checkout-all-the-components">Step 2: Checkout all the components</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-done">Step 3: Done!</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -422,28 +410,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="cesm-setup">
-<span id="cesm"></span><h1>CESM Setup<a class="headerlink" href="#cesm-setup" title="Link to this heading">#</a></h1>
-<p>The first step in running an ocean model inside the CESM is setting up the CESM! Here’s how to do it:</p>
-<section id="step-1-clone-the-repo">
-<h2>Step 1: Clone the repo<a class="headerlink" href="#step-1-clone-the-repo" title="Link to this heading">#</a></h2>
-<p>CROCODILE has its own fork of the CESM available here: <a class="github reference external" href="https://github.com/CROCODILE-CESM/CESM">CROCODILE-CESM/CESM</a>. Go ahead and clone it as shown below. I’m gonna call mine CROCESM.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/CROCODILE-CESM/CESM<span class="w"> </span>CROCESM
-</pre></div>
+  <section id="use-cases">
+<h1>Use Cases<a class="headerlink" href="#use-cases" title="Link to this heading">#</a></h1>
+<p>Please check out the following use cases of CrocoDash. These are places where CrocoDash is being used in the wild!</p>
+<div class="toctree-wrapper compound">
 </div>
-</section>
-<section id="step-2-checkout-all-the-components">
-<h2>Step 2: Checkout all the components<a class="headerlink" href="#step-2-checkout-all-the-components" title="Link to this heading">#</a></h2>
-<p>The original clone only clones the CESM code, we need to checkout all of the components as well, like the ocean model and the sea ice model. This will take some time.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>CROCESM
-./bin/git-fleximod<span class="w"> </span>update
-</pre></div>
-</div>
-</section>
-<section id="step-3-done">
-<h2>Step 3: Done!<a class="headerlink" href="#step-3-done" title="Link to this heading">#</a></h2>
-<p>We’re done! Remember this path, and continue over to the <a class="reference internal" href="walkthrough.html#notebook-walkthrough"><span class="std std-ref">CrocoDash Basic Notebook Walkthrough</span></a></p>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -459,7 +430,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks/tutorials"
+            path: "./notebooks/use_cases"
         },
         predefinedOutput: true
     }
@@ -477,20 +448,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="walkthrough.html"
+       href="../features/add_tides.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">CrocoDash Basic Notebook Walkthrough</p>
+        <p class="prev-next-title">Add Boundary Tides to the Run</p>
       </div>
     </a>
     <a class="right-next"
-       href="minimal_demo_rect.html"
+       href="three_boundary_from_t232.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Set up a rectangular regional CESM-MOM6 run</p>
+        <p class="prev-next-title">Make a lowres domain for DA dev work!</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -500,23 +471,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-clone-the-repo">Step 1: Clone the repo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-checkout-all-the-components">Step 2: Checkout all the components</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-done">Step 3: Done!</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
