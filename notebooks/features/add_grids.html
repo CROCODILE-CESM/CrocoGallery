@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Add Custom Grids &#8212; CrocoDash Gallery</title>
+    <title>Use Custom Pre-Generated Grids &#8212; CrocoDash Gallery</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/features/add_grids';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Try the CrocoDash Data Access Module" href="add_data_products.html" />
-    <link rel="prev" title="Iterative OBC generation (for Long CESM-MOM6 runs)" href="too_much_data.html" />
+    <link rel="next" title="Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the Large Data Workflow" href="too_much_data.html" />
+    <link rel="prev" title="Add Global Subset Grids" href="subset_global.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,35 +179,43 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/minimal_demo_rect.html">Set up a rectangular regional CESM-MOM6 run</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/walkthrough.html">Basic Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/cesm_setup.html">CESM Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/minimal_demo_rect.html">Set up a rectangular regional CESM-MOM6 run</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/input_params.html">Input Parameters</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Feature Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="add_bgc.html">Run a coupled biogeochemistry (MARBL) &amp; ocean (MOM6) model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_cice.html">Run a coupled sea ice (CICE) &amp; ocean (MOM6) model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subset_global.html">Add Global Subset Grids</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Use Custom Pre-Generated Grids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="too_much_data.html">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="add_data_products.html">Use different data products w/ the CrocoDash Data Access Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_rof.html">Add data runoff from GLOFAS to the Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_chl.html">Add Chlorophyll Files to the Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_tides.html">Add Boundary Tides to the Run</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../use_cases/index.html">Use Cases Overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../use_cases/three_boundary_from_t232.html">Make a lowres domain for DA dev work!</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../use_cases/three_boundary.html">Setup the NWA12 domain through CrocoDash</a></li>
 
 
 
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use Cases</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../use_cases/three_boundary_from_t232.html">Make a lowres domain for DA dev work!</a></li>
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../use_cases/three_boundary.html">Setup the NWA12 domain through CrocoDash</a></li>
-
-
-
-
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Features</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="subset_global.html">Add Global Subset Grids</a></li>
-<li class="toctree-l1"><a class="reference internal" href="too_much_data.html">Iterative OBC generation (for Long CESM-MOM6 runs)</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Add Custom Grids</a></li>
-<li class="toctree-l1"><a class="reference internal" href="add_data_products.html">Try the CrocoDash Data Access Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="add_chl.html">Add Chlorophyll</a></li>
-<li class="toctree-l1"><a class="reference internal" href="add_tides.html">Add Tides</a></li>
+</details></li>
 </ul>
 
     </div>
@@ -393,7 +401,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Add Custom Grids</h1>
+    <h1>Use Custom Pre-Generated Grids</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -417,15 +425,26 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="add-custom-grids">
-<h1>Add Custom Grids<a class="headerlink" href="#add-custom-grids" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="use-custom-pre-generated-grids">
+<h1>Use Custom Pre-Generated Grids<a class="headerlink" href="#use-custom-pre-generated-grids" title="Link to this heading">#</a></h1>
 <section id="step-1-1-horizontal-grid">
 <h2>Step 1.1: Horizontal Grid<a class="headerlink" href="#step-1-1-horizontal-grid" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.grid</span><span class="w"> </span><span class="kn">import</span> <span class="n">Gridx</span>
 
-<span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="o">.</span><span class="n">from_supergrid</span><span class="p">(</span><span class="s2">&quot;&lt;HGRID_TRIMMED&gt;&quot;</span><span class="p">)</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="o">.</span><span class="n">from_supergrid</span><span class="p">(</span><span class="s2">&quot;s3://crocodile-cesm/CrocoDash/data/grids/ocean_hgrid_trimmed.nc&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.grid</span><span class="w"> </span><span class="kn">import</span> <span class="n">Gridx</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="o">.</span><span class="n">from_supergrid</span><span class="p">(</span><span class="s2">&quot;s3://crocodile-cesm/CrocoDash/data/grids/ocean_hgrid_trimmed.nc&quot;</span><span class="p">)</span>
+
+<span class="ne">ImportError</span>: cannot import name &#39;Gridx&#39; from &#39;CrocoDash.grid&#39; (/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/grid.py)
 </pre></div>
 </div>
 </div>
@@ -437,7 +456,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.topo</span><span class="w"> </span><span class="kn">import</span> <span class="n">Topo</span>
 
-<span class="n">bathymetry_path</span><span class="o">=</span><span class="s1">&#39;&lt;BATHY_FILE&gt;&#39;</span>
+<span class="n">bathymetry_path</span><span class="o">=</span><span class="s1">&#39;s3://crocodile-cesm/CrocoDash/data/grids/ocean_topog_little_nwa12_5d22b5.nc&#39;</span>
 
 <span class="n">topo</span> <span class="o">=</span> <span class="n">Topo</span><span class="o">.</span><span class="n">from_topo_file</span><span class="p">(</span>
     <span class="n">grid</span> <span class="o">=</span> <span class="n">grid</span><span class="p">,</span>
@@ -521,20 +540,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="too_much_data.html"
+       href="subset_global.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Iterative OBC generation (for Long CESM-MOM6 runs)</p>
+        <p class="prev-next-title">Add Global Subset Grids</p>
       </div>
     </a>
     <a class="right-next"
-       href="add_data_products.html"
+       href="too_much_data.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Try the CrocoDash Data Access Module</p>
+        <p class="prev-next-title">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

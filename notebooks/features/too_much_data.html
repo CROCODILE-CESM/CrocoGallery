@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Iterative OBC generation (for Long CESM-MOM6 runs) &#8212; CrocoDash Gallery</title>
+    <title>Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the Large Data Workflow &#8212; CrocoDash Gallery</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/features/too_much_data';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Add Custom Grids" href="add_grids.html" />
-    <link rel="prev" title="Add Global Subset Grids" href="subset_global.html" />
+    <link rel="next" title="Use different data products w/ the CrocoDash Data Access Module" href="add_data_products.html" />
+    <link rel="prev" title="Use Custom Pre-Generated Grids" href="add_grids.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,35 +179,43 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/minimal_demo_rect.html">Set up a rectangular regional CESM-MOM6 run</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/walkthrough.html">Basic Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/cesm_setup.html">CESM Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/minimal_demo_rect.html">Set up a rectangular regional CESM-MOM6 run</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/input_params.html">Input Parameters</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Feature Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="add_bgc.html">Run a coupled biogeochemistry (MARBL) &amp; ocean (MOM6) model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_cice.html">Run a coupled sea ice (CICE) &amp; ocean (MOM6) model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subset_global.html">Add Global Subset Grids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_grids.html">Use Custom Pre-Generated Grids</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="add_data_products.html">Use different data products w/ the CrocoDash Data Access Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_rof.html">Add data runoff from GLOFAS to the Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_chl.html">Add Chlorophyll Files to the Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_tides.html">Add Boundary Tides to the Run</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../use_cases/index.html">Use Cases Overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../use_cases/three_boundary_from_t232.html">Make a lowres domain for DA dev work!</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../use_cases/three_boundary.html">Setup the NWA12 domain through CrocoDash</a></li>
 
 
 
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use Cases</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../use_cases/three_boundary_from_t232.html">Make a lowres domain for DA dev work!</a></li>
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../use_cases/three_boundary.html">Setup the NWA12 domain through CrocoDash</a></li>
-
-
-
-
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Features</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="subset_global.html">Add Global Subset Grids</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Iterative OBC generation (for Long CESM-MOM6 runs)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="add_grids.html">Add Custom Grids</a></li>
-<li class="toctree-l1"><a class="reference internal" href="add_data_products.html">Try the CrocoDash Data Access Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="add_chl.html">Add Chlorophyll</a></li>
-<li class="toctree-l1"><a class="reference internal" href="add_tides.html">Add Tides</a></li>
+</details></li>
 </ul>
 
     </div>
@@ -393,7 +401,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Iterative OBC generation (for Long CESM-MOM6 runs)</h1>
+    <h1>Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -403,10 +411,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#large-data-workflow-overview">Large Data Workflow Overview</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#folder-structure">Folder Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts">Scripts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use">How to Use</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-trigger-large-data-workflow">Step 1: Trigger Large Data Workflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-run-the-iterative-obc-processor">Step 2: Run the iterative OBC processor</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-process-forcing-data">Step 3: Process forcing data</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -417,9 +433,42 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="iterative-obc-generation-for-long-cesm-mom6-runs">
-<h1>Iterative OBC generation (for Long CESM-MOM6 runs)<a class="headerlink" href="#iterative-obc-generation-for-long-cesm-mom6-runs" title="Link to this heading">#</a></h1>
-<p>Often, generating OBC datasets can be done all in one shot, but in longer and larger cases (like running the Northwest Atlantic for a year) we need to start iterating through the generation. Here is an example, it only affects configure and process forcing steps!</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="setup-iterative-obc-generation-for-long-cesm-mom6-runs-w-the-large-data-workflow">
+<h1>Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow<a class="headerlink" href="#setup-iterative-obc-generation-for-long-cesm-mom6-runs-w-the-large-data-workflow" title="Link to this heading">#</a></h1>
+<p>Often, generating OBC datasets can be done all in one shot, but in longer and larger cases (like running the Northwest Atlantic for a year) we need to start iterating through the generation. Generating open boundary condition (OBC) data is essential for the entire model runtime but can be time-consuming and resource-intensive.</p>
+<p>The Large Data Workflow in CrocoDash helps manage this by breaking data access into smaller, more manageable components.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="large-data-workflow-overview">
+<h1>Large Data Workflow Overview<a class="headerlink" href="#large-data-workflow-overview" title="Link to this heading">#</a></h1>
+<p>The workflow is enabled by setting the <code class="docutils literal notranslate"><span class="pre">too_much_data</span></code> boolean in <code class="docutils literal notranslate"><span class="pre">case.configure_forcings</span></code>. This triggers the copying of a script folder into the case input directory forcing folder
+and the generation of a configuration file to download the required boundary condition files. An example of this is in CrocoGallery under features/add_data_products.ipynb.
+Users can trigger the workflow by running <a class="reference external" href="http://driver.py">driver.py</a> in the forcing folder and adjusting config options in the config file.</p>
+<section id="folder-structure">
+<h2>Folder Structure<a class="headerlink" href="#folder-structure" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>config.json</strong> – Defines the region-specific requirements and run parameters.</p></li>
+<li><p><strong>README</strong> – Explains the workflow.</p></li>
+<li><p><strong><a class="reference external" href="http://driver.py">driver.py</a></strong> – Executes all scripts needed to obtain OBC data.</p></li>
+<li><p><strong>Code/</strong> – Contains all scripts used in the workflow.</p></li>
+<li><p><strong>raw_data/</strong>, <strong>regridded_data/</strong> – Intermediate storage for workflow steps, preventing the need to rerun all scripts at once.</p></li>
+</ul>
+</section>
+<section id="scripts">
+<h2>Scripts<a class="headerlink" href="#scripts" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>get_data_piecewise</strong> – Retrieves raw, unprocessed data in chunks (size defined by <code class="docutils literal notranslate"><span class="pre">config[&quot;params&quot;][&quot;step&quot;]</span></code>) and saves it to <code class="docutils literal notranslate"><span class="pre">config[&quot;raw_data&quot;]</span></code>.</p></li>
+<li><p><strong>regrid_data_piecewise</strong> – Processes raw data and stores it in <code class="docutils literal notranslate"><span class="pre">config[&quot;regridded_data&quot;]</span></code>.</p></li>
+<li><p><strong>merge_piecewise_dataset</strong> – Combines regridded data into the final dataset for model input.</p></li>
+</ol>
+</section>
+<section id="how-to-use">
+<h2>How to Use<a class="headerlink" href="#how-to-use" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Identify and allocate available computing resources.</p></li>
+<li><p>Adjust the <code class="docutils literal notranslate"><span class="pre">step</span></code> parameter to match resource constraints (default: 5 days).</p></li>
+<li><p>Run each step manually or use <code class="docutils literal notranslate"><span class="pre">driver.py</span></code> as a guide.</p></li>
+</ol>
+</section>
 <section id="step-1-trigger-large-data-workflow">
 <h2>Step 1: Trigger Large Data Workflow<a class="headerlink" href="#step-1-trigger-large-data-workflow" title="Link to this heading">#</a></h2>
 <p>This can be done by setting the too_much_data bool to true.</p>
@@ -496,20 +545,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="subset_global.html"
+       href="add_grids.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Add Global Subset Grids</p>
+        <p class="prev-next-title">Use Custom Pre-Generated Grids</p>
       </div>
     </a>
     <a class="right-next"
-       href="add_grids.html"
+       href="add_data_products.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Add Custom Grids</p>
+        <p class="prev-next-title">Use different data products w/ the CrocoDash Data Access Module</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -529,10 +578,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#large-data-workflow-overview">Large Data Workflow Overview</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#folder-structure">Folder Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts">Scripts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use">How to Use</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-trigger-large-data-workflow">Step 1: Trigger Large Data Workflow</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-run-the-iterative-obc-processor">Step 2: Run the iterative OBC processor</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-process-forcing-data">Step 3: Process forcing data</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

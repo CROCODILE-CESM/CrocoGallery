@@ -25,168 +25,38 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-bathymetry_path='<BATHY_FILE>'
-
-topo.interpolate_from_file(
-    file_path = bathymetry_path,
-    longitude_coordinate_name="lon",
-    latitude_coordinate_name="lat",
-    vertical_coordinate_name="elevation"
+from CrocoDash.case import Case
+import os
+case = Case(
+    cesmroot = cesmroot,
+    caseroot = caseroot,
+    inputdir = inputdir,
+    ocn_grid = grid,
+    ocn_vgrid = vgrid,
+    ocn_topo = topo,
+    project = 'NCGD0011',
+    override = True,
+    machine = "ubuntu-latest"
 )
 ------------------
 
------ stdout -----
-If bathymetry setup fails, rerun this function with write_to_file = True
-------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mValueError[0m                                Traceback (most recent call last)
-Input [0;32mIn [3][0m, in [0;36m<cell line: 0>[0;34m()[0m
-[1;32m      1[0m bathymetry_path[38;5;241m=[39m[38;5;124m'[39m[38;5;124m<BATHY_FILE>[39m[38;5;124m'[39m
-[0;32m----> 3[0m [43mtopo[49m[38;5;241;43m.[39;49m[43minterpolate_from_file[49m[43m([49m
-[1;32m      4[0m [43m    [49m[43mfile_path[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mbathymetry_path[49m[43m,[49m
-[1;32m      5[0m [43m    [49m[43mlongitude_coordinate_name[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mlon[39;49m[38;5;124;43m"[39;49m[43m,[49m
-[1;32m      6[0m [43m    [49m[43mlatitude_coordinate_name[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mlat[39;49m[38;5;124;43m"[39;49m[43m,[49m
-[1;32m      7[0m [43m    [49m[43mvertical_coordinate_name[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43melevation[39;49m[38;5;124;43m"[39;49m
-[1;32m      8[0m [43m)[49m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+Input [0;32mIn [11][0m, in [0;36m<cell line: 0>[0;34m()[0m
+[1;32m      1[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mCrocoDash[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcase[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Case
+[1;32m      2[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mos[39;00m
+[0;32m----> 3[0m case [38;5;241m=[39m [43mCase[49m[43m([49m
+[1;32m      4[0m [43m    [49m[43mcesmroot[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mcesmroot[49m[43m,[49m
+[1;32m      5[0m [43m    [49m[43mcaseroot[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mcaseroot[49m[43m,[49m
+[1;32m      6[0m [43m    [49m[43minputdir[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43minputdir[49m[43m,[49m
+[1;32m      7[0m [43m    [49m[43mocn_grid[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mgrid[49m[43m,[49m
+[1;32m      8[0m [43m    [49m[43mocn_vgrid[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mvgrid[49m[43m,[49m
+[1;32m      9[0m [43m    [49m[43mocn_topo[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mtopo[49m[43m,[49m
+[1;32m     10[0m [43m    [49m[43mproject[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mNCGD0011[39;49m[38;5;124;43m'[39;49m[43m,[49m
+[1;32m     11[0m [43m    [49m[43moverride[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m
+[1;32m     12[0m [43m    [49m[43mmachine[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mubuntu-latest[39;49m[38;5;124;43m"[39;49m
+[1;32m     13[0m [43m)[49m
 
-File [0;32m~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/topo.py:44[0m, in [0;36mTopo.interpolate_from_file[0;34m(self, file_path, longitude_coordinate_name, latitude_coordinate_name, vertical_coordinate_name, fill_channels, positive_down, write_to_file)[0m
-[1;32m     40[0m     expt[38;5;241m.[39mmom_input_dir [38;5;241m=[39m Path([38;5;124m"[39m[38;5;124m"[39m)
-[1;32m     41[0m [38;5;28mprint[39m(
-[1;32m     42[0m     [38;5;124m"[39m[38;5;124mIf bathymetry setup fails, rerun this function with write_to_file = True[39m[38;5;124m"[39m
-[1;32m     43[0m )
-[0;32m---> 44[0m [38;5;28mself[39m[38;5;241m.[39m_depth [38;5;241m=[39m [43mexpt[49m[38;5;241;43m.[39;49m[43msetup_bathymetry[49m[43m([49m
-[1;32m     45[0m [43m    [49m[43mbathymetry_path[49m[38;5;241;43m=[39;49m[43mfile_path[49m[43m,[49m
-[1;32m     46[0m [43m    [49m[43mlongitude_coordinate_name[49m[38;5;241;43m=[39;49m[43mlongitude_coordinate_name[49m[43m,[49m
-[1;32m     47[0m [43m    [49m[43mlatitude_coordinate_name[49m[38;5;241;43m=[39;49m[43mlatitude_coordinate_name[49m[43m,[49m
-[1;32m     48[0m [43m    [49m[43mvertical_coordinate_name[49m[38;5;241;43m=[39;49m[43mvertical_coordinate_name[49m[43m,[49m
-[1;32m     49[0m [43m    [49m[43mfill_channels[49m[38;5;241;43m=[39;49m[43mfill_channels[49m[43m,[49m
-[1;32m     50[0m [43m    [49m[43mpositive_down[49m[38;5;241;43m=[39;49m[43mpositive_down[49m[43m,[49m
-[1;32m     51[0m [43m    [49m[43mwrite_to_file[49m[38;5;241;43m=[39;49m[43mwrite_to_file[49m[43m,[49m
-[1;32m     52[0m [43m[49m[43m)[49m[38;5;241m.[39mdepth
-
-File [0;32m~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/rm6/regional_mom6/regional_mom6.py:1736[0m, in [0;36mexperiment.setup_bathymetry[0;34m(self, bathymetry_path, longitude_coordinate_name, latitude_coordinate_name, vertical_coordinate_name, fill_channels, positive_down, write_to_file, regridding_method)[0m
-[1;32m   1728[0m [38;5;66;03m## Convert the provided coordinate names into a dictionary mapping to the[39;00m
-[1;32m   1729[0m [38;5;66;03m## coordinate names that MOM6 expects.[39;00m
-[1;32m   1730[0m coordinate_names [38;5;241m=[39m {
-[1;32m   1731[0m     [38;5;124m"[39m[38;5;124mxh[39m[38;5;124m"[39m: longitude_coordinate_name,
-[1;32m   1732[0m     [38;5;124m"[39m[38;5;124myh[39m[38;5;124m"[39m: latitude_coordinate_name,
-[1;32m   1733[0m     [38;5;124m"[39m[38;5;124mdepth[39m[38;5;124m"[39m: vertical_coordinate_name,
-[1;32m   1734[0m }
-[0;32m-> 1736[0m bathymetry [38;5;241m=[39m [43mxr[49m[38;5;241;43m.[39;49m[43mopen_zarr[49m[43m([49m[43mbathymetry_path[49m[43m,[49m[43m [49m[43mchunks[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mauto[39;49m[38;5;124;43m"[39;49m[43m,[49m[43mstorage_options[49m[38;5;241;43m=[39;49m[43m{[49m[38;5;124;43m"[39;49m[38;5;124;43manon[39;49m[38;5;124;43m"[39;49m[43m:[49m[43m [49m[38;5;28;43;01mFalse[39;49;00m[43m}[49m[43m)[49m[
-[1;32m   1737[0m     coordinate_names[[38;5;124m"[39m[38;5;124mdepth[39m[38;5;124m"[39m]
-[1;32m   1738[0m ]
-[1;32m   1740[0m bathymetry [38;5;241m=[39m bathymetry[38;5;241m.[39msel(
-[1;32m   1741[0m     {
-[1;32m   1742[0m         coordinate_names[[38;5;124m"[39m[38;5;124myh[39m[38;5;124m"[39m]: [38;5;28mslice[39m(
-[0;32m   (...)[0m
-[1;32m   1745[0m     }  [38;5;66;03m# 0.5 degree latitude buffer (hardcoded) for regridding[39;00m
-[1;32m   1746[0m )[38;5;241m.[39mastype([38;5;124m"[39m[38;5;124mfloat[39m[38;5;124m"[39m)
-[1;32m   1748[0m [38;5;66;03m## Check if the original bathymetry provided has a longitude extent that goes around the globe[39;00m
-[1;32m   1749[0m [38;5;66;03m## to take care of the longitude seam when we slice out the regional domain.[39;00m
-
-File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/backends/zarr.py:944[0m, in [0;36mopen_zarr[0;34m(store, group, synchronizer, chunks, decode_cf, mask_and_scale, decode_times, concat_characters, decode_coords, drop_variables, consolidated, overwrite_encoded_chunks, chunk_store, storage_options, decode_timedelta, use_cftime, zarr_version, chunked_array_type, from_array_kwargs, **kwargs)[0m
-[1;32m    930[0m     [38;5;28;01mraise[39;00m [38;5;167;01mTypeError[39;00m(
-[1;32m    931[0m         [38;5;124m"[39m[38;5;124mopen_zarr() got unexpected keyword arguments [39m[38;5;124m"[39m [38;5;241m+[39m [38;5;124m"[39m[38;5;124m,[39m[38;5;124m"[39m[38;5;241m.[39mjoin(kwargs[38;5;241m.[39mkeys())
-[1;32m    932[0m     )
-[1;32m    934[0m backend_kwargs [38;5;241m=[39m {
-[1;32m    935[0m     [38;5;124m"[39m[38;5;124msynchronizer[39m[38;5;124m"[39m: synchronizer,
-[1;32m    936[0m     [38;5;124m"[39m[38;5;124mconsolidated[39m[38;5;124m"[39m: consolidated,
-[0;32m   (...)[0m
-[1;32m    941[0m     [38;5;124m"[39m[38;5;124mzarr_version[39m[38;5;124m"[39m: zarr_version,
-[1;32m    942[0m }
-[0;32m--> 944[0m ds [38;5;241m=[39m [43mopen_dataset[49m[43m([49m
-[1;32m    945[0m [43m    [49m[43mfilename_or_obj[49m[38;5;241;43m=[39;49m[43mstore[49m[43m,[49m
-[1;32m    946[0m [43m    [49m[43mgroup[49m[38;5;241;43m=[39;49m[43mgroup[49m[43m,[49m
-[1;32m    947[0m [43m    [49m[43mdecode_cf[49m[38;5;241;43m=[39;49m[43mdecode_cf[49m[43m,[49m
-[1;32m    948[0m [43m    [49m[43mmask_and_scale[49m[38;5;241;43m=[39;49m[43mmask_and_scale[49m[43m,[49m
-[1;32m    949[0m [43m    [49m[43mdecode_times[49m[38;5;241;43m=[39;49m[43mdecode_times[49m[43m,[49m
-[1;32m    950[0m [43m    [49m[43mconcat_characters[49m[38;5;241;43m=[39;49m[43mconcat_characters[49m[43m,[49m
-[1;32m    951[0m [43m    [49m[43mdecode_coords[49m[38;5;241;43m=[39;49m[43mdecode_coords[49m[43m,[49m
-[1;32m    952[0m [43m    [49m[43mengine[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mzarr[39;49m[38;5;124;43m"[39;49m[43m,[49m
-[1;32m    953[0m [43m    [49m[43mchunks[49m[38;5;241;43m=[39;49m[43mchunks[49m[43m,[49m
-[1;32m    954[0m [43m    [49m[43mdrop_variables[49m[38;5;241;43m=[39;49m[43mdrop_variables[49m[43m,[49m
-[1;32m    955[0m [43m    [49m[43mchunked_array_type[49m[38;5;241;43m=[39;49m[43mchunked_array_type[49m[43m,[49m
-[1;32m    956[0m [43m    [49m[43mfrom_array_kwargs[49m[38;5;241;43m=[39;49m[43mfrom_array_kwargs[49m[43m,[49m
-[1;32m    957[0m [43m    [49m[43mbackend_kwargs[49m[38;5;241;43m=[39;49m[43mbackend_kwargs[49m[43m,[49m
-[1;32m    958[0m [43m    [49m[43mdecode_timedelta[49m[38;5;241;43m=[39;49m[43mdecode_timedelta[49m[43m,[49m
-[1;32m    959[0m [43m    [49m[43muse_cftime[49m[38;5;241;43m=[39;49m[43muse_cftime[49m[43m,[49m
-[1;32m    960[0m [43m    [49m[43mzarr_version[49m[38;5;241;43m=[39;49m[43mzarr_version[49m[43m,[49m
-[1;32m    961[0m [43m[49m[43m)[49m
-[1;32m    962[0m [38;5;28;01mreturn[39;00m ds
-
-File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/backends/api.py:572[0m, in [0;36mopen_dataset[0;34m(filename_or_obj, engine, chunks, cache, decode_cf, mask_and_scale, decode_times, decode_timedelta, use_cftime, concat_characters, decode_coords, drop_variables, inline_array, chunked_array_type, from_array_kwargs, backend_kwargs, **kwargs)[0m
-[1;32m    560[0m decoders [38;5;241m=[39m _resolve_decoders_kwargs(
-[1;32m    561[0m     decode_cf,
-[1;32m    562[0m     open_backend_dataset_parameters[38;5;241m=[39mbackend[38;5;241m.[39mopen_dataset_parameters,
-[0;32m   (...)[0m
-[1;32m    568[0m     decode_coords[38;5;241m=[39mdecode_coords,
-[1;32m    569[0m )
-[1;32m    571[0m overwrite_encoded_chunks [38;5;241m=[39m kwargs[38;5;241m.[39mpop([38;5;124m"[39m[38;5;124moverwrite_encoded_chunks[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m)
-[0;32m--> 572[0m backend_ds [38;5;241m=[39m [43mbackend[49m[38;5;241;43m.[39;49m[43mopen_dataset[49m[43m([49m
-[1;32m    573[0m [43m    [49m[43mfilename_or_obj[49m[43m,[49m
-[1;32m    574[0m [43m    [49m[43mdrop_variables[49m[38;5;241;43m=[39;49m[43mdrop_variables[49m[43m,[49m
-[1;32m    575[0m [43m    [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mdecoders[49m[43m,[49m
-[1;32m    576[0m [43m    [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m,[49m
-[1;32m    577[0m [43m[49m[43m)[49m
-[1;32m    578[0m ds [38;5;241m=[39m _dataset_from_backend_dataset(
-[1;32m    579[0m     backend_ds,
-[1;32m    580[0m     filename_or_obj,
-[0;32m   (...)[0m
-[1;32m    590[0m     [38;5;241m*[39m[38;5;241m*[39mkwargs,
-[1;32m    591[0m )
-[1;32m    592[0m [38;5;28;01mreturn[39;00m ds
-
-File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/backends/zarr.py:1011[0m, in [0;36mZarrBackendEntrypoint.open_dataset[0;34m(self, filename_or_obj, mask_and_scale, decode_times, concat_characters, decode_coords, drop_variables, use_cftime, decode_timedelta, group, mode, synchronizer, consolidated, chunk_store, storage_options, stacklevel, zarr_version)[0m
-[1;32m    990[0m [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21mopen_dataset[39m(  [38;5;66;03m# type: ignore[override]  # allow LSP violation, not supporting **kwargs[39;00m
-[1;32m    991[0m     [38;5;28mself[39m,
-[1;32m    992[0m     filename_or_obj: [38;5;28mstr[39m [38;5;241m|[39m os[38;5;241m.[39mPathLike[Any] [38;5;241m|[39m BufferedIOBase [38;5;241m|[39m AbstractDataStore,
-[0;32m   (...)[0m
-[1;32m   1008[0m     zarr_version[38;5;241m=[39m[38;5;28;01mNone[39;00m,
-[1;32m   1009[0m ) [38;5;241m-[39m[38;5;241m>[39m Dataset:
-[1;32m   1010[0m     filename_or_obj [38;5;241m=[39m _normalize_path(filename_or_obj)
-[0;32m-> 1011[0m     store [38;5;241m=[39m [43mZarrStore[49m[38;5;241;43m.[39;49m[43mopen_group[49m[43m([49m
-[1;32m   1012[0m [43m        [49m[43mfilename_or_obj[49m[43m,[49m
-[1;32m   1013[0m [43m        [49m[43mgroup[49m[38;5;241;43m=[39;49m[43mgroup[49m[43m,[49m
-[1;32m   1014[0m [43m        [49m[43mmode[49m[38;5;241;43m=[39;49m[43mmode[49m[43m,[49m
-[1;32m   1015[0m [43m        [49m[43msynchronizer[49m[38;5;241;43m=[39;49m[43msynchronizer[49m[43m,[49m
-[1;32m   1016[0m [43m        [49m[43mconsolidated[49m[38;5;241;43m=[39;49m[43mconsolidated[49m[43m,[49m
-[1;32m   1017[0m [43m        [49m[43mconsolidate_on_close[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
-[1;32m   1018[0m [43m        [49m[43mchunk_store[49m[38;5;241;43m=[39;49m[43mchunk_store[49m[43m,[49m
-[1;32m   1019[0m [43m        [49m[43mstorage_options[49m[38;5;241;43m=[39;49m[43mstorage_options[49m[43m,[49m
-[1;32m   1020[0m [43m        [49m[43mstacklevel[49m[38;5;241;43m=[39;49m[43mstacklevel[49m[43m [49m[38;5;241;43m+[39;49m[43m [49m[38;5;241;43m1[39;49m[43m,[49m
-[1;32m   1021[0m [43m        [49m[43mzarr_version[49m[38;5;241;43m=[39;49m[43mzarr_version[49m[43m,[49m
-[1;32m   1022[0m [43m    [49m[43m)[49m
-[1;32m   1024[0m     store_entrypoint [38;5;241m=[39m StoreBackendEntrypoint()
-[1;32m   1025[0m     [38;5;28;01mwith[39;00m close_on_error(store):
-
-File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/backends/zarr.py:441[0m, in [0;36mZarrStore.open_group[0;34m(cls, store, mode, synchronizer, group, consolidated, consolidate_on_close, chunk_store, storage_options, append_dim, write_region, safe_chunks, stacklevel, zarr_version, write_empty)[0m
-[1;32m    439[0m [38;5;28;01mif[39;00m consolidated [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
-[1;32m    440[0m     [38;5;28;01mtry[39;00m:
-[0;32m--> 441[0m         zarr_group [38;5;241m=[39m [43mzarr[49m[38;5;241;43m.[39;49m[43mopen_consolidated[49m[43m([49m[43mstore[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mopen_kwargs[49m[43m)[49m
-[1;32m    442[0m     [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m:
-[1;32m    443[0m         [38;5;28;01mtry[39;00m:
-
-File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/zarr/convenience.py:1345[0m, in [0;36mopen_consolidated[0;34m(store, metadata_key, mode, **kwargs)[0m
-[1;32m   1343[0m [38;5;66;03m# normalize parameters[39;00m
-[1;32m   1344[0m zarr_version [38;5;241m=[39m kwargs[38;5;241m.[39mget([38;5;124m"[39m[38;5;124mzarr_version[39m[38;5;124m"[39m)
-[0;32m-> 1345[0m store [38;5;241m=[39m [43mnormalize_store_arg[49m[43m([49m
-[1;32m   1346[0m [43m    [49m[43mstore[49m[43m,[49m[43m [49m[43mstorage_options[49m[38;5;241;43m=[39;49m[43mkwargs[49m[38;5;241;43m.[39;49m[43mget[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mstorage_options[39;49m[38;5;124;43m"[39;49m[43m)[49m[43m,[49m[43m [49m[43mmode[49m[38;5;241;43m=[39;49m[43mmode[49m[43m,[49m[43m [49m[43mzarr_version[49m[38;5;241;43m=[39;49m[43mzarr_version[49m
-[1;32m   1347[0m [43m[49m[43m)[49m
-[1;32m   1348[0m [38;5;28;01mif[39;00m mode [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m {[38;5;124m"[39m[38;5;124mr[39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124mr+[39m[38;5;124m"[39m}:
-[1;32m   1349[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124mf[39m[38;5;124m"[39m[38;5;124minvalid mode, expected either [39m[38;5;124m'[39m[38;5;124mr[39m[38;5;124m'[39m[38;5;124m or [39m[38;5;124m'[39m[38;5;124mr+[39m[38;5;124m'[39m[38;5;124m; found [39m[38;5;132;01m{[39;00mmode[38;5;132;01m!r}[39;00m[38;5;124m"[39m)
-
-File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/zarr/storage.py:201[0m, in [0;36mnormalize_store_arg[0;34m(store, storage_options, mode, zarr_version)[0m
-[1;32m    199[0m [38;5;28;01melse[39;00m:
-[1;32m    200[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124m"[39m[38;5;124mzarr_version must be either 2 or 3[39m[38;5;124m"[39m)
-[0;32m--> 201[0m [38;5;28;01mreturn[39;00m [43mnormalize_store[49m[43m([49m[43mstore[49m[43m,[49m[43m [49m[43mstorage_options[49m[43m,[49m[43m [49m[43mmode[49m[43m)[49m
-
-File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/zarr/storage.py:173[0m, in [0;36m_normalize_store_arg_v2[0;34m(store, storage_options, mode)[0m
-[1;32m    171[0m     [38;5;28;01mreturn[39;00m FSStore(store, mode[38;5;241m=[39mmode, [38;5;241m*[39m[38;5;241m*[39m(storage_options [38;5;129;01mor[39;00m {}))
-[1;32m    172[0m [38;5;28;01melif[39;00m storage_options:
-[0;32m--> 173[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124m"[39m[38;5;124mstorage_options passed with non-fsspec path[39m[38;5;124m"[39m)
-[1;32m    174[0m [38;5;28;01mif[39;00m store[38;5;241m.[39mendswith([38;5;124m"[39m[38;5;124m.zip[39m[38;5;124m"[39m):
-[1;32m    175[0m     [38;5;28;01mreturn[39;00m ZipStore(store, mode[38;5;241m=[39mmode)
-
-[0;31mValueError[0m: storage_options passed with non-fsspec path
+[0;31mTypeError[0m: Case.__init__() missing 1 required keyword-only argument: 'compset'
 

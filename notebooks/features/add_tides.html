@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Add Tides &#8212; CrocoDash Gallery</title>
+    <title>Add Boundary Tides to the Run &#8212; CrocoDash Gallery</title>
   
   
   
@@ -60,7 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/features/add_tides';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Add Chlorophyll" href="add_chl.html" />
+    <link rel="next" title="Use Cases" href="../use_cases/index.html" />
+    <link rel="prev" title="Add Chlorophyll Files to the Run" href="add_chl.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,35 +179,43 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/minimal_demo_rect.html">Set up a rectangular regional CESM-MOM6 run</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/walkthrough.html">Basic Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/cesm_setup.html">CESM Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/minimal_demo_rect.html">Set up a rectangular regional CESM-MOM6 run</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/input_params.html">Input Parameters</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Feature Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="add_bgc.html">Run a coupled biogeochemistry (MARBL) &amp; ocean (MOM6) model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_cice.html">Run a coupled sea ice (CICE) &amp; ocean (MOM6) model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subset_global.html">Add Global Subset Grids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_grids.html">Use Custom Pre-Generated Grids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="too_much_data.html">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="add_data_products.html">Use different data products w/ the CrocoDash Data Access Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_rof.html">Add data runoff from GLOFAS to the Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_chl.html">Add Chlorophyll Files to the Run</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Add Boundary Tides to the Run</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../use_cases/index.html">Use Cases Overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../use_cases/three_boundary_from_t232.html">Make a lowres domain for DA dev work!</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../use_cases/three_boundary.html">Setup the NWA12 domain through CrocoDash</a></li>
 
 
 
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use Cases</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../use_cases/three_boundary_from_t232.html">Make a lowres domain for DA dev work!</a></li>
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../use_cases/three_boundary.html">Setup the NWA12 domain through CrocoDash</a></li>
-
-
-
-
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Features</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="subset_global.html">Add Global Subset Grids</a></li>
-<li class="toctree-l1"><a class="reference internal" href="too_much_data.html">Iterative OBC generation (for Long CESM-MOM6 runs)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="add_grids.html">Add Custom Grids</a></li>
-<li class="toctree-l1"><a class="reference internal" href="add_data_products.html">Try the CrocoDash Data Access Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="add_chl.html">Add Chlorophyll</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Add Tides</a></li>
+</details></li>
 </ul>
 
     </div>
@@ -390,7 +399,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Add Tides</h1>
+    <h1>Add Boundary Tides to the Run</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -404,17 +413,36 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="add-tides">
-<h1>Add Tides<a class="headerlink" href="#add-tides" title="Link to this heading">#</a></h1>
-<p>Tides can be added into a CrocoDash case, using functions from regional_mom6 and called from configure_forcings. There are three parameters in configure forcings and many parameters adjusted in MOM6.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="add-boundary-tides-to-the-run">
+<h1>Add Boundary Tides to the Run<a class="headerlink" href="#add-boundary-tides-to-the-run" title="Link to this heading">#</a></h1>
+<p>MOM6 can take tides data as a boundary condition in the regional domain. Many tides parameters are impacted by this and can be seen in case.process_forcings.</p>
+<p>In our workflow, we take data from the TPXO tidal model and regrid onto our grid.</p>
+<p>TPXO model data can be requested off of the TPXO website or is available on derecho.</p>
+<p>The file paths of the tidal files can be passed into configure forcings as shown below with all wanted tidal constituents, like M2.
+There are three parameters in configure forcings and many parameters adjusted in MOM6.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="o">.</span><span class="n">configure_forcings</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="o">.</span><span class="n">configure_forcings</span><span class="p">(</span>
     <span class="n">date_range</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;2020-01-01 00:00:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-01-09 00:00:00&quot;</span><span class="p">],</span>
     <span class="n">tidal_constituents</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;M2&#39;</span><span class="p">],</span>
-    <span class="n">tpxo_elevation_filepath</span> <span class="o">=</span> <span class="s2">&quot;&lt;TPXO_H&gt;&quot;</span><span class="p">,</span>
-    <span class="n">tpxo_velocity_filepath</span> <span class="o">=</span> <span class="s2">&quot;&lt;TPXO_U&gt;&quot;</span>
+    <span class="n">tpxo_elevation_filepath</span> <span class="o">=</span> <span class="s2">&quot;s3://crocodile-cesm/CrocoDash/data/tpxo/h_tpxo9.v1.zarr/&quot;</span><span class="p">,</span>
+    <span class="n">tpxo_velocity_filepath</span> <span class="o">=</span> <span class="s2">&quot;s3://crocodile-cesm/CrocoDash/data/tpxo/u_tpxo9.v1.zarr/&quot;</span>
 <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">case</span><span class="o">.</span><span class="n">configure_forcings</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">date_range</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;2020-01-01 00:00:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-01-09 00:00:00&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">tidal_constituents</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;M2&#39;</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">tpxo_elevation_filepath</span> <span class="o">=</span> <span class="s2">&quot;s3://crocodile-cesm/CrocoDash/data/tpxo/h_tpxo9.v1.zarr/&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">tpxo_velocity_filepath</span> <span class="o">=</span> <span class="s2">&quot;s3://crocodile-cesm/CrocoDash/data/tpxo/u_tpxo9.v1.zarr/&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;case&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -457,8 +485,17 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Add Chlorophyll</p>
+        <p class="prev-next-title">Add Chlorophyll Files to the Run</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../use_cases/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Use Cases</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Try the CrocoDash Data Access Module &#8212; CrocoDash Gallery</title>
+    <title>Use different data products w/ the CrocoDash Data Access Module &#8212; CrocoDash Gallery</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/features/add_data_products';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Add Chlorophyll" href="add_chl.html" />
-    <link rel="prev" title="Add Custom Grids" href="add_grids.html" />
+    <link rel="next" title="Add data runoff from GLOFAS to the Run" href="add_rof.html" />
+    <link rel="prev" title="Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the Large Data Workflow" href="too_much_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,35 +179,43 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/minimal_demo_rect.html">Set up a rectangular regional CESM-MOM6 run</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/walkthrough.html">Basic Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/cesm_setup.html">CESM Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/minimal_demo_rect.html">Set up a rectangular regional CESM-MOM6 run</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/input_params.html">Input Parameters</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Feature Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="add_bgc.html">Run a coupled biogeochemistry (MARBL) &amp; ocean (MOM6) model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_cice.html">Run a coupled sea ice (CICE) &amp; ocean (MOM6) model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subset_global.html">Add Global Subset Grids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_grids.html">Use Custom Pre-Generated Grids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="too_much_data.html">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow</a></li>
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Use different data products w/ the CrocoDash Data Access Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_rof.html">Add data runoff from GLOFAS to the Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_chl.html">Add Chlorophyll Files to the Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_tides.html">Add Boundary Tides to the Run</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../use_cases/index.html">Use Cases Overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../use_cases/three_boundary_from_t232.html">Make a lowres domain for DA dev work!</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../use_cases/three_boundary.html">Setup the NWA12 domain through CrocoDash</a></li>
 
 
 
 
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use Cases</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../use_cases/three_boundary_from_t232.html">Make a lowres domain for DA dev work!</a></li>
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../use_cases/three_boundary.html">Setup the NWA12 domain through CrocoDash</a></li>
-
-
-
-
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Features</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="subset_global.html">Add Global Subset Grids</a></li>
-<li class="toctree-l1"><a class="reference internal" href="too_much_data.html">Iterative OBC generation (for Long CESM-MOM6 runs)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="add_grids.html">Add Custom Grids</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Try the CrocoDash Data Access Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="add_chl.html">Add Chlorophyll</a></li>
-<li class="toctree-l1"><a class="reference internal" href="add_tides.html">Add Tides</a></li>
+</details></li>
 </ul>
 
     </div>
@@ -391,7 +399,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Try the CrocoDash Data Access Module</h1>
+    <h1>Use different data products w/ the CrocoDash Data Access Module</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -405,11 +413,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="try-the-crocodash-data-access-module">
-<h1>Try the CrocoDash Data Access Module<a class="headerlink" href="#try-the-crocodash-data-access-module" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="use-different-data-products-w-the-crocodash-data-access-module">
+<h1>Use different data products w/ the CrocoDash Data Access Module<a class="headerlink" href="#use-different-data-products-w-the-crocodash-data-access-module" title="Link to this heading">#</a></h1>
 <p>This module can be used with case.configure_forcings to find different ways to access raw data from data sources. Just supply data product name and function name in the following manner:</p>
 <p>case.configure_forcing(…other_arguments…, product_name = “product_name”, function_name = “function_name”)</p>
-<p>Available products and functions can be found within the documentation and in raw_ata_access helper functions seen below and more. Please see the docs for all data_access functions.</p>
+<p>Available products and functions can be found in the <a class="reference external" href="https://crocodile-cesm.github.io/CrocoDash/tutorials/datasets.html">documentation</a> and in the <code class="docutils literal notranslate"><span class="pre">raw_data_access</span></code> helper functions shown below. Please see the <a class="reference external" href="https://crocodile-cesm.github.io/CrocoDash/tutorials/datasets.html">data_access functions</a> for the full list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.raw_data_access</span><span class="w"> </span><span class="kn">import</span> <span class="n">driver</span>
@@ -600,20 +608,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="add_grids.html"
+       href="too_much_data.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Add Custom Grids</p>
+        <p class="prev-next-title">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow</p>
       </div>
     </a>
     <a class="right-next"
-       href="add_chl.html"
+       href="add_rof.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Add Chlorophyll</p>
+        <p class="prev-next-title">Add data runoff from GLOFAS to the Run</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
