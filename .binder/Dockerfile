@@ -48,8 +48,7 @@ USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 
-# Create the environment
-RUN conda env create -f environment.yml
+
 
 # Activate the env and make it default
 RUN echo "conda activate CrocoDash" >> ~/.bashrc
