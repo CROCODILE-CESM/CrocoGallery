@@ -42,7 +42,10 @@ RUN pip install -r CrocoGallery/requirements.txt
 
 RUN python3 -m pip install --no-cache-dir notebook jupyterlab
 
-
+# Write the entrypoint script
+RUN echo '#!/bin/bash\n\
+exec conda run -n CrocoDash jupyter notebook "$@"' \
+> /usr/local/bin/start.sh && chmod +x /usr/local/bin/start.sh
 
 # Make sure the contents of our repo are in ${HOME}
 COPY . ${HOME}
@@ -50,10 +53,7 @@ USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 
-# Write the entrypoint script
-RUN echo '#!/bin/bash\n\
-exec conda run -n CrocoDash jupyter notebook "$@"' \
-> /usr/local/bin/start.sh && chmod +x /usr/local/bin/start.sh
+
 
 # Use the script as the entrypoint
 ENTRYPOINT ["/usr/local/bin/start.sh"]
