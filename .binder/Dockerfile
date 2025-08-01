@@ -1,4 +1,4 @@
-FROM continuumio/miniconda3:8b56fc8564f7d1637ccf6584a6d9368489f873d7041e05e31f4c13af83352783
+FROM continuumio/miniconda3:25.3.1-1
 
 # Install system dependencies (add any you need)
 RUN apt-get update && apt-get install -y git make curl build-essential && rm -rf /var/lib/apt/lists/*
