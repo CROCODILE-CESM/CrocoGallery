@@ -489,7 +489,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bathymetry_path</span><span class="o">=</span><span class="s1">&#39;s3://crocodile-cesm/CrocoDash/data/grids/ocean_topog_little_nwa12_5d22b5.nc&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bathymetry_path</span><span class="o">=</span><span class="s1">&#39;s3://crocodile-cesm/CrocoDash/data/gebco/GEBCO_2024.zarr/&#39;</span>
 
 <span class="n">topo</span><span class="o">.</span><span class="n">interpolate_from_file</span><span class="p">(</span>
     <span class="n">file_path</span> <span class="o">=</span> <span class="n">bathymetry_path</span><span class="p">,</span>
@@ -504,299 +504,22 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>If bathymetry setup fails, rerun this function with write_to_file = True
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ClientError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/s3fs/core.py:529,</span> in <span class="ni">S3FileSystem.info</span><span class="nt">(self, path, version_id, refresh)</span>
-<span class="g g-Whitespace">    </span><span class="mi">528</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">529</span>     <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_s3</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">s3</span><span class="o">.</span><span class="n">head_object</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">,</span> <span class="n">Bucket</span><span class="o">=</span><span class="n">bucket</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">530</span>                         <span class="n">Key</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="o">**</span><span class="n">version_id_kw</span><span class="p">(</span><span class="n">version_id</span><span class="p">),</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">req_kw</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">531</span>     <span class="k">return</span> <span class="p">{</span>
-<span class="g g-Whitespace">    </span><span class="mi">532</span>         <span class="s1">&#39;ETag&#39;</span><span class="p">:</span> <span class="n">out</span><span class="p">[</span><span class="s1">&#39;ETag&#39;</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">533</span>         <span class="s1">&#39;Key&#39;</span><span class="p">:</span> <span class="s1">&#39;/&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">bucket</span><span class="p">,</span> <span class="n">key</span><span class="p">]),</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">540</span>         <span class="s1">&#39;VersionId&#39;</span><span class="p">:</span> <span class="n">out</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;VersionId&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">541</span>     <span class="p">}</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Begin regridding bathymetry...
 
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/s3fs/core.py:200,</span> in <span class="ni">S3FileSystem._call_s3</span><span class="nt">(self, method, *akwarglist, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">198</span> <span class="n">additional_kwargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_s3_method_kwargs</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="o">*</span><span class="n">akwarglist</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">199</span>                                                <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">200</span> <span class="k">return</span> <span class="n">method</span><span class="p">(</span><span class="o">**</span><span class="n">additional_kwargs</span><span class="p">)</span>
+Original bathymetry size: 1.85 Mb
+Regridded size: 0.24 Mb
+Automatic regridding may fail if your domain is too big! If this process hangs or crashes,make sure function argument write_to_file = True and,open a terminal with appropriate computational and resources try calling ESMF directly in the input directory None via
 
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/botocore/client.py:598,</span> in <span class="ni">ClientCreator._create_api_method.&lt;locals&gt;._api_call</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">597</span> <span class="c1"># The &quot;self&quot; in this scope is referring to the BaseClient.</span>
-<span class="ne">--&gt; </span><span class="mi">598</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_api_call</span><span class="p">(</span><span class="n">operation_name</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+`mpirun -np NUMBER_OF_CPUS ESMF_Regrid -s bathymetry_original.nc -d bathymetry_unfinished.nc -m bilinear --src_var depth --dst_var depth --netcdf4 --src_regional --dst_regional`
 
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/botocore/context.py:123,</span> in <span class="ni">with_current_context.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">122</span>     <span class="n">hook</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">123</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+For details see https://xesmf.readthedocs.io/en/latest/large_problems_on_HPC.html
 
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/botocore/client.py:1061,</span> in <span class="ni">BaseClient._make_api_call</span><span class="nt">(self, operation_name, api_params)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1060</span>     <span class="n">error_class</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">from_code</span><span class="p">(</span><span class="n">error_code</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1061</span>     <span class="k">raise</span> <span class="n">error_class</span><span class="p">(</span><span class="n">parsed_response</span><span class="p">,</span> <span class="n">operation_name</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1062</span> <span class="k">else</span><span class="p">:</span>
-
-<span class="ne">ClientError</span>: An error occurred (404) when calling the HeadObject operation: Not Found
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/fsspec/mapping.py:155,</span> in <span class="ni">FSMap.__getitem__</span><span class="nt">(self, key, default)</span>
-<span class="g g-Whitespace">    </span><span class="mi">154</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">155</span>     <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">156</span> <span class="k">except</span> <span class="bp">self</span><span class="o">.</span><span class="n">missing_exceptions</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/fsspec/spec.py:912,</span> in <span class="ni">AbstractFileSystem.cat</span><span class="nt">(self, path, recursive, on_error, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">911</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">912</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">cat_file</span><span class="p">(</span><span class="n">paths</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/fsspec/spec.py:797,</span> in <span class="ni">AbstractFileSystem.cat_file</span><span class="nt">(self, path, start, end, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">796</span> <span class="c1"># explicitly set buffering off?</span>
-<span class="ne">--&gt; </span><span class="mi">797</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">798</span>     <span class="k">if</span> <span class="n">start</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/fsspec/spec.py:1338,</span> in <span class="ni">AbstractFileSystem.open</span><span class="nt">(self, path, mode, block_size, cache_options, compression, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1337</span> <span class="n">ac</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;autocommit&quot;</span><span class="p">,</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_intrans</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1338</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1339</span>     <span class="n">path</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1340</span>     <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1341</span>     <span class="n">block_size</span><span class="o">=</span><span class="n">block_size</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1342</span>     <span class="n">autocommit</span><span class="o">=</span><span class="n">ac</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1343</span>     <span class="n">cache_options</span><span class="o">=</span><span class="n">cache_options</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1344</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1345</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1346</span> <span class="k">if</span> <span class="n">compression</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/s3fs/core.py:375,</span> in <span class="ni">S3FileSystem._open</span><span class="nt">(self, path, mode, block_size, acl, version_id, fill_cache, cache_type, autocommit, requester_pays, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">373</span>     <span class="n">cache_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_cache_type</span>
-<span class="ne">--&gt; </span><span class="mi">375</span> <span class="k">return</span> <span class="n">S3File</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">block_size</span><span class="o">=</span><span class="n">block_size</span><span class="p">,</span> <span class="n">acl</span><span class="o">=</span><span class="n">acl</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">376</span>               <span class="n">version_id</span><span class="o">=</span><span class="n">version_id</span><span class="p">,</span> <span class="n">fill_cache</span><span class="o">=</span><span class="n">fill_cache</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">377</span>               <span class="n">s3_additional_kwargs</span><span class="o">=</span><span class="n">kw</span><span class="p">,</span> <span class="n">cache_type</span><span class="o">=</span><span class="n">cache_type</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">378</span>               <span class="n">autocommit</span><span class="o">=</span><span class="n">autocommit</span><span class="p">,</span> <span class="n">requester_pays</span><span class="o">=</span><span class="n">requester_pays</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/s3fs/core.py:1096,</span> in <span class="ni">S3File.__init__</span><span class="nt">(self, s3, path, mode, block_size, acl, version_id, fill_cache, s3_additional_kwargs, autocommit, cache_type, requester_pays)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1095</span> <span class="bp">self</span><span class="o">.</span><span class="n">req_kw</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;RequestPayer&#39;</span><span class="p">:</span> <span class="s1">&#39;requester&#39;</span><span class="p">}</span> <span class="k">if</span> <span class="n">requester_pays</span> <span class="k">else</span> <span class="p">{}</span>
-<span class="ne">-&gt; </span><span class="mi">1096</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">s3</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">block_size</span><span class="p">,</span> <span class="n">autocommit</span><span class="o">=</span><span class="n">autocommit</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1097</span>                  <span class="n">cache_type</span><span class="o">=</span><span class="n">cache_type</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1098</span> <span class="bp">self</span><span class="o">.</span><span class="n">s3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fs</span>  <span class="c1"># compatibility</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/fsspec/spec.py:1912,</span> in <span class="ni">AbstractBufferedFile.__init__</span><span class="nt">(self, fs, path, mode, block_size, autocommit, cache_type, cache_options, size, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1911</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1912</span>     <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">details</span><span class="p">[</span><span class="s2">&quot;size&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1913</span> <span class="bp">self</span><span class="o">.</span><span class="n">cache</span> <span class="o">=</span> <span class="n">caches</span><span class="p">[</span><span class="n">cache_type</span><span class="p">](</span>
-<span class="g g-Whitespace">   </span><span class="mi">1914</span>     <span class="bp">self</span><span class="o">.</span><span class="n">blocksize</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fetch_range</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="o">**</span><span class="n">cache_options</span>
-<span class="g g-Whitespace">   </span><span class="mi">1915</span> <span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/fsspec/spec.py:1925,</span> in <span class="ni">AbstractBufferedFile.details</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1924</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_details</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1925</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_details</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1926</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_details</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/s3fs/core.py:546,</span> in <span class="ni">S3FileSystem.info</span><span class="nt">(self, path, version_id, refresh)</span>
-<span class="g g-Whitespace">    </span><span class="mi">545</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ee</span><span class="p">,</span> <span class="ne">FileNotFoundError</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">546</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">S3FileSystem</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">547</span> <span class="k">else</span><span class="p">:</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/fsspec/spec.py:703,</span> in <span class="ni">AbstractFileSystem.info</span><span class="nt">(self, path, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">702</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">703</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: crocodile-cesm/CrocoDash/data/grids/ocean_topog_little_nwa12_5d22b5.nc/.zmetadata
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/zarr/storage.py:1446,</span> in <span class="ni">FSStore.__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1445</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1446</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">map</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1447</span> <span class="k">except</span> <span class="bp">self</span><span class="o">.</span><span class="n">exceptions</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/fsspec/mapping.py:159,</span> in <span class="ni">FSMap.__getitem__</span><span class="nt">(self, key, default)</span>
-<span class="g g-Whitespace">    </span><span class="mi">158</span>         <span class="k">return</span> <span class="n">default</span>
-<span class="ne">--&gt; </span><span class="mi">159</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">exc</span>
-<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="k">return</span> <span class="n">result</span>
-
-<span class="ne">KeyError</span>: &#39;.zmetadata&#39;
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/backends/zarr.py:441,</span> in <span class="ni">ZarrStore.open_group</span><span class="nt">(cls, store, mode, synchronizer, group, consolidated, consolidate_on_close, chunk_store, storage_options, append_dim, write_region, safe_chunks, stacklevel, zarr_version, write_empty)</span>
-<span class="g g-Whitespace">    </span><span class="mi">440</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">441</span>     <span class="n">zarr_group</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">open_consolidated</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="o">**</span><span class="n">open_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">442</span> <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/zarr/convenience.py:1362,</span> in <span class="ni">open_consolidated</span><span class="nt">(store, metadata_key, mode, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1361</span> <span class="c1"># setup metadata store</span>
-<span class="ne">-&gt; </span><span class="mi">1362</span> <span class="n">meta_store</span> <span class="o">=</span> <span class="n">ConsolidatedStoreClass</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="n">metadata_key</span><span class="o">=</span><span class="n">metadata_key</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1364</span> <span class="c1"># pass through</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/zarr/storage.py:3045,</span> in <span class="ni">ConsolidatedMetadataStore.__init__</span><span class="nt">(self, store, metadata_key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">3044</span> <span class="c1"># retrieve consolidated metadata</span>
-<span class="ne">-&gt; </span><span class="mi">3045</span> <span class="n">meta</span> <span class="o">=</span> <span class="n">json_loads</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">store</span><span class="p">[</span><span class="n">metadata_key</span><span class="p">])</span>
-<span class="g g-Whitespace">   </span><span class="mi">3047</span> <span class="c1"># check format of consolidated metadata</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/zarr/storage.py:1448,</span> in <span class="ni">FSStore.__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1447</span> <span class="k">except</span> <span class="bp">self</span><span class="o">.</span><span class="n">exceptions</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1448</span>     <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
-
-<span class="ne">KeyError</span>: &#39;.zmetadata&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">GroupNotFoundError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/backends/zarr.py:444,</span> in <span class="ni">ZarrStore.open_group</span><span class="nt">(cls, store, mode, synchronizer, group, consolidated, consolidate_on_close, chunk_store, storage_options, append_dim, write_region, safe_chunks, stacklevel, zarr_version, write_empty)</span>
-<span class="g g-Whitespace">    </span><span class="mi">443</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">444</span>     <span class="n">zarr_group</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">open_group</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="o">**</span><span class="n">open_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">445</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">446</span>         <span class="s2">&quot;Failed to open Zarr store with consolidated metadata, &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">447</span>         <span class="s2">&quot;but successfully read with non-consolidated metadata. &quot;</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">458</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">459</span>     <span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/zarr/hierarchy.py:1578,</span> in <span class="ni">open_group</span><span class="nt">(store, mode, cache_attrs, synchronizer, path, chunk_store, storage_options, zarr_version, meta_array)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1577</span>             <span class="k">raise</span> <span class="n">ContainsArrayError</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1578</span>         <span class="k">raise</span> <span class="n">GroupNotFoundError</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1580</span> <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;w&quot;</span><span class="p">:</span>
-
-<span class="ne">GroupNotFoundError</span>: group not found at path &#39;&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">bathymetry_path</span><span class="o">=</span><span class="s1">&#39;s3://crocodile-cesm/CrocoDash/data/grids/ocean_topog_little_nwa12_5d22b5.nc&#39;</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">topo</span><span class="o">.</span><span class="n">interpolate_from_file</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">file_path</span> <span class="o">=</span> <span class="n">bathymetry_path</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">longitude_coordinate_name</span><span class="o">=</span><span class="s2">&quot;lon&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">latitude_coordinate_name</span><span class="o">=</span><span class="s2">&quot;lat&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">vertical_coordinate_name</span><span class="o">=</span><span class="s2">&quot;elevation&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="p">)</span>
-
-<span class="nn">File ~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/topo.py:44,</span> in <span class="ni">Topo.interpolate_from_file</span><span class="nt">(self, file_path, longitude_coordinate_name, latitude_coordinate_name, vertical_coordinate_name, fill_channels, positive_down, write_to_file)</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span>     <span class="n">expt</span><span class="o">.</span><span class="n">mom_input_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="nb">print</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span>     <span class="s2">&quot;If bathymetry setup fails, rerun this function with write_to_file = True&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">44</span> <span class="bp">self</span><span class="o">.</span><span class="n">_depth</span> <span class="o">=</span> <span class="n">expt</span><span class="o">.</span><span class="n">setup_bathymetry</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="n">bathymetry_path</span><span class="o">=</span><span class="n">file_path</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span>     <span class="n">longitude_coordinate_name</span><span class="o">=</span><span class="n">longitude_coordinate_name</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="n">latitude_coordinate_name</span><span class="o">=</span><span class="n">latitude_coordinate_name</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span>     <span class="n">vertical_coordinate_name</span><span class="o">=</span><span class="n">vertical_coordinate_name</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span>     <span class="n">fill_channels</span><span class="o">=</span><span class="n">fill_channels</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span>     <span class="n">positive_down</span><span class="o">=</span><span class="n">positive_down</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span>     <span class="n">write_to_file</span><span class="o">=</span><span class="n">write_to_file</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span> <span class="p">)</span><span class="o">.</span><span class="n">depth</span>
-
-<span class="nn">File ~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/rm6/regional_mom6/regional_mom6.py:1736,</span> in <span class="ni">experiment.setup_bathymetry</span><span class="nt">(self, bathymetry_path, longitude_coordinate_name, latitude_coordinate_name, vertical_coordinate_name, fill_channels, positive_down, write_to_file, regridding_method)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1728</span> <span class="c1">## Convert the provided coordinate names into a dictionary mapping to the</span>
-<span class="g g-Whitespace">   </span><span class="mi">1729</span> <span class="c1">## coordinate names that MOM6 expects.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1730</span> <span class="n">coordinate_names</span> <span class="o">=</span> <span class="p">{</span>
-<span class="g g-Whitespace">   </span><span class="mi">1731</span>     <span class="s2">&quot;xh&quot;</span><span class="p">:</span> <span class="n">longitude_coordinate_name</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1732</span>     <span class="s2">&quot;yh&quot;</span><span class="p">:</span> <span class="n">latitude_coordinate_name</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1733</span>     <span class="s2">&quot;depth&quot;</span><span class="p">:</span> <span class="n">vertical_coordinate_name</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1734</span> <span class="p">}</span>
-<span class="ne">-&gt; </span><span class="mi">1736</span> <span class="n">bathymetry</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_zarr</span><span class="p">(</span><span class="n">bathymetry_path</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span><span class="n">storage_options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;anon&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})[</span>
-<span class="g g-Whitespace">   </span><span class="mi">1737</span>     <span class="n">coordinate_names</span><span class="p">[</span><span class="s2">&quot;depth&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1738</span> <span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1740</span> <span class="n">bathymetry</span> <span class="o">=</span> <span class="n">bathymetry</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1741</span>     <span class="p">{</span>
-<span class="g g-Whitespace">   </span><span class="mi">1742</span>         <span class="n">coordinate_names</span><span class="p">[</span><span class="s2">&quot;yh&quot;</span><span class="p">]:</span> <span class="nb">slice</span><span class="p">(</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1745</span>     <span class="p">}</span>  <span class="c1"># 0.5 degree latitude buffer (hardcoded) for regridding</span>
-<span class="g g-Whitespace">   </span><span class="mi">1746</span> <span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;float&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1748</span> <span class="c1">## Check if the original bathymetry provided has a longitude extent that goes around the globe</span>
-<span class="g g-Whitespace">   </span><span class="mi">1749</span> <span class="c1">## to take care of the longitude seam when we slice out the regional domain.</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/backends/zarr.py:944,</span> in <span class="ni">open_zarr</span><span class="nt">(store, group, synchronizer, chunks, decode_cf, mask_and_scale, decode_times, concat_characters, decode_coords, drop_variables, consolidated, overwrite_encoded_chunks, chunk_store, storage_options, decode_timedelta, use_cftime, zarr_version, chunked_array_type, from_array_kwargs, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">930</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">931</span>         <span class="s2">&quot;open_zarr() got unexpected keyword arguments &quot;</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-<span class="g g-Whitespace">    </span><span class="mi">932</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">934</span> <span class="n">backend_kwargs</span> <span class="o">=</span> <span class="p">{</span>
-<span class="g g-Whitespace">    </span><span class="mi">935</span>     <span class="s2">&quot;synchronizer&quot;</span><span class="p">:</span> <span class="n">synchronizer</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">936</span>     <span class="s2">&quot;consolidated&quot;</span><span class="p">:</span> <span class="n">consolidated</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">941</span>     <span class="s2">&quot;zarr_version&quot;</span><span class="p">:</span> <span class="n">zarr_version</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">942</span> <span class="p">}</span>
-<span class="ne">--&gt; </span><span class="mi">944</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">open_dataset</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">945</span>     <span class="n">filename_or_obj</span><span class="o">=</span><span class="n">store</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">946</span>     <span class="n">group</span><span class="o">=</span><span class="n">group</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">947</span>     <span class="n">decode_cf</span><span class="o">=</span><span class="n">decode_cf</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">948</span>     <span class="n">mask_and_scale</span><span class="o">=</span><span class="n">mask_and_scale</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">949</span>     <span class="n">decode_times</span><span class="o">=</span><span class="n">decode_times</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">950</span>     <span class="n">concat_characters</span><span class="o">=</span><span class="n">concat_characters</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">951</span>     <span class="n">decode_coords</span><span class="o">=</span><span class="n">decode_coords</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">952</span>     <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;zarr&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">953</span>     <span class="n">chunks</span><span class="o">=</span><span class="n">chunks</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">954</span>     <span class="n">drop_variables</span><span class="o">=</span><span class="n">drop_variables</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">955</span>     <span class="n">chunked_array_type</span><span class="o">=</span><span class="n">chunked_array_type</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">956</span>     <span class="n">from_array_kwargs</span><span class="o">=</span><span class="n">from_array_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">957</span>     <span class="n">backend_kwargs</span><span class="o">=</span><span class="n">backend_kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">958</span>     <span class="n">decode_timedelta</span><span class="o">=</span><span class="n">decode_timedelta</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">959</span>     <span class="n">use_cftime</span><span class="o">=</span><span class="n">use_cftime</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">960</span>     <span class="n">zarr_version</span><span class="o">=</span><span class="n">zarr_version</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">961</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">962</span> <span class="k">return</span> <span class="n">ds</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/backends/api.py:572,</span> in <span class="ni">open_dataset</span><span class="nt">(filename_or_obj, engine, chunks, cache, decode_cf, mask_and_scale, decode_times, decode_timedelta, use_cftime, concat_characters, decode_coords, drop_variables, inline_array, chunked_array_type, from_array_kwargs, backend_kwargs, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">560</span> <span class="n">decoders</span> <span class="o">=</span> <span class="n">_resolve_decoders_kwargs</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">561</span>     <span class="n">decode_cf</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">562</span>     <span class="n">open_backend_dataset_parameters</span><span class="o">=</span><span class="n">backend</span><span class="o">.</span><span class="n">open_dataset_parameters</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">568</span>     <span class="n">decode_coords</span><span class="o">=</span><span class="n">decode_coords</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">569</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">571</span> <span class="n">overwrite_encoded_chunks</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;overwrite_encoded_chunks&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">572</span> <span class="n">backend_ds</span> <span class="o">=</span> <span class="n">backend</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">573</span>     <span class="n">filename_or_obj</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">574</span>     <span class="n">drop_variables</span><span class="o">=</span><span class="n">drop_variables</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">575</span>     <span class="o">**</span><span class="n">decoders</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">576</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">577</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">578</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">_dataset_from_backend_dataset</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">579</span>     <span class="n">backend_ds</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">580</span>     <span class="n">filename_or_obj</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">590</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">591</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">592</span> <span class="k">return</span> <span class="n">ds</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/backends/zarr.py:1011,</span> in <span class="ni">ZarrBackendEntrypoint.open_dataset</span><span class="nt">(self, filename_or_obj, mask_and_scale, decode_times, concat_characters, decode_coords, drop_variables, use_cftime, decode_timedelta, group, mode, synchronizer, consolidated, chunk_store, storage_options, stacklevel, zarr_version)</span>
-<span class="g g-Whitespace">    </span><span class="mi">990</span> <span class="k">def</span><span class="w"> </span><span class="nf">open_dataset</span><span class="p">(</span>  <span class="c1"># type: ignore[override]  # allow LSP violation, not supporting **kwargs</span>
-<span class="g g-Whitespace">    </span><span class="mi">991</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">992</span>     <span class="n">filename_or_obj</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">os</span><span class="o">.</span><span class="n">PathLike</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="n">BufferedIOBase</span> <span class="o">|</span> <span class="n">AbstractDataStore</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1008</span>     <span class="n">zarr_version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1009</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dataset</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1010</span>     <span class="n">filename_or_obj</span> <span class="o">=</span> <span class="n">_normalize_path</span><span class="p">(</span><span class="n">filename_or_obj</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1011</span>     <span class="n">store</span> <span class="o">=</span> <span class="n">ZarrStore</span><span class="o">.</span><span class="n">open_group</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1012</span>         <span class="n">filename_or_obj</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1013</span>         <span class="n">group</span><span class="o">=</span><span class="n">group</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1014</span>         <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1015</span>         <span class="n">synchronizer</span><span class="o">=</span><span class="n">synchronizer</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1016</span>         <span class="n">consolidated</span><span class="o">=</span><span class="n">consolidated</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1017</span>         <span class="n">consolidate_on_close</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1018</span>         <span class="n">chunk_store</span><span class="o">=</span><span class="n">chunk_store</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1019</span>         <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1020</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1021</span>         <span class="n">zarr_version</span><span class="o">=</span><span class="n">zarr_version</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1022</span>     <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1024</span>     <span class="n">store_entrypoint</span> <span class="o">=</span> <span class="n">StoreBackendEntrypoint</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1025</span>     <span class="k">with</span> <span class="n">close_on_error</span><span class="p">(</span><span class="n">store</span><span class="p">):</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/backends/zarr.py:461,</span> in <span class="ni">ZarrStore.open_group</span><span class="nt">(cls, store, mode, synchronizer, group, consolidated, consolidate_on_close, chunk_store, storage_options, append_dim, write_region, safe_chunks, stacklevel, zarr_version, write_empty)</span>
-<span class="g g-Whitespace">    </span><span class="mi">445</span>             <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">446</span>                 <span class="s2">&quot;Failed to open Zarr store with consolidated metadata, &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">447</span>                 <span class="s2">&quot;but successfully read with non-consolidated metadata. &quot;</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">458</span>                 <span class="n">stacklevel</span><span class="o">=</span><span class="n">stacklevel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">459</span>             <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">460</span>         <span class="k">except</span> <span class="n">zarr</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">GroupNotFoundError</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">461</span>             <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No such file or directory: &#39;</span><span class="si">{</span><span class="n">store</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">462</span> <span class="k">elif</span> <span class="n">consolidated</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">463</span>     <span class="c1"># TODO: an option to pass the metadata_key keyword</span>
-<span class="g g-Whitespace">    </span><span class="mi">464</span>     <span class="n">zarr_group</span> <span class="o">=</span> <span class="n">zarr</span><span class="o">.</span><span class="n">open_consolidated</span><span class="p">(</span><span class="n">store</span><span class="p">,</span> <span class="o">**</span><span class="n">open_kwargs</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: No such file or directory: &#39;s3://crocodile-cesm/CrocoDash/data/grids/ocean_topog_little_nwa12_5d22b5.nc&#39;
+Afterwards, we run the &#39;expt.tidy_bathymetry&#39; method to skip the expensive interpolation step, and finishing metadata, encoding and cleanup.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Regridding successful! Now calling `tidy_bathymetry` method for some finishing touches...
+setup bathymetry has finished successfully.
+Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Filling in inland lakes and channels... 
 </pre></div>
 </div>
 </div>
@@ -808,10 +531,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x346dbeab0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f38f5a6d690&gt;
 </pre></div>
 </div>
-<img alt="../../_images/b352f12206a9a67b0c73f3e5cafbad410359214594ef4a4fba1a90856bba2c38.png" src="../../_images/b352f12206a9a67b0c73f3e5cafbad410359214594ef4a4fba1a90856bba2c38.png" />
+<img alt="../../_images/512e3b4dfe38912c58dd093848bb2dacf023eabcb26d70c2b88f1bf943e94e18.png" src="../../_images/512e3b4dfe38912c58dd093848bb2dacf023eabcb26d70c2b88f1bf943e94e18.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -825,7 +548,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "d4c7d1e309f540e5ae63fefeabbe4a42", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "72ebbcf3afb74edc8efe5ba0da00e2b9"}</script></div>
 </div>
 </section>
 <section id="step-1-3-vertical-grid">
@@ -883,7 +606,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "c1400a5e3e0c41e59d2e1361d3267188", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "fa73c317c781404f84a3247d108604d2"}</script></div>
 </div>
 </section>
 </section>
@@ -948,66 +671,24 @@ The <code class="docutils literal notranslate"><span class="pre">caseroot</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:  csp_solver:CspSolver initialized.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">Creating case...</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [11],</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.case</span><span class="w"> </span><span class="kn">import</span> <span class="n">Case</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">case</span> <span class="o">=</span> <span class="n">Case</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">cesmroot</span> <span class="o">=</span> <span class="n">cesmroot</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">caseroot</span> <span class="o">=</span> <span class="n">caseroot</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">inputdir</span> <span class="o">=</span> <span class="n">inputdir</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">ocn_grid</span> <span class="o">=</span> <span class="n">grid</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">ocn_vgrid</span> <span class="o">=</span> <span class="n">vgrid</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">ocn_topo</span> <span class="o">=</span> <span class="n">topo</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">project</span> <span class="o">=</span> <span class="s1">&#39;NCGD0011&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">override</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">machine</span> <span class="o">=</span> <span class="s2">&quot;ubuntu-latest&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="p">)</span>
 
-• Updating ccs_config/modelgrid_aliases_nuopc.xml file to include the new resolution &quot;panama-1&quot; consisting of the following component grids.
- atm grid: &quot;TL319&quot;, lnd grid: &quot;TL319&quot;, ocn grid: &quot;panama1&quot;.
-
-• Updating ccs_config/component_grids_nuopc.xml file to include newly generated ocean grid &quot;panama1&quot; with the following properties:
- nx: 100, ny: 100. ocean mesh: /Users/manishrv/croc_input/panama-1/ocnice/ESMF_mesh_panama1_0a7340.nc.
-
-<span class=" -Color -Color-Bold">Running the create_newcase tool with the following command:</span>
-
-/Users/manishrv/CrocoGallery/cesm/cime/scripts/create_newcase --compset 1850_DATM%JRA_SLND_SICE_MOM6_SROF_SGLC_SWAV --res panama-1 --case /Users/manishrv/croc_cases/panama-1 --machine ubuntu-latest --run-unsupported --project NCGD0011 
-
-<span class=" -Color -Color-Bold">The create_newcase command was successful.</span>
-
-<span class=" -Color -Color-Bold">Navigating to the case directory:</span>
-
-cd /Users/manishrv/croc_cases/panama-1
-
-<span class=" -Color -Color-Bold">Apply NTASK grid xml changes:</span>
-
-./xmlchange NTASKS_OCN=128
-
-<span class=" -Color -Color-Bold">Running the case.setup script with the following command:</span>
-
-./case.setup
-
-<span class=" -Color -Color-Bold">Adding parameter changes to user_nl_mom:</span>
-
-  ! Custom Horizonal Grid, Topography, and Vertical Grid
-  INPUTDIR = /Users/manishrv/croc_input/panama-1/ocnice
-  TRIPOLAR_N = False
-  REENTRANT_X = False
-  REENTRANT_Y = False
-  NIGLOBAL = 100
-  NJGLOBAL = 100
-  GRID_CONFIG = mosaic
-  GRID_FILE = ocean_hgrid_panama1_0a7340.nc
-  TOPO_CONFIG = file
-  TOPO_FILE = ocean_topog_panama1_0a7340.nc
-  MAXIMUM_DEPTH = 2780.1300176568307
-  MINIMUM_DEPTH = 9.5
-  NK = 75
-  COORD_CONFIG = none
-  ALE_COORDINATE_CONFIG = FILE:ocean_vgrid_panama1_0a7340.nc
-  REGRIDDING_COORDINATE_MODE = Z*
-
-  ! Timesteps (based on grid resolution)
-  DT = 25.0
-  DT_THERM = 100.0
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:	stage:SUCCESS: All stages are complete.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Green">Case created successfully at /Users/manishrv/croc_cases/panama-1.</span>
-
-<span class=" -Color -Color-Bold">To further customize, build, and run the case, navigate to the case directory in your terminal. To create another case, restart the notebook.</span>
+<span class="ne">TypeError</span>: Case.__init__() missing 1 required keyword-only argument: &#39;compset&#39;
 </pre></div>
 </div>
 </div>
