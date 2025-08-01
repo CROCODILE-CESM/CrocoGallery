@@ -1,4 +1,4 @@
-FROM continuumio/miniconda3:latest
+FROM continuumio/miniconda3:8b56fc8564f7d1637ccf6584a6d9368489f873d7041e05e31f4c13af83352783
 
 # Install system dependencies (add any you need)
 RUN apt-get update && apt-get install -y git make curl build-essential && rm -rf /var/lib/apt/lists/*
@@ -50,4 +50,10 @@ USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 
-CMD ["conda", "run", "-n", "CrocoDash", "jupyter", "notebook", "--ip=0.0.0.0", "--no-browser", "--NotebookApp.token=''"]
+# Write the entrypoint script
+RUN echo '#!/bin/bash\n\
+exec conda run -n CrocoDash jupyter notebook "$@"' \
+> /usr/local/bin/start.sh && chmod +x /usr/local/bin/start.sh
+
+# Use the script as the entrypoint
+ENTRYPOINT ["/usr/local/bin/start.sh"]
