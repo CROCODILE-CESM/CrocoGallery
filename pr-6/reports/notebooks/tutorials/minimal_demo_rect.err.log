@@ -1,0 +1,335 @@
+Traceback (most recent call last):
+  File "/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 154, in wrapped
+    asyncio.get_running_loop()
+RuntimeError: no running event loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 158, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/miniconda/envs/CrocoDash/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+bathymetry_path='s3://crocodile-cesm/CrocoDash/data/grids/ocean_topog_little_nwa12_5d22b5.nc'
+
+topo.interpolate_from_file(
+    file_path = bathymetry_path,
+    longitude_coordinate_name="lon",
+    latitude_coordinate_name="lat",
+    vertical_coordinate_name="elevation"
+)
+------------------
+
+----- stdout -----
+If bathymetry setup fails, rerun this function with write_to_file = True
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mClientError[0m                               Traceback (most recent call last)
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/s3fs/core.py:529[0m, in [0;36mS3FileSystem.info[0;34m(self, path, version_id, refresh)[0m
+[1;32m    528[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 529[0m     out [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_call_s3[49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43ms3[49m[38;5;241;43m.[39;49m[43mhead_object[49m[43m,[49m[43m [49m[43mkwargs[49m[43m,[49m[43m [49m[43mBucket[49m[38;5;241;43m=[39;49m[43mbucket[49m[43m,[49m
+[1;32m    530[0m [43m                        [49m[43mKey[49m[38;5;241;43m=[39;49m[43mkey[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mversion_id_kw[49m[43m([49m[43mversion_id[49m[43m)[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mreq_kw[49m[43m)[49m
+[1;32m    531[0m     [38;5;28;01mreturn[39;00m {
+[1;32m    532[0m         [38;5;124m'[39m[38;5;124mETag[39m[38;5;124m'[39m: out[[38;5;124m'[39m[38;5;124mETag[39m[38;5;124m'[39m],
+[1;32m    533[0m         [38;5;124m'[39m[38;5;124mKey[39m[38;5;124m'[39m: [38;5;124m'[39m[38;5;124m/[39m[38;5;124m'[39m[38;5;241m.[39mjoin([bucket, key]),
+[0;32m   (...)[0m
+[1;32m    540[0m         [38;5;124m'[39m[38;5;124mVersionId[39m[38;5;124m'[39m: out[38;5;241m.[39mget([38;5;124m'[39m[38;5;124mVersionId[39m[38;5;124m'[39m)
+[1;32m    541[0m     }
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/s3fs/core.py:200[0m, in [0;36mS3FileSystem._call_s3[0;34m(self, method, *akwarglist, **kwargs)[0m
+[1;32m    198[0m additional_kwargs [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_get_s3_method_kwargs(method, [38;5;241m*[39makwarglist,
+[1;32m    199[0m                                                [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[0;32m--> 200[0m [38;5;28;01mreturn[39;00m [43mmethod[49m[43m([49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43madditional_kwargs[49m[43m)[49m
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/botocore/client.py:598[0m, in [0;36mClientCreator._create_api_method.<locals>._api_call[0;34m(self, *args, **kwargs)[0m
+[1;32m    597[0m [38;5;66;03m# The "self" in this scope is referring to the BaseClient.[39;00m
+[0;32m--> 598[0m [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_make_api_call[49m[43m([49m[43moperation_name[49m[43m,[49m[43m [49m[43mkwargs[49m[43m)[49m
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/botocore/context.py:123[0m, in [0;36mwith_current_context.<locals>.decorator.<locals>.wrapper[0;34m(*args, **kwargs)[0m
+[1;32m    122[0m     hook()
+[0;32m--> 123[0m [38;5;28;01mreturn[39;00m [43mfunc[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/botocore/client.py:1061[0m, in [0;36mBaseClient._make_api_call[0;34m(self, operation_name, api_params)[0m
+[1;32m   1060[0m     error_class [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mexceptions[38;5;241m.[39mfrom_code(error_code)
+[0;32m-> 1061[0m     [38;5;28;01mraise[39;00m error_class(parsed_response, operation_name)
+[1;32m   1062[0m [38;5;28;01melse[39;00m:
+
+[0;31mClientError[0m: An error occurred (404) when calling the HeadObject operation: Not Found
+
+During handling of the above exception, another exception occurred:
+
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/fsspec/mapping.py:155[0m, in [0;36mFSMap.__getitem__[0;34m(self, key, default)[0m
+[1;32m    154[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 155[0m     result [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mfs[49m[38;5;241;43m.[39;49m[43mcat[49m[43m([49m[43mk[49m[43m)[49m
+[1;32m    156[0m [38;5;28;01mexcept[39;00m [38;5;28mself[39m[38;5;241m.[39mmissing_exceptions [38;5;28;01mas[39;00m exc:
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/fsspec/spec.py:912[0m, in [0;36mAbstractFileSystem.cat[0;34m(self, path, recursive, on_error, **kwargs)[0m
+[1;32m    911[0m [38;5;28;01melse[39;00m:
+[0;32m--> 912[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mcat_file[49m[43m([49m[43mpaths[49m[43m[[49m[38;5;241;43m0[39;49m[43m][49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/fsspec/spec.py:797[0m, in [0;36mAbstractFileSystem.cat_file[0;34m(self, path, start, end, **kwargs)[0m
+[1;32m    796[0m [38;5;66;03m# explicitly set buffering off?[39;00m
+[0;32m--> 797[0m [38;5;28;01mwith[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mopen[49m[43m([49m[43mpath[49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mrb[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m [38;5;28;01mas[39;00m f:
+[1;32m    798[0m     [38;5;28;01mif[39;00m start [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/fsspec/spec.py:1338[0m, in [0;36mAbstractFileSystem.open[0;34m(self, path, mode, block_size, cache_options, compression, **kwargs)[0m
+[1;32m   1337[0m ac [38;5;241m=[39m kwargs[38;5;241m.[39mpop([38;5;124m"[39m[38;5;124mautocommit[39m[38;5;124m"[39m, [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39m_intrans)
+[0;32m-> 1338[0m f [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_open[49m[43m([49m
+[1;32m   1339[0m [43m    [49m[43mpath[49m[43m,[49m
+[1;32m   1340[0m [43m    [49m[43mmode[49m[38;5;241;43m=[39;49m[43mmode[49m[43m,[49m
+[1;32m   1341[0m [43m    [49m[43mblock_size[49m[38;5;241;43m=[39;49m[43mblock_size[49m[43m,[49m
+[1;32m   1342[0m [43m    [49m[43mautocommit[49m[38;5;241;43m=[39;49m[43mac[49m[43m,[49m
+[1;32m   1343[0m [43m    [49m[43mcache_options[49m[38;5;241;43m=[39;49m[43mcache_options[49m[43m,[49m
+[1;32m   1344[0m [43m    [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m,[49m
+[1;32m   1345[0m [43m[49m[43m)[49m
+[1;32m   1346[0m [38;5;28;01mif[39;00m compression [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/s3fs/core.py:375[0m, in [0;36mS3FileSystem._open[0;34m(self, path, mode, block_size, acl, version_id, fill_cache, cache_type, autocommit, requester_pays, **kwargs)[0m
+[1;32m    373[0m     cache_type [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mdefault_cache_type
+[0;32m--> 375[0m [38;5;28;01mreturn[39;00m [43mS3File[49m[43m([49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43mpath[49m[43m,[49m[43m [49m[43mmode[49m[43m,[49m[43m [49m[43mblock_size[49m[38;5;241;43m=[39;49m[43mblock_size[49m[43m,[49m[43m [49m[43macl[49m[38;5;241;43m=[39;49m[43macl[49m[43m,[49m
+[1;32m    376[0m [43m              [49m[43mversion_id[49m[38;5;241;43m=[39;49m[43mversion_id[49m[43m,[49m[43m [49m[43mfill_cache[49m[38;5;241;43m=[39;49m[43mfill_cache[49m[43m,[49m
+[1;32m    377[0m [43m              [49m[43ms3_additional_kwargs[49m[38;5;241;43m=[39;49m[43mkw[49m[43m,[49m[43m [49m[43mcache_type[49m[38;5;241;43m=[39;49m[43mcache_type[49m[43m,[49m
+[1;32m    378[0m [43m              [49m[43mautocommit[49m[38;5;241;43m=[39;49m[43mautocommit[49m[43m,[49m[43m [49m[43mrequester_pays[49m[38;5;241;43m=[39;49m[43mrequester_pays[49m[43m)[49m
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/s3fs/core.py:1096[0m, in [0;36mS3File.__init__[0;34m(self, s3, path, mode, block_size, acl, version_id, fill_cache, s3_additional_kwargs, autocommit, cache_type, requester_pays)[0m
+[1;32m   1095[0m [38;5;28mself[39m[38;5;241m.[39mreq_kw [38;5;241m=[39m {[38;5;124m'[39m[38;5;124mRequestPayer[39m[38;5;124m'[39m: [38;5;124m'[39m[38;5;124mrequester[39m[38;5;124m'[39m} [38;5;28;01mif[39;00m requester_pays [38;5;28;01melse[39;00m {}
+[0;32m-> 1096[0m [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[38;5;21;43m__init__[39;49m[43m([49m[43ms3[49m[43m,[49m[43m [49m[43mpath[49m[43m,[49m[43m [49m[43mmode[49m[43m,[49m[43m [49m[43mblock_size[49m[43m,[49m[43m [49m[43mautocommit[49m[38;5;241;43m=[39;49m[43mautocommit[49m[43m,[49m
+[1;32m   1097[0m [43m                 [49m[43mcache_type[49m[38;5;241;43m=[39;49m[43mcache_type[49m[43m)[49m
+[1;32m   1098[0m [38;5;28mself[39m[38;5;241m.[39ms3 [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mfs  [38;5;66;03m# compatibility[39;00m
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/fsspec/spec.py:1912[0m, in [0;36mAbstractBufferedFile.__init__[0;34m(self, fs, path, mode, block_size, autocommit, cache_type, cache_options, size, **kwargs)[0m
+[1;32m   1911[0m [38;5;28;01melse[39;00m:
+[0;32m-> 1912[0m     [38;5;28mself[39m[38;5;241m.[39msize [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mdetails[49m[[38;5;124m"[39m[38;5;124msize[39m[38;5;124m"[39m]
+[1;32m   1913[0m [38;5;28mself[39m[38;5;241m.[39mcache [38;5;241m=[39m caches[cache_type](
+[1;32m   1914[0m     [38;5;28mself[39m[38;5;241m.[39mblocksize, [38;5;28mself[39m[38;5;241m.[39m_fetch_range, [38;5;28mself[39m[38;5;241m.[39msize, [38;5;241m*[39m[38;5;241m*[39mcache_options
+[1;32m   1915[0m )
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/fsspec/spec.py:1925[0m, in [0;36mAbstractBufferedFile.details[0;34m(self)[0m
+[1;32m   1924[0m [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39m_details [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[0;32m-> 1925[0m     [38;5;28mself[39m[38;5;241m.[39m_details [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mfs[49m[38;5;241;43m.[39;49m[43minfo[49m[43m([49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mpath[49m[43m)[49m
+[1;32m   1926[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_details
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/s3fs/core.py:546[0m, in [0;36mS3FileSystem.info[0;34m(self, path, version_id, refresh)[0m
+[1;32m    545[0m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(ee, [38;5;167;01mFileNotFoundError[39;00m):
+[0;32m--> 546[0m     [38;5;28;01mreturn[39;00m [38;5;28;43msuper[39;49m[43m([49m[43mS3FileSystem[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[43m)[49m[38;5;241;43m.[39;49m[43minfo[49m[43m([49m[43mpath[49m[43m)[49m
+[1;32m    547[0m [38;5;28;01melse[39;00m:
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/fsspec/spec.py:703[0m, in [0;36mAbstractFileSystem.info[0;34m(self, path, **kwargs)[0m
+[1;32m    702[0m [38;5;28;01melse[39;00m:
+[0;32m--> 703[0m     [38;5;28;01mraise[39;00m [38;5;167;01mFileNotFoundError[39;00m(path)
+
+[0;31mFileNotFoundError[0m: crocodile-cesm/CrocoDash/data/grids/ocean_topog_little_nwa12_5d22b5.nc/.zmetadata
+
+The above exception was the direct cause of the following exception:
+
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/zarr/storage.py:1446[0m, in [0;36mFSStore.__getitem__[0;34m(self, key)[0m
+[1;32m   1445[0m [38;5;28;01mtry[39;00m:
+[0;32m-> 1446[0m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mmap[49m[43m[[49m[43mkey[49m[43m][49m
+[1;32m   1447[0m [38;5;28;01mexcept[39;00m [38;5;28mself[39m[38;5;241m.[39mexceptions [38;5;28;01mas[39;00m e:
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/fsspec/mapping.py:159[0m, in [0;36mFSMap.__getitem__[0;34m(self, key, default)[0m
+[1;32m    158[0m         [38;5;28;01mreturn[39;00m default
+[0;32m--> 159[0m     [38;5;28;01mraise[39;00m [38;5;167;01mKeyError[39;00m(key) [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mexc[39;00m
+[1;32m    160[0m [38;5;28;01mreturn[39;00m result
+
+[0;31mKeyError[0m: '.zmetadata'
+
+The above exception was the direct cause of the following exception:
+
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/backends/zarr.py:441[0m, in [0;36mZarrStore.open_group[0;34m(cls, store, mode, synchronizer, group, consolidated, consolidate_on_close, chunk_store, storage_options, append_dim, write_region, safe_chunks, stacklevel, zarr_version, write_empty)[0m
+[1;32m    440[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 441[0m     zarr_group [38;5;241m=[39m [43mzarr[49m[38;5;241;43m.[39;49m[43mopen_consolidated[49m[43m([49m[43mstore[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mopen_kwargs[49m[43m)[49m
+[1;32m    442[0m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m:
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/zarr/convenience.py:1362[0m, in [0;36mopen_consolidated[0;34m(store, metadata_key, mode, **kwargs)[0m
+[1;32m   1361[0m [38;5;66;03m# setup metadata store[39;00m
+[0;32m-> 1362[0m meta_store [38;5;241m=[39m [43mConsolidatedStoreClass[49m[43m([49m[43mstore[49m[43m,[49m[43m [49m[43mmetadata_key[49m[38;5;241;43m=[39;49m[43mmetadata_key[49m[43m)[49m
+[1;32m   1364[0m [38;5;66;03m# pass through[39;00m
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/zarr/storage.py:3045[0m, in [0;36mConsolidatedMetadataStore.__init__[0;34m(self, store, metadata_key)[0m
+[1;32m   3044[0m [38;5;66;03m# retrieve consolidated metadata[39;00m
+[0;32m-> 3045[0m meta [38;5;241m=[39m json_loads([38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mstore[49m[43m[[49m[43mmetadata_key[49m[43m][49m)
+[1;32m   3047[0m [38;5;66;03m# check format of consolidated metadata[39;00m
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/zarr/storage.py:1448[0m, in [0;36mFSStore.__getitem__[0;34m(self, key)[0m
+[1;32m   1447[0m [38;5;28;01mexcept[39;00m [38;5;28mself[39m[38;5;241m.[39mexceptions [38;5;28;01mas[39;00m e:
+[0;32m-> 1448[0m     [38;5;28;01mraise[39;00m [38;5;167;01mKeyError[39;00m(key) [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01me[39;00m
+
+[0;31mKeyError[0m: '.zmetadata'
+
+During handling of the above exception, another exception occurred:
+
+[0;31mGroupNotFoundError[0m                        Traceback (most recent call last)
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/backends/zarr.py:444[0m, in [0;36mZarrStore.open_group[0;34m(cls, store, mode, synchronizer, group, consolidated, consolidate_on_close, chunk_store, storage_options, append_dim, write_region, safe_chunks, stacklevel, zarr_version, write_empty)[0m
+[1;32m    443[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 444[0m     zarr_group [38;5;241m=[39m [43mzarr[49m[38;5;241;43m.[39;49m[43mopen_group[49m[43m([49m[43mstore[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mopen_kwargs[49m[43m)[49m
+[1;32m    445[0m     warnings[38;5;241m.[39mwarn(
+[1;32m    446[0m         [38;5;124m"[39m[38;5;124mFailed to open Zarr store with consolidated metadata, [39m[38;5;124m"[39m
+[1;32m    447[0m         [38;5;124m"[39m[38;5;124mbut successfully read with non-consolidated metadata. [39m[38;5;124m"[39m
+[0;32m   (...)[0m
+[1;32m    458[0m         stacklevel[38;5;241m=[39mstacklevel,
+[1;32m    459[0m     )
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/zarr/hierarchy.py:1578[0m, in [0;36mopen_group[0;34m(store, mode, cache_attrs, synchronizer, path, chunk_store, storage_options, zarr_version, meta_array)[0m
+[1;32m   1577[0m             [38;5;28;01mraise[39;00m ContainsArrayError(path)
+[0;32m-> 1578[0m         [38;5;28;01mraise[39;00m GroupNotFoundError(path)
+[1;32m   1580[0m [38;5;28;01melif[39;00m mode [38;5;241m==[39m [38;5;124m"[39m[38;5;124mw[39m[38;5;124m"[39m:
+
+[0;31mGroupNotFoundError[0m: group not found at path ''
+
+During handling of the above exception, another exception occurred:
+
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Input [0;32mIn [3][0m, in [0;36m<cell line: 0>[0;34m()[0m
+[1;32m      1[0m bathymetry_path[38;5;241m=[39m[38;5;124m'[39m[38;5;124ms3://crocodile-cesm/CrocoDash/data/grids/ocean_topog_little_nwa12_5d22b5.nc[39m[38;5;124m'[39m
+[0;32m----> 3[0m [43mtopo[49m[38;5;241;43m.[39;49m[43minterpolate_from_file[49m[43m([49m
+[1;32m      4[0m [43m    [49m[43mfile_path[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mbathymetry_path[49m[43m,[49m
+[1;32m      5[0m [43m    [49m[43mlongitude_coordinate_name[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mlon[39;49m[38;5;124;43m"[39;49m[43m,[49m
+[1;32m      6[0m [43m    [49m[43mlatitude_coordinate_name[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mlat[39;49m[38;5;124;43m"[39;49m[43m,[49m
+[1;32m      7[0m [43m    [49m[43mvertical_coordinate_name[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43melevation[39;49m[38;5;124;43m"[39;49m
+[1;32m      8[0m [43m)[49m
+
+File [0;32m~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/topo.py:44[0m, in [0;36mTopo.interpolate_from_file[0;34m(self, file_path, longitude_coordinate_name, latitude_coordinate_name, vertical_coordinate_name, fill_channels, positive_down, write_to_file)[0m
+[1;32m     40[0m     expt[38;5;241m.[39mmom_input_dir [38;5;241m=[39m Path([38;5;124m"[39m[38;5;124m"[39m)
+[1;32m     41[0m [38;5;28mprint[39m(
+[1;32m     42[0m     [38;5;124m"[39m[38;5;124mIf bathymetry setup fails, rerun this function with write_to_file = True[39m[38;5;124m"[39m
+[1;32m     43[0m )
+[0;32m---> 44[0m [38;5;28mself[39m[38;5;241m.[39m_depth [38;5;241m=[39m [43mexpt[49m[38;5;241;43m.[39;49m[43msetup_bathymetry[49m[43m([49m
+[1;32m     45[0m [43m    [49m[43mbathymetry_path[49m[38;5;241;43m=[39;49m[43mfile_path[49m[43m,[49m
+[1;32m     46[0m [43m    [49m[43mlongitude_coordinate_name[49m[38;5;241;43m=[39;49m[43mlongitude_coordinate_name[49m[43m,[49m
+[1;32m     47[0m [43m    [49m[43mlatitude_coordinate_name[49m[38;5;241;43m=[39;49m[43mlatitude_coordinate_name[49m[43m,[49m
+[1;32m     48[0m [43m    [49m[43mvertical_coordinate_name[49m[38;5;241;43m=[39;49m[43mvertical_coordinate_name[49m[43m,[49m
+[1;32m     49[0m [43m    [49m[43mfill_channels[49m[38;5;241;43m=[39;49m[43mfill_channels[49m[43m,[49m
+[1;32m     50[0m [43m    [49m[43mpositive_down[49m[38;5;241;43m=[39;49m[43mpositive_down[49m[43m,[49m
+[1;32m     51[0m [43m    [49m[43mwrite_to_file[49m[38;5;241;43m=[39;49m[43mwrite_to_file[49m[43m,[49m
+[1;32m     52[0m [43m[49m[43m)[49m[38;5;241m.[39mdepth
+
+File [0;32m~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/rm6/regional_mom6/regional_mom6.py:1736[0m, in [0;36mexperiment.setup_bathymetry[0;34m(self, bathymetry_path, longitude_coordinate_name, latitude_coordinate_name, vertical_coordinate_name, fill_channels, positive_down, write_to_file, regridding_method)[0m
+[1;32m   1728[0m [38;5;66;03m## Convert the provided coordinate names into a dictionary mapping to the[39;00m
+[1;32m   1729[0m [38;5;66;03m## coordinate names that MOM6 expects.[39;00m
+[1;32m   1730[0m coordinate_names [38;5;241m=[39m {
+[1;32m   1731[0m     [38;5;124m"[39m[38;5;124mxh[39m[38;5;124m"[39m: longitude_coordinate_name,
+[1;32m   1732[0m     [38;5;124m"[39m[38;5;124myh[39m[38;5;124m"[39m: latitude_coordinate_name,
+[1;32m   1733[0m     [38;5;124m"[39m[38;5;124mdepth[39m[38;5;124m"[39m: vertical_coordinate_name,
+[1;32m   1734[0m }
+[0;32m-> 1736[0m bathymetry [38;5;241m=[39m [43mxr[49m[38;5;241;43m.[39;49m[43mopen_zarr[49m[43m([49m[43mbathymetry_path[49m[43m,[49m[43m [49m[43mchunks[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mauto[39;49m[38;5;124;43m"[39;49m[43m,[49m[43mstorage_options[49m[38;5;241;43m=[39;49m[43m{[49m[38;5;124;43m"[39;49m[38;5;124;43manon[39;49m[38;5;124;43m"[39;49m[43m:[49m[43m [49m[38;5;28;43;01mFalse[39;49;00m[43m}[49m[43m)[49m[
+[1;32m   1737[0m     coordinate_names[[38;5;124m"[39m[38;5;124mdepth[39m[38;5;124m"[39m]
+[1;32m   1738[0m ]
+[1;32m   1740[0m bathymetry [38;5;241m=[39m bathymetry[38;5;241m.[39msel(
+[1;32m   1741[0m     {
+[1;32m   1742[0m         coordinate_names[[38;5;124m"[39m[38;5;124myh[39m[38;5;124m"[39m]: [38;5;28mslice[39m(
+[0;32m   (...)[0m
+[1;32m   1745[0m     }  [38;5;66;03m# 0.5 degree latitude buffer (hardcoded) for regridding[39;00m
+[1;32m   1746[0m )[38;5;241m.[39mastype([38;5;124m"[39m[38;5;124mfloat[39m[38;5;124m"[39m)
+[1;32m   1748[0m [38;5;66;03m## Check if the original bathymetry provided has a longitude extent that goes around the globe[39;00m
+[1;32m   1749[0m [38;5;66;03m## to take care of the longitude seam when we slice out the regional domain.[39;00m
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/backends/zarr.py:944[0m, in [0;36mopen_zarr[0;34m(store, group, synchronizer, chunks, decode_cf, mask_and_scale, decode_times, concat_characters, decode_coords, drop_variables, consolidated, overwrite_encoded_chunks, chunk_store, storage_options, decode_timedelta, use_cftime, zarr_version, chunked_array_type, from_array_kwargs, **kwargs)[0m
+[1;32m    930[0m     [38;5;28;01mraise[39;00m [38;5;167;01mTypeError[39;00m(
+[1;32m    931[0m         [38;5;124m"[39m[38;5;124mopen_zarr() got unexpected keyword arguments [39m[38;5;124m"[39m [38;5;241m+[39m [38;5;124m"[39m[38;5;124m,[39m[38;5;124m"[39m[38;5;241m.[39mjoin(kwargs[38;5;241m.[39mkeys())
+[1;32m    932[0m     )
+[1;32m    934[0m backend_kwargs [38;5;241m=[39m {
+[1;32m    935[0m     [38;5;124m"[39m[38;5;124msynchronizer[39m[38;5;124m"[39m: synchronizer,
+[1;32m    936[0m     [38;5;124m"[39m[38;5;124mconsolidated[39m[38;5;124m"[39m: consolidated,
+[0;32m   (...)[0m
+[1;32m    941[0m     [38;5;124m"[39m[38;5;124mzarr_version[39m[38;5;124m"[39m: zarr_version,
+[1;32m    942[0m }
+[0;32m--> 944[0m ds [38;5;241m=[39m [43mopen_dataset[49m[43m([49m
+[1;32m    945[0m [43m    [49m[43mfilename_or_obj[49m[38;5;241;43m=[39;49m[43mstore[49m[43m,[49m
+[1;32m    946[0m [43m    [49m[43mgroup[49m[38;5;241;43m=[39;49m[43mgroup[49m[43m,[49m
+[1;32m    947[0m [43m    [49m[43mdecode_cf[49m[38;5;241;43m=[39;49m[43mdecode_cf[49m[43m,[49m
+[1;32m    948[0m [43m    [49m[43mmask_and_scale[49m[38;5;241;43m=[39;49m[43mmask_and_scale[49m[43m,[49m
+[1;32m    949[0m [43m    [49m[43mdecode_times[49m[38;5;241;43m=[39;49m[43mdecode_times[49m[43m,[49m
+[1;32m    950[0m [43m    [49m[43mconcat_characters[49m[38;5;241;43m=[39;49m[43mconcat_characters[49m[43m,[49m
+[1;32m    951[0m [43m    [49m[43mdecode_coords[49m[38;5;241;43m=[39;49m[43mdecode_coords[49m[43m,[49m
+[1;32m    952[0m [43m    [49m[43mengine[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mzarr[39;49m[38;5;124;43m"[39;49m[43m,[49m
+[1;32m    953[0m [43m    [49m[43mchunks[49m[38;5;241;43m=[39;49m[43mchunks[49m[43m,[49m
+[1;32m    954[0m [43m    [49m[43mdrop_variables[49m[38;5;241;43m=[39;49m[43mdrop_variables[49m[43m,[49m
+[1;32m    955[0m [43m    [49m[43mchunked_array_type[49m[38;5;241;43m=[39;49m[43mchunked_array_type[49m[43m,[49m
+[1;32m    956[0m [43m    [49m[43mfrom_array_kwargs[49m[38;5;241;43m=[39;49m[43mfrom_array_kwargs[49m[43m,[49m
+[1;32m    957[0m [43m    [49m[43mbackend_kwargs[49m[38;5;241;43m=[39;49m[43mbackend_kwargs[49m[43m,[49m
+[1;32m    958[0m [43m    [49m[43mdecode_timedelta[49m[38;5;241;43m=[39;49m[43mdecode_timedelta[49m[43m,[49m
+[1;32m    959[0m [43m    [49m[43muse_cftime[49m[38;5;241;43m=[39;49m[43muse_cftime[49m[43m,[49m
+[1;32m    960[0m [43m    [49m[43mzarr_version[49m[38;5;241;43m=[39;49m[43mzarr_version[49m[43m,[49m
+[1;32m    961[0m [43m[49m[43m)[49m
+[1;32m    962[0m [38;5;28;01mreturn[39;00m ds
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/backends/api.py:572[0m, in [0;36mopen_dataset[0;34m(filename_or_obj, engine, chunks, cache, decode_cf, mask_and_scale, decode_times, decode_timedelta, use_cftime, concat_characters, decode_coords, drop_variables, inline_array, chunked_array_type, from_array_kwargs, backend_kwargs, **kwargs)[0m
+[1;32m    560[0m decoders [38;5;241m=[39m _resolve_decoders_kwargs(
+[1;32m    561[0m     decode_cf,
+[1;32m    562[0m     open_backend_dataset_parameters[38;5;241m=[39mbackend[38;5;241m.[39mopen_dataset_parameters,
+[0;32m   (...)[0m
+[1;32m    568[0m     decode_coords[38;5;241m=[39mdecode_coords,
+[1;32m    569[0m )
+[1;32m    571[0m overwrite_encoded_chunks [38;5;241m=[39m kwargs[38;5;241m.[39mpop([38;5;124m"[39m[38;5;124moverwrite_encoded_chunks[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m)
+[0;32m--> 572[0m backend_ds [38;5;241m=[39m [43mbackend[49m[38;5;241;43m.[39;49m[43mopen_dataset[49m[43m([49m
+[1;32m    573[0m [43m    [49m[43mfilename_or_obj[49m[43m,[49m
+[1;32m    574[0m [43m    [49m[43mdrop_variables[49m[38;5;241;43m=[39;49m[43mdrop_variables[49m[43m,[49m
+[1;32m    575[0m [43m    [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mdecoders[49m[43m,[49m
+[1;32m    576[0m [43m    [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m,[49m
+[1;32m    577[0m [43m[49m[43m)[49m
+[1;32m    578[0m ds [38;5;241m=[39m _dataset_from_backend_dataset(
+[1;32m    579[0m     backend_ds,
+[1;32m    580[0m     filename_or_obj,
+[0;32m   (...)[0m
+[1;32m    590[0m     [38;5;241m*[39m[38;5;241m*[39mkwargs,
+[1;32m    591[0m )
+[1;32m    592[0m [38;5;28;01mreturn[39;00m ds
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/backends/zarr.py:1011[0m, in [0;36mZarrBackendEntrypoint.open_dataset[0;34m(self, filename_or_obj, mask_and_scale, decode_times, concat_characters, decode_coords, drop_variables, use_cftime, decode_timedelta, group, mode, synchronizer, consolidated, chunk_store, storage_options, stacklevel, zarr_version)[0m
+[1;32m    990[0m [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21mopen_dataset[39m(  [38;5;66;03m# type: ignore[override]  # allow LSP violation, not supporting **kwargs[39;00m
+[1;32m    991[0m     [38;5;28mself[39m,
+[1;32m    992[0m     filename_or_obj: [38;5;28mstr[39m [38;5;241m|[39m os[38;5;241m.[39mPathLike[Any] [38;5;241m|[39m BufferedIOBase [38;5;241m|[39m AbstractDataStore,
+[0;32m   (...)[0m
+[1;32m   1008[0m     zarr_version[38;5;241m=[39m[38;5;28;01mNone[39;00m,
+[1;32m   1009[0m ) [38;5;241m-[39m[38;5;241m>[39m Dataset:
+[1;32m   1010[0m     filename_or_obj [38;5;241m=[39m _normalize_path(filename_or_obj)
+[0;32m-> 1011[0m     store [38;5;241m=[39m [43mZarrStore[49m[38;5;241;43m.[39;49m[43mopen_group[49m[43m([49m
+[1;32m   1012[0m [43m        [49m[43mfilename_or_obj[49m[43m,[49m
+[1;32m   1013[0m [43m        [49m[43mgroup[49m[38;5;241;43m=[39;49m[43mgroup[49m[43m,[49m
+[1;32m   1014[0m [43m        [49m[43mmode[49m[38;5;241;43m=[39;49m[43mmode[49m[43m,[49m
+[1;32m   1015[0m [43m        [49m[43msynchronizer[49m[38;5;241;43m=[39;49m[43msynchronizer[49m[43m,[49m
+[1;32m   1016[0m [43m        [49m[43mconsolidated[49m[38;5;241;43m=[39;49m[43mconsolidated[49m[43m,[49m
+[1;32m   1017[0m [43m        [49m[43mconsolidate_on_close[49m[38;5;241;43m=[39;49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[1;32m   1018[0m [43m        [49m[43mchunk_store[49m[38;5;241;43m=[39;49m[43mchunk_store[49m[43m,[49m
+[1;32m   1019[0m [43m        [49m[43mstorage_options[49m[38;5;241;43m=[39;49m[43mstorage_options[49m[43m,[49m
+[1;32m   1020[0m [43m        [49m[43mstacklevel[49m[38;5;241;43m=[39;49m[43mstacklevel[49m[43m [49m[38;5;241;43m+[39;49m[43m [49m[38;5;241;43m1[39;49m[43m,[49m
+[1;32m   1021[0m [43m        [49m[43mzarr_version[49m[38;5;241;43m=[39;49m[43mzarr_version[49m[43m,[49m
+[1;32m   1022[0m [43m    [49m[43m)[49m
+[1;32m   1024[0m     store_entrypoint [38;5;241m=[39m StoreBackendEntrypoint()
+[1;32m   1025[0m     [38;5;28;01mwith[39;00m close_on_error(store):
+
+File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/backends/zarr.py:461[0m, in [0;36mZarrStore.open_group[0;34m(cls, store, mode, synchronizer, group, consolidated, consolidate_on_close, chunk_store, storage_options, append_dim, write_region, safe_chunks, stacklevel, zarr_version, write_empty)[0m
+[1;32m    445[0m             warnings[38;5;241m.[39mwarn(
+[1;32m    446[0m                 [38;5;124m"[39m[38;5;124mFailed to open Zarr store with consolidated metadata, [39m[38;5;124m"[39m
+[1;32m    447[0m                 [38;5;124m"[39m[38;5;124mbut successfully read with non-consolidated metadata. [39m[38;5;124m"[39m
+[0;32m   (...)[0m
+[1;32m    458[0m                 stacklevel[38;5;241m=[39mstacklevel,
+[1;32m    459[0m             )
+[1;32m    460[0m         [38;5;28;01mexcept[39;00m zarr[38;5;241m.[39merrors[38;5;241m.[39mGroupNotFoundError:
+[0;32m--> 461[0m             [38;5;28;01mraise[39;00m [38;5;167;01mFileNotFoundError[39;00m([38;5;124mf[39m[38;5;124m"[39m[38;5;124mNo such file or directory: [39m[38;5;124m'[39m[38;5;132;01m{[39;00mstore[38;5;132;01m}[39;00m[38;5;124m'[39m[38;5;124m"[39m)
+[1;32m    462[0m [38;5;28;01melif[39;00m consolidated:
+[1;32m    463[0m     [38;5;66;03m# TODO: an option to pass the metadata_key keyword[39;00m
+[1;32m    464[0m     zarr_group [38;5;241m=[39m zarr[38;5;241m.[39mopen_consolidated(store, [38;5;241m*[39m[38;5;241m*[39mopen_kwargs)
+
+[0;31mFileNotFoundError[0m: No such file or directory: 's3://crocodile-cesm/CrocoDash/data/grids/ocean_topog_little_nwa12_5d22b5.nc'
+

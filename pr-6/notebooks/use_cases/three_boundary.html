@@ -454,7 +454,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.grid</span><span class="w"> </span><span class="kn">import</span> <span class="n">Grid</span>
 
 <span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="o">.</span><span class="n">subgrid_from_supergrid</span><span class="p">(</span>
-    <span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;&lt;HGRID_TRIMMED&gt;&quot;</span><span class="p">,</span>  <span class="c1"># supergrid</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;s3://crocodile-cesm/CrocoDash/data/grids/ocean_hgrid_trimmed.nc&quot;</span><span class="p">,</span>  <span class="c1"># supergrid</span>
     <span class="n">llc</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">99</span><span class="p">),</span>  <span class="c1"># (l)ower (l)eft (c)orner coords</span>
     <span class="n">urc</span> <span class="o">=</span> <span class="p">(</span><span class="mi">59</span><span class="p">,</span> <span class="o">-</span><span class="mf">36.</span><span class="p">),</span>  <span class="c1"># (u)pper (r)ight (c)orner coords</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;nwa12&quot;</span>
@@ -480,7 +480,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bathymetry_path</span><span class="o">=</span><span class="s1">&#39;&lt;GEBCO&gt;&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bathymetry_path</span><span class="o">=</span><span class="s1">&#39;s3://crocodile-cesm/CrocoDash/data/gebco/GEBCO_2024.zarr/&#39;</span>
 
 <span class="n">topo</span><span class="o">.</span><span class="n">interpolate_from_file</span><span class="p">(</span>
     <span class="n">file_path</span> <span class="o">=</span> <span class="n">bathymetry_path</span><span class="p">,</span>
@@ -541,7 +541,7 @@ document.write(`
 <span class="n">casename</span> <span class="o">=</span> <span class="s2">&quot;three-boundary-nwa&quot;</span>
 
 <span class="c1"># CESM source root (Update this path accordingly!!!)</span>
-<span class="n">cesmroot</span> <span class="o">=</span> <span class="s2">&quot;&lt;CESM&gt;&quot;</span>
+<span class="n">cesmroot</span> <span class="o">=</span> <span class="s2">&quot;/home/runner/work/CrocoGallery/CrocoGallery/CESM/&quot;</span>
 
 <span class="c1"># Place where all your input files go </span>
 <span class="n">inputdir</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;croc_input&quot;</span> <span class="o">/</span> <span class="n">casename</span>
@@ -588,8 +588,8 @@ The <code class="docutils literal notranslate"><span class="pre">caseroot</span>
     <span class="n">date_range</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;2020-01-01 00:00:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-02-01 00:00:00&quot;</span><span class="p">],</span>
     <span class="n">boundaries</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;south&quot;</span><span class="p">,</span> <span class="s2">&quot;north&quot;</span><span class="p">,</span><span class="s2">&quot;east&quot;</span><span class="p">],</span> 
     <span class="n">tidal_constituents</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;M2&#39;</span><span class="p">],</span>
-    <span class="n">tpxo_elevation_filepath</span> <span class="o">=</span> <span class="s2">&quot;&lt;TPXO_H&gt;&quot;</span><span class="p">,</span>
-    <span class="n">tpxo_velocity_filepath</span> <span class="o">=</span> <span class="s2">&quot;&lt;TPXO_U&gt;&quot;</span>
+    <span class="n">tpxo_elevation_filepath</span> <span class="o">=</span> <span class="s2">&quot;s3://crocodile-cesm/CrocoDash/data/tpxo/h_tpxo9.v1.zarr/&quot;</span><span class="p">,</span>
+    <span class="n">tpxo_velocity_filepath</span> <span class="o">=</span> <span class="s2">&quot;s3://crocodile-cesm/CrocoDash/data/tpxo/u_tpxo9.v1.zarr/&quot;</span>
 <span class="p">)</span>
 </pre></div>
 </div>

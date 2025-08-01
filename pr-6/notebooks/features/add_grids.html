@@ -433,7 +433,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.grid</span><span class="w"> </span><span class="kn">import</span> <span class="n">Gridx</span>
 
-<span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="o">.</span><span class="n">from_supergrid</span><span class="p">(</span><span class="s2">&quot;&lt;HGRID_TRIMMED&gt;&quot;</span><span class="p">)</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="o">.</span><span class="n">from_supergrid</span><span class="p">(</span><span class="s2">&quot;s3://crocodile-cesm/CrocoDash/data/grids/ocean_hgrid_trimmed.nc&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -445,7 +445,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.topo</span><span class="w"> </span><span class="kn">import</span> <span class="n">Topo</span>
 
-<span class="n">bathymetry_path</span><span class="o">=</span><span class="s1">&#39;&lt;BATHY_FILE&gt;&#39;</span>
+<span class="n">bathymetry_path</span><span class="o">=</span><span class="s1">&#39;s3://crocodile-cesm/CrocoDash/data/grids/ocean_topog_little_nwa12_5d22b5.nc&#39;</span>
 
 <span class="n">topo</span> <span class="o">=</span> <span class="n">Topo</span><span class="o">.</span><span class="n">from_topo_file</span><span class="p">(</span>
     <span class="n">grid</span> <span class="o">=</span> <span class="n">grid</span><span class="p">,</span>
