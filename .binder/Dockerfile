@@ -20,3 +20,6 @@ COPY . ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
+
+# Register the conda environment as a Jupyter kernel
+RUN conda run -n CrocoDash python -m ipykernel install --user --name CrocoDash --display-name "Python (CrocoDash)"
