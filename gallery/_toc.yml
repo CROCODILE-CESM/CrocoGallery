@@ -35,8 +35,10 @@ parts:
         - file: notebooks/features/add_rof
         - file: notebooks/features/add_chl
         - file: notebooks/features/add_tides
+    - caption: Use Cases
+      chapters:
       - file: notebooks/use_cases/index 
-        title: Use Cases Overview
+        title: Development Cases
         sections:
           - file: notebooks/use_cases/three_boundary_from_t232
           - file: notebooks/use_cases/three_boundary
