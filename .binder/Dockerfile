@@ -10,7 +10,7 @@ RUN adduser --disabled-password \
     --gecos "Default user" \
     --uid ${NB_UID} \
     ${NB_USER}
-
+ARG CACHE_BUST=1
 # Clone CrocoGallery and move only the gallery/ folder
 RUN git clone --depth=1 https://github.com/CROCODILE-CESM/CrocoGallery.git /tmp/cg && \
     python3 /tmp/cg/code/set_cesm_path.py /workspace/CESM && \
