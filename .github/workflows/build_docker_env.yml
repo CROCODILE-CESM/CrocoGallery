@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-push:
+  build-cg-docker-env:
     runs-on: ubuntu-latest
 
     permissions:
@@ -34,8 +34,8 @@ jobs:
           file: Dockerfile
           push: true
           tags: |
-                ghcr.io/${{ github.repository_owner }}/CrocoGallery:latest
-                ghcr.io/${{ github.repository_owner }}/CrocoGallery:cache
-          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/CrocoGallery:cache
-          cache-to: type=registry,ref=ghcr.io/${{ github.repository_owner }}/CrocoGallery:cache,mode=max
+                ghcr.io/${{ github.repository_owner }}/crocogallery:latest
+                ghcr.io/${{ github.repository_owner }}/crocogallery:cache
+          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/crocogallery:cache
+          cache-to: type=registry,ref=ghcr.io/${{ github.repository_owner }}/crocogallery:cache,mode=max
 
