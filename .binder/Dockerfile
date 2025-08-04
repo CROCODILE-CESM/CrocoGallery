@@ -13,7 +13,7 @@ RUN adduser --disabled-password \
 
 # Clone CrocoGallery and move only the gallery/ folder
 RUN git clone --depth=1 https://github.com/CROCODILE-CESM/CrocoGallery.git /tmp/cg && \
-    mv /tmp/cg/gallery ${HOME}/gallery && \
+    mv /tmp/cg/gallery /gallery && \
     rm -rf /tmp/cg
 # Make sure the contents of our repo are in ${HOME}
 COPY . ${HOME}
