@@ -1,5 +1,7 @@
 FROM continuumio/miniconda3:25.3.1-1
 
+
+
 # ---- System dependencies ----
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -18,6 +20,9 @@ WORKDIR ${WORKDIR}
 RUN git clone https://github.com/CROCODILE-CESM/CESM.git ${CESMROOT} && \
     cd ${CESMROOT} && \
     ./bin/git-fleximod update
+
+# Define a cache-busting argument
+ARG CACHEBUST=1
 
 # ---- Clone CrocoDash and checkout submodule branch ----
 RUN git clone --recurse-submodules https://github.com/CROCODILE-CESM/CrocoDash.git && \
