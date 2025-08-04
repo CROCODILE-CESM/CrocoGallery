@@ -13,13 +13,7 @@ RUN adduser --disabled-password \
 
 # Clone CrocoGallery and move only the gallery/ folder
 RUN git clone --depth=1 https://github.com/CROCODILE-CESM/CrocoGallery.git /tmp/cg && \
-    python3 -c "import json; \
-with open('/tmp/cg/code/data_paths.json','r+') as f: \
-    data=json.load(f); \
-    data['CESM']='/workspace/CESM'; \
-    f.seek(0); \
-    json.dump(data,f,indent=2); \
-    f.truncate()" && \
+    python3 /tmp/cg/code/set_cesm_path.py /workspace/CESM && \
     python3 /tmp/cg/code/inject_paths.py && \
     mv /tmp/cg/gallery /workspace/gallery && \
     rm -rf /tmp/cg
