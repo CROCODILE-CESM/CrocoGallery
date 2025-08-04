@@ -13,6 +13,7 @@ RUN adduser --disabled-password \
 
 # Clone CrocoGallery and move only the gallery/ folder
 RUN git clone --depth=1 https://github.com/CROCODILE-CESM/CrocoGallery.git /tmp/cg && \
+    python3 /tmp/cg/code/inject_paths.py && \
     mv /tmp/cg/gallery /workspace/gallery && \
     rm -rf /tmp/cg
 # Make sure the contents of our repo are in ${HOME}
