@@ -19,44 +19,21 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^^
   File "/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
-    await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
-    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
-nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
-------------------
-from CrocoDash.case import Case
-import os
-case = Case(
-    cesmroot = cesmroot,
-    caseroot = caseroot,
-    inputdir = inputdir,
-    ocn_grid = grid,
-    ocn_vgrid = vgrid,
-    ocn_topo = topo,
-    project = 'NCGD0011',
-    override = True,
-    machine = "ubuntu-latest"
+  File "/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/nbclient/client.py", line 1005, in async_execute_cell
+    exec_reply = await self.task_poll_for_reply
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/nbclient/client.py", line 806, in _async_poll_for_reply
+    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/nbclient/client.py", line 856, in _async_handle_timeout
+    raise CellTimeoutError.error_from_timeout_and_cell(
+nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
+The message was: Cell execution timed out.
+Here is a preview of the cell contents:
+-------------------
+case.configure_forcings(
+    date_range = ["2020-01-01 00:00:00", "2020-01-09 00:00:00"],
+    function_name="get_glorys_data_from_cds_api"
 )
-------------------
-
-
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mTypeError[0m                                 Traceback (most recent call last)
-Input [0;32mIn [11][0m, in [0;36m<cell line: 0>[0;34m()[0m
-[1;32m      1[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mCrocoDash[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcase[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Case
-[1;32m      2[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mos[39;00m
-[0;32m----> 3[0m case [38;5;241m=[39m [43mCase[49m[43m([49m
-[1;32m      4[0m [43m    [49m[43mcesmroot[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mcesmroot[49m[43m,[49m
-[1;32m      5[0m [43m    [49m[43mcaseroot[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mcaseroot[49m[43m,[49m
-[1;32m      6[0m [43m    [49m[43minputdir[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43minputdir[49m[43m,[49m
-[1;32m      7[0m [43m    [49m[43mocn_grid[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mgrid[49m[43m,[49m
-[1;32m      8[0m [43m    [49m[43mocn_vgrid[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mvgrid[49m[43m,[49m
-[1;32m      9[0m [43m    [49m[43mocn_topo[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mtopo[49m[43m,[49m
-[1;32m     10[0m [43m    [49m[43mproject[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mNCGD0011[39;49m[38;5;124;43m'[39;49m[43m,[49m
-[1;32m     11[0m [43m    [49m[43moverride[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m
-[1;32m     12[0m [43m    [49m[43mmachine[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mubuntu-latest[39;49m[38;5;124;43m"[39;49m
-[1;32m     13[0m [43m)[49m
-
-[0;31mTypeError[0m: Case.__init__() missing 1 required keyword-only argument: 'compset'
+-------------------
 
