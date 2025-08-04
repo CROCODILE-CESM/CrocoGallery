@@ -11,6 +11,10 @@ RUN adduser --disabled-password \
     --uid ${NB_UID} \
     ${NB_USER}
 
+# Clone CrocoGallery and move only the gallery/ folder
+RUN git clone --depth=1 https://github.com/CROCODILE-CESM/CrocoGallery.git /tmp/cg && \
+    mv /tmp/cg/gallery ${HOME}/gallery && \
+    rm -rf /tmp/cg
 # Make sure the contents of our repo are in ${HOME}
 COPY . ${HOME}
 USER root
