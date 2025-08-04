@@ -21,9 +21,10 @@ RUN git clone --depth=1 https://github.com/CROCODILE-CESM/CrocoGallery.git /tmp/
 COPY . ${HOME}
 USER root
 RUN chown -R ${NB_UID} ${HOME}
-USER ${NB_USER}
 
-RUN git config --global --add safe.directory /workspace/CESM/cime
+# ✅ Also fix ownership for /workspace/CESM
+RUN chown -R ${NB_UID} /workspace/CESM
+USER ${NB_USER}
 
 # Register the conda environment as a Jupyter kernel
 RUN conda run -n CrocoDash python -m ipykernel install --user --name CrocoDash --display-name "Python (CrocoDash)"
