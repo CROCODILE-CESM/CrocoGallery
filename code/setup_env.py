@@ -51,9 +51,10 @@ def setup_glorys_credentials():
     glorys_username = os.getenv("GLORYS_USERNAME")
     glorys_password = os.getenv("GLORYS_PASSWORD")
 
-    copernicusmarine.login(
-        username=glorys_username, password=glorys_password, force_overwrite=True
-    )
+    if not copernicusmarine.login(check_credentials_valid=True):
+        copernicusmarine.login(
+            username=glorys_username, password=glorys_password, force_overwrite=True
+        )
 
 
 def checkout_cesm(
