@@ -12,6 +12,7 @@ parts:
         - file: notebooks/tutorials/cesm_setup
         - file: notebooks/tutorials/minimal_demo_rect
         - file: notebooks/tutorials/input_params
+        - file: notebooks/tutorials/CUPiD_for_regional_MOM6
     - caption: Feature Tutorials
       chapters:
       - file: notebooks/features/coupling 
