@@ -14,7 +14,10 @@ data_dir = Path(__file__).parent.parent / "data"
 
 def main():
 
-    with open(Path(__file__).parent / "data_paths.json", "r") as f:
+    path_file = Path(__file__).parent / "data_paths_loc.json"
+    if not path_file.is_file():
+        path_file = Path(__file__).parent / "data_paths.json"
+    with open(path_file, "r") as f:
         paths = json.load(f)
 
     setup_glorys_credentials()
