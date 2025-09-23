@@ -33,6 +33,7 @@ parts:
         title: Additional Component Tutorials
         sections:
         - file: notebooks/features/add_rof
+        - file: notebooks/features/add_runoff_product
         - file: notebooks/features/add_chl
         - file: notebooks/features/add_tides
     - caption: Use Cases
