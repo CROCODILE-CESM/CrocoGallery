@@ -10,12 +10,12 @@ logo: crocodile.png
 execute:
   execute_notebooks: force
   kernel_name: CrocoDash
-  exclude_patterns:
-    - 'add_grids.ipynb'
-    - 'add_tides.ipynb'
-    - 'add_chl.ipynb'
-    - 'three_*'
-    - 'subset_global.ipynb'
+  # exclude_patterns:
+  #   # - 'add_grids.ipynb'
+  #   # - 'add_tides.ipynb'
+  #   # - 'add_chl.ipynb'
+  #   # - 'three_*'
+  #   # - 'subset_global.ipynb'
 
 
 # Define the name of the latex output file for PDF builds
@@ -38,3 +38,7 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+launch_buttons:
+  binderhub_url: "https://mybinder.org"  # The URL for your BinderHub (e.g., https://mybinder.org)
+  notebook_interface: "jupyterlab" 
