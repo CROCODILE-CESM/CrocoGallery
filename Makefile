@@ -4,8 +4,8 @@ build: setup
 	jupyter-book build gallery
 
 setup:
-	python code/setup_env.py
-	python code/inject_paths.py
+	python code/setup_credentials_and_cesm.py
+	python code/inject_paths_into_notebooks.py
 
 clean:
 	python code/inject_paths.py --reverse

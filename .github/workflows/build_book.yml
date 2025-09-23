@@ -66,9 +66,10 @@ jobs:
           source $(conda info --base)/etc/profile.d/conda.sh
           conda activate CrocoDash
           pip install -r CrocoGallery/requirements.txt
-      - name: Update CESM path in data_paths.json
+      - name: Update CESM path in path_to_datasets.json
         run: |
-            python CrocoGallery/code/set_cesm_path.py
+            cd CrocoGallery/code
+            python -c "from setup_credentials_and_cesm import set_cesm_path; import os; set_cesm_path(os.environ['CESMROOT'])"
       - name: Build book with Makefile
         run: |
             source $(conda info --base)/etc/profile.d/conda.sh
