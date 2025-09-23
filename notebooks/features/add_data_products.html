@@ -212,6 +212,7 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="add_components.html">Additional Component Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="add_rof.html">Add data runoff from GLOFAS to the Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_runoff_product.html">Adding your own runoff product to the CESM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="add_chl.html">Add Chlorophyll Files to the Run</a></li>
 <li class="toctree-l2"><a class="reference internal" href="add_tides.html">Add Boundary Tides to the Run</a></li>
 </ul>
@@ -552,7 +553,9 @@ document.write(`
  &#39;SEAWIFS&#39;: {&#39;get_global_seawifs_script_for_cli&#39;: &lt;function CrocoDash.raw_data_access.datasets.seawifs.get_global_seawifs_script_for_cli(dates=&#39;UNUSED&#39;, lat_min=&#39;UNUSED&#39;, lat_max=&#39;UNUSED&#39;, lon_min=&#39;UNUSED&#39;, lon_max=&#39;UNUSED&#39;, output_dir=None, output_file=&#39;UNUSED&#39;, username=&#39;&#39;)&gt;,
   &#39;get_processed_global_seawifs_script_for_cli&#39;: &lt;function CrocoDash.raw_data_access.datasets.seawifs.get_processed_global_seawifs_script_for_cli(dates=&#39;UNUSED&#39;, lat_min=&#39;UNUSED&#39;, lat_max=&#39;UNUSED&#39;, lon_min=&#39;UNUSED&#39;, lon_max=&#39;UNUSED&#39;, output_dir=PosixPath(&#39;.&#39;), output_file=&#39;processed_seawifs.nc&#39;)&gt;},
  &#39;GEBCO&#39;: {&#39;get_gebco_data_with_python&#39;: &lt;function CrocoDash.raw_data_access.datasets.gebco.get_gebco_data_with_python(dates=&#39;UNUSED&#39;, lat_min=&#39;UNUSED&#39;, lat_max=&#39;UNUSED&#39;, lon_min=&#39;UNUSED&#39;, lon_max=&#39;UNUSED&#39;, output_dir=None, output_file=None)&gt;,
-  &#39;get_gebco_data_script&#39;: &lt;function CrocoDash.raw_data_access.datasets.gebco.get_gebco_data_script(dates=&#39;UNUSED&#39;, lat_min=&#39;UNUSED&#39;, lat_max=&#39;UNUSED&#39;, lon_min=&#39;UNUSED&#39;, lon_max=&#39;UNUSED&#39;, output_dir=None, output_file=None)&gt;}}
+  &#39;get_gebco_data_script&#39;: &lt;function CrocoDash.raw_data_access.datasets.gebco.get_gebco_data_script(dates=&#39;UNUSED&#39;, lat_min=&#39;UNUSED&#39;, lat_max=&#39;UNUSED&#39;, lon_min=&#39;UNUSED&#39;, lon_max=&#39;UNUSED&#39;, output_dir=None, output_file=None)&gt;},
+ &#39;GLOFAS&#39;: {&#39;get_processed_global_glofas_script_for_cli&#39;: &lt;function CrocoDash.raw_data_access.datasets.glofas.get_processed_global_glofas_script_for_cli(dates=&#39;UNUSED&#39;, lat_min=&#39;UNUSED&#39;, lat_max=&#39;UNUSED&#39;, lon_min=&#39;UNUSED&#39;, lon_max=&#39;UNUSED&#39;, output_dir=PosixPath(&#39;.&#39;), output_file=&#39;processed_glofas.nc&#39;)&gt;,
+  &#39;get_global_data_with_python&#39;: &lt;function CrocoDash.raw_data_access.datasets.glofas.get_global_data_with_python(dates, lat_min=&#39;UNUSED&#39;, lat_max=&#39;UNUSED&#39;, lon_min=&#39;UNUSED&#39;, lon_max=&#39;UNUSED&#39;, output_dir=PosixPath(&#39;.&#39;), output_file=&#39;glofas_data.nc&#39;)&gt;}}
 </pre></div>
 </div>
 </div>

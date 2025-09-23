@@ -212,6 +212,7 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../features/add_components.html">Additional Component Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../features/add_rof.html">Add data runoff from GLOFAS to the Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../features/add_runoff_product.html">Adding your own runoff product to the CESM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../features/add_chl.html">Add Chlorophyll Files to the Run</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../features/add_tides.html">Add Boundary Tides to the Run</a></li>
 </ul>
@@ -519,7 +520,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>syntax error, unexpected WORD_WORD, expecting SCAN_ATTR or SCAN_DATASET or SCAN_ERROR
-context: &lt;?xml^ version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Error&gt;&lt;Code&gt;AccessDenied&lt;/Code&gt;&lt;Message&gt;Access Denied&lt;/Message&gt;&lt;RequestId&gt;T8HE0N80EA0VRT7K&lt;/RequestId&gt;&lt;HostId&gt;XZOuDyjrA9PScO8p4K6s8wRuEQ2Y3gWi5LZrPSRO3WsLAioMdtuzLZ9IvSd3mtw+HZjhpKlGm70=&lt;/HostId&gt;&lt;/Error&gt;
+context: &lt;?xml^ version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Error&gt;&lt;Code&gt;AccessDenied&lt;/Code&gt;&lt;Message&gt;Access Denied&lt;/Message&gt;&lt;RequestId&gt;GZ5E4C5SJ4WRK4BG&lt;/RequestId&gt;&lt;HostId&gt;fUJiq/7W1DmuzeqtZG+O07TsQoTzUzHs8A/Gj5bibGsbwaKBE/2BGmHErwkKf9700lnm8z58iYQ=&lt;/HostId&gt;&lt;/Error&gt;
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -534,7 +535,7 @@ context: &lt;?xml^ version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Er
 <span class="ne">---&gt; </span><span class="mi">56</span>     <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">57</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="o">.</span><span class="n">move_to_end</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
-<span class="ne">KeyError</span>: [&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;, (&#39;s3://crocodile-cesm/CrocoDash/data/grids/ocean_hgrid_221123.nc&#39;,), &#39;r&#39;, ((&#39;clobber&#39;, True), (&#39;diskless&#39;, False), (&#39;format&#39;, &#39;NETCDF4&#39;), (&#39;persist&#39;, False)), &#39;74667f43-8a96-42dd-b40b-7e635dfe4420&#39;]
+<span class="ne">KeyError</span>: [&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;, (&#39;s3://crocodile-cesm/CrocoDash/data/grids/ocean_hgrid_221123.nc&#39;,), &#39;r&#39;, ((&#39;clobber&#39;, True), (&#39;diskless&#39;, False), (&#39;format&#39;, &#39;NETCDF4&#39;), (&#39;persist&#39;, False)), &#39;6eccf1ff-c2b4-4516-abc1-970e9f1ae953&#39;]
 
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
@@ -548,32 +549,32 @@ context: &lt;?xml^ version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Er
 <span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;little_nwa12&quot;</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="p">)</span>
 
-<span class="nn">File ~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/mom6_bathy/grid.py:432,</span> in <span class="ni">Grid.subgrid_from_supergrid</span><span class="nt">(cls, path, llc, urc, name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">411</span> <span class="nd">@classmethod</span>
-<span class="g g-Whitespace">    </span><span class="mi">412</span> <span class="k">def</span><span class="w"> </span><span class="nf">subgrid_from_supergrid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">llc</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="n">urc</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Grid&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">413</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Create a Grid instance from a subset of a supergrid file.</span>
-<span class="g g-Whitespace">    </span><span class="mi">414</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">415</span><span class="sd">     Parameters</span>
+<span class="nn">File ~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/mom6_bathy/grid.py:433,</span> in <span class="ni">Grid.subgrid_from_supergrid</span><span class="nt">(cls, path, llc, urc, name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">412</span> <span class="nd">@classmethod</span>
+<span class="g g-Whitespace">    </span><span class="mi">413</span> <span class="k">def</span><span class="w"> </span><span class="nf">subgrid_from_supergrid</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">llc</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="n">urc</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Grid&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">414</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Create a Grid instance from a subset of a supergrid file.</span>
+<span class="g g-Whitespace">    </span><span class="mi">415</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">416</span><span class="sd">     Parameters</span>
 <span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">429</span><span class="sd">         The Grid instance created from the supergrid file.</span>
-<span class="g g-Whitespace">    </span><span class="mi">430</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">432</span>     <span class="n">full_grid</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_supergrid</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">434</span>     <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">llc</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;llc must be a tuple of two floats&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">435</span>     <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">urc</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;urc must be a tuple of two floats&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">430</span><span class="sd">         The Grid instance created from the supergrid file.</span>
+<span class="g g-Whitespace">    </span><span class="mi">431</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">433</span>     <span class="n">full_grid</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_supergrid</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">435</span>     <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">llc</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;llc must be a tuple of two floats&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">436</span>     <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">urc</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;urc must be a tuple of two floats&quot;</span>
 
-<span class="nn">File ~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/mom6_bathy/grid.py:376,</span> in <span class="ni">Grid.from_supergrid</span><span class="nt">(cls, path, name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">359</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Create a Grid instance from a supergrid file.</span>
-<span class="g g-Whitespace">    </span><span class="mi">360</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">361</span><span class="sd"> Parameters</span>
+<span class="nn">File ~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/mom6_bathy/grid.py:377,</span> in <span class="ni">Grid.from_supergrid</span><span class="nt">(cls, path, name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Create a Grid instance from a supergrid file.</span>
+<span class="g g-Whitespace">    </span><span class="mi">361</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span><span class="sd"> Parameters</span>
 <span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">372</span><span class="sd">     The Grid instance created from the supergrid file.</span>
-<span class="g g-Whitespace">    </span><span class="mi">373</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">375</span> <span class="c1"># read supergrid dataset</span>
-<span class="ne">--&gt; </span><span class="mi">376</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">377</span> <span class="k">assert</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">378</span>     <span class="n">ds</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">units</span> <span class="o">==</span> <span class="n">ds</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">units</span> <span class="ow">and</span> <span class="s2">&quot;degree&quot;</span> <span class="ow">in</span> <span class="n">ds</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">units</span>
-<span class="g g-Whitespace">    </span><span class="mi">379</span> <span class="p">),</span> <span class="s2">&quot;Only degrees units are supported in supergrid files&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">381</span> <span class="c1"># check supergrid</span>
+<span class="g g-Whitespace">    </span><span class="mi">373</span><span class="sd">     The Grid instance created from the supergrid file.</span>
+<span class="g g-Whitespace">    </span><span class="mi">374</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">376</span> <span class="c1"># read supergrid dataset</span>
+<span class="ne">--&gt; </span><span class="mi">377</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span> <span class="k">assert</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">379</span>     <span class="n">ds</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">units</span> <span class="o">==</span> <span class="n">ds</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">units</span> <span class="ow">and</span> <span class="s2">&quot;degree&quot;</span> <span class="ow">in</span> <span class="n">ds</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">units</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span> <span class="p">),</span> <span class="s2">&quot;Only degrees units are supported in supergrid files&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">382</span> <span class="c1"># check supergrid</span>
 
 <span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/backends/api.py:572,</span> in <span class="ni">open_dataset</span><span class="nt">(filename_or_obj, engine, chunks, cache, decode_cf, mask_and_scale, decode_times, decode_timedelta, use_cftime, concat_characters, decode_coords, drop_variables, inline_array, chunked_array_type, from_array_kwargs, backend_kwargs, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">560</span> <span class="n">decoders</span> <span class="o">=</span> <span class="n">_resolve_decoders_kwargs</span><span class="p">(</span>

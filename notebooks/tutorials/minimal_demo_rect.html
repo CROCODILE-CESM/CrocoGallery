@@ -212,6 +212,7 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../features/add_components.html">Additional Component Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../features/add_rof.html">Add data runoff from GLOFAS to the Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../features/add_runoff_product.html">Adding your own runoff product to the CESM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../features/add_chl.html">Add Chlorophyll Files to the Run</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../features/add_tides.html">Add Boundary Tides to the Run</a></li>
 </ul>
@@ -578,7 +579,7 @@ Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Fill
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f0ece942cd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f80642dac10&gt;
 </pre></div>
 </div>
 <img alt="../../_images/512e3b4dfe38912c58dd093848bb2dacf023eabcb26d70c2b88f1bf943e94e18.png" src="../../_images/512e3b4dfe38912c58dd093848bb2dacf023eabcb26d70c2b88f1bf943e94e18.png" />
@@ -595,7 +596,7 @@ Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Fill
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "a7d90f4595724afc886b4f6b6a1f6e5f"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "8ce529a1f22c4a1b93212b8913977e4f"}</script></div>
 </div>
 </section>
 <section id="step-1-3-vertical-grid">
@@ -653,7 +654,7 @@ Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Fill
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "f4aa1c1f7c7643e3bc5ea180036876d3"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "69b5e060739f46eaa23ff23e85f16a0c"}</script></div>
 </div>
 </section>
 </section>
@@ -735,7 +736,7 @@ The <code class="docutils literal notranslate"><span class="pre">caseroot</span>
  atm grid: &quot;TL319&quot;, lnd grid: &quot;TL319&quot;, ocn grid: &quot;panama1&quot;.
 
 • Updating ccs_config/component_grids_nuopc.xml file to include newly generated ocean grid &quot;panama1&quot; with the following properties:
- nx: 100, ny: 100. ocean mesh: /home/runner/croc_input/panama-not/ocnice/ESMF_mesh_panama1_249ef7.nc.
+ nx: 100, ny: 100. ocean mesh: /home/runner/croc_input/panama-not/ocnice/ESMF_mesh_panama1_2e5af8.nc.
 
 <span class=" -Color -Color-Bold">Running the create_newcase tool with the following command:</span>
 
@@ -767,14 +768,14 @@ cd /home/runner/croc_cases/panama-not
   NIGLOBAL = 100
   NJGLOBAL = 100
   GRID_CONFIG = mosaic
-  GRID_FILE = ocean_hgrid_panama1_249ef7.nc
+  GRID_FILE = ocean_hgrid_panama1_2e5af8.nc
   TOPO_CONFIG = file
-  TOPO_FILE = ocean_topog_panama1_249ef7.nc
+  TOPO_FILE = ocean_topog_panama1_2e5af8.nc
   MAXIMUM_DEPTH = 2780.130017656834
   MINIMUM_DEPTH = 9.5
   NK = 75
   COORD_CONFIG = none
-  ALE_COORDINATE_CONFIG = FILE:ocean_vgrid_panama1_249ef7.nc
+  ALE_COORDINATE_CONFIG = FILE:ocean_vgrid_panama1_2e5af8.nc
   REGRIDDING_COORDINATE_MODE = Z*
 
   ! Timesteps (based on grid resolution)
@@ -810,25 +811,25 @@ cd /home/runner/croc_cases/panama-not
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - 2025-08-04T21:44:09Z - Selected dataset version: &quot;202311&quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - 2025-09-23T20:02:11Z - Selected dataset version: &quot;202311&quot;
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:copernicusmarine:Selected dataset version: &quot;202311&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - 2025-08-04T21:44:09Z - Selected dataset part: &quot;default&quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - 2025-09-23T20:02:11Z - Selected dataset part: &quot;default&quot;
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:copernicusmarine:Selected dataset part: &quot;default&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - 2025-08-04T21:44:18Z - Starting download. Please wait...
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - 2025-09-23T20:02:22Z - Starting download. Please wait...
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:copernicusmarine:Starting download. Please wait...
 </pre></div>
 </div>
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "60312b1c67ac494f95a5fc7f15a22069"}</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "c6e6fe22379d41c496a656fbecad66c0"}</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
 <span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">case</span><span class="o">.</span><span class="n">configure_forcings</span><span class="p">(</span>
@@ -836,16 +837,41 @@ cd /home/runner/croc_cases/panama-not
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">function_name</span><span class="o">=</span><span class="s2">&quot;get_glorys_data_from_cds_api&quot;</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">)</span>
 
-<span class="nn">File ~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/case.py:327,</span> in <span class="ni">Case.configure_forcings</span><span class="nt">(self, date_range, boundaries, tidal_constituents, tpxo_elevation_filepath, tpxo_velocity_filepath, product_name, function_name, too_much_data, chl_processed_filepath)</span>
-<span class="g g-Whitespace">    </span><span class="mi">323</span> <span class="bp">self</span><span class="o">.</span><span class="n">ProductFunctionRegistry</span><span class="o">.</span><span class="n">load_functions</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">324</span> <span class="k">assert</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">325</span>     <span class="n">tb</span><span class="o">.</span><span class="n">category_of_product</span><span class="p">(</span><span class="n">product_name</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;forcing&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">326</span> <span class="p">),</span> <span class="s2">&quot;Data product must be a forcing product&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">327</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ProductFunctionRegistry</span><span class="o">.</span><span class="n">validate_function</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">328</span>     <span class="n">product_name</span><span class="p">,</span> <span class="n">function_name</span>
-<span class="g g-Whitespace">    </span><span class="mi">329</span> <span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">330</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Selected Product or Function was not valid&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">331</span> <span class="bp">self</span><span class="o">.</span><span class="n">forcing_product_name</span> <span class="o">=</span> <span class="n">product_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="nn">File ~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/case.py:350,</span> in <span class="ni">Case.configure_forcings</span><span class="nt">(self, date_range, boundaries, tidal_constituents, tpxo_elevation_filepath, tpxo_velocity_filepath, product_name, function_name, too_much_data, chl_processed_filepath, runoff_esmf_mesh_filepath)</span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span> <span class="k">def</span><span class="w"> </span><span class="nf">configure_forcings</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">279</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span>     <span class="n">date_range</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">289</span>     <span class="n">runoff_esmf_mesh_filepath</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">290</span> <span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">291</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span><span class="sd">     Configure the boundary conditions and tides for the MOM6 case.</span>
+<span class="g g-Whitespace">    </span><span class="mi">293</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">347</span><span class="sd">     process_forcings : Executes the actual boundary, initial condition, and tide setup based on the configuration.</span>
+<span class="g g-Whitespace">    </span><span class="mi">348</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">350</span>     <span class="bp">self</span><span class="o">.</span><span class="n">configure_initial_and_boundary_conditions</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">351</span>         <span class="n">date_range</span><span class="o">=</span><span class="n">date_range</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">352</span>         <span class="n">boundaries</span><span class="o">=</span><span class="n">boundaries</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">353</span>         <span class="n">product_name</span><span class="o">=</span><span class="n">product_name</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">354</span>         <span class="n">function_name</span><span class="o">=</span><span class="n">function_name</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">355</span>         <span class="n">too_much_data</span><span class="o">=</span><span class="n">too_much_data</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">356</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">357</span>     <span class="bp">self</span><span class="o">.</span><span class="n">configure_tides</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">358</span>         <span class="n">tidal_constituents</span><span class="p">,</span> <span class="n">tpxo_elevation_filepath</span><span class="p">,</span> <span class="n">tpxo_velocity_filepath</span>
+<span class="g g-Whitespace">    </span><span class="mi">359</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span>     <span class="bp">self</span><span class="o">.</span><span class="n">configure_chl</span><span class="p">(</span><span class="n">chl_processed_filepath</span><span class="p">)</span>
+
+<span class="nn">File ~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/case.py:446,</span> in <span class="ni">Case.configure_initial_and_boundary_conditions</span><span class="nt">(self, date_range, boundaries, product_name, function_name, too_much_data)</span>
+<span class="g g-Whitespace">    </span><span class="mi">441</span> <span class="k">assert</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">442</span>     <span class="n">tb</span><span class="o">.</span><span class="n">category_of_product</span><span class="p">(</span><span class="n">product_name</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;forcing&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">443</span> <span class="p">),</span> <span class="s2">&quot;Data product must be a forcing product&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">445</span> <span class="bp">self</span><span class="o">.</span><span class="n">ProductFunctionRegistry</span><span class="o">.</span><span class="n">load_functions</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">446</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">ProductFunctionRegistry</span><span class="o">.</span><span class="n">validate_function</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">447</span>     <span class="n">product_name</span><span class="p">,</span> <span class="n">function_name</span>
+<span class="g g-Whitespace">    </span><span class="mi">448</span> <span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">449</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Selected Product or Function was not valid&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">450</span> <span class="bp">self</span><span class="o">.</span><span class="n">forcing_product_name</span> <span class="o">=</span> <span class="n">product_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 
 <span class="nn">File ~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/raw_data_access/driver.py:101,</span> in <span class="ni">ProductFunctionRegistry.validate_function</span><span class="nt">(self, product, func_name)</span>
 <span class="g g-Whitespace">     </span><span class="mi">99</span>     <span class="k">return</span> <span class="kc">False</span>
@@ -1063,12 +1089,12 @@ cd /home/runner/croc_cases/panama-not
 <span class="g g-Whitespace">    </span><span class="mi">214</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">215</span>     <span class="p">)</span>
 
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/dask/array/core.py:1227,</span> in <span class="ni">store</span><span class="nt">(***failed resolving arguments***)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1224</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">return_stored</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1225</span>     <span class="kn">import</span><span class="w"> </span><span class="nn">dask</span>
-<span class="ne">-&gt; </span><span class="mi">1227</span>     <span class="n">dask</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">arrays</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1228</span>     <span class="k">return</span> <span class="kc">None</span>
-<span class="g g-Whitespace">   </span><span class="mi">1229</span> <span class="k">else</span><span class="p">:</span>
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/dask/array/core.py:1221,</span> in <span class="ni">store</span><span class="nt">(***failed resolving arguments***)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1218</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">return_stored</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1219</span>     <span class="kn">import</span><span class="w"> </span><span class="nn">dask</span>
+<span class="ne">-&gt; </span><span class="mi">1221</span>     <span class="n">dask</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">arrays</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1222</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1223</span> <span class="k">else</span><span class="p">:</span>
 
 <span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/dask/base.py:681,</span> in <span class="ni">compute</span><span class="nt">(traverse, optimize_graph, scheduler, get, *args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">678</span>     <span class="n">expr</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
