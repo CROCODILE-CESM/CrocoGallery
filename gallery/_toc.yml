@@ -36,6 +36,15 @@ parts:
         - file: notebooks/features/add_runoff_product
         - file: notebooks/features/add_chl
         - file: notebooks/features/add_tides
+    - caption: 2025 CROCODILE Workshop Projects
+      chapters:
+      - file: notebooks/projects/index 
+        title: 2025 CROCODILE Workshop Projects
+        sections:
+          - file: notebooks/projects/NWA
+          - file: notebooks/projects/CICE
+          - file: notebooks/projects/choose_your_own_adventure
+            title: Choose Your Own Adventure
     - caption: Use Cases
       chapters:
       - file: notebooks/use_cases/index 
