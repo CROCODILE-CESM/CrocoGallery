@@ -44,7 +44,7 @@ File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xar
 [0;32m---> 56[0m     value [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_cache[49m[43m[[49m[43mkey[49m[43m][49m
 [1;32m     57[0m     [38;5;28mself[39m[38;5;241m.[39m_cache[38;5;241m.[39mmove_to_end(key)
 
-[0;31mKeyError[0m: [<class 'netCDF4._netCDF4.Dataset'>, ('/glade/derecho/scratch/manishrv/croc_input/gustavo-glorys-1/ocnice/ocean_hgrid.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '65986f40-a1b3-46cd-a208-becadb565e1f']
+[0;31mKeyError[0m: [<class 'netCDF4._netCDF4.Dataset'>, ('/glade/derecho/scratch/manishrv/croc_input/gustavo-glorys-1/ocnice/ocean_hgrid.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '12a82b56-aab8-4549-8c9f-1a5cacdcb47c']
 
 During handling of the above exception, another exception occurred:
 

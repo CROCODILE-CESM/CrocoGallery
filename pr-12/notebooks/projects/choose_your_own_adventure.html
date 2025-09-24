@@ -220,20 +220,17 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2025 CROCODILE Workshop Projects</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">2025 CROCODILE Workshop Projects</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="NWA.html">Post Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CICE.html">Set up a rectangular regional CESM-MOM6-CICE coupled run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NWA.html">Post Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CICE.html">Set up a rectangular regional CESM-MOM6-CICE coupled run</a></li>
 
 
 
 
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Set up a rectangular regional CESM-MOM6 run</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Set up a rectangular regional CESM-MOM6 run</a></li>
 
 
 
 
-</ul>
-</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Use Cases</span></p>
 <ul class="nav bd-sidenav">
@@ -601,7 +598,7 @@ Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Fill
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f47a6e5c0d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fe8532ce590&gt;
 </pre></div>
 </div>
 <img alt="../../_images/512e3b4dfe38912c58dd093848bb2dacf023eabcb26d70c2b88f1bf943e94e18.png" src="../../_images/512e3b4dfe38912c58dd093848bb2dacf023eabcb26d70c2b88f1bf943e94e18.png" />
@@ -618,7 +615,7 @@ Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Fill
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "16c657b0576e43f0be10a8b04513d915"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "a8c350aea18b4d10b689be1159cd5181"}</script></div>
 </div>
 </section>
 <section id="step-1-3-vertical-grid">
@@ -676,7 +673,7 @@ Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Fill
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "5513e143f70843c1bfdabab844c82284"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "05e1f0c2cac94f8298a848a973428d2a"}</script></div>
 </div>
 </section>
 </section>
@@ -743,6 +740,9 @@ The <code class="docutils literal notranslate"><span class="pre">caseroot</span>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:  cime_interface:CIME_OUTPUT_ROOT doesn&#39;t exist. Creating it at /home/runner/cesm/scratch
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ERROR:  cime_interface:DIN_LOC_ROOT doesn&#39;t exist: /home/runner/cesm/inputdata
 </pre></div>
 </div>
@@ -755,7 +755,7 @@ The <code class="docutils literal notranslate"><span class="pre">caseroot</span>
  atm grid: &quot;TL319&quot;, lnd grid: &quot;TL319&quot;, ocn grid: &quot;panama1&quot;.
 
 • Updating ccs_config/component_grids_nuopc.xml file to include newly generated ocean grid &quot;panama1&quot; with the following properties:
- nx: 100, ny: 100. ocean mesh: /home/runner/croc_input/panama-not/ocnice/ESMF_mesh_panama1_3437ff.nc.
+ nx: 100, ny: 100. ocean mesh: /home/runner/croc_input/panama-not/ocnice/ESMF_mesh_panama1_ebd893.nc.
 
 <span class=" -Color -Color-Bold">Running the create_newcase tool with the following command:</span>
 
@@ -771,9 +771,8 @@ cd /home/runner/croc_cases/panama-not
 <span class=" -Color -Color-Bold">Apply NTASK grid xml changes:</span>
 
 ./xmlchange NTASKS_OCN=128
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">Running the case.setup script with the following command:</span>
+
+<span class=" -Color -Color-Bold">Running the case.setup script with the following command:</span>
 
 ./case.setup
 </pre></div>
@@ -788,14 +787,14 @@ cd /home/runner/croc_cases/panama-not
   NIGLOBAL = 100
   NJGLOBAL = 100
   GRID_CONFIG = mosaic
-  GRID_FILE = ocean_hgrid_panama1_3437ff.nc
+  GRID_FILE = ocean_hgrid_panama1_ebd893.nc
   TOPO_CONFIG = file
-  TOPO_FILE = ocean_topog_panama1_3437ff.nc
+  TOPO_FILE = ocean_topog_panama1_ebd893.nc
   MAXIMUM_DEPTH = 2780.130017656834
   MINIMUM_DEPTH = 9.5
   NK = 75
   COORD_CONFIG = none
-  ALE_COORDINATE_CONFIG = FILE:ocean_vgrid_panama1_3437ff.nc
+  ALE_COORDINATE_CONFIG = FILE:ocean_vgrid_panama1_ebd893.nc
   REGRIDDING_COORDINATE_MODE = Z*
 
   ! Timesteps (based on grid resolution)
@@ -831,25 +830,25 @@ cd /home/runner/croc_cases/panama-not
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - 2025-09-24T15:22:00Z - Selected dataset version: &quot;202311&quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - 2025-09-24T15:27:09Z - Selected dataset version: &quot;202311&quot;
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:copernicusmarine:Selected dataset version: &quot;202311&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - 2025-09-24T15:22:00Z - Selected dataset part: &quot;default&quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - 2025-09-24T15:27:09Z - Selected dataset part: &quot;default&quot;
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:copernicusmarine:Selected dataset part: &quot;default&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - 2025-09-24T15:22:10Z - Starting download. Please wait...
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - 2025-09-24T15:27:20Z - Starting download. Please wait...
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:copernicusmarine:Starting download. Please wait...
 </pre></div>
 </div>
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "4a8d90fa695b4a4681053fff1fe64c6a"}</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "0739d8243abf41e78042ff6c6d835519"}</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
 <span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">case</span><span class="o">.</span><span class="n">configure_forcings</span><span class="p">(</span>

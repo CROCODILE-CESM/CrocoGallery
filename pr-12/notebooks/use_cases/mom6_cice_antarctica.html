@@ -219,20 +219,17 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2025 CROCODILE Workshop Projects</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../projects/index.html">2025 CROCODILE Workshop Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../projects/NWA.html">Post Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../projects/CICE.html">Set up a rectangular regional CESM-MOM6-CICE coupled run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/NWA.html">Post Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/CICE.html">Set up a rectangular regional CESM-MOM6-CICE coupled run</a></li>
 
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="../projects/choose_your_own_adventure.html">Set up a rectangular regional CESM-MOM6 run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/choose_your_own_adventure.html">Set up a rectangular regional CESM-MOM6 run</a></li>
 
 
 
 
-</ul>
-</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Use Cases</span></p>
 <ul class="current nav bd-sidenav">
@@ -596,9 +593,348 @@ For details see https://xesmf.readthedocs.io/en/latest/large_problems_on_HPC.htm
 Afterwards, we run the &#39;expt.tidy_bathymetry&#39; method to skip the expensive interpolation step, and finishing metadata, encoding and cleanup.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Regridding successful! Now calling `tidy_bathymetry` method for some finishing touches...
-setup bathymetry has finished successfully.
-Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Filling in inland lakes and channels... 
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">bathymetry_path</span><span class="o">=</span><span class="s1">&#39;s3://crocodile-cesm/CrocoDash/data/gebco/GEBCO_2024.zarr/&#39;</span> <span class="c1"># Swap this!</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">topo</span><span class="o">.</span><span class="n">interpolate_from_file</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">file_path</span> <span class="o">=</span> <span class="n">bathymetry_path</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">longitude_coordinate_name</span><span class="o">=</span><span class="s2">&quot;lon&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">latitude_coordinate_name</span><span class="o">=</span><span class="s2">&quot;lat&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">vertical_coordinate_name</span><span class="o">=</span><span class="s2">&quot;elevation&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">write_to_file</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="p">)</span>
+
+<span class="nn">File ~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/topo.py:44,</span> in <span class="ni">Topo.interpolate_from_file</span><span class="nt">(self, file_path, longitude_coordinate_name, latitude_coordinate_name, vertical_coordinate_name, fill_channels, positive_down, write_to_file)</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span>     <span class="n">expt</span><span class="o">.</span><span class="n">mom_input_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="nb">print</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>     <span class="s2">&quot;If bathymetry setup fails, rerun this function with write_to_file = True&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">44</span> <span class="bp">self</span><span class="o">.</span><span class="n">_depth</span> <span class="o">=</span> <span class="n">expt</span><span class="o">.</span><span class="n">setup_bathymetry</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="n">bathymetry_path</span><span class="o">=</span><span class="n">file_path</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span>     <span class="n">longitude_coordinate_name</span><span class="o">=</span><span class="n">longitude_coordinate_name</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="n">latitude_coordinate_name</span><span class="o">=</span><span class="n">latitude_coordinate_name</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span>     <span class="n">vertical_coordinate_name</span><span class="o">=</span><span class="n">vertical_coordinate_name</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span>     <span class="n">fill_channels</span><span class="o">=</span><span class="n">fill_channels</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span>     <span class="n">positive_down</span><span class="o">=</span><span class="n">positive_down</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span>     <span class="n">write_to_file</span><span class="o">=</span><span class="n">write_to_file</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span> <span class="p">)</span><span class="o">.</span><span class="n">depth</span>
+
+<span class="nn">File ~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/rm6/regional_mom6/regional_mom6.py:1841,</span> in <span class="ni">experiment.setup_bathymetry</span><span class="nt">(self, bathymetry_path, longitude_coordinate_name, latitude_coordinate_name, vertical_coordinate_name, fill_channels, positive_down, write_to_file, regridding_method)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1826</span> <span class="nb">print</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1827</span>     <span class="s2">&quot;Begin regridding bathymetry...</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1828</span>     <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;Original bathymetry size: </span><span class="si">{</span><span class="n">bathymetry_output</span><span class="o">.</span><span class="n">nbytes</span><span class="o">/</span><span class="mf">1e6</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> Mb</span><span class="se">\n</span><span class="s2">&quot;</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1836</span>     <span class="o">+</span> <span class="s2">&quot;Afterwards, we run the &#39;expt.tidy_bathymetry&#39; method to skip the expensive interpolation step, and finishing metadata, encoding and cleanup.</span><span class="se">\n\n\n</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1837</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1838</span> <span class="n">regridder</span> <span class="o">=</span> <span class="n">rgd</span><span class="o">.</span><span class="n">create_regridder</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1839</span>     <span class="n">bathymetry_output</span><span class="p">,</span> <span class="n">empty_bathy</span><span class="p">,</span> <span class="n">locstream_out</span><span class="o">=</span><span class="kc">False</span>
+<span class="g g-Whitespace">   </span><span class="mi">1840</span> <span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1841</span> <span class="n">bathymetry</span> <span class="o">=</span> <span class="n">regridder</span><span class="p">(</span><span class="n">bathymetry_output</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1842</span> <span class="k">if</span> <span class="n">write_to_file</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1843</span>     <span class="n">bathymetry</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1844</span>         <span class="bp">self</span><span class="o">.</span><span class="n">mom_input_dir</span> <span class="o">/</span> <span class="s2">&quot;bathymetry_unfinished.nc&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1845</span>         <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1846</span>         <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;netcdf4&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1847</span>     <span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xesmf/frontend.py:546,</span> in <span class="ni">BaseRegridder.__call__</span><span class="nt">(self, indata, keep_attrs, skipna, na_thres, output_chunks)</span>
+<span class="g g-Whitespace">    </span><span class="mi">538</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">regrid_dataarray</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">539</span>         <span class="n">indata</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">540</span>         <span class="n">keep_attrs</span><span class="o">=</span><span class="n">keep_attrs</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">543</span>         <span class="n">output_chunks</span><span class="o">=</span><span class="n">output_chunks</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">544</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">545</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">indata</span><span class="p">,</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">546</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">regrid_dataset</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">547</span>         <span class="n">indata</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">548</span>         <span class="n">keep_attrs</span><span class="o">=</span><span class="n">keep_attrs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">549</span>         <span class="n">skipna</span><span class="o">=</span><span class="n">skipna</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">550</span>         <span class="n">na_thres</span><span class="o">=</span><span class="n">na_thres</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">551</span>         <span class="n">output_chunks</span><span class="o">=</span><span class="n">output_chunks</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">552</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">553</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">554</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;input must be numpy array, dask array, xarray DataArray or Dataset!&#39;</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xesmf/frontend.py:685,</span> in <span class="ni">BaseRegridder.regrid_dataset</span><span class="nt">(self, ds_in, keep_attrs, skipna, na_thres, output_chunks)</span>
+<span class="g g-Whitespace">    </span><span class="mi">678</span> <span class="n">non_regriddable</span> <span class="o">=</span> <span class="p">[</span>
+<span class="g g-Whitespace">    </span><span class="mi">679</span>     <span class="n">name</span>
+<span class="nn">    680     for name, data</span> in <span class="ni">ds_in.data_vars.items</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">681</span>     <span class="k">if</span> <span class="ow">not</span> <span class="nb">set</span><span class="p">(</span><span class="n">input_horiz_dims</span><span class="p">)</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">682</span> <span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">683</span> <span class="n">ds_in</span> <span class="o">=</span> <span class="n">ds_in</span><span class="o">.</span><span class="n">drop_vars</span><span class="p">(</span><span class="n">non_regriddable</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">685</span> <span class="n">ds_out</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">apply_ufunc</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">686</span>     <span class="bp">self</span><span class="o">.</span><span class="n">regrid_array</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">687</span>     <span class="n">ds_in</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">688</span>     <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">689</span>     <span class="n">kwargs</span><span class="o">=</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">690</span>     <span class="n">input_core_dims</span><span class="o">=</span><span class="p">[</span><span class="n">input_horiz_dims</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;out_dim&#39;</span><span class="p">,</span> <span class="s1">&#39;in_dim&#39;</span><span class="p">)],</span>
+<span class="g g-Whitespace">    </span><span class="mi">691</span>     <span class="n">output_core_dims</span><span class="o">=</span><span class="p">[</span><span class="n">temp_horiz_dims</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">692</span>     <span class="n">dask</span><span class="o">=</span><span class="s1">&#39;allowed&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">693</span>     <span class="n">keep_attrs</span><span class="o">=</span><span class="n">keep_attrs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">694</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">696</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_format_xroutput</span><span class="p">(</span><span class="n">ds_out</span><span class="p">,</span> <span class="n">temp_horiz_dims</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/core/computation.py:1254,</span> in <span class="ni">apply_ufunc</span><span class="nt">(func, input_core_dims, output_core_dims, exclude_dims, vectorize, join, dataset_join, dataset_fill_value, keep_attrs, kwargs, dask, output_dtypes, output_sizes, meta, dask_gufunc_kwargs, on_missing_core_dim, *args)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1252</span> <span class="c1"># feed datasets apply_variable_ufunc through apply_dataset_vfunc</span>
+<span class="g g-Whitespace">   </span><span class="mi">1253</span> <span class="k">elif</span> <span class="nb">any</span><span class="p">(</span><span class="n">is_dict_like</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1254</span>     <span class="k">return</span> <span class="n">apply_dataset_vfunc</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1255</span>         <span class="n">variables_vfunc</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1256</span>         <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1257</span>         <span class="n">signature</span><span class="o">=</span><span class="n">signature</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1258</span>         <span class="n">join</span><span class="o">=</span><span class="n">join</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1259</span>         <span class="n">exclude_dims</span><span class="o">=</span><span class="n">exclude_dims</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1260</span>         <span class="n">dataset_join</span><span class="o">=</span><span class="n">dataset_join</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1261</span>         <span class="n">fill_value</span><span class="o">=</span><span class="n">dataset_fill_value</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1262</span>         <span class="n">keep_attrs</span><span class="o">=</span><span class="n">keep_attrs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1263</span>         <span class="n">on_missing_core_dim</span><span class="o">=</span><span class="n">on_missing_core_dim</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1264</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1265</span> <span class="c1"># feed DataArray apply_variable_ufunc through apply_dataarray_vfunc</span>
+<span class="g g-Whitespace">   </span><span class="mi">1266</span> <span class="k">elif</span> <span class="nb">any</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">DataArray</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">):</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/core/computation.py:531,</span> in <span class="ni">apply_dataset_vfunc</span><span class="nt">(func, signature, join, dataset_join, fill_value, exclude_dims, keep_attrs, on_missing_core_dim, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">526</span> <span class="n">list_of_coords</span><span class="p">,</span> <span class="n">list_of_indexes</span> <span class="o">=</span> <span class="n">build_output_coords_and_indexes</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">527</span>     <span class="n">args</span><span class="p">,</span> <span class="n">signature</span><span class="p">,</span> <span class="n">exclude_dims</span><span class="p">,</span> <span class="n">combine_attrs</span><span class="o">=</span><span class="n">keep_attrs</span>
+<span class="g g-Whitespace">    </span><span class="mi">528</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">529</span> <span class="n">args</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="s2">&quot;data_vars&quot;</span><span class="p">,</span> <span class="n">arg</span><span class="p">)</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">531</span> <span class="n">result_vars</span> <span class="o">=</span> <span class="n">apply_dict_of_variables_vfunc</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">532</span>     <span class="n">func</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">533</span>     <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">534</span>     <span class="n">signature</span><span class="o">=</span><span class="n">signature</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">535</span>     <span class="n">join</span><span class="o">=</span><span class="n">dataset_join</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">536</span>     <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">537</span>     <span class="n">on_missing_core_dim</span><span class="o">=</span><span class="n">on_missing_core_dim</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">538</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">540</span> <span class="n">out</span><span class="p">:</span> <span class="n">Dataset</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Dataset</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">541</span> <span class="k">if</span> <span class="n">signature</span><span class="o">.</span><span class="n">num_outputs</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/core/computation.py:455,</span> in <span class="ni">apply_dict_of_variables_vfunc</span><span class="nt">(func, signature, join, fill_value, on_missing_core_dim, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">453</span> <span class="n">core_dim_present</span> <span class="o">=</span> <span class="n">_check_core_dims</span><span class="p">(</span><span class="n">signature</span><span class="p">,</span> <span class="n">variable_args</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">454</span> <span class="k">if</span> <span class="n">core_dim_present</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">455</span>     <span class="n">result_vars</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">variable_args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">456</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">457</span>     <span class="k">if</span> <span class="n">on_missing_core_dim</span> <span class="o">==</span> <span class="s2">&quot;raise&quot;</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/core/computation.py:822,</span> in <span class="ni">apply_variable_ufunc</span><span class="nt">(func, signature, exclude_dims, dask, output_dtypes, vectorize, keep_attrs, dask_gufunc_kwargs, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">817</span>     <span class="k">if</span> <span class="n">vectorize</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">818</span>         <span class="n">func</span> <span class="o">=</span> <span class="n">_vectorize</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">819</span>             <span class="n">func</span><span class="p">,</span> <span class="n">signature</span><span class="p">,</span> <span class="n">output_dtypes</span><span class="o">=</span><span class="n">output_dtypes</span><span class="p">,</span> <span class="n">exclude_dims</span><span class="o">=</span><span class="n">exclude_dims</span>
+<span class="g g-Whitespace">    </span><span class="mi">820</span>         <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">822</span> <span class="n">result_data</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">input_data</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">824</span> <span class="k">if</span> <span class="n">signature</span><span class="o">.</span><span class="n">num_outputs</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">825</span>     <span class="n">result_data</span> <span class="o">=</span> <span class="p">(</span><span class="n">result_data</span><span class="p">,)</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xesmf/frontend.py:631,</span> in <span class="ni">BaseRegridder.regrid_array</span><span class="nt">(self, indata, weights, skipna, na_thres, output_chunks)</span>
+<span class="g g-Whitespace">    </span><span class="mi">629</span>     <span class="n">outdata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_regrid</span><span class="p">(</span><span class="n">indata</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">630</span> <span class="k">else</span><span class="p">:</span>  <span class="c1"># numpy</span>
+<span class="ne">--&gt; </span><span class="mi">631</span>     <span class="n">outdata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_regrid</span><span class="p">(</span><span class="n">indata</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">632</span> <span class="k">return</span> <span class="n">outdata</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xesmf/frontend.py:564,</span> in <span class="ni">BaseRegridder._regrid</span><span class="nt">(indata, weights, shape_in, shape_out, skipna, na_thres)</span>
+<span class="g g-Whitespace">    </span><span class="mi">561</span>     <span class="n">indata</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">missing</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">indata</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">563</span> <span class="c1"># apply weights</span>
+<span class="ne">--&gt; </span><span class="mi">564</span> <span class="n">outdata</span> <span class="o">=</span> <span class="n">apply_weights</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">indata</span><span class="p">,</span> <span class="n">shape_in</span><span class="p">,</span> <span class="n">shape_out</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">566</span> <span class="c1"># skipna: Compute the influence of missing data at each interpolation point and filter those not meeting acceptable threshold.</span>
+<span class="g g-Whitespace">    </span><span class="mi">567</span> <span class="k">if</span> <span class="n">skipna</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xesmf/smm.py:190,</span> in <span class="ni">apply_weights</span><span class="nt">(weights, indata, shape_in, shape_out)</span>
+<span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="n">indata</span> <span class="o">=</span> <span class="n">indata</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;&lt;f8&#39;</span><span class="p">)</span>  <span class="c1"># On the fly conversion</span>
+<span class="g g-Whitespace">    </span><span class="mi">189</span> <span class="c1"># Dot product</span>
+<span class="ne">--&gt; </span><span class="mi">190</span> <span class="n">outdata</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tensordot</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">191</span>     <span class="n">indata</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">192</span>     <span class="n">weights</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">193</span>     <span class="n">axes</span><span class="o">=</span><span class="p">((</span><span class="n">indata</span><span class="o">.</span><span class="n">ndim</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">indata</span><span class="o">.</span><span class="n">ndim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="n">weights</span><span class="o">.</span><span class="n">ndim</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">weights</span><span class="o">.</span><span class="n">ndim</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)),</span>
+<span class="g g-Whitespace">    </span><span class="mi">194</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="c1"># Ensure same dtype as the input.</span>
+<span class="g g-Whitespace">    </span><span class="mi">197</span> <span class="n">outdata</span> <span class="o">=</span> <span class="n">outdata</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">indata_dtype</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/sparse/numba_backend/_sparse_array.py:294,</span> in <span class="ni">SparseArray.__array_function__</span><span class="nt">(self, func, types, args, kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span>     <span class="k">pass</span>
+<span class="g g-Whitespace">    </span><span class="mi">293</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">294</span>     <span class="k">return</span> <span class="n">sparse_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">296</span> <span class="k">with</span> <span class="n">contextlib</span><span class="o">.</span><span class="n">suppress</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span>     <span class="n">sparse_func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/sparse/numba_backend/_common.py:214,</span> in <span class="ni">tensordot</span><span class="nt">(a, b, axes, return_type)</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span> <span class="n">at</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">newaxes_a</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">newshape_a</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span> <span class="n">bt</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">newaxes_b</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">newshape_b</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">214</span> <span class="n">res</span> <span class="o">=</span> <span class="n">_dot</span><span class="p">(</span><span class="n">at</span><span class="p">,</span> <span class="n">bt</span><span class="p">,</span> <span class="n">return_type</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span> <span class="k">return</span> <span class="n">res</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">olda</span> <span class="o">+</span> <span class="n">oldb</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/sparse/numba_backend/_common.py:492,</span> in <span class="ni">_dot</span><span class="nt">(a, b, return_type)</span>
+<span class="g g-Whitespace">    </span><span class="mi">489</span> <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">491</span> <span class="k">if</span> <span class="n">return_type</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">return_type</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">492</span>     <span class="k">return</span> <span class="n">_dot_ndarray_coo_type</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">dtype</span><span class="p">)(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">out_shape</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">493</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">T</span>
+<span class="g g-Whitespace">    </span><span class="mi">494</span> <span class="n">coords</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">_dot_ndarray_coo_type_sparse</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">dtype</span><span class="p">)(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">out_shape</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/numba/core/dispatcher.py:376,</span> in <span class="ni">_DispatcherBase._compile_for_args</span><span class="nt">(self, *args, **kws)</span>
+<span class="g g-Whitespace">    </span><span class="mi">374</span> <span class="n">return_val</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">375</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">376</span>     <span class="n">return_val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">argtypes</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">377</span> <span class="k">except</span> <span class="n">errors</span><span class="o">.</span><span class="n">ForceLiteralArg</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span>     <span class="c1"># Received request for compiler re-entry with the list of arguments</span>
+<span class="g g-Whitespace">    </span><span class="mi">379</span>     <span class="c1"># indicated by e.requested_args.</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span>     <span class="c1"># First, check if any of these args are already Literal-ized</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span>     <span class="n">already_lit_pos</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">e</span><span class="o">.</span><span class="n">requested_args</span>
+<span class="g g-Whitespace">    </span><span class="mi">382</span>                        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">types</span><span class="o">.</span><span class="n">Literal</span><span class="p">)]</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/numba/core/dispatcher.py:908,</span> in <span class="ni">Dispatcher.compile</span><span class="nt">(self, sig)</span>
+<span class="g g-Whitespace">    </span><span class="mi">906</span> <span class="k">with</span> <span class="n">ev</span><span class="o">.</span><span class="n">trigger_event</span><span class="p">(</span><span class="s2">&quot;numba:compile&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">ev_details</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">907</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">908</span>         <span class="n">cres</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiler</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">909</span>     <span class="k">except</span> <span class="n">errors</span><span class="o">.</span><span class="n">ForceLiteralArg</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">910</span>         <span class="k">def</span><span class="w"> </span><span class="nf">folded</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kws</span><span class="p">):</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/numba/core/dispatcher.py:80,</span> in <span class="ni">_FunctionCompiler.compile</span><span class="nt">(self, args, return_type)</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span> <span class="k">def</span><span class="w"> </span><span class="nf">compile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">80</span>     <span class="n">status</span><span class="p">,</span> <span class="n">retval</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compile_cached</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span>     <span class="k">if</span> <span class="n">status</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span>         <span class="k">return</span> <span class="n">retval</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/numba/core/dispatcher.py:94,</span> in <span class="ni">_FunctionCompiler._compile_cached</span><span class="nt">(self, args, return_type)</span>
+<span class="g g-Whitespace">     </span><span class="mi">91</span>     <span class="k">pass</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">94</span>     <span class="n">retval</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compile_core</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span> <span class="k">except</span> <span class="n">errors</span><span class="o">.</span><span class="n">TypingError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_failed_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/numba/core/dispatcher.py:107,</span> in <span class="ni">_FunctionCompiler._compile_core</span><span class="nt">(self, args, return_type)</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span> <span class="n">flags</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_customize_flags</span><span class="p">(</span><span class="n">flags</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span> <span class="n">impl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_implementation</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="p">{})</span>
+<span class="ne">--&gt; </span><span class="mi">107</span> <span class="n">cres</span> <span class="o">=</span> <span class="n">compiler</span><span class="o">.</span><span class="n">compile_extra</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">targetdescr</span><span class="o">.</span><span class="n">typing_context</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span>                               <span class="bp">self</span><span class="o">.</span><span class="n">targetdescr</span><span class="o">.</span><span class="n">target_context</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span>                               <span class="n">impl</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span>                               <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="o">=</span><span class="n">return_type</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span>                               <span class="n">flags</span><span class="o">=</span><span class="n">flags</span><span class="p">,</span> <span class="nb">locals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">locals</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span>                               <span class="n">pipeline_class</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pipeline_class</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="c1"># Check typing error if object mode is used</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span> <span class="k">if</span> <span class="n">cres</span><span class="o">.</span><span class="n">typing_error</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">flags</span><span class="o">.</span><span class="n">enable_pyobject</span><span class="p">:</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/numba/core/compiler.py:737,</span> in <span class="ni">compile_extra</span><span class="nt">(typingctx, targetctx, func, args, return_type, flags, locals, library, pipeline_class)</span>
+<span class="g g-Whitespace">    </span><span class="mi">713</span> <span class="k">def</span><span class="w"> </span><span class="nf">compile_extra</span><span class="p">(</span><span class="n">typingctx</span><span class="p">,</span> <span class="n">targetctx</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">714</span>                   <span class="nb">locals</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pipeline_class</span><span class="o">=</span><span class="n">Compiler</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">715</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Compiler entry point</span>
+<span class="g g-Whitespace">    </span><span class="mi">716</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">717</span><span class="sd">     Parameter</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">735</span><span class="sd">         compiler pipeline</span>
+<span class="g g-Whitespace">    </span><span class="mi">736</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">737</span>     <span class="n">pipeline</span> <span class="o">=</span> <span class="n">pipeline_class</span><span class="p">(</span><span class="n">typingctx</span><span class="p">,</span> <span class="n">targetctx</span><span class="p">,</span> <span class="n">library</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">738</span>                               <span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="nb">locals</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">739</span>     <span class="k">return</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">compile_extra</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/numba/core/compiler.py:395,</span> in <span class="ni">CompilerBase.__init__</span><span class="nt">(self, typingctx, targetctx, library, args, return_type, flags, locals)</span>
+<span class="g g-Whitespace">    </span><span class="mi">391</span> <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">typingctx</span><span class="p">,</span> <span class="n">targetctx</span><span class="p">,</span> <span class="n">library</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">392</span>              <span class="nb">locals</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">393</span>     <span class="c1"># Make sure the environment is reloaded</span>
+<span class="g g-Whitespace">    </span><span class="mi">394</span>     <span class="n">config</span><span class="o">.</span><span class="n">reload_config</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">395</span>     <span class="n">typingctx</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">396</span>     <span class="n">targetctx</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">398</span>     <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">StateDict</span><span class="p">()</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/numba/core/typing/context.py:239,</span> in <span class="ni">BaseContext.refresh</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_additional_registries</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">238</span> <span class="c1"># Some extensions may have augmented the builtin registry</span>
+<span class="ne">--&gt; </span><span class="mi">239</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_builtins</span><span class="p">()</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/numba/core/typing/context.py:488,</span> in <span class="ni">BaseContext._load_builtins</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">485</span> <span class="kn">from</span><span class="w"> </span><span class="nn">numba.core.typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">ctypes_utils</span><span class="p">,</span> <span class="n">bufproto</span>           <span class="c1"># noqa: F401, E501</span>
+<span class="g g-Whitespace">    </span><span class="mi">486</span> <span class="kn">from</span><span class="w"> </span><span class="nn">numba.core.unsafe</span><span class="w"> </span><span class="kn">import</span> <span class="n">eh</span>                    <span class="c1"># noqa: F401</span>
+<span class="ne">--&gt; </span><span class="mi">488</span> <span class="bp">self</span><span class="o">.</span><span class="n">install_registry</span><span class="p">(</span><span class="n">templates</span><span class="o">.</span><span class="n">builtin_registry</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/numba/core/typing/context.py:552,</span> in <span class="ni">BaseContext.install_registry</span><span class="nt">(self, registry)</span>
+<span class="g g-Whitespace">    </span><span class="mi">550</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">is_for_this_target</span><span class="p">(</span><span class="n">ftcls</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">551</span>         <span class="k">continue</span>
+<span class="ne">--&gt; </span><span class="mi">552</span>     <span class="bp">self</span><span class="o">.</span><span class="n">insert_attributes</span><span class="p">(</span><span class="n">ftcls</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">553</span> <span class="k">for</span> <span class="n">gv</span><span class="p">,</span> <span class="n">gty</span> <span class="ow">in</span> <span class="n">loader</span><span class="o">.</span><span class="n">new_registrations</span><span class="p">(</span><span class="s1">&#39;globals&#39;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">554</span>     <span class="n">existing</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lookup_global</span><span class="p">(</span><span class="n">gv</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/numba/core/typing/templates.py:1057,</span> in <span class="ni">_OverloadAttributeTemplate.__init__</span><span class="nt">(self, context)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1055</span> <span class="nb">super</span><span class="p">(</span><span class="n">_OverloadAttributeTemplate</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1056</span> <span class="bp">self</span><span class="o">.</span><span class="n">context</span> <span class="o">=</span> <span class="n">context</span>
+<span class="ne">-&gt; </span><span class="mi">1057</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_once</span><span class="p">()</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/numba/core/typing/templates.py:1106,</span> in <span class="ni">_OverloadMethodTemplate._init_once</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1101</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1102</span><span class="sd"> Overriding parent definition</span>
+<span class="g g-Whitespace">   </span><span class="mi">1103</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1104</span> <span class="n">attr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_attr</span>
+<span class="ne">-&gt; </span><span class="mi">1106</span> <span class="n">registry</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_target_registry</span><span class="p">(</span><span class="s1">&#39;method&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1108</span> <span class="nd">@registry</span><span class="o">.</span><span class="n">lower</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">attr</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">VarArg</span><span class="p">(</span><span class="n">types</span><span class="o">.</span><span class="n">Any</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1109</span> <span class="k">def</span><span class="w"> </span><span class="nf">method_impl</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">builder</span><span class="p">,</span> <span class="n">sig</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1110</span>     <span class="n">typ</span> <span class="o">=</span> <span class="n">sig</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/numba/core/typing/templates.py:947,</span> in <span class="ni">_TemplateTargetHelperMixin._get_target_registry</span><span class="nt">(self, reason)</span>
+<span class="g g-Whitespace">    </span><span class="mi">924</span> <span class="n">tgtctx</span> <span class="o">=</span> <span class="n">disp</span><span class="o">.</span><span class="n">targetdescr</span><span class="o">.</span><span class="n">target_context</span>
+<span class="g g-Whitespace">    </span><span class="mi">925</span> <span class="c1"># This is all workarounds...</span>
+<span class="g g-Whitespace">    </span><span class="mi">926</span> <span class="c1"># The issue is that whilst targets shouldn&#39;t care about which registry</span>
+<span class="g g-Whitespace">    </span><span class="mi">927</span> <span class="c1"># in which to register lowering implementations, the CUDA target</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">945</span> <span class="c1"># In case the target has swapped, e.g. cuda borrowing cpu, refresh to</span>
+<span class="g g-Whitespace">    </span><span class="mi">946</span> <span class="c1"># populate.</span>
+<span class="ne">--&gt; </span><span class="mi">947</span> <span class="n">tgtctx</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">948</span> <span class="k">if</span> <span class="n">builtin_registry</span> <span class="ow">in</span> <span class="n">tgtctx</span><span class="o">.</span><span class="n">_registries</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">949</span>     <span class="n">reg</span> <span class="o">=</span> <span class="n">builtin_registry</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/numba/core/base.py:267,</span> in <span class="ni">BaseContext.refresh</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">262</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">263</span><span class="sd"> Refresh context with new declarations from known registries.</span>
+<span class="g g-Whitespace">    </span><span class="mi">264</span><span class="sd"> Useful for third-party extensions.</span>
+<span class="g g-Whitespace">    </span><span class="mi">265</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span> <span class="c1"># load target specific registries</span>
+<span class="ne">--&gt; </span><span class="mi">267</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_additional_registries</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span> <span class="c1"># Populate the builtin registry, this has to happen after loading</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span> <span class="c1"># additional registries as some of the &quot;additional&quot; registries write</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="c1"># their implementations into the builtin_registry and would be missed if</span>
+<span class="g g-Whitespace">    </span><span class="mi">272</span> <span class="c1"># this ran first.</span>
+<span class="g g-Whitespace">    </span><span class="mi">273</span> <span class="bp">self</span><span class="o">.</span><span class="n">install_registry</span><span class="p">(</span><span class="n">builtin_registry</span><span class="p">)</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/numba/core/cpu.py:74,</span> in <span class="ni">CPUContext.load_additional_registries</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span> <span class="c1"># Add implementations that work via import</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="kn">from</span><span class="w"> </span><span class="nn">numba.cpython</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">builtins</span><span class="p">,</span> <span class="n">charseq</span><span class="p">,</span> <span class="n">enumimpl</span><span class="p">,</span> <span class="c1"># noqa F401</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>                            <span class="n">hashing</span><span class="p">,</span> <span class="n">heapq</span><span class="p">,</span> <span class="n">iterators</span><span class="p">,</span> <span class="c1"># noqa F401</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span>                            <span class="n">listobj</span><span class="p">,</span> <span class="n">numbers</span><span class="p">,</span> <span class="n">rangeobj</span><span class="p">,</span> <span class="c1"># noqa F401</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span>                            <span class="n">setobj</span><span class="p">,</span> <span class="n">slicing</span><span class="p">,</span> <span class="n">tupleobj</span><span class="p">,</span> <span class="c1"># noqa F401</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span>                            <span class="n">unicode</span><span class="p">,)</span> <span class="c1"># noqa F401</span>
+<span class="ne">---&gt; </span><span class="mi">74</span> <span class="kn">from</span><span class="w"> </span><span class="nn">numba.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">optional</span><span class="p">,</span> <span class="n">inline_closurecall</span> <span class="c1"># noqa F401</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span> <span class="kn">from</span><span class="w"> </span><span class="nn">numba.misc</span><span class="w"> </span><span class="kn">import</span> <span class="n">gdb_hook</span><span class="p">,</span> <span class="n">literal</span> <span class="c1"># noqa F401</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span> <span class="kn">from</span><span class="w"> </span><span class="nn">numba.np</span><span class="w"> </span><span class="kn">import</span> <span class="n">linalg</span><span class="p">,</span> <span class="n">arraymath</span><span class="p">,</span> <span class="n">arrayobj</span> <span class="c1"># noqa F401</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">miniconda</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">CrocoDash</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.11</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">numba</span><span class="o">/</span><span class="n">core</span><span class="o">/</span><span class="n">inline_closurecall</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">38</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">36</span> <span class="kn">from</span><span class="w"> </span><span class="nn">numba.cpython.listobj</span><span class="w"> </span><span class="kn">import</span> <span class="n">ListIterInstance</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="kn">from</span><span class="w"> </span><span class="nn">numba.cpython.rangeobj</span><span class="w"> </span><span class="kn">import</span> <span class="n">range_impl_map</span>
+<span class="ne">---&gt; </span><span class="mi">38</span> <span class="kn">from</span><span class="w"> </span><span class="nn">numba.np.arrayobj</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_array</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="kn">from</span><span class="w"> </span><span class="nn">numba.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">postproc</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="kn">from</span><span class="w"> </span><span class="nn">numba.np.unsafe.ndarray</span><span class="w"> </span><span class="kn">import</span> <span class="n">empty_inferred</span> <span class="k">as</span> <span class="n">unsafe_empty_inferred</span>
+
+<span class="n">File</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">miniconda</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">CrocoDash</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.11</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">numba</span><span class="o">/</span><span class="n">np</span><span class="o">/</span><span class="n">arrayobj</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">6369</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">   </span><span class="mi">6364</span>             <span class="k">return</span> <span class="n">context</span><span class="o">.</span><span class="n">compile_internal</span><span class="p">(</span><span class="n">builder</span><span class="p">,</span> <span class="n">np_vstack_impl</span><span class="p">,</span> <span class="n">sig</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6366</span>     <span class="k">return</span> <span class="n">sig</span><span class="p">,</span> <span class="n">codegen</span>
+<span class="ne">-&gt; </span><span class="mi">6369</span> <span class="nd">@overload</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6370</span> <span class="k">def</span><span class="w"> </span><span class="nf">impl_np_dstack</span><span class="p">(</span><span class="n">tup</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">6371</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tup</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">BaseTuple</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">6372</span>         <span class="k">def</span><span class="w"> </span><span class="nf">impl</span><span class="p">(</span><span class="n">tup</span><span class="p">):</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/numba/core/extending.py:138,</span> in <span class="ni">overload.&lt;locals&gt;.decorate</span><span class="nt">(overload_func)</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span> <span class="k">def</span><span class="w"> </span><span class="nf">decorate</span><span class="p">(</span><span class="n">overload_func</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">138</span>     <span class="n">template</span> <span class="o">=</span> <span class="n">make_overload_template</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">overload_func</span><span class="p">,</span> <span class="n">opts</span><span class="p">,</span> <span class="n">strict</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span>                                       <span class="n">inline</span><span class="p">,</span> <span class="n">prefer_literal</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span>     <span class="n">infer</span><span class="p">(</span><span class="n">template</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span>     <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+
+<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/numba/core/typing/templates.py:901,</span> in <span class="ni">make_overload_template</span><span class="nt">(func, overload_func, jit_options, strict, inline, prefer_literal, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">895</span> <span class="n">base</span> <span class="o">=</span> <span class="n">_OverloadFunctionTemplate</span>
+<span class="g g-Whitespace">    </span><span class="mi">896</span> <span class="n">dct</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">func</span><span class="p">,</span> <span class="n">_overload_func</span><span class="o">=</span><span class="nb">staticmethod</span><span class="p">(</span><span class="n">overload_func</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">897</span>            <span class="n">_impl_cache</span><span class="o">=</span><span class="p">{},</span> <span class="n">_compiled_overloads</span><span class="o">=</span><span class="p">{},</span> <span class="n">_jit_options</span><span class="o">=</span><span class="n">jit_options</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">898</span>            <span class="n">_strict</span><span class="o">=</span><span class="n">strict</span><span class="p">,</span> <span class="n">_inline</span><span class="o">=</span><span class="nb">staticmethod</span><span class="p">(</span><span class="n">InlineOptions</span><span class="p">(</span><span class="n">inline</span><span class="p">)),</span>
+<span class="g g-Whitespace">    </span><span class="mi">899</span>            <span class="n">_inline_overloads</span><span class="o">=</span><span class="p">{},</span> <span class="n">prefer_literal</span><span class="o">=</span><span class="n">prefer_literal</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">900</span>            <span class="n">metadata</span><span class="o">=</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">901</span> <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="n">base</span><span class="p">)(</span><span class="n">name</span><span class="p">,</span> <span class="p">(</span><span class="n">base</span><span class="p">,),</span> <span class="n">dct</span><span class="p">)</span>
+
+<span class="nn">File &lt;frozen abc&gt;:106,</span> in <span class="ni">__new__</span><span class="nt">(mcls, name, bases, namespace, **kwargs)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -609,12 +945,6 @@ Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Fill
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topo</span><span class="o">.</span><span class="n">depth</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f1f9f000810&gt;
-</pre></div>
-</div>
-<img alt="../../_images/f00b94dab951e9d8d798f44de532dd6709e2aa479554b7e01358c2d573ffcf80.png" src="../../_images/f00b94dab951e9d8d798f44de532dd6709e2aa479554b7e01358c2d573ffcf80.png" />
 </div>
 </div>
 <p>Run the topo-editor below to configure your bathymetry!</p>
@@ -627,8 +957,6 @@ Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Fill
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "c3f396312e0d46b7b3b131bf8fc0e85e"}</script></div>
 </div>
 </section>
 <section id="step-1-3-vertical-grid">
@@ -652,25 +980,6 @@ Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Fill
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[  6.95095642   6.99486359   7.04685819   7.10842131   7.18130184
-   7.26756348   7.36963949   7.49039614   7.63320597   7.80203196
-   8.00152344   8.23712473   8.51519675   8.84315151   9.22959827
-   9.68449896  10.21932835  10.84723189  11.58317051  12.44403732
-  13.44872526  14.61811846  15.9749729   17.54364506  19.34962195
-  21.41880423  23.77649924  26.44609518  29.44741643  32.79480341
-  36.49501977  40.54515875  44.93078801  49.62462077  54.58600872
-  59.76150162  65.08660134  70.48866681  75.89073227  81.21583199
-  86.39132489  91.35271284  96.0465456  100.43217487 104.48231384
- 108.1825302  111.52991718 114.53123843 117.20083437 119.55852938
- 121.62771167 123.43368855 125.00236071 126.35921515 127.52860835
- 128.53329629 129.3941631  130.13010173 130.75800526 131.29283465
- 131.74773534 132.1341821  132.46213686 132.74020888 132.97581017
- 133.17530165 133.34412764 133.48693748 133.60769412 133.70977013
- 133.79603177 133.8689123  133.93047542 133.98247002 134.02637719]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -687,8 +996,6 @@ Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Fill
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "bea00ccbb7cc40f7b0977a43546766d2"}</script></div>
 </div>
 </section>
 </section>
@@ -731,11 +1038,6 @@ Below is an example setup:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/CrocoGallery/CrocoGallery/CESM/ /home/runner/input/antarctica-tutorial /home/runner/cases/antarctica-tutorial
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="step-2-2-create-the-case">
@@ -759,36 +1061,6 @@ The <code class="docutils literal notranslate"><span class="pre">caseroot</span>
     <span class="n">machine</span> <span class="o">=</span> <span class="s2">&quot;derecho&quot;</span><span class="p">,</span> <span class="c1"># And this</span>
     <span class="n">compset</span> <span class="o">=</span> <span class="s2">&quot;1850_DATM%JRA_SLND_CICE_MOM6_SROF_SGLC_SWAV&quot;</span><span class="p">,</span> 
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:  csp_solver:CspSolver initialized.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">Creating case...</span>
-
-• Updating ccs_config/modelgrid_aliases_nuopc.xml file to include the new resolution &quot;antarctica-tutorial&quot; consisting of the following component grids.
- atm grid: &quot;TL319&quot;, lnd grid: &quot;TL319&quot;, ocn grid: &quot;antarctica2&quot;.
-
-• Updating ccs_config/component_grids_nuopc.xml file to include newly generated ocean grid &quot;antarctica2&quot; with the following properties:
- nx: 400, ny: 400. ocean mesh: /home/runner/input/antarctica-tutorial/ocnice/ESMF_mesh_antarctica2_77ce60.nc.
-
-<span class=" -Color -Color-Bold">Running the create_newcase tool with the following command:</span>
-
-/home/runner/work/CrocoGallery/CrocoGallery/CESM/cime/scripts/create_newcase --compset 1850_DATM%JRA_SLND_CICE_MOM6_SROF_SGLC_SWAV --res antarctica-tutorial --case /home/runner/cases/antarctica-tutorial --machine derecho --run-unsupported --project P93300012 --non-local 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Red">Error creating case.</span>
-
-b&quot;ERROR: Undefined env var &#39;SCRATCH&#39;\n&quot;
-
-<span class=" -Color -Color-Bold -Color-Bold-Red">Error creating case.</span>
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">exception</span> <span class="n">has</span> <span class="n">occurred</span><span class="p">,</span> <span class="n">use</span> <span class="o">%</span><span class="k">tb</span> to see the full traceback.
-
-<span class="ne">CIMEError</span>: ERROR: Makes no sense to have empty read-only file: /home/runner/cases/antarctica-tutorial/env_case.xml
 </pre></div>
 </div>
 </div>
