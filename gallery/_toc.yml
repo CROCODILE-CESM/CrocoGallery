@@ -41,7 +41,6 @@ parts:
         - file: notebooks/projects/NWA
         - file: notebooks/projects/CICE
         - file: notebooks/projects/choose_your_own_adventure
-          title: Choose Your Own Adventure
     - caption: Use Cases
       chapters:
       - file: notebooks/use_cases/index 
