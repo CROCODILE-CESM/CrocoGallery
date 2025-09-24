@@ -596,166 +596,9 @@ For details see https://xesmf.readthedocs.io/en/latest/large_problems_on_HPC.htm
 Afterwards, we run the &#39;expt.tidy_bathymetry&#39; method to skip the expensive interpolation step, and finishing metadata, encoding and cleanup.
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">bathymetry_path</span><span class="o">=</span><span class="s1">&#39;s3://crocodile-cesm/CrocoDash/data/gebco/GEBCO_2024.zarr/&#39;</span> <span class="c1"># Swap this!</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">topo</span><span class="o">.</span><span class="n">interpolate_from_file</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">file_path</span> <span class="o">=</span> <span class="n">bathymetry_path</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">longitude_coordinate_name</span><span class="o">=</span><span class="s2">&quot;lon&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">latitude_coordinate_name</span><span class="o">=</span><span class="s2">&quot;lat&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">vertical_coordinate_name</span><span class="o">=</span><span class="s2">&quot;elevation&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">write_to_file</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="p">)</span>
-
-<span class="nn">File ~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/topo.py:44,</span> in <span class="ni">Topo.interpolate_from_file</span><span class="nt">(self, file_path, longitude_coordinate_name, latitude_coordinate_name, vertical_coordinate_name, fill_channels, positive_down, write_to_file)</span>
-<span class="g g-Whitespace">     </span><span class="mi">40</span>     <span class="n">expt</span><span class="o">.</span><span class="n">mom_input_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="nb">print</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">42</span>     <span class="s2">&quot;If bathymetry setup fails, rerun this function with write_to_file = True&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span> <span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">44</span> <span class="bp">self</span><span class="o">.</span><span class="n">_depth</span> <span class="o">=</span> <span class="n">expt</span><span class="o">.</span><span class="n">setup_bathymetry</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="n">bathymetry_path</span><span class="o">=</span><span class="n">file_path</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span>     <span class="n">longitude_coordinate_name</span><span class="o">=</span><span class="n">longitude_coordinate_name</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span>     <span class="n">latitude_coordinate_name</span><span class="o">=</span><span class="n">latitude_coordinate_name</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span>     <span class="n">vertical_coordinate_name</span><span class="o">=</span><span class="n">vertical_coordinate_name</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span>     <span class="n">fill_channels</span><span class="o">=</span><span class="n">fill_channels</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span>     <span class="n">positive_down</span><span class="o">=</span><span class="n">positive_down</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span>     <span class="n">write_to_file</span><span class="o">=</span><span class="n">write_to_file</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span> <span class="p">)</span><span class="o">.</span><span class="n">depth</span>
-
-<span class="nn">File ~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/rm6/regional_mom6/regional_mom6.py:1838,</span> in <span class="ni">experiment.setup_bathymetry</span><span class="nt">(self, bathymetry_path, longitude_coordinate_name, latitude_coordinate_name, vertical_coordinate_name, fill_channels, positive_down, write_to_file, regridding_method)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1825</span> <span class="n">bathymetry_output</span> <span class="o">=</span> <span class="n">bathymetry_output</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1826</span> <span class="nb">print</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1827</span>     <span class="s2">&quot;Begin regridding bathymetry...</span><span class="se">\n\n</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1828</span>     <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;Original bathymetry size: </span><span class="si">{</span><span class="n">bathymetry_output</span><span class="o">.</span><span class="n">nbytes</span><span class="o">/</span><span class="mf">1e6</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> Mb</span><span class="se">\n</span><span class="s2">&quot;</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1836</span>     <span class="o">+</span> <span class="s2">&quot;Afterwards, we run the &#39;expt.tidy_bathymetry&#39; method to skip the expensive interpolation step, and finishing metadata, encoding and cleanup.</span><span class="se">\n\n\n</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1837</span> <span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1838</span> <span class="n">regridder</span> <span class="o">=</span> <span class="n">rgd</span><span class="o">.</span><span class="n">create_regridder</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1839</span>     <span class="n">bathymetry_output</span><span class="p">,</span> <span class="n">empty_bathy</span><span class="p">,</span> <span class="n">locstream_out</span><span class="o">=</span><span class="kc">False</span>
-<span class="g g-Whitespace">   </span><span class="mi">1840</span> <span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1841</span> <span class="n">bathymetry</span> <span class="o">=</span> <span class="n">regridder</span><span class="p">(</span><span class="n">bathymetry_output</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1842</span> <span class="k">if</span> <span class="n">write_to_file</span><span class="p">:</span>
-
-<span class="nn">File ~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/rm6/regional_mom6/regridding.py:252,</span> in <span class="ni">create_regridder</span><span class="nt">(forcing_variables, output_grid, outfile, method, locstream_out, periodic)</span>
-<span class="g g-Whitespace">    </span><span class="mi">249</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">250</span>     <span class="n">reuse_weights</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="ne">--&gt; </span><span class="mi">252</span> <span class="n">regridder</span> <span class="o">=</span> <span class="n">xe</span><span class="o">.</span><span class="n">Regridder</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">253</span>     <span class="n">forcing_variables</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">254</span>     <span class="n">output_grid</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">255</span>     <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">256</span>     <span class="n">locstream_out</span><span class="o">=</span><span class="n">locstream_out</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">257</span>     <span class="n">periodic</span><span class="o">=</span><span class="n">periodic</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">258</span>     <span class="n">filename</span><span class="o">=</span><span class="n">outfile</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">259</span>     <span class="n">reuse_weights</span><span class="o">=</span><span class="n">reuse_weights</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">260</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">262</span> <span class="k">return</span> <span class="n">regridder</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xesmf/frontend.py:926,</span> in <span class="ni">Regridder.__init__</span><span class="nt">(self, ds_in, ds_out, method, locstream_in, locstream_out, periodic, parallel, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">923</span>     <span class="n">grid_out</span><span class="p">,</span> <span class="n">shape_out</span><span class="p">,</span> <span class="n">output_dims</span> <span class="o">=</span> <span class="n">ds_to_ESMFgrid</span><span class="p">(</span><span class="n">ds_out</span><span class="p">,</span> <span class="n">need_bounds</span><span class="o">=</span><span class="n">need_bounds</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">925</span> <span class="c1"># Create the BaseRegridder</span>
-<span class="ne">--&gt; </span><span class="mi">926</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">927</span>     <span class="n">grid_in</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">928</span>     <span class="n">grid_out</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">929</span>     <span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">930</span>     <span class="n">input_dims</span><span class="o">=</span><span class="n">input_dims</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">931</span>     <span class="n">output_dims</span><span class="o">=</span><span class="n">output_dims</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">932</span>     <span class="n">parallel</span><span class="o">=</span><span class="n">parallel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">933</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">934</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">935</span> <span class="c1"># Weights are computed, we do not need the grids anymore</span>
-<span class="g g-Whitespace">    </span><span class="mi">936</span> <span class="n">grid_in</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xesmf/frontend.py:370,</span> in <span class="ni">BaseRegridder.__init__</span><span class="nt">(self, grid_in, grid_out, method, filename, reuse_weights, extrap_method, extrap_dist_exponent, extrap_num_src_pnts, weights, ignore_degenerate, input_dims, output_dims, unmapped_to_nan, parallel)</span>
-<span class="g g-Whitespace">    </span><span class="mi">368</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">parallel</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">369</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">reuse_weights</span> <span class="ow">and</span> <span class="n">weights</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">370</span>         <span class="n">weights</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compute_weights</span><span class="p">(</span><span class="n">grid_in</span><span class="p">,</span> <span class="n">grid_out</span><span class="p">)</span>  <span class="c1"># Dictionary of weights</span>
-<span class="g g-Whitespace">    </span><span class="mi">371</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">372</span>         <span class="n">weights</span> <span class="o">=</span> <span class="n">filename</span> <span class="k">if</span> <span class="n">filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">weights</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xesmf/frontend.py:437,</span> in <span class="ni">BaseRegridder._compute_weights</span><span class="nt">(self, grid_in, grid_out)</span>
-<span class="g g-Whitespace">    </span><span class="mi">436</span> <span class="k">def</span><span class="w"> </span><span class="nf">_compute_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid_in</span><span class="p">,</span> <span class="n">grid_out</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">437</span>     <span class="n">regrid</span> <span class="o">=</span> <span class="n">esmf_regrid_build</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">438</span>         <span class="n">grid_in</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">439</span>         <span class="n">grid_out</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">440</span>         <span class="bp">self</span><span class="o">.</span><span class="n">method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">441</span>         <span class="n">extrap_method</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">extrap_method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">442</span>         <span class="n">extrap_dist_exponent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">extrap_dist_exponent</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">443</span>         <span class="n">extrap_num_src_pnts</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">extrap_num_src_pnts</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">444</span>         <span class="n">ignore_degenerate</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ignore_degenerate</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">445</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">447</span>     <span class="n">w</span> <span class="o">=</span> <span class="n">regrid</span><span class="o">.</span><span class="n">get_weights_dict</span><span class="p">(</span><span class="n">deep_copy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">448</span>     <span class="n">esmf_regrid_finalize</span><span class="p">(</span><span class="n">regrid</span><span class="p">)</span>  <span class="c1"># only need weights, not regrid object</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xesmf/backend.py:484,</span> in <span class="ni">esmf_regrid_build</span><span class="nt">(sourcegrid, destgrid, method, filename, extra_dims, extrap_method, extrap_dist_exponent, extrap_num_src_pnts, ignore_degenerate)</span>
-<span class="g g-Whitespace">    </span><span class="mi">481</span> <span class="k">if</span> <span class="n">allow_masked_values</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">482</span>     <span class="n">kwargs</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">src_mask_values</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dst_mask_values</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-<span class="ne">--&gt; </span><span class="mi">484</span> <span class="n">regrid</span> <span class="o">=</span> <span class="n">ESMF</span><span class="o">.</span><span class="n">Regrid</span><span class="p">(</span><span class="n">sourcefield</span><span class="p">,</span> <span class="n">destfield</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">486</span> <span class="k">return</span> <span class="n">regrid</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/esmpy/util/decorators.py:59,</span> in <span class="ni">initialize.&lt;locals&gt;.new_func</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">56</span> <span class="kn">from</span><span class="w"> </span><span class="nn">esmpy.api</span><span class="w"> </span><span class="kn">import</span> <span class="n">esmpymanager</span>
-<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="n">esmp</span> <span class="o">=</span> <span class="n">esmpymanager</span><span class="o">.</span><span class="n">Manager</span><span class="p">(</span><span class="n">debug</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">59</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/esmpy/api/regrid.py:179,</span> in <span class="ni">Regrid.__init__</span><span class="nt">(self, srcfield, dstfield, filename, rh_filename, src_mask_values, dst_mask_values, regrid_method, pole_method, regrid_pole_npoints, line_type, norm_type, extrap_method, extrap_num_src_pnts, extrap_dist_exponent, extrap_num_levels, unmapped_action, ignore_degenerate, create_rh, filemode, src_file, dst_file, src_file_type, dst_file_type, factors, large_file, src_frac_field, dst_frac_field)</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span>     <span class="n">fil</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span>     <span class="n">num_factors</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">179</span> <span class="bp">self</span><span class="o">.</span><span class="n">_routehandle</span> <span class="o">=</span> <span class="n">ESMP_FieldRegridStore</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span>     <span class="n">srcfield</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span>     <span class="n">dstfield</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">182</span>     <span class="n">srcMaskValues</span><span class="o">=</span><span class="n">src_mask_values</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span>     <span class="n">dstMaskValues</span><span class="o">=</span><span class="n">dst_mask_values</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">184</span>     <span class="n">regridmethod</span><span class="o">=</span><span class="n">regrid_method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span>     <span class="n">polemethod</span><span class="o">=</span><span class="n">pole_method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span>     <span class="n">regridPoleNPnts</span><span class="o">=</span><span class="n">regrid_pole_npoints</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="n">lineType</span><span class="o">=</span><span class="n">line_type</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">188</span>     <span class="n">normType</span><span class="o">=</span><span class="n">norm_type</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">189</span>     <span class="n">extrapMethod</span><span class="o">=</span><span class="n">extrap_method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">190</span>     <span class="n">extrapNumSrcPnts</span><span class="o">=</span><span class="n">extrap_num_src_pnts</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">191</span>     <span class="n">extrapDistExponent</span><span class="o">=</span><span class="n">extrap_dist_exponent</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">192</span>     <span class="n">extrapNumLevels</span><span class="o">=</span><span class="n">extrap_num_levels</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">193</span>     <span class="n">unmappedaction</span><span class="o">=</span><span class="n">unmapped_action</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">194</span>     <span class="n">ignoreDegenerate</span><span class="o">=</span><span class="n">ignore_degenerate</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">195</span>     <span class="n">factorList</span><span class="o">=</span><span class="n">fl</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">196</span>     <span class="n">factorIndexList</span><span class="o">=</span><span class="n">fil</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">197</span>     <span class="n">numFactors</span><span class="o">=</span><span class="n">num_factors</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">198</span>     <span class="n">srcFracField</span><span class="o">=</span><span class="n">src_frac_field</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">199</span>     <span class="n">dstFracField</span><span class="o">=</span><span class="n">dst_frac_field</span>
-<span class="g g-Whitespace">    </span><span class="mi">200</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">202</span> <span class="c1"># If we are returning factors, store them and cast/convert from</span>
-<span class="g g-Whitespace">    </span><span class="mi">203</span> <span class="c1"># ctypes</span>
-<span class="g g-Whitespace">    </span><span class="mi">204</span> <span class="k">if</span> <span class="n">factors</span><span class="p">:</span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/esmpy/interface/cbindings.py:2111,</span> in <span class="ni">ESMP_FieldRegridStore</span><span class="nt">(srcField, dstField, srcMaskValues, dstMaskValues, regridmethod, polemethod, regridPoleNPnts, lineType, normType, extrapMethod, extrapNumSrcPnts, extrapDistExponent, extrapNumLevels, unmappedaction, ignoreDegenerate, factorList, factorIndexList, numFactors, srcFracField, dstFracField)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2108</span>     <span class="n">arg_factorList</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">byref</span><span class="p">(</span><span class="n">factorList</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2109</span>     <span class="n">arg_factorIndexList</span> <span class="o">=</span> <span class="n">ct</span><span class="o">.</span><span class="n">byref</span><span class="p">(</span><span class="n">factorIndexList</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">2111</span> <span class="n">rc</span> <span class="o">=</span> <span class="n">_ESMF</span><span class="o">.</span><span class="n">ESMC_FieldRegridStore</span><span class="p">(</span><span class="n">srcField</span><span class="o">.</span><span class="n">struct</span><span class="o">.</span><span class="n">ptr</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2112</span>                                  <span class="n">dstField</span><span class="o">.</span><span class="n">struct</span><span class="o">.</span><span class="n">ptr</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2113</span>                                  <span class="n">srcMaskValues_i</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2114</span>                                  <span class="n">dstMaskValues_i</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2115</span>                                  <span class="n">ct</span><span class="o">.</span><span class="n">byref</span><span class="p">(</span><span class="n">routehandle</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">2116</span>                                  <span class="n">regridmethod</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2117</span>                                  <span class="n">polemethod</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2118</span>                                  <span class="n">regridPoleNPnts_ct</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2119</span>                                  <span class="n">lineType</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2120</span>                                  <span class="n">normType</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2121</span>                                  <span class="n">extrapMethod</span><span class="p">,</span> 
-<span class="g g-Whitespace">   </span><span class="mi">2122</span>                                  <span class="n">extrapNumSrcPnts</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2123</span>                                  <span class="n">extrapDistExponent</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2124</span>                                  <span class="n">extrapNumLevels</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2125</span>                                  <span class="n">unmappedaction</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2126</span>                                  <span class="n">ignoreDegenerate</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2127</span>                                  <span class="n">arg_factorList</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2128</span>                                  <span class="n">arg_factorIndexList</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2129</span>                                  <span class="n">ct</span><span class="o">.</span><span class="n">byref</span><span class="p">(</span><span class="n">numfac</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">2130</span>                                  <span class="n">srcFracField</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2131</span>                                  <span class="n">dstFracField</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2133</span> <span class="n">handle_esmf_error</span><span class="p">(</span><span class="n">rc</span><span class="p">,</span> <span class="s1">&#39;ESMC_FieldRegridStore&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2135</span> <span class="c1"># Assign the outgoing pointer for the factor count if we are returning</span>
-<span class="g g-Whitespace">   </span><span class="mi">2136</span> <span class="c1"># factors.</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Regridding successful! Now calling `tidy_bathymetry` method for some finishing touches...
+setup bathymetry has finished successfully.
+Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Filling in inland lakes and channels... 
 </pre></div>
 </div>
 </div>
@@ -766,6 +609,12 @@ Afterwards, we run the &#39;expt.tidy_bathymetry&#39; method to skip the expensi
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topo</span><span class="o">.</span><span class="n">depth</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f1f9f000810&gt;
+</pre></div>
+</div>
+<img alt="../../_images/f00b94dab951e9d8d798f44de532dd6709e2aa479554b7e01358c2d573ffcf80.png" src="../../_images/f00b94dab951e9d8d798f44de532dd6709e2aa479554b7e01358c2d573ffcf80.png" />
 </div>
 </div>
 <p>Run the topo-editor below to configure your bathymetry!</p>
@@ -778,6 +627,8 @@ Afterwards, we run the &#39;expt.tidy_bathymetry&#39; method to skip the expensi
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "c3f396312e0d46b7b3b131bf8fc0e85e"}</script></div>
 </div>
 </section>
 <section id="step-1-3-vertical-grid">
@@ -801,6 +652,25 @@ Afterwards, we run the &#39;expt.tidy_bathymetry&#39; method to skip the expensi
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[  6.95095642   6.99486359   7.04685819   7.10842131   7.18130184
+   7.26756348   7.36963949   7.49039614   7.63320597   7.80203196
+   8.00152344   8.23712473   8.51519675   8.84315151   9.22959827
+   9.68449896  10.21932835  10.84723189  11.58317051  12.44403732
+  13.44872526  14.61811846  15.9749729   17.54364506  19.34962195
+  21.41880423  23.77649924  26.44609518  29.44741643  32.79480341
+  36.49501977  40.54515875  44.93078801  49.62462077  54.58600872
+  59.76150162  65.08660134  70.48866681  75.89073227  81.21583199
+  86.39132489  91.35271284  96.0465456  100.43217487 104.48231384
+ 108.1825302  111.52991718 114.53123843 117.20083437 119.55852938
+ 121.62771167 123.43368855 125.00236071 126.35921515 127.52860835
+ 128.53329629 129.3941631  130.13010173 130.75800526 131.29283465
+ 131.74773534 132.1341821  132.46213686 132.74020888 132.97581017
+ 133.17530165 133.34412764 133.48693748 133.60769412 133.70977013
+ 133.79603177 133.8689123  133.93047542 133.98247002 134.02637719]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -817,6 +687,8 @@ Afterwards, we run the &#39;expt.tidy_bathymetry&#39; method to skip the expensi
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "bea00ccbb7cc40f7b0977a43546766d2"}</script></div>
 </div>
 </section>
 </section>
@@ -859,6 +731,11 @@ Below is an example setup:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/CrocoGallery/CrocoGallery/CESM/ /home/runner/input/antarctica-tutorial /home/runner/cases/antarctica-tutorial
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="step-2-2-create-the-case">
@@ -882,6 +759,36 @@ The <code class="docutils literal notranslate"><span class="pre">caseroot</span>
     <span class="n">machine</span> <span class="o">=</span> <span class="s2">&quot;derecho&quot;</span><span class="p">,</span> <span class="c1"># And this</span>
     <span class="n">compset</span> <span class="o">=</span> <span class="s2">&quot;1850_DATM%JRA_SLND_CICE_MOM6_SROF_SGLC_SWAV&quot;</span><span class="p">,</span> 
 <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:  csp_solver:CspSolver initialized.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">Creating case...</span>
+
+• Updating ccs_config/modelgrid_aliases_nuopc.xml file to include the new resolution &quot;antarctica-tutorial&quot; consisting of the following component grids.
+ atm grid: &quot;TL319&quot;, lnd grid: &quot;TL319&quot;, ocn grid: &quot;antarctica2&quot;.
+
+• Updating ccs_config/component_grids_nuopc.xml file to include newly generated ocean grid &quot;antarctica2&quot; with the following properties:
+ nx: 400, ny: 400. ocean mesh: /home/runner/input/antarctica-tutorial/ocnice/ESMF_mesh_antarctica2_77ce60.nc.
+
+<span class=" -Color -Color-Bold">Running the create_newcase tool with the following command:</span>
+
+/home/runner/work/CrocoGallery/CrocoGallery/CESM/cime/scripts/create_newcase --compset 1850_DATM%JRA_SLND_CICE_MOM6_SROF_SGLC_SWAV --res antarctica-tutorial --case /home/runner/cases/antarctica-tutorial --machine derecho --run-unsupported --project P93300012 --non-local 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Red">Error creating case.</span>
+
+b&quot;ERROR: Undefined env var &#39;SCRATCH&#39;\n&quot;
+
+<span class=" -Color -Color-Bold -Color-Bold-Red">Error creating case.</span>
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">exception</span> <span class="n">has</span> <span class="n">occurred</span><span class="p">,</span> <span class="n">use</span> <span class="o">%</span><span class="k">tb</span> to see the full traceback.
+
+<span class="ne">CIMEError</span>: ERROR: Makes no sense to have empty read-only file: /home/runner/cases/antarctica-tutorial/env_case.xml
 </pre></div>
 </div>
 </div>
