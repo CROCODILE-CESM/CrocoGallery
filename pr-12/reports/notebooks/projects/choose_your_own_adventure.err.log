@@ -31,14 +31,9 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-bathymetry_path='s3://crocodile-cesm/CrocoDash/data/gebco/GEBCO_2024.zarr/' # Swap this!
-
-topo.interpolate_from_file(
-    file_path = bathymetry_path,
-    longitude_coordinate_name="lon",
-    latitude_coordinate_name="lat",
-    vertical_coordinate_name="elevation",
-    write_to_file = True
+case.configure_forcings(
+    date_range = ["2020-01-01 00:00:00", "2020-01-09 00:00:00"],
+    function_name="get_glorys_data_from_cds_api"
 )
 -------------------
 

@@ -27,18 +27,10 @@ nbclient.exceptions.CellExecutionError: An error occurred while executing the fo
 ------------------
 from CrocoDash.grid import Grid
 
-grid = Grid.subgrid_from_supergrid(
-    path = "s3://crocodile-cesm/CrocoDash/data/grids/ocean_hgrid_trimmed.nc",  # supergrid
-    llc = (5, -99),  # (l)ower (l)eft (c)orner coords
-    urc = (59, -36.),  # (u)pper (r)ight (c)orner coords
-    name = "nwa12"
-)
+grid = Grid.from_supergrid("/glade/derecho/scratch/manishrv/croc_input/gustavo-glorys-1/ocnice/ocean_hgrid.nc")
+
 ------------------
 
------ stderr -----
-syntax error, unexpected WORD_WORD, expecting SCAN_ATTR or SCAN_DATASET or SCAN_ERROR
-context: <?xml^ version="1.0" encoding="UTF-8"?><Error><Code>AccessDenied</Code><Message>Access Denied</Message><RequestId>JHWK05D2CPB7MHY1</RequestId><HostId>uMvwLo8LYP2wX/ly63jU8J1NQIio7ElCXk9/qP5jwXD9exWNA/Je/W4jv992lLx6mLJalSql4b4=</HostId></Error>
-------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mKeyError[0m                                  Traceback (most recent call last)
@@ -52,32 +44,14 @@ File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xar
 [0;32m---> 56[0m     value [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_cache[49m[43m[[49m[43mkey[49m[43m][49m
 [1;32m     57[0m     [38;5;28mself[39m[38;5;241m.[39m_cache[38;5;241m.[39mmove_to_end(key)
 
-[0;31mKeyError[0m: [<class 'netCDF4._netCDF4.Dataset'>, ('s3://crocodile-cesm/CrocoDash/data/grids/ocean_hgrid_trimmed.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '17d47108-e66a-4a46-954d-56c70c4a7114']
+[0;31mKeyError[0m: [<class 'netCDF4._netCDF4.Dataset'>, ('/glade/derecho/scratch/manishrv/croc_input/gustavo-glorys-1/ocnice/ocean_hgrid.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '0288b048-74cd-4644-9c80-bd6a2f186bbd']
 
 During handling of the above exception, another exception occurred:
 
-[0;31mOSError[0m                                   Traceback (most recent call last)
-Input [0;32mIn [1][0m, in [0;36m<cell line: 0>[0;34m()[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Input [0;32mIn [2][0m, in [0;36m<cell line: 0>[0;34m()[0m
 [1;32m      1[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mCrocoDash[39;00m[38;5;21;01m.[39;00m[38;5;21;01mgrid[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Grid
-[0;32m----> 3[0m grid [38;5;241m=[39m [43mGrid[49m[38;5;241;43m.[39;49m[43msubgrid_from_supergrid[49m[43m([49m
-[1;32m      4[0m [43m    [49m[43mpath[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43ms3://crocodile-cesm/CrocoDash/data/grids/ocean_hgrid_trimmed.nc[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m  [49m[38;5;66;43;03m# supergrid[39;49;00m
-[1;32m      5[0m [43m    [49m[43mllc[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43m([49m[38;5;241;43m5[39;49m[43m,[49m[43m [49m[38;5;241;43m-[39;49m[38;5;241;43m99[39;49m[43m)[49m[43m,[49m[43m  [49m[38;5;66;43;03m# (l)ower (l)eft (c)orner coords[39;49;00m
-[1;32m      6[0m [43m    [49m[43murc[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43m([49m[38;5;241;43m59[39;49m[43m,[49m[43m [49m[38;5;241;43m-[39;49m[38;5;241;43m36.[39;49m[43m)[49m[43m,[49m[43m  [49m[38;5;66;43;03m# (u)pper (r)ight (c)orner coords[39;49;00m
-[1;32m      7[0m [43m    [49m[43mname[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mnwa12[39;49m[38;5;124;43m"[39;49m
-[1;32m      8[0m [43m)[49m
-
-File [0;32m~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/mom6_bathy/grid.py:433[0m, in [0;36mGrid.subgrid_from_supergrid[0;34m(cls, path, llc, urc, name)[0m
-[1;32m    412[0m [38;5;129m@classmethod[39m
-[1;32m    413[0m [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21msubgrid_from_supergrid[39m([38;5;28mcls[39m, path: [38;5;28mstr[39m, llc: [38;5;28mtuple[39m[[38;5;28mfloat[39m, [38;5;28mfloat[39m], urc: [38;5;28mtuple[39m[[38;5;28mfloat[39m, [38;5;28mfloat[39m], name: [38;5;28mstr[39m) [38;5;241m-[39m[38;5;241m>[39m [38;5;124m"[39m[38;5;124mGrid[39m[38;5;124m"[39m:
-[1;32m    414[0m [38;5;250m    [39m[38;5;124;03m"""Create a Grid instance from a subset of a supergrid file.[39;00m
-[1;32m    415[0m 
-[1;32m    416[0m [38;5;124;03m    Parameters[39;00m
-[0;32m   (...)[0m
-[1;32m    430[0m [38;5;124;03m        The Grid instance created from the supergrid file.[39;00m
-[1;32m    431[0m [38;5;124;03m    """[39;00m
-[0;32m--> 433[0m     full_grid [38;5;241m=[39m [38;5;28;43mcls[39;49m[38;5;241;43m.[39;49m[43mfrom_supergrid[49m[43m([49m[43mpath[49m[43m)[49m
-[1;32m    435[0m     [38;5;28;01massert[39;00m [38;5;28mlen[39m(llc) [38;5;241m==[39m [38;5;241m2[39m, [38;5;124m"[39m[38;5;124mllc must be a tuple of two floats[39m[38;5;124m"[39m
-[1;32m    436[0m     [38;5;28;01massert[39;00m [38;5;28mlen[39m(urc) [38;5;241m==[39m [38;5;241m2[39m, [38;5;124m"[39m[38;5;124murc must be a tuple of two floats[39m[38;5;124m"[39m
+[0;32m----> 3[0m grid [38;5;241m=[39m [43mGrid[49m[38;5;241;43m.[39;49m[43mfrom_supergrid[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43m/glade/derecho/scratch/manishrv/croc_input/gustavo-glorys-1/ocnice/ocean_hgrid.nc[39;49m[38;5;124;43m"[39;49m[43m)[49m
 
 File [0;32m~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/mom6_bathy/grid.py:377[0m, in [0;36mGrid.from_supergrid[0;34m(cls, path, name)[0m
 [1;32m    360[0m [38;5;250m[39m[38;5;124;03m"""Create a Grid instance from a supergrid file.[39;00m
@@ -191,5 +165,5 @@ File [0;32msrc/netCDF4/_netCDF4.pyx:2469[0m, in [0;36mnetCDF4._netCDF4.Datase
 
 File [0;32msrc/netCDF4/_netCDF4.pyx:2028[0m, in [0;36mnetCDF4._netCDF4._ensure_nc_success[0;34m()[0m
 
-[0;31mOSError[0m: [Errno -78] NetCDF: Authorization failure: 's3://crocodile-cesm/CrocoDash/data/grids/ocean_hgrid_trimmed.nc'
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '/glade/derecho/scratch/manishrv/croc_input/gustavo-glorys-1/ocnice/ocean_hgrid.nc'
 
