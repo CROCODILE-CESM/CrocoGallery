@@ -7,7 +7,7 @@ import argparse
 
 def main(reverse=False):
 
-    with open(Path(__file__).parent / "data_paths.json", "r") as f:
+    with open(Path(__file__).parent / "path_to_datasets.json", "r") as f:
         paths = json.load(f)
     notebooks_path = Path(__file__).parent.parent / "gallery" / "notebooks"
 
