@@ -218,6 +218,21 @@
 </ul>
 </details></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2025 CROCODILE Workshop Projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../projects/NWA.html">NWA</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../projects/CICE.html">CICE-MOM6</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../projects/choose_your_own_adventure.html">Choose your own adventure!</a></li>
+
+
+
+
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Use Cases</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../use_cases/index.html">Development Cases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -227,6 +242,11 @@
 
 
 <li class="toctree-l2"><a class="reference internal" href="../use_cases/three_boundary.html">Setup the NWA12 domain through CrocoDash</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../use_cases/mom6_cice_antarctica.html">Set up a rectangular regional CESM-MOM6-CICE coupled run</a></li>
 
 
 
@@ -436,7 +456,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -452,6 +474,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-after-running-once-use-restart-files-as-initial-condition-for-your-run-for-realiastic-initial-conditions">Optional: After running once, use restart files as initial condition for your run (for realiastic initial conditions)</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -463,6 +493,61 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="run-a-coupled-sea-ice-cice-ocean-mom6-model">
 <h1>Run a coupled sea ice (CICE) &amp; ocean (MOM6) model<a class="headerlink" href="#run-a-coupled-sea-ice-cice-ocean-mom6-model" title="Link to this heading">#</a></h1>
+<p>Change the compset to include CICE!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For example...</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.case</span><span class="w"> </span><span class="kn">import</span> <span class="n">Case</span>
+<span class="n">case</span> <span class="o">=</span> <span class="n">Case</span><span class="p">(</span>
+    <span class="n">cesmroot</span> <span class="o">=</span> <span class="n">cesmroot</span><span class="p">,</span>
+    <span class="n">caseroot</span> <span class="o">=</span> <span class="n">caseroot</span><span class="p">,</span>
+    <span class="n">inputdir</span> <span class="o">=</span> <span class="n">inputdir</span><span class="p">,</span>
+    <span class="n">ocn_grid</span> <span class="o">=</span> <span class="n">grid</span><span class="p">,</span>
+    <span class="n">ocn_vgrid</span> <span class="o">=</span> <span class="n">vgrid</span><span class="p">,</span>
+    <span class="n">ocn_topo</span> <span class="o">=</span> <span class="n">topo</span><span class="p">,</span>
+    <span class="n">project</span> <span class="o">=</span> <span class="s1">&#39;NCGD0011&#39;</span><span class="p">,</span>
+    <span class="n">override</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">machine</span> <span class="o">=</span> <span class="s2">&quot;derecho&quot;</span><span class="p">,</span>
+    <span class="n">compset</span> <span class="o">=</span> <span class="s2">&quot;1850_DATM%JRA_SLND_CICE_MOM6_SROF_SGLC_SWAV&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># For example...</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.case</span><span class="w"> </span><span class="kn">import</span> <span class="n">Case</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">case</span> <span class="o">=</span> <span class="n">Case</span><span class="p">(</span>
+<span class="ne">----&gt; </span><span class="mi">4</span>     <span class="n">cesmroot</span> <span class="o">=</span> <span class="n">cesmroot</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">caseroot</span> <span class="o">=</span> <span class="n">caseroot</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">inputdir</span> <span class="o">=</span> <span class="n">inputdir</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">ocn_grid</span> <span class="o">=</span> <span class="n">grid</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">ocn_vgrid</span> <span class="o">=</span> <span class="n">vgrid</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">ocn_topo</span> <span class="o">=</span> <span class="n">topo</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">project</span> <span class="o">=</span> <span class="s1">&#39;NCGD0011&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">override</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">machine</span> <span class="o">=</span> <span class="s2">&quot;derecho&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">compset</span> <span class="o">=</span> <span class="s2">&quot;1850_DATM%JRA_SLND_CICE_MOM6_SROF_SGLC_SWAV&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;cesmroot&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<section id="optional-after-running-once-use-restart-files-as-initial-condition-for-your-run-for-realiastic-initial-conditions">
+<h2>Optional: After running once, use restart files as initial condition for your run (for realiastic initial conditions)<a class="headerlink" href="#optional-after-running-once-use-restart-files-as-initial-condition-for-your-run-for-realiastic-initial-conditions" title="Link to this heading">#</a></h2>
+<p>In case you want to start the model with a restart file instead of using the generated initial condition, follow the below steps. Note that you have to have finished a run beforehand for the restart files to appear.</p>
+<ol class="arabic simple">
+<li><p>Locate your restart file - they are usually in your previous case’s <code class="docutils literal notranslate"><span class="pre">/archive/rest/&lt;year&gt;</span></code> folder with a <code class="docutils literal notranslate"><span class="pre">.r</span></code> infix, e.g., <code class="docutils literal notranslate"><span class="pre">cice.test.cice.r.1994-01-01-00000.nc</span></code>.
+If you do not know your <code class="docutils literal notranslate"><span class="pre">/archive</span></code> folder location, run <code class="docutils literal notranslate"><span class="pre">./xmlquery</span> <span class="pre">DOUT_S_ROOT</span></code> in your (previous) case folder, which will return a path similar to <code class="docutils literal notranslate"><span class="pre">DOUT_S_ROOT:</span> <span class="pre">&lt;PATH</span> <span class="pre">TO</span> <span class="pre">ARCHIVE&gt;</span></code>.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">cp</span></code> command to copy the file to your current case <code class="docutils literal notranslate"><span class="pre">/run</span></code> directory, e.g., <code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">cice.test.cice.r.1994-01-01-00000.nc</span> <span class="pre">&lt;your_run_dir&gt;</span></code>.</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">user_nl_cice</span></code> in your case directory again and change the <code class="docutils literal notranslate"><span class="pre">ice_ic</span></code> variable from <code class="docutils literal notranslate"><span class="pre">&quot;UNSET&quot;</span></code> to your file name, e.g., <code class="docutils literal notranslate"><span class="pre">ice_ic=cice.test.cice.r.1994-01-01-00000.nc</span></code></p></li>
+</ol>
+<p>Your file will now be used automatically as the ice initial condition for your next run. Note that <code class="docutils literal notranslate"><span class="pre">.h</span></code> and <code class="docutils literal notranslate"><span class="pre">.h1</span></code> files (i.e. history files) currently <strong>cannot be used</strong> as initial conditions for CICE.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -519,6 +604,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-after-running-once-use-restart-files-as-initial-condition-for-your-run-for-realiastic-initial-conditions">Optional: After running once, use restart files as initial condition for your run (for realiastic initial conditions)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

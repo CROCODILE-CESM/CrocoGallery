@@ -218,6 +218,21 @@
 </ul>
 </details></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2025 CROCODILE Workshop Projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../projects/NWA.html">NWA</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../projects/CICE.html">CICE-MOM6</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../projects/choose_your_own_adventure.html">Choose your own adventure!</a></li>
+
+
+
+
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Use Cases</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Development Cases</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -227,6 +242,11 @@
 
 
 <li class="toctree-l2"><a class="reference internal" href="three_boundary.html">Setup the NWA12 domain through CrocoDash</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="mom6_cice_antarctica.html">Set up a rectangular regional CESM-MOM6-CICE coupled run</a></li>
 
 
 
@@ -520,7 +540,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>syntax error, unexpected WORD_WORD, expecting SCAN_ATTR or SCAN_DATASET or SCAN_ERROR
-context: &lt;?xml^ version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Error&gt;&lt;Code&gt;AccessDenied&lt;/Code&gt;&lt;Message&gt;Access Denied&lt;/Message&gt;&lt;RequestId&gt;GZ5E4C5SJ4WRK4BG&lt;/RequestId&gt;&lt;HostId&gt;fUJiq/7W1DmuzeqtZG+O07TsQoTzUzHs8A/Gj5bibGsbwaKBE/2BGmHErwkKf9700lnm8z58iYQ=&lt;/HostId&gt;&lt;/Error&gt;
+context: &lt;?xml^ version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Error&gt;&lt;Code&gt;AccessDenied&lt;/Code&gt;&lt;Message&gt;Access Denied&lt;/Message&gt;&lt;RequestId&gt;XXMTEYE8V7ZSK2XK&lt;/RequestId&gt;&lt;HostId&gt;UfQ5Gdzb49fIqBQw84XO8HU+n5Q9RzyPTFO0Zy6YR2KBve/G2HrU9pIuRLejFMdzAm9ZmXyb+Vw=&lt;/HostId&gt;&lt;/Error&gt;
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -535,7 +555,7 @@ context: &lt;?xml^ version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Er
 <span class="ne">---&gt; </span><span class="mi">56</span>     <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">57</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="o">.</span><span class="n">move_to_end</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
-<span class="ne">KeyError</span>: [&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;, (&#39;s3://crocodile-cesm/CrocoDash/data/grids/ocean_hgrid_221123.nc&#39;,), &#39;r&#39;, ((&#39;clobber&#39;, True), (&#39;diskless&#39;, False), (&#39;format&#39;, &#39;NETCDF4&#39;), (&#39;persist&#39;, False)), &#39;6eccf1ff-c2b4-4516-abc1-970e9f1ae953&#39;]
+<span class="ne">KeyError</span>: [&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;, (&#39;s3://crocodile-cesm/CrocoDash/data/grids/ocean_hgrid_221123.nc&#39;,), &#39;r&#39;, ((&#39;clobber&#39;, True), (&#39;diskless&#39;, False), (&#39;format&#39;, &#39;NETCDF4&#39;), (&#39;persist&#39;, False)), &#39;968c6d2b-c11c-43a8-8d60-190646683c3d&#39;]
 
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 

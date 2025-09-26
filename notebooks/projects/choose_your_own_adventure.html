@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Set up a rectangular regional CESM-MOM6 run &#8212; CrocoDash Gallery</title>
+    <title>Choose your own adventure! &#8212; CrocoDash Gallery</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tutorials/minimal_demo_rect';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/projects/choose_your_own_adventure';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Input Parameters" href="input_params.html" />
-    <link rel="prev" title="CESM Setup" href="cesm_setup.html" />
+    <link rel="next" title="Use Cases" href="../use_cases/index.html" />
+    <link rel="prev" title="CICE-MOM6" href="CICE.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,15 +180,15 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="walkthrough.html">Basic Tutorial</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="cesm_setup.html">CESM Setup</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Set up a rectangular regional CESM-MOM6 run</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/walkthrough.html">Basic Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/cesm_setup.html">CESM Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/minimal_demo_rect.html">Set up a rectangular regional CESM-MOM6 run</a></li>
 
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="input_params.html">Input Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/input_params.html">Input Parameters</a></li>
 </ul>
 </details></li>
 </ul>
@@ -219,15 +219,15 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2025 CROCODILE Workshop Projects</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../projects/NWA.html">NWA</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="NWA.html">NWA</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../projects/CICE.html">CICE-MOM6</a></li>
-
-
+<li class="toctree-l1"><a class="reference internal" href="CICE.html">CICE-MOM6</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="../projects/choose_your_own_adventure.html">Choose your own adventure!</a></li>
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Choose your own adventure!</a></li>
 
 
 
@@ -307,7 +307,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/CROCODILE-CESM/CrocoGallery/main?urlpath=lab/tree/gallery/notebooks/tutorials/minimal_demo_rect.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/CROCODILE-CESM/CrocoGallery/main?urlpath=lab/tree/gallery/notebooks/projects/choose_your_own_adventure.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -355,7 +355,7 @@
       
       
       
-      <li><a href="https://github.com/CROCODILE-CESM/CrocoGallery/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tutorials/minimal_demo_rect.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/CROCODILE-CESM/CrocoGallery/issues/new?title=Issue%20on%20page%20%2Fnotebooks/projects/choose_your_own_adventure.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -385,7 +385,7 @@
       
       
       
-      <li><a href="../../_sources/notebooks/tutorials/minimal_demo_rect.ipynb" target="_blank"
+      <li><a href="../../_sources/notebooks/projects/choose_your_own_adventure.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -469,7 +469,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Set up a rectangular regional CESM-MOM6 run</h1>
+    <h1>Choose your own adventure!</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -479,7 +479,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Set up a rectangular regional CESM-MOM6 run</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Choose your own adventure!</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#section-1-generate-a-regional-mom6-domain">SECTION 1: Generate a regional MOM6 domain</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-1-horizontal-grid">Step 1.1: Horizontal Grid</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-2-topography">Step 1.2: Topography</a></li>
@@ -509,8 +509,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="set-up-a-rectangular-regional-cesm-mom6-run">
-<h1>Set up a rectangular regional CESM-MOM6 run<a class="headerlink" href="#set-up-a-rectangular-regional-cesm-mom6-run" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="choose-your-own-adventure">
+<h1>Choose your own adventure!<a class="headerlink" href="#choose-your-own-adventure" title="Link to this heading">#</a></h1>
 <p>A typical workflow of utilizing CrocoDash consists of four main steps:</p>
 <ol class="arabic simple">
 <li><p>Generate a regional MOM6 domain.</p></li>
@@ -599,7 +599,7 @@ Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Fill
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f9264974ed0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f8f19bfd5d0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/512e3b4dfe38912c58dd093848bb2dacf023eabcb26d70c2b88f1bf943e94e18.png" src="../../_images/512e3b4dfe38912c58dd093848bb2dacf023eabcb26d70c2b88f1bf943e94e18.png" />
@@ -616,7 +616,7 @@ Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Fill
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "3d2ef27803244955abb5721d2d2f5d47"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "04a2f82db5f74c5c890309ae77c36087"}</script></div>
 </div>
 </section>
 <section id="step-1-3-vertical-grid">
@@ -674,7 +674,7 @@ Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Fill
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "cffc10ae993e4b829cc630758ff961cc"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "bb64ea0247144b6bb674fd04d8770a86"}</script></div>
 </div>
 </section>
 </section>
@@ -741,6 +741,9 @@ The <code class="docutils literal notranslate"><span class="pre">caseroot</span>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ERROR:  cime_interface:DIN_LOC_ROOT doesn&#39;t exist: /home/runner/cesm/inputdata
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:  csp_solver:CspSolver initialized.
 </pre></div>
 </div>
@@ -750,7 +753,7 @@ The <code class="docutils literal notranslate"><span class="pre">caseroot</span>
  atm grid: &quot;TL319&quot;, lnd grid: &quot;TL319&quot;, ocn grid: &quot;panama1&quot;.
 
 • Updating ccs_config/component_grids_nuopc.xml file to include newly generated ocean grid &quot;panama1&quot; with the following properties:
- nx: 100, ny: 100. ocean mesh: /home/runner/croc_input/panama-not/ocnice/ESMF_mesh_panama1_c2f021.nc.
+ nx: 100, ny: 100. ocean mesh: /home/runner/croc_input/panama-not/ocnice/ESMF_mesh_panama1_a90381.nc.
 
 <span class=" -Color -Color-Bold">Running the create_newcase tool with the following command:</span>
 
@@ -782,14 +785,14 @@ cd /home/runner/croc_cases/panama-not
   NIGLOBAL = 100
   NJGLOBAL = 100
   GRID_CONFIG = mosaic
-  GRID_FILE = ocean_hgrid_panama1_c2f021.nc
+  GRID_FILE = ocean_hgrid_panama1_a90381.nc
   TOPO_CONFIG = file
-  TOPO_FILE = ocean_topog_panama1_c2f021.nc
+  TOPO_FILE = ocean_topog_panama1_a90381.nc
   MAXIMUM_DEPTH = 2780.130017656834
   MINIMUM_DEPTH = 9.5
   NK = 75
   COORD_CONFIG = none
-  ALE_COORDINATE_CONFIG = FILE:ocean_vgrid_panama1_c2f021.nc
+  ALE_COORDINATE_CONFIG = FILE:ocean_vgrid_panama1_a90381.nc
   REGRIDDING_COORDINATE_MODE = Z*
 
   ! Timesteps (based on grid resolution)
@@ -825,25 +828,25 @@ cd /home/runner/croc_cases/panama-not
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - 2025-09-26T21:07:11Z - Selected dataset version: &quot;202311&quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - 2025-09-26T21:06:28Z - Selected dataset version: &quot;202311&quot;
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:copernicusmarine:Selected dataset version: &quot;202311&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - 2025-09-26T21:07:11Z - Selected dataset part: &quot;default&quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - 2025-09-26T21:06:28Z - Selected dataset part: &quot;default&quot;
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:copernicusmarine:Selected dataset part: &quot;default&quot;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - 2025-09-26T21:07:20Z - Starting download. Please wait...
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - 2025-09-26T21:06:38Z - Starting download. Please wait...
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:copernicusmarine:Starting download. Please wait...
 </pre></div>
 </div>
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "7b0ea6daa3d347f79b7a28112b30922f"}</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "5da7fa1effa346a8b637fc052b026bbe"}</script><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
 <span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">case</span><span class="o">.</span><span class="n">configure_forcings</span><span class="p">(</span>
@@ -1339,7 +1342,7 @@ Case is ready to be built: /Users/manishrv/croc_cases/panama-1
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks/tutorials"
+            path: "./notebooks/projects"
         },
         predefinedOutput: true
     }
@@ -1357,20 +1360,20 @@ Case is ready to be built: /Users/manishrv/croc_cases/panama-1
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cesm_setup.html"
+       href="CICE.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">CESM Setup</p>
+        <p class="prev-next-title">CICE-MOM6</p>
       </div>
     </a>
     <a class="right-next"
-       href="input_params.html"
+       href="../use_cases/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Input Parameters</p>
+        <p class="prev-next-title">Use Cases</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1390,7 +1393,7 @@ Case is ready to be built: /Users/manishrv/croc_cases/panama-1
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Set up a rectangular regional CESM-MOM6 run</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Choose your own adventure!</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#section-1-generate-a-regional-mom6-domain">SECTION 1: Generate a regional MOM6 domain</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-1-horizontal-grid">Step 1.1: Horizontal Grid</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-2-topography">Step 1.2: Topography</a></li>
