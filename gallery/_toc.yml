@@ -12,9 +12,19 @@ parts:
         - file: notebooks/tutorials/cesm_setup
         - file: notebooks/tutorials/minimal_demo_rect
         - file: notebooks/tutorials/input_params
-        - file: notebooks/tutorials/CUPiD_for_regional_MOM6
     - caption: Feature Tutorials
       chapters:
+      - file: notebooks/diagnostics/CUPiD_for_regional_MOM6
+        title: Using CUPiD to Diagnose Regional MOM6 runs
+        sections:
+        - file: notebooks/diagnostics/CUPiD_intro
+          title: Installing CUPiD
+        - file: notebooks/diagnostics/standalone_CUPiD
+          title: Running a CUPiD Example
+        - file: notebooks/diagnostics/CUPiD_in_CESM_Workflow
+          title: Running CUPiD within CESM
+        - file: notebooks/diagnostics/contributing_to_CUPiD
+          title: Contributing to CESM
       - file: notebooks/features/coupling 
         title: Coupling Tutorials
         sections:
