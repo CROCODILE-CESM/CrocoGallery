@@ -12,4 +12,4 @@ jobs:
 
         - name: Run Quality Control
           run: |
-            code/quality_control.sh
+            code/quality_control_notebooks.sh

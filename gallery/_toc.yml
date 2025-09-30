@@ -44,8 +44,14 @@ parts:
         title: Additional Component Tutorials
         sections:
         - file: notebooks/features/add_rof
+        - file: notebooks/features/add_runoff_product
         - file: notebooks/features/add_chl
         - file: notebooks/features/add_tides
+    - caption: 2025 CROCODILE Workshop Projects
+      chapters:
+        - file: notebooks/projects/NWA
+        - file: notebooks/projects/CICE
+        - file: notebooks/projects/choose_your_own_adventure
     - caption: Use Cases
       chapters:
       - file: notebooks/use_cases/index 
@@ -53,4 +59,5 @@ parts:
         sections:
           - file: notebooks/use_cases/three_boundary_from_t232
           - file: notebooks/use_cases/three_boundary
+          - file: notebooks/use_cases/mom6_cice_antarctica
  
