@@ -93,3 +93,40 @@ This may also take a while,
 but when it finishes you will be ready to run CUPiD!
 
 ## CUPiD Configuration
+
+While the CUPiD environments install, let's talk about how CUPiD works.
+The next exercise in this tutorial will be using CUPiD to create diagnostics for a CESM case that has already been run.
+After you have completed Task 1 and created the `(cupid-infrastructure)` environment,
+Task 2 will involve running the `cupid-diagnostics` command.
+
+```
+(cupid-infrastructure) $ cupid-diagnostics --help
+Usage: cupid-diagnostics [OPTIONS] [CONFIG_PATH]
+
+  Main engine to set up running all the notebooks.
+
+  Args:     CONFIG_PATH: str, path to configuration file (default config.yml)
+
+  Returns:     None
+
+  Called by ``cupid-diagnostics``.
+
+Options:
+  -s, --serial          Do not use LocalCluster objects
+  -atm, --atmosphere    Run atmosphere component diagnostics
+  -ocn, --ocean         Run ocean component diagnostics
+  -lnd, --land          Run land component diagnostics
+  -ice, --seaice        Run sea ice component diagnostics
+  -glc, --landice       Run land ice component diagnostics
+  -rof, --river-runoff  Run river runoff component diagnostics
+  -h, --help            Show this message and exit.
+```
+
+Notice that `cupid-diagnostics` has a few options to allow you to run a subset of the default diagnostics,
+but the `CONFIG_PATH` argument (which defaults to `config.yml`) is the important argument.
+This YAML file (YAML is a recursive acronym, standing for ["YAML Ain't Markup Language"](https://yaml.org/);
+you have encountered it when dealing with conda environment files as well)
+contains all the details about what CUPiD should do.
+
+This can also be found on the CUPiD webpage, on the [Configuration File](https://ncar.github.io/CUPiD/config.html) page.
+
