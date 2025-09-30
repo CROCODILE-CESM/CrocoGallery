@@ -10,12 +10,15 @@ logo: crocodile.png
 execute:
   execute_notebooks: force
   kernel_name: CrocoDash
-  # exclude_patterns:
-  #   # - 'add_grids.ipynb'
-  #   # - 'add_tides.ipynb'
-  #   # - 'add_chl.ipynb'
-  #   # - 'three_*'
-  #   # - 'subset_global.ipynb'
+  exclude_patterns:
+    - CICE.ipynb
+    - NWA.ipynb
+    - choose_your_own_adventure.ipynb
+    # - 'add_grids.ipynb'
+    # - 'add_tides.ipynb'
+    # - 'add_chl.ipynb'
+    # - 'three_*'
+    # - 'subset_global.ipynb'
 
 
 # Define the name of the latex output file for PDF builds
