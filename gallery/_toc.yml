@@ -36,21 +36,21 @@ parts:
         - file: notebooks/features/add_runoff_product
         - file: notebooks/features/add_chl
         - file: notebooks/features/add_tides
-      - file: notebooks/diagnostics/CUPiD_for_regional_MOM6
-        title: Using CUPiD to Diagnose Regional MOM6 runs
-        sections:
-        - file: notebooks/diagnostics/CUPiD_intro
-          title: Installing CUPiD
-        - file: notebooks/diagnostics/standalone_CUPiD
-          title: Running a CUPiD Example
-        - file: notebooks/diagnostics/CUPiD_in_CESM_Workflow
-          title: Running CUPiD within CESM
-        - file: notebooks/diagnostics/contributing_to_CUPiD
-          title: Contributing to CESM
     - caption: 2025 CROCODILE Workshop Projects
       chapters:
         - file: notebooks/projects/NWA
         - file: notebooks/projects/CICE
+        - file: notebooks/diagnostics/CUPiD_for_regional_MOM6
+          title: Using CUPiD to Diagnose Regional MOM6 runs
+          sections:
+          - file: notebooks/diagnostics/CUPiD_intro
+            title: Installing CUPiD
+          - file: notebooks/diagnostics/standalone_CUPiD
+            title: Running a CUPiD Example
+          - file: notebooks/diagnostics/CUPiD_in_CESM_Workflow
+            title: Running CUPiD within CESM
+          - file: notebooks/diagnostics/contributing_to_CUPiD
+            title: Contributing to CESM
         - file: notebooks/projects/choose_your_own_adventure
     - caption: Use Cases
       chapters:

@@ -1,6 +1,6 @@
 # Using CUPiD to Diagnose Regional MOM6 runs
 
-![CUPiD Logo](../../images/CUPiD_logo.png)
+![CUPiD Logo](../../images/CUPiD/logo.png)
 
 CESM3 includes a python-based postprocessing tool, CESM Unified Postprocessing and Diagnostics ([CUPiD](https://ncar.github.io/CUPiD/)).
 Development is guided by its vision statement:
