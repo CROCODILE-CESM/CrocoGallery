@@ -1,16 +1,18 @@
-# Introduction to CUPiD
+# Installing CUPiD
+
+To get the most out of this tutorial, install CUPiD on the NCAR super computer.
 
 ## Task 1: Clone CUPiD and Install Environments
 
 CUPiD is available from the NCAR organization on [github.com](https://github.com/NCAR/CUPiD).
 It requires conda to manage a few different python environments.
-On the NCAR super computer, you can run
+The NCAR system administrators provide conda through a module,
+you can access it by running
 
 ```bash
 module load conda
 ```
 
-and use the version of conda managed by the system administrators.
 If you need to install conda on a different computer,
 we recommend [miniconda](https://www.anaconda.com/docs/getting-started/miniconda/main)
 (but this tutorial assumes you already have access to conda).
@@ -25,7 +27,7 @@ but we will cover the key steps here.
 Running the following command will create a subdirectory named `CUPiD` in your current working directory:
 
 ```bash
-git clone https://github.com/NCAR/CUPiD.git
+git clone --recurse-submodules https://github.com/NCAR/CUPiD.git
 ```
 
 The rest of this tutorial will refer to the location you installed CUPiD as `${CUPID_ROOT}`.
