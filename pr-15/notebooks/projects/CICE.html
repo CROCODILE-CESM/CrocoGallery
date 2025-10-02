@@ -527,12 +527,18 @@ document.write(`
 <h1>Section 1: Generate a regional MOM6 domain<a class="headerlink" href="#section-1-generate-a-regional-mom6-domain" title="Link to this heading">#</a></h1>
 <section id="step-1-1-horizontal-grid">
 <h2>Step 1.1: Horizontal Grid<a class="headerlink" href="#step-1-1-horizontal-grid" title="Link to this heading">#</a></h2>
-<p>CROCODILE grid generator tools cannot create domains over the poles (but will soon!), instead we pass in previously generated grids over the Artic/Antartic (If you’re interested in how we generated these, please reach out!). As a quick reminder, sea ice OBCs are not well understood, and it is common practice to have a domain where sea ice does not reach the boundaries. Arctic Grid: /glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/grids/cice_grids/replica_grid_3413.nc Arctic Bathy: /glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/grids/cice_grids/bathy_3413.nc Antarctic Grid: /glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/grids/cice_grids/replica_grid_3031.nc Antarctic Bathy: /glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/grids/cice_grids/bathy_3031.nc</p>
+<p>CROCODILE grid generator tools cannot create domains over the poles (but will soon!), instead we pass in previously generated grids over the Artic/Antartic (If you’re interested in how we generated these, please reach out!).
+As a quick reminder, sea ice OBCs are not well understood, and it is common practice to have a domain where sea ice does not reach the boundaries.</p>
+<p>Grids:
+Arctic Grid: /glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/grids/cice_grids/replica_grid_3413.nc
+Arctic Bathy: /glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/grids/cice_grids/bathy_3413.nc
+Antarctic Grid: /glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/grids/cice_grids/replica_grid_3031.nc
+Antarctic Bathy: /glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/grids/cice_grids/bathy_3031.nc</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.grid</span><span class="w"> </span><span class="kn">import</span> <span class="n">Grid</span>
 
-<span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="o">.</span><span class="n">from_supergrid</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="o">.</span><span class="n">from_supergrid</span><span class="p">(</span><span class="s2">&quot;/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/grids/cice_grids/replica_grid_3413.nc&quot;</span><span class="p">)</span>
 <span class="n">grid</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Arctic_Grid&quot;</span>
 </pre></div>
 </div>
@@ -545,7 +551,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.topo</span><span class="w"> </span><span class="kn">import</span> <span class="n">Topo</span>
 
-<span class="n">bathymetry_path</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="n">bathymetry_path</span><span class="o">=</span><span class="s1">&#39;/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/grids/cice_grids/bathy_3413.nc&#39;</span>
 
 <span class="n">topo</span> <span class="o">=</span> <span class="n">Topo</span><span class="o">.</span><span class="n">from_topo_file</span><span class="p">(</span>
     <span class="n">grid</span> <span class="o">=</span> <span class="n">grid</span><span class="p">,</span>
