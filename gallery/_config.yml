@@ -8,7 +8,7 @@ logo: crocodile.png
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: off
   kernel_name: CrocoDash
   exclude_patterns:
     - CICE.ipynb
@@ -44,4 +44,4 @@ html:
 
 launch_buttons:
   binderhub_url: "https://mybinder.org"  # The URL for your BinderHub (e.g., https://mybinder.org)
-  notebook_interface: "jupyterlab" 
+  notebook_interface: "jupyterlab"
