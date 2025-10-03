@@ -3,8 +3,6 @@
 # Exceptions for /glade paths
 GLADE_EXCEPTIONS=(
   "gallery/notebooks/projects"        # whole folder
-  "gallery/notebooks/features/add_bgc.ipynb"  # specific notebook
-  "gallery/notebooks/features/add_rof.ipynb"  # specific notebook
 )
 
 # Exceptions for s3:// paths
