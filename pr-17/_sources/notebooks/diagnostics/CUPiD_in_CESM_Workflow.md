@@ -4,14 +4,6 @@ CUPiD has been included in the CESM workflow,
 which means you can run CUPiD from a CESM case directory with the familiar `case.submit` command.
 For this exercise, we will run the notebooks Aidan put together on the case you ran with Manish.
 
-Steps:
-
-1. Show all CUPiD env variables in case root (` ./xmlquery -p CUPID`)
-1. Show snippets from `case.cupid` and `cesm_postprocessing.sh` to explain what CUPiD will do
-1. make a bunch of `xmlchange` calls (`CUPiD_ROOT`? also set run length, only run ocean notebooks, maybe increase `MEM_PER_TASK`)
-1. `./case.submit --job case.cupid`
-
-
 ## Task 3:
 
 ### Task 3.1: Explore how CUPiD is Incorporated in a CESM Case
@@ -81,6 +73,105 @@ Results in group cupid_run_components
 	CUPID_TASKS_PER_NODE: 128
 ```
 </details>
+
+### Side Quest: How Does CUPiD Tie in to CESM?
+
+The details look complicated, but it's pretty simple from the user's perspective
+(we're going to look at several files to understand what CESM is doing,
+but in practice you won't need to modify any of them if you just want to run CUPiD).
+The CESM workflow is defined in the [`ccs_config_cesm`](https://github.com/ESMCI/ccs_config_cesm) repository,
+and the piece relevant to CUPiD is the [`machines/template.cupid`](https://github.com/ESMCI/ccs_config_cesm/blob/main/machines/template.cupid) file:
+
+```bash
+#!/bin/bash -e
+
+# Batch system directives
+{{ batchdirectives }}
+
+# Set environment for CESM
+source .env_mach_specific.sh
+
+# Run shell script in CUPiD external
+CUPID_ROOT=`./xmlquery --value CUPID_ROOT`
+(. ${CUPID_ROOT}/helper_scripts/cesm_postprocessing.sh)
+```
+
+CIME parses everything in `{{ }}` and replaces it with machine-specific code;
+the final file is `case.cupid` in your case directory.
+On derecho, this looks like:
+
+```bash
+#!/bin/bash -e
+
+# Batch system directives
+#PBS -N cupid.{CASE}
+#PBS  -r n
+#PBS  -j oe
+#PBS  -S /bin/bash
+#PBS  -l select=1:ncpus=1:mpiprocs=1:ompthreads=1:mem=10GB
+
+# Set environment for CESM
+source .env_mach_specific.sh
+
+# Run shell script in CUPiD external
+CUPID_ROOT=`./xmlquery --value CUPID_ROOT`
+(. ${CUPID_ROOT}/helper_scripts/cesm_postprocessing.sh)
+```
+
+In an attempt to keep all necessary code in the CUPiD repository,
+you'll note that the last two lines are then calling [`helper_scripts/cesm_postprocessing.sh`](https://github.com/NCAR/CUPiD/blob/main/helper_scripts/cesm_postprocessing.sh) out of `CUPID_ROOT`.
+CUPiD's [`helper_scripts/`](https://github.com/NCAR/CUPiD/blob/main/helper_scripts/) directory contains several scripts used to create configuration files,
+and `cesm_postprocessing.sh` is the driver that ties everything together.
+We won't walk through the entire script here,
+but I want to highlight the comments in the script that list the processes:
+
+```bash
+# Set variables that come from environment or CESM XML files
+
+# Create directory for running CUPiD
+mkdir -p cupid-postprocessing
+cd cupid-postprocessing
+
+# Use cupid-infrastructure environment for running these scripts
+conda activate ${CUPID_INFRASTRUCTURE_ENV}
+
+# 1. Generate CUPiD config file
+${CUPID_ROOT}/helper_scripts/generate_cupid_config_for_cesm_case.py
+
+# 2. Generate ADF config file
+if [ "${CUPID_RUN_ADF}" == "TRUE" ]; then
+
+# 3. Generate ILAMB config file
+if [ "${CUPID_RUN_ILAMB}" == "TRUE" ]; then
+
+# 4. Generate LDF config file
+if [ "${CUPID_RUN_LDF}" == "TRUE" ]; then
+
+# 5. Generate timeseries files
+if [ "${CUPID_GEN_TIMESERIES}" == "TRUE" ]; then
+
+# 6. Run ADF
+if [ "${CUPID_RUN_ADF}" == "TRUE" ]; then
+
+# 7. Run ILAMB
+if [ "${CUPID_RUN_ILAMB}" == "TRUE" ]; then
+
+# 8. Run LDF
+if [ "${CUPID_RUN_LDF}" == "TRUE" ]; then
+
+# 9. Run CUPiD and build webpage
+conda deactivate
+conda activate ${CUPID_INFRASTRUCTURE_ENV}
+if [ "${CUPID_GEN_DIAGNOSTICS}" == "TRUE" ]; then
+  ${CUPID_ROOT}/cupid/run_diagnostics.py ${CUPID_FLAG_STRING}
+fi
+if [ "${CUPID_GEN_HTML}" == "TRUE" ]; then
+  ${CUPID_ROOT}/cupid/generate_webpage.py
+fi
+```
+
+You can see how the variables defined in `env_postprocessing.xml` impact what parts of CUPiD are run.
+In the next task we will make sure these XML variables are set correctly and then ask CESM to run `case.cupid`.
 
 ### Task 3.2: Configure and Run CUPiD
 
