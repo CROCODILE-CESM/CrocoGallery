@@ -7,7 +7,7 @@ parts:
     - caption: Introduction
       chapters:
       - file: notebooks/tutorials/walkthrough 
-        title: Basic Tutorial
+        title: Basic CrocoDash Tutorial
         sections:
         - file: notebooks/tutorials/cesm_setup
         - file: notebooks/tutorials/minimal_demo_rect
