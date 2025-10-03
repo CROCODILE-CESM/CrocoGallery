@@ -1,5 +1,6 @@
-cesm/
 # CrocoDash specific ignores
+cesm
+path_to_datasets_loc.json
 *_temp/
 .DS_Store
 .vscode/
