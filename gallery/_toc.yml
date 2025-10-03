@@ -36,11 +36,19 @@ parts:
         - file: notebooks/features/add_runoff_product
         - file: notebooks/features/add_chl
         - file: notebooks/features/add_tides
+      - file: notebooks/features/model-obs_comparison
+        title: Model-Observation Comparison Tutorials
+        sections:
+        - file: notebooks/features/tutorial1_MOM6-CL-comparison
+        - file: notebooks/features/tutorial2_MOM6-CL-comparison-float
     - caption: 2025 CROCODILE Workshop Projects
       chapters:
         - file: notebooks/projects/NWA
         - file: notebooks/projects/CICE
         - file: notebooks/projects/choose_your_own_adventure
+        - file: notebooks/projects/tutorial3_CrocoLake_map_temperature
+        - file: notebooks/projects/tutorial4_MOM6-WOD13-comparison
+        - file: notebooks/projects/model-obs_your_own_model
     - caption: Use Cases
       chapters:
       - file: notebooks/use_cases/index 
@@ -49,4 +57,3 @@ parts:
           - file: notebooks/use_cases/three_boundary_from_t232
           - file: notebooks/use_cases/three_boundary
           - file: notebooks/use_cases/mom6_cice_antarctica
- 
