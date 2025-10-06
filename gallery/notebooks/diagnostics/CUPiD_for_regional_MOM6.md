@@ -13,16 +13,16 @@ and sharing python code and a standard conda environment across components.
 
 ## CUPiD for Regional MOM6
 
-As the vision statement states, CUPiD is a broad package designed to pull many independent tasks together.
+CUPiD is a broad package designed to pull many independent tasks together and standardize common parts of a postprocessing workflow.
 For postprocessing, CUPiD is automating the process of converting CESM output to the standard format required for the Coupled Model Intercomparison Project ([CMIP](https://wcrp-cmip.org/)).
 
-This tutorial is going to focus on the diagnostic side of CUPiD.
+This tutorial is going to focus on the diagnostic side of CUPiD and tools for accessing and manipulating MOM6 output.
 CUPiD is designed to make it easy for users to run existing notebooks to look at output from all components of CESM,
 but we will focus on a set of MOM6 notebooks meant to analyze regional runs.
 Participants will install CUPiD and then familiarize themselves with it by
 
-1. looking at diagnostics from an existing regional MOM6 run in stand-alone mode,
-1. running the same diagnostics on their own regional MOM6 run, and
-1. learning how to add their own diagnostic notebooks to the CUPiD suite.
+1. looking at diagnostics from an existing regional MOM6 run in stand-alone mode (no CESM integration),
+2. running the same diagnostics on their own regional MOM6 run (with CESM integration), and
+3. learning how to add their own diagnostic notebooks to the CUPiD suite.
 
 We will touch briefly on generating time series files from CESM history files as well.
