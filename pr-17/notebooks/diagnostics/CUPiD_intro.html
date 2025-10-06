@@ -455,9 +455,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-0-setup-jupyterhub">Task 0: Setup JupyterHub</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-a-jupyterhub-server">0.1 Start a JupyterHub Server</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigate-to-crocodile-2025-directory">0.2 Navigate to <code class="docutils literal notranslate"><span class="pre">crocodile_2025</span></code> directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-a-terminal">0.3 Open a terminal</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-clone-cupid-and-install-environments">Task 1: Clone CUPiD and Install Environments</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-repository-from-github">1.1: Clone the repository from github</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-two-conda-environments">1.2: Install two conda environments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-two-conda-environments">1.2: Install two conda environments</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-cupid-infrastructure">Install <code class="docutils literal notranslate"><span class="pre">(cupid-infrastructure)</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-cupid-analysis">Install <code class="docutils literal notranslate"><span class="pre">(cupid-analysis)</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cupid-configuration">CUPiD Configuration</a><ul class="nav section-nav flex-column">
@@ -484,6 +494,42 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="installing-cupid">
 <h1>Installing CUPiD<a class="headerlink" href="#installing-cupid" title="Link to this heading">#</a></h1>
 <p>To get the most out of this tutorial, install CUPiD on the NCAR super computer.</p>
+<section id="task-0-setup-jupyterhub">
+<h2>Task 0: Setup JupyterHub<a class="headerlink" href="#task-0-setup-jupyterhub" title="Link to this heading">#</a></h2>
+<p>We first need to setup a JupyterHub instance and navigate to our directory for the workshop.</p>
+<section id="start-a-jupyterhub-server">
+<h3>0.1 Start a JupyterHub Server<a class="headerlink" href="#start-a-jupyterhub-server" title="Link to this heading">#</a></h3>
+<p>If you are not already logged into <a class="reference external" href="http://jupyter.hub.ucar.edu">jupyter.hub.ucar.edu</a>, please navigate there and start a new server.</p>
+<div class="alert alert-info">
+<strong>Required Settings</strong>
+  <ul>
+    <li>Resource Selection: <strong>Casper PBS Batch</strong></li>  
+    <li>Queue or Reservation: <strong>tutorial</strong>
+    <li>Project Account: <strong>CESM0030</strong> </li>
+    ...
+    <li> Specify Memory per Node in GB: <strong>20</strong>
+  </ul>
+  Leave everything else the same!
+</div>
+</section>
+<section id="navigate-to-crocodile-2025-directory">
+<h3>0.2 Navigate to <code class="docutils literal notranslate"><span class="pre">crocodile_2025</span></code> directory<a class="headerlink" href="#navigate-to-crocodile-2025-directory" title="Link to this heading">#</a></h3>
+<p>We should have a directory named <code class="docutils literal notranslate"><span class="pre">crocodile_2025</span></code> in our work directory. The full path to this will be: <code class="docutils literal notranslate"><span class="pre">/glade/work/YOUR_USERNAME/crocodile_2025</span></code>.</p>
+<p>JupyterHub references the filesystem slightly differently. To access this directory:</p>
+<ol class="arabic simple">
+<li><p>Click <strong>File</strong> in the top left and select <strong>Open from Path…</strong></p></li>
+<li><p>In the pop-up field enter: <code class="docutils literal notranslate"><span class="pre">/work/USERNAME/crocodile_2025</span></code></p></li>
+</ol>
+<p>If JupyterHub tells you this path does not exist, let us know.</p>
+</section>
+<section id="open-a-terminal">
+<h3>0.3 Open a terminal<a class="headerlink" href="#open-a-terminal" title="Link to this heading">#</a></h3>
+<p>Open a Terminal instance by scrolling all the way down in the launcher tab and selecting <strong>Terminal</strong>.
+<img alt="Jupyter Terminal" src="../../_images/Jupyter_Terminal.png" />
+This should open a terminal with the following prompt:
+<code class="docutils literal notranslate"><span class="pre">USERNAME&#64;crhtcXX:/glade/work/USERNAME/crocodile_2025&gt;</span></code></p>
+</section>
+</section>
 <section id="task-1-clone-cupid-and-install-environments">
 <h2>Task 1: Clone CUPiD and Install Environments<a class="headerlink" href="#task-1-clone-cupid-and-install-environments" title="Link to this heading">#</a></h2>
 <p>CUPiD is available from the NCAR organization on <a class="reference external" href="https://github.com/NCAR/CUPiD">github.com</a>.
@@ -508,8 +554,7 @@ but we will cover the key steps here.</p>
 </pre></div>
 </div>
 <p>The rest of this tutorial will refer to the location you installed CUPiD as <code class="docutils literal notranslate"><span class="pre">${CUPID_ROOT}</span></code>.
-To be able to copy and paste blocks of commands directly,
-so let’s add the variable to your environment.</p>
+To be able to copy and paste blocks of commands directly, we need to add the variable to your environment (see <a class="reference external" href="https://www.tutorialspoint.com/bash-export-variable">Bash Export Variable</a>).</p>
 <p>Most of you are using <code class="docutils literal notranslate"><span class="pre">bash</span></code> or <code class="docutils literal notranslate"><span class="pre">zsh</span></code>,
 which have been the default shell on Linux and Unix computers for a while now.
 To set the environment variable run</p>
@@ -517,6 +562,13 @@ To set the environment variable run</p>
 <span class="nb">export</span><span class="w"> </span><span class="nv">CUPID_ROOT</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="w"> </span>-P<span class="sb">`</span>
 </pre></div>
 </div>
+<blockquote>
+<div><p><strong>Note:</strong> This environment variable only exists in this specific terminal.
+It will disappear after this tutorial (see <a class="reference external" href="https://ncar-hpc-docs.readthedocs.io/en/latest/environment-and-software/user-environment/customizing/">Personalizing start files - NCAR Docs</a> for more information).</p>
+</div></blockquote>
+<div class="alert alert-warning">  
+<details>  
+<summary>Using a different shell?</summary><br>
 <p>If you have changed your shell to <code class="docutils literal notranslate"><span class="pre">csh</span></code> or <code class="docutils literal notranslate"><span class="pre">tcsh</span></code>,
 you will want to run the following instead:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>CUPiD
@@ -529,17 +581,25 @@ To know for sure, though, run</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$SHELL</span>
 </pre></div>
 </div>
+</div>
+<p><strong>TEMPORARY EXTRA STEP (until PR is merged)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>fetch<span class="w"> </span>origin<span class="w"> </span>pull/294/head:CROCODILE_Workshop_2025
+git<span class="w"> </span>checkout<span class="w"> </span>CROCODILE_Workshop_2025
+</pre></div>
+</div>
 </section>
 <section id="install-two-conda-environments">
 <h3>1.2: Install two conda environments<a class="headerlink" href="#install-two-conda-environments" title="Link to this heading">#</a></h3>
 <p>CUPiD needs a python environment with specific packages installed to run the CUPiD tools,
 while the diagnostic notebooks provided with CUPiD need a different set of packages.</p>
-<p>To run CUPiD itself we use the <code class="docutils literal notranslate"><span class="pre">(cupid-infrastructure)</span></code> environment:</p>
+<p>To run CUPiD itself we use the <code class="docutils literal notranslate"><span class="pre">(cupid-infrastructure)</span></code> environment, then CUPiD runs the diagnostics notebooks with <code class="docutils literal notranslate"><span class="pre">(cupid-analysis)</span></code>.</p>
+<section id="install-cupid-infrastructure">
+<h4>Install <code class="docutils literal notranslate"><span class="pre">(cupid-infrastructure)</span></code><a class="headerlink" href="#install-cupid-infrastructure" title="Link to this heading">#</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">CUPID_ROOT</span><span class="si">}</span>
 mamba<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environments/cupid-infrastructure.yml
 </pre></div>
 </div>
-<p>This step may take a while.
+<p>This step may take a while, and you may need to confirm prompts in the terminal.
 When it completes you can verify it was successful by running</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>cupid-infrastructure
 which<span class="w"> </span>cupid-diagnostics
@@ -549,13 +609,15 @@ which<span class="w"> </span>cupid-diagnostics
 <code class="docutils literal notranslate"><span class="pre">which</span></code> will return a path to <code class="docutils literal notranslate"><span class="pre">cupid-diagnostics</span></code>.
 If the environment did not install correctly,
 <code class="docutils literal notranslate"><span class="pre">which</span></code> will return an error like <code class="docutils literal notranslate"><span class="pre">which:</span> <span class="pre">no</span> <span class="pre">cupid-diagnostics</span> <span class="pre">in</span> <span class="pre">[long</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">directories]</span></code>.</p>
-<p>The other environment provided by CUPiD is <code class="docutils literal notranslate"><span class="pre">(cupid-analysis)</span></code>.
-It can be installed by running:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mamba</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">environments</span><span class="o">/</span><span class="n">cupid</span><span class="o">-</span><span class="n">analysis</span><span class="o">.</span><span class="n">yml</span>
+</section>
+<section id="install-cupid-analysis">
+<h4>Install <code class="docutils literal notranslate"><span class="pre">(cupid-analysis)</span></code><a class="headerlink" href="#install-cupid-analysis" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environments/cupid-analysis.yml
 </pre></div>
 </div>
 <p>This may also take a while,
 but when it finishes you will be ready to run CUPiD!</p>
+</section>
 </section>
 </section>
 <section id="cupid-configuration">
@@ -607,8 +669,8 @@ It points CUPiD to the notebook library and also tells CUPiD where to execute th
 <h3><code class="docutils literal notranslate"><span class="pre">computation_config</span></code> Section<a class="headerlink" href="#computation-config-section" title="Link to this heading">#</a></h3>
 <p>Much like the <code class="docutils literal notranslate"><span class="pre">data_sources</span></code> section,
 this section typically does not need to be modified by users and may turn into command-line arguments.
-It provides the name of the conda environment to run notebooks in by default(users can specify different environments for individual notebooks),
-and also sets logging information:</p>
+It provides the name of the conda environment to run notebooks in by default (users can specify different environments for individual notebooks),
+and it also sets logging information:</p>
 <p><img alt="computational configuration section of config.yml" src="../../_images/computation_config.png" /></p>
 </section>
 <section id="global-params-section">
@@ -726,9 +788,19 @@ or maybe it should be a command line argument instead.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-0-setup-jupyterhub">Task 0: Setup JupyterHub</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start-a-jupyterhub-server">0.1 Start a JupyterHub Server</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigate-to-crocodile-2025-directory">0.2 Navigate to <code class="docutils literal notranslate"><span class="pre">crocodile_2025</span></code> directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-a-terminal">0.3 Open a terminal</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-clone-cupid-and-install-environments">Task 1: Clone CUPiD and Install Environments</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-repository-from-github">1.1: Clone the repository from github</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-two-conda-environments">1.2: Install two conda environments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-two-conda-environments">1.2: Install two conda environments</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-cupid-infrastructure">Install <code class="docutils literal notranslate"><span class="pre">(cupid-infrastructure)</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-cupid-analysis">Install <code class="docutils literal notranslate"><span class="pre">(cupid-analysis)</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cupid-configuration">CUPiD Configuration</a><ul class="nav section-nav flex-column">

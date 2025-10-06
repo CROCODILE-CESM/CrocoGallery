@@ -459,7 +459,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-let-s-run-cupid">Task 2: Let’s Run CUPiD</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#peak-at-the-config-yml">Peak at the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#global-params">Global Params</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#timeseries-settings">Timeseries Settings</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-parameters">Notebook Parameters</a></li>
 </ul>
 </li>
@@ -484,6 +483,10 @@ document.write(`
 These examples are designed to be run on the NCAR supercomputers,
 using output curated from CESM development runs and stored in <code class="docutils literal notranslate"><span class="pre">/glade/campaign/cesm/development/cross-wg/diagnostic_framework/CESM_output_for_testing/</span></code>.
 These example configuration files also act as templates for the CESM workflow discussed in the next section.</p>
+<blockquote>
+<div><p><strong>Note:</strong> we actually access the example output through the CROCODILE workshop directory for simplicity: <code class="docutils literal notranslate"><span class="pre">/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/Diagnostics/CESM_Output/</span></code>.
+It just links back to <code class="docutils literal notranslate"><span class="pre">CESM_output_for_testing</span></code>.</p>
+</div></blockquote>
 <p>We have added a <code class="docutils literal notranslate"><span class="pre">regional_mom6</span></code> example to CUPiD that provides diagnostics for a 10-month run.
 This run uses a 1/12° grid over the northwest Atlantic domain, and includes ocean biogeochemistry tracers from the Marine Biogeochemistry library (MARBL).
 The compset used for this run was</p>
@@ -492,69 +495,63 @@ The compset used for this run was</p>
 </div>
 <p>We will run the <code class="docutils literal notranslate"><span class="pre">regional_ocean</span></code> example included with CUPiD. This includes four notebooks:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Regional_Ocean_Report_Card.ipynb</span></code>: basic plotting and analysis utilities, primarily focused on surface fields</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Regional_Ocean_Animations.ipynb</span></code>: create GIFs of various surface fields</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Regional_Ocean_Atmospheric_Forcing.ipynb</span></code>: look at atmospheric forcing at the surface</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Regional_Ocean_OBC.ipynb</span></code>: visualize surface fields and open boundary conditions to look for weird behavior</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Regional_Ocean_Report_Card.ipynb</span></code>: basic plotting and analysis utilities, primarily focused on surface fields.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Regional_Ocean_Animations.ipynb</span></code>: create animations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Regional_Ocean_Atmospheric_Forcing.ipynb</span></code>: look at atmospheric forcing at the surface.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Regional_Ocean_OBC.ipynb</span></code>: visualize surface fields and open boundary conditions.</p></li>
 </ul>
 <section id="what-we-need">
 <h2>What We Need<a class="headerlink" href="#what-we-need" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>The latest installation of CUPiD</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cupid-infrastructure</span></code> and <code class="docutils literal notranslate"><span class="pre">cupid-analysis</span></code> conda environments installed</p></li>
-<li><p>Sufficient resources to run the example (run within JupyterHub or start a <a class="reference external" href="https://ncar-hpc-docs.readthedocs.io/en/latest/pbs/">PBS job</a>)</p>
-<ul>
-<li><p>🚧 This example needs about 100 GB of memory on a single core?</p></li>
-</ul>
-</li>
-</ul>
+<p>Make sure <code class="docutils literal notranslate"><span class="pre">(cupid-infrastructure)</span></code> and <code class="docutils literal notranslate"><span class="pre">(cupid-analysis)</span></code> conda environments are fully installed before starting this task.</p>
 </section>
 <section id="task-2-let-s-run-cupid">
 <h2>Task 2: Let’s Run CUPiD<a class="headerlink" href="#task-2-let-s-run-cupid" title="Link to this heading">#</a></h2>
 <p>Navigate to your installation of CUPiD, we will run the diagnostics in the example directory.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">CUPID_ROOT</span> <span class="p">(</span><span class="n">see</span> <span class="n">where</span> <span class="n">you</span> <span class="n">git</span> <span class="n">cloned</span> <span class="ow">in</span> <span class="n">Task</span> <span class="mi">1</span> <span class="ow">and</span> <span class="nb">set</span> <span class="n">up</span> <span class="n">env</span> <span class="n">variable</span><span class="p">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">CUPID_ROOT</span><span class="si">}</span>
 </pre></div>
 </div>
 <p>Now change to the <code class="docutils literal notranslate"><span class="pre">examples</span></code> directory, and look at what’s inside.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">examples</span>
-<span class="n">ls</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>examples
+ls
 </pre></div>
 </div>
-<p>We will be using <code class="docutils literal notranslate"><span class="pre">regional_ocean</span></code> example for this demo and the workshop; if this example is not in your <code class="docutils literal notranslate"><span class="pre">examples</span></code> directory, let us know.
+<div class="alert alert-warning">  
+<details>  
+<summary>Output</summary><br>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>additional_metrics<span class="w">  </span>external_diag_packages<span class="w">  </span>key_metrics<span class="w">  </span>regional_ocean
+</pre></div>
+</div>
+</div>
+<p>We will be using the <code class="docutils literal notranslate"><span class="pre">regional_ocean</span></code> example for this demo and the workshop; if this example is not in your <code class="docutils literal notranslate"><span class="pre">examples</span></code> directory, let us know.
 Change into the <code class="docutils literal notranslate"><span class="pre">regional_ocean</span></code> directory.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">regional_ocean</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>regional_ocean
 </pre></div>
 </div>
-<p>For a standalone CUPiD run (i.e. not part of a CESM case run) we will run <code class="docutils literal notranslate"><span class="pre">cupid-diagnostics</span></code> from the same directory as the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file.
-CUPiD will automatically recognize the file is in the current directory, and the output will also be in the same directory.</p>
+<p>For a standalone CUPiD run (i.e. not part of a CESM case run) we will run <code class="docutils literal notranslate"><span class="pre">cupid-diagnostics</span></code> from the same directory as a <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file.
+CUPiD will automatically recognize the file is in the current directory, and the output will also be in the same directory. Each example has a specific <code class="docutils literal notranslate"><span class="pre">config.yml</span></code>, let’s look at the one in <code class="docutils literal notranslate"><span class="pre">regional_ocean</span></code>.</p>
 <section id="peak-at-the-config-yml">
 <h3>Peak at the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code><a class="headerlink" href="#peak-at-the-config-yml" title="Link to this heading">#</a></h3>
-<p>Before running CUPiD and producing diagnostics, let’s look at what the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file is telling CUPiD to do. The last section also touched on this.
-There are multiple tools that you can use to view files in JupyterHub and Linux, we recommend using <code class="docutils literal notranslate"><span class="pre">cat</span></code> or <code class="docutils literal notranslate"><span class="pre">less</span></code> from the terminal, or opening it directly in JupyterLab.
+<p>There are multiple tools that you can use to view files in JupyterHub and Linux, we recommend using <code class="docutils literal notranslate"><span class="pre">cat</span></code> or <code class="docutils literal notranslate"><span class="pre">less</span></code> from the terminal, or opening it directly in JupyterLab.
 You can also view this config file <a class="reference external" href="https://gist.github.com/AidanJanney/92e34fdae16bf993a57fac7112ab818c">here</a> (it may be outdated).</p>
-<p>Most of the settings in <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> stay the same from the previous page, but there are a few key changes to note.</p>
+<p>Most of the settings in <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> stay the same or similar from the other examples, but there are a few key changes to note.</p>
 <section id="global-params">
 <h4>Global Params<a class="headerlink" href="#global-params" title="Link to this heading">#</a></h4>
 <p><img alt="Regional Ocean Global Params" src="../../_images/standalone_global_params.png" />
-Here is where we specify that CUPiD should run diagnostics on the example output discussed above. Also note the timeseries output directory is set to <strong>null</strong>.
-You are able to create timeseries files, but you are not able to save them to the <code class="docutils literal notranslate"><span class="pre">CESM_output_dir</span></code> as you normally would because we only have read permissions in <code class="docutils literal notranslate"><span class="pre">CESM_output_for_testing</span></code>.</p>
-<p>If you want to run the timeseries tool, set <code class="docutils literal notranslate"><span class="pre">ts_dir:</span> <span class="pre">/glade/derecho/scratch/$USER/archive</span></code> or another directory
-(replace <code class="docutils literal notranslate"><span class="pre">$USER</span></code> with your username, you can check what your username is with <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">$USER</span></code> in the terminal).</p>
-</section>
-<section id="timeseries-settings">
-<h4>Timeseries Settings<a class="headerlink" href="#timeseries-settings" title="Link to this heading">#</a></h4>
-<p><img alt="Regional Ocean Timeseries Settings" src="../../_images/standalone_timeseries_config.png" />
-The key here is to note which variables <code class="docutils literal notranslate"><span class="pre">cupid-timeseries</span></code> will generate timeseries for. The default here is to work with meridonal velocity (vo), zonal velocity (uo), potential temperature (thetao), and salinity (so).</p>
-<p><em><strong>OPTIONAL</strong>:</em> If you want to create timeseries, make sure to adjust <code class="docutils literal notranslate"><span class="pre">ts_dir</span></code> in the global parameters, and run</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cupid</span><span class="o">-</span><span class="n">timseries</span> <span class="o">-</span><span class="n">ocn</span>
-</pre></div>
+Here is where we specify that CUPiD should run diagnostics on the example output discussed above.</p>
+<div class="alert alert-warning">  
+<details>  
+<summary>Want to generate timeseries?</summary><br>
+<p>Note that the timeseries output directory <code class="docutils literal notranslate"><span class="pre">ts_dir</span></code> is not instantiated.
+You are able to create timeseries files, but you are not able to save them to the <code class="docutils literal notranslate"><span class="pre">CESM_output_dir</span></code> as you normally would because we only have read permissions there.</p>
+<p>If you want to run the timeseries tool, set <code class="docutils literal notranslate"><span class="pre">ts_dir:</span> <span class="pre">/glade/derecho/scratch/USERNAME/archive</span></code> or another directory
+(you can check what your username is with <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">${USER}</span></code> in the terminal).</p>
+<p><strong>Not recommended this for this example; it contains multiple terabytes of output.</strong></p>
 </div>
-<p>The timeseries should be in <code class="docutils literal notranslate"><span class="pre">ts_dir/CROCODILE_tutorial_nwa12_MARBL/ocn/proc/tseries</span></code>. None of the diagnostics notebooks require timseries files.</p>
 </section>
 <section id="notebook-parameters">
 <h4>Notebook Parameters<a class="headerlink" href="#notebook-parameters" title="Link to this heading">#</a></h4>
 <p><img alt="Regional Ocean Notebook Params" src="../../_images/standalone_nb_params.png" />
-Here we pass in the specific variables for each notebook. If you don’t want to save the figures from each notebook, change these variables to false. The <code class="docutils literal notranslate"><span class="pre">img_output_dir</span></code> is set to <code class="docutils literal notranslate"><span class="pre">null</span></code>, so it will save the images to your scratch directory in Derecho. If you would like them saved somewhere else, change this variable now.</p>
+Here we pass in the specific variables for each notebook. Read more about specific variables in each notebook. The <code class="docutils literal notranslate"><span class="pre">mom6_input_dir</span></code> let’s us access the input boundary conditions, the CESM workflow will handle this automatically.</p>
 <p>This section also tells us this example will run four notebooks:
 <code class="docutils literal notranslate"><span class="pre">Regional_Ocean_Animations.ipynb</span></code>,
 <code class="docutils literal notranslate"><span class="pre">Regional_Ocean_Atmospheric_Forcing.ipynb</span></code>,
@@ -564,22 +561,24 @@ Here we pass in the specific variables for each notebook. If you don’t want to
 </section>
 <section id="time-to-run-cupid">
 <h3>Time to Run CUPiD!<a class="headerlink" href="#time-to-run-cupid" title="Link to this heading">#</a></h3>
-<p>Now we understand the processes and notebooks will run, it is time to run CUPiD. From the same <code class="docutils literal notranslate"><span class="pre">CUPID_ROOT/examples/regional_ocean</span></code> directory, run on one processor with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cupid</span><span class="o">-</span><span class="n">diagnostics</span> <span class="o">--</span><span class="n">serial</span>
+<p>Now we understand the processes and notebooks will run, it is time to run CUPiD. From the same <code class="docutils literal notranslate"><span class="pre">${CUPID_ROOT}/examples/regional_ocean</span></code> directory, run on one processor with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cupid-diagnostics<span class="w"> </span>--serial
 </pre></div>
 </div>
 <p>This step might take some time, and we can track the progress with the output to terminal.</p>
 <p>The notebooks will be run in <code class="docutils literal notranslate"><span class="pre">nblibrary</span></code> and then copied to the current directory under <code class="docutils literal notranslate"><span class="pre">computed_notebooks/ocn</span></code>. If you want to rerun the notebooks, make sure to manually copy the <code class="docutils literal notranslate"><span class="pre">regional_utils.py</span></code> file with</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">../../</span><span class="n">nblibrary</span><span class="o">/</span><span class="n">ocn</span><span class="o">/</span><span class="n">regional_utils</span><span class="o">.</span><span class="n">py</span> <span class="n">computed_notebooks</span><span class="o">/</span><span class="n">ocn</span><span class="o">/</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>../../nblibrary/ocn/regional_utils.py<span class="w"> </span>computed_notebooks/ocn/
 </pre></div>
 </div>
 </section>
 <section id="optional-cupid-webpage">
 <h3>Optional: CUPiD Webpage<a class="headerlink" href="#optional-cupid-webpage" title="Link to this heading">#</a></h3>
-<p>You can look at the notebooks in JupyterHub and rerun them. If you want to use CUPiD’s webpage feature, in the current directory run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cupid</span><span class="o">-</span><span class="n">webpage</span>
+<p>We recommend viewing at the notebooks in JupyterHub and rerunning them in JupyterHub if you want to play with the output.</p>
+<p>If you want to use CUPiD’s webpage feature, in the same directory, <code class="docutils literal notranslate"><span class="pre">${CUPID_ROOT}/examples/regional_ocean</span></code>, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cupid-webpage
 </pre></div>
 </div>
+<p>Reference the <a class="reference external" href="https://ncar.github.io/CUPiD/ncar_tips.html#looking-at-output">CUPiD Documentation for Looking at Output</a>.</p>
 </section>
 </section>
 </section>
@@ -652,7 +651,6 @@ Here we pass in the specific variables for each notebook. If you don’t want to
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-let-s-run-cupid">Task 2: Let’s Run CUPiD</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#peak-at-the-config-yml">Peak at the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#global-params">Global Params</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#timeseries-settings">Timeseries Settings</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-parameters">Notebook Parameters</a></li>
 </ul>
 </li>
