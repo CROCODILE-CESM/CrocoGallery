@@ -55,7 +55,7 @@ cd regional_ocean
 For a standalone CUPiD run (i.e. not part of a CESM case run) we will run `cupid-diagnostics` from the same directory as a `config.yml` file. 
 CUPiD will automatically recognize the file is in the current directory, and the output will also be in the same directory. Each example has a specific `config.yml`, let's look at the one in `regional_ocean`.
 
-### Peak at the `config.yml`
+### Task 2.1: Peak at the `config.yml`
 There are multiple tools that you can use to view files in JupyterHub and Linux, we recommend using `cat` or `less` from the terminal, or opening it directly in JupyterLab. 
 You can also view this config file [here](https://gist.github.com/AidanJanney/92e34fdae16bf993a57fac7112ab818c) (it may be outdated). 
 
@@ -101,7 +101,7 @@ The notebooks will be run in `nblibrary` and then copied to the current director
 cp ../../nblibrary/ocn/regional_utils.py computed_notebooks/ocn/
 ```
 
-### Optional: CUPiD Webpage
+## Optional Task 2.2: CUPiD Webpage
 We recommend viewing at the notebooks in JupyterHub and rerunning them in JupyterHub if you want to play with the output. 
 
 If you want to use CUPiD's webpage feature, in the same directory, `${CUPID_ROOT}/examples/regional_ocean`, run:

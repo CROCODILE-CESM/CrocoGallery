@@ -23,19 +23,20 @@ env_postprocessing.xml
 env_run.xml
 env_workflow.xml
 ```
+Note: run the above inside your CESM installation if interested
 
 We are interested in the CUPiD variables,
 which are all defined in `env_postprocessing.xml`.
 XML variables plain-text files so we could inspect them directly,
 but let's use the provided `xmlquery` tool instead.
 
-<span style="background-color:#CF9812">🚨 POP QUIZ #1!! 🚨</span>
+<div class="alert alert-warning">  
+🚨 <strong>POP QUIZ #1!</strong> 🚨 
 
-> How do you use `xmlquery` to see all the variables that contain `CUPID` in their name (along with their values)?
+How do you use `xmlquery` to see all the variables that contain `CUPID` in their name (along with their values)?
+<details>  
 
-
-<details>
-<summary>(Solution to quiz #1)</summary>
+<summary>Solution</summary><br>
 
 ```
 $ ./xmlquery -p CUPID
@@ -73,6 +74,7 @@ Results in group cupid_run_components
 	CUPID_TASKS_PER_NODE: 128
 ```
 </details>
+</div>
 
 ### Side Quest: How Does CUPiD Tie in to CESM?
 
@@ -191,18 +193,19 @@ Also, as we saw in the last section of this tutorial,
 we want to run the `regional_ocean` example and use 100 GB of memory.
 These are set by the `CUPID_EXAMPLE` and `CUPID_MEM_PER_TASK` variables, respectively.
 
-<span style="background-color:#CF9812">🚨 POP QUIZ #2!! 🚨</span>
+<div class="alert alert-warning">  
+🚨 <strong>POP QUIZ #2!</strong> 🚨 
 
-> How do we use `xmlchange` to set `CUPID_EXAMPLE = regional_ocean` and `CUPID_MEM_PER_TASK = 100`?
+How do we use `xmlchange` to set `CUPID_EXAMPLE = regional_ocean` and `CUPID_MEM_PER_TASK = 100`?
+<details>  
 
-<details>
-<summary>(Solution to quiz #2)</summary>
+<summary>Solution</summary><br>
 
 ```bash
 ./xmlchange CUPID_EXAMPLE=regional_ocean,CUPID_MEM_PER_TASK=100
 ```
 </details>
-<p>
+</div>
 
 Lastly, we don't need to generate time series files or build a webpage
 
@@ -218,5 +221,5 @@ Make sure you are logged in to Derecho (not Casper) and then run:
 ```
 
 This will add a job to the development queue on derecho,
-and hopefully will start running quickly.
-When it finishes, output will be in the [???] subdirectory of your case.
+and it hopefully will start running quickly.
+When it finishes, output will be in the `computed_notebooks` subdirectory of your case directory.
