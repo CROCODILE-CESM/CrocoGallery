@@ -464,7 +464,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-notebook-specific-parameters">Adding Notebook Specific Parameters</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideas-for-new-notebooks">Ideas for New Notebooks</a></li>
 </ul>
             </nav>
         </div>
@@ -493,7 +492,7 @@ New diagnostics notebooks can become part of an existing diagnostics workflow (s
 <li><p>Have an idea for diagnostics or analysis of a component of CESM output</p></li>
 <li><p>Design a Jupyter notebook that operates on CESM history (one time step, multiple variables) or timeseries (one variable, multiple time steps) files</p></li>
 <li><p>Add a cell for parameters that CUPiD will inject (see <a class="reference external" href="https://ncar.github.io/CUPiD/addingnotebookstocollection.html">how to add new notebooks</a>). These are flexible, but variables can be tricky to add within the CUPiD workflow so be mindful.</p></li>
-<li><p>Pass it off to CUPiD maintainers for the final steps or create/modify a <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file to populate and run your new notebook(s)!</p></li>
+<li><p>Create/modify a <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file to populate and run your new notebook(s)!</p></li>
 </ol>
 <section id="cupid-structure">
 <h3>CUPiD Structure<a class="headerlink" href="#cupid-structure" title="Link to this heading">#</a></h3>
@@ -538,16 +537,6 @@ The input directory is not available through the CESM output directory, but the 
 </div>
 </div></blockquote>
 </section>
-</section>
-<section id="ideas-for-new-notebooks">
-<h2>Ideas for New Notebooks<a class="headerlink" href="#ideas-for-new-notebooks" title="Link to this heading">#</a></h2>
-<p>This is a brief list of some possible topics/notebooks to contribute from a regional ocean perspective!</p>
-<ul class="simple">
-<li><p><strong>Comparison to Other Model Output/Reanalysis Products:</strong> compare model output to other model output or a reanalysis product (<a class="reference external" href="https://github.com/NCAR/CUPiD/blob/main/nblibrary/atm/Global_PSL_NMSE_compare_obs_lens.ipynb">Global Atmspheric Observations Example</a>). CUPiD is already setup with this in mind with the <code class="docutils literal notranslate"><span class="pre">base_case</span></code> global parameters.</p></li>
-<li><p><strong>Transport through Passages:</strong> MOM6 lets you define transects to calculate transport through different passages. These transects are defined in the <code class="docutils literal notranslate"><span class="pre">diag_table</span></code> so a notebook would need to chek if any transects are defined and then visualize/analyze them appropriately. Comparing to observations could be tricky and very helpful!</p></li>
-<li><p><strong>Region Aware Diagnostics:</strong> Different regions might benefit from a different standard sets of diagnostics. Even simple adjustments like choosing a different projection for plotting or looking at sea ice in the arctic.</p></li>
-</ul>
-<!-- - **Comparison to Sparse Observations:** Adapt [CrocoCamp](https://github.com/CROCODILE-CESM/CrocoCamp) or similar tools to compare model output to sparse observations. This might be a lot to chew because of the dependencies and data assimilation software involved. -->
 </section>
 </section>
 
@@ -624,7 +613,6 @@ The input directory is not available through the CESM output directory, but the 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-notebook-specific-parameters">Adding Notebook Specific Parameters</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideas-for-new-notebooks">Ideas for New Notebooks</a></li>
 </ul>
   </nav></div>
 

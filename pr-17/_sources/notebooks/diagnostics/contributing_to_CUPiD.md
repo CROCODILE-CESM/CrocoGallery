@@ -14,7 +14,7 @@ The structure of CUPiD can be confusing, but contributing is easy! Here are the 
 1. Have an idea for diagnostics or analysis of a component of CESM output
 2. Design a Jupyter notebook that operates on CESM history (one time step, multiple variables) or timeseries (one variable, multiple time steps) files
 3. Add a cell for parameters that CUPiD will inject (see [how to add new notebooks](https://ncar.github.io/CUPiD/addingnotebookstocollection.html)). These are flexible, but variables can be tricky to add within the CUPiD workflow so be mindful. 
-4. Pass it off to CUPiD maintainers for the final steps or create/modify a `config.yml` file to populate and run your new notebook(s)!
+4. Create/modify a `config.yml` file to populate and run your new notebook(s)!
    
 ### CUPiD Structure
 - `nblibrary`: where new notebooks will go. They are categorized by component (e.g. ocean - ocn and atmosphere - atm). Notebooks are run here by CUPiD then copied to the path from `run_dir` in the config file. 
@@ -51,11 +51,4 @@ These handle the translation of information from the CESM case to CUPiD config s
 > ```
 >
 
-## Ideas for New Notebooks
-This is a brief list of some possible topics/notebooks to contribute from a regional ocean perspective!
-- **Comparison to Other Model Output/Reanalysis Products:** compare model output to other model output or a reanalysis product ([Global Atmspheric Observations Example](https://github.com/NCAR/CUPiD/blob/main/nblibrary/atm/Global_PSL_NMSE_compare_obs_lens.ipynb)). CUPiD is already setup with this in mind with the `base_case` global parameters.
-- **Transport through Passages:** MOM6 lets you define transects to calculate transport through different passages. These transects are defined in the `diag_table` so a notebook would need to chek if any transects are defined and then visualize/analyze them appropriately. Comparing to observations could be tricky and very helpful!
-- **Region Aware Diagnostics:** Different regions might benefit from a different standard sets of diagnostics. Even simple adjustments like choosing a different projection for plotting or looking at sea ice in the arctic. 
-  
-<!-- - **Comparison to Sparse Observations:** Adapt [CrocoCamp](https://github.com/CROCODILE-CESM/CrocoCamp) or similar tools to compare model output to sparse observations. This might be a lot to chew because of the dependencies and data assimilation software involved. -->
 

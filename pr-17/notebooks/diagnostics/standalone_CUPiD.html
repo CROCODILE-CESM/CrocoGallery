@@ -457,15 +457,15 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-we-need">What We Need</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-let-s-run-cupid">Task 2: Let’s Run CUPiD</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#peak-at-the-config-yml">Peak at the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-1-peak-at-the-config-yml">Task 2.1: Peak at the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#global-params">Global Params</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-parameters">Notebook Parameters</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-to-run-cupid">Time to Run CUPiD!</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-cupid-webpage">Optional: CUPiD Webpage</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task-2-2-cupid-webpage">Optional Task 2.2: CUPiD Webpage</a></li>
 </ul>
             </nav>
         </div>
@@ -529,8 +529,8 @@ Change into the <code class="docutils literal notranslate"><span class="pre">reg
 </div>
 <p>For a standalone CUPiD run (i.e. not part of a CESM case run) we will run <code class="docutils literal notranslate"><span class="pre">cupid-diagnostics</span></code> from the same directory as a <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file.
 CUPiD will automatically recognize the file is in the current directory, and the output will also be in the same directory. Each example has a specific <code class="docutils literal notranslate"><span class="pre">config.yml</span></code>, let’s look at the one in <code class="docutils literal notranslate"><span class="pre">regional_ocean</span></code>.</p>
-<section id="peak-at-the-config-yml">
-<h3>Peak at the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code><a class="headerlink" href="#peak-at-the-config-yml" title="Link to this heading">#</a></h3>
+<section id="task-2-1-peak-at-the-config-yml">
+<h3>Task 2.1: Peak at the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code><a class="headerlink" href="#task-2-1-peak-at-the-config-yml" title="Link to this heading">#</a></h3>
 <p>There are multiple tools that you can use to view files in JupyterHub and Linux, we recommend using <code class="docutils literal notranslate"><span class="pre">cat</span></code> or <code class="docutils literal notranslate"><span class="pre">less</span></code> from the terminal, or opening it directly in JupyterLab.
 You can also view this config file <a class="reference external" href="https://gist.github.com/AidanJanney/92e34fdae16bf993a57fac7112ab818c">here</a> (it may be outdated).</p>
 <p>Most of the settings in <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> stay the same or similar from the other examples, but there are a few key changes to note.</p>
@@ -571,15 +571,15 @@ Here we pass in the specific variables for each notebook. Read more about specif
 </pre></div>
 </div>
 </section>
-<section id="optional-cupid-webpage">
-<h3>Optional: CUPiD Webpage<a class="headerlink" href="#optional-cupid-webpage" title="Link to this heading">#</a></h3>
+</section>
+<section id="optional-task-2-2-cupid-webpage">
+<h2>Optional Task 2.2: CUPiD Webpage<a class="headerlink" href="#optional-task-2-2-cupid-webpage" title="Link to this heading">#</a></h2>
 <p>We recommend viewing at the notebooks in JupyterHub and rerunning them in JupyterHub if you want to play with the output.</p>
 <p>If you want to use CUPiD’s webpage feature, in the same directory, <code class="docutils literal notranslate"><span class="pre">${CUPID_ROOT}/examples/regional_ocean</span></code>, run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cupid-webpage
 </pre></div>
 </div>
 <p>Reference the <a class="reference external" href="https://ncar.github.io/CUPiD/ncar_tips.html#looking-at-output">CUPiD Documentation for Looking at Output</a>.</p>
-</section>
 </section>
 </section>
 
@@ -649,15 +649,15 @@ Here we pass in the specific variables for each notebook. Read more about specif
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-we-need">What We Need</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-let-s-run-cupid">Task 2: Let’s Run CUPiD</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#peak-at-the-config-yml">Peak at the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-1-peak-at-the-config-yml">Task 2.1: Peak at the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#global-params">Global Params</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-parameters">Notebook Parameters</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-to-run-cupid">Time to Run CUPiD!</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-cupid-webpage">Optional: CUPiD Webpage</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task-2-2-cupid-webpage">Optional Task 2.2: CUPiD Webpage</a></li>
 </ul>
   </nav></div>
 

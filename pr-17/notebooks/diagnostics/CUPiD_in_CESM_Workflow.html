@@ -495,16 +495,16 @@ env_run.xml
 env_workflow.xml
 </pre></div>
 </div>
+<p>Note: run the above inside your CESM installation if interested</p>
 <p>We are interested in the CUPiD variables,
 which are all defined in <code class="docutils literal notranslate"><span class="pre">env_postprocessing.xml</span></code>.
 XML variables plain-text files so we could inspect them directly,
 but let’s use the provided <code class="docutils literal notranslate"><span class="pre">xmlquery</span></code> tool instead.</p>
-<p><span style="background-color:#CF9812">🚨 POP QUIZ #1!! 🚨</span></p>
-<blockquote>
-<div><p>How do you use <code class="docutils literal notranslate"><span class="pre">xmlquery</span></code> to see all the variables that contain <code class="docutils literal notranslate"><span class="pre">CUPID</span></code> in their name (along with their values)?</p>
-</div></blockquote>
-<details>
-<summary>(Solution to quiz #1)</summary>
+<div class="alert alert-warning">  
+🚨 <strong>POP QUIZ #1!</strong> 🚨 
+<p>How do you use <code class="docutils literal notranslate"><span class="pre">xmlquery</span></code> to see all the variables that contain <code class="docutils literal notranslate"><span class="pre">CUPID</span></code> in their name (along with their values)?</p>
+<details>  
+<summary>Solution</summary><br>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./xmlquery -p CUPID
 Results in group cupid_analysis
 	CUPID_BASELINE_CASE: b.e23_alpha17f.BLT1850.ne30_t232.092
@@ -541,6 +541,7 @@ Results in group cupid_run_components
 </pre></div>
 </div>
 </details>
+</div>
 </section>
 <section id="side-quest-how-does-cupid-tie-in-to-cesm">
 <h3>Side Quest: How Does CUPiD Tie in to CESM?<a class="headerlink" href="#side-quest-how-does-cupid-tie-in-to-cesm" title="Link to this heading">#</a></h3>
@@ -650,17 +651,16 @@ In that case, you want to run</p>
 <p>Also, as we saw in the last section of this tutorial,
 we want to run the <code class="docutils literal notranslate"><span class="pre">regional_ocean</span></code> example and use 100 GB of memory.
 These are set by the <code class="docutils literal notranslate"><span class="pre">CUPID_EXAMPLE</span></code> and <code class="docutils literal notranslate"><span class="pre">CUPID_MEM_PER_TASK</span></code> variables, respectively.</p>
-<p><span style="background-color:#CF9812">🚨 POP QUIZ #2!! 🚨</span></p>
-<blockquote>
-<div><p>How do we use <code class="docutils literal notranslate"><span class="pre">xmlchange</span></code> to set <code class="docutils literal notranslate"><span class="pre">CUPID_EXAMPLE</span> <span class="pre">=</span> <span class="pre">regional_ocean</span></code> and <code class="docutils literal notranslate"><span class="pre">CUPID_MEM_PER_TASK</span> <span class="pre">=</span> <span class="pre">100</span></code>?</p>
-</div></blockquote>
-<details>
-<summary>(Solution to quiz #2)</summary>
+<div class="alert alert-warning">  
+🚨 <strong>POP QUIZ #2!</strong> 🚨 
+<p>How do we use <code class="docutils literal notranslate"><span class="pre">xmlchange</span></code> to set <code class="docutils literal notranslate"><span class="pre">CUPID_EXAMPLE</span> <span class="pre">=</span> <span class="pre">regional_ocean</span></code> and <code class="docutils literal notranslate"><span class="pre">CUPID_MEM_PER_TASK</span> <span class="pre">=</span> <span class="pre">100</span></code>?</p>
+<details>  
+<summary>Solution</summary><br>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./xmlchange<span class="w"> </span><span class="nv">CUPID_EXAMPLE</span><span class="o">=</span>regional_ocean,CUPID_MEM_PER_TASK<span class="o">=</span><span class="m">100</span>
 </pre></div>
 </div>
 </details>
-<p>
+</div>
 <p>Lastly, we don’t need to generate time series files or build a webpage</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./xmlchange<span class="w"> </span><span class="nv">CUPID_GEN_TIMESERIES</span><span class="o">=</span>FALSE,CUPID_GEN_HTML<span class="o">=</span>FALSE
 </pre></div>
@@ -671,8 +671,8 @@ Make sure you are logged in to Derecho (not Casper) and then run:</p>
 </pre></div>
 </div>
 <p>This will add a job to the development queue on derecho,
-and hopefully will start running quickly.
-When it finishes, output will be in the [???] subdirectory of your case.</p>
+and it hopefully will start running quickly.
+When it finishes, output will be in the <code class="docutils literal notranslate"><span class="pre">computed_notebooks</span></code> subdirectory of your case directory.</p>
 </section>
 </section>
 </section>

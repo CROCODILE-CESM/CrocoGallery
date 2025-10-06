@@ -456,6 +456,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cupid-for-regional-mom6">CUPiD for Regional MOM6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">Your Turn!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ideas-for-new-notebooks">Ideas for New Notebooks</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -480,6 +484,7 @@ and sharing python code and a standard conda environment across components.</p>
 </div></blockquote>
 <section id="cupid-for-regional-mom6">
 <h2>CUPiD for Regional MOM6<a class="headerlink" href="#cupid-for-regional-mom6" title="Link to this heading">#</a></h2>
+<p>IMAGE/GIF NEEDED HERE</p>
 <p>CUPiD is a broad package designed to pull many independent tasks together and standardize common parts of a postprocessing workflow.
 For postprocessing, CUPiD is automating the process of converting CESM output to the standard format required for the Coupled Model Intercomparison Project (<a class="reference external" href="https://wcrp-cmip.org/">CMIP</a>).</p>
 <p>This tutorial is going to focus on the diagnostic side of CUPiD and tools for accessing and manipulating MOM6 output.
@@ -492,6 +497,19 @@ Participants will install CUPiD and then familiarize themselves with it by</p>
 <li><p>learning how to add their own diagnostic notebooks to the CUPiD suite.</p></li>
 </ol>
 <p>We will touch briefly on generating time series files from CESM history files as well.</p>
+</section>
+<section id="your-turn">
+<h2>Your Turn!<a class="headerlink" href="#your-turn" title="Link to this heading">#</a></h2>
+<p>As we progress through this tutorial, thin about what kinds of diagnostics might be helpful for general regions and your specific regions of interest.</p>
+<section id="ideas-for-new-notebooks">
+<h3>Ideas for New Notebooks<a class="headerlink" href="#ideas-for-new-notebooks" title="Link to this heading">#</a></h3>
+<p>This is a brief list of some possible topics/notebooks to contribute from a regional ocean perspective. Add your own!</p>
+<ul class="simple">
+<li><p><strong>Comparison to Other Model Output/Reanalysis Products:</strong> compare model output to other model output or a reanalysis product (<a class="reference external" href="https://github.com/NCAR/CUPiD/blob/main/nblibrary/atm/Global_PSL_NMSE_compare_obs_lens.ipynb">Global Atmspheric Observations Example</a>). CUPiD is already setup with this in mind with the <code class="docutils literal notranslate"><span class="pre">base_case</span></code> global parameters.</p></li>
+<li><p><strong>Transport through Passages:</strong> MOM6 lets you define transects to calculate transport through different passages. These transects are defined in the <code class="docutils literal notranslate"><span class="pre">diag_table</span></code> so a notebook would need to chek if any transects are defined and then visualize/analyze them appropriately. Comparing to observations could be tricky and very helpful!</p></li>
+<li><p><strong>Region Aware Diagnostics:</strong> Different regions might benefit from a different standard sets of diagnostics. Even simple adjustments like choosing a different projection for plotting or looking at sea ice in the arctic.</p></li>
+</ul>
+</section>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -562,6 +580,10 @@ Participants will install CUPiD and then familiarize themselves with it by</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cupid-for-regional-mom6">CUPiD for Regional MOM6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">Your Turn!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ideas-for-new-notebooks">Ideas for New Notebooks</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
