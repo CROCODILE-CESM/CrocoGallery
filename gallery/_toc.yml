@@ -38,9 +38,7 @@ parts:
         - file: notebooks/features/add_tides
     - caption: 2025 CROCODILE Workshop Projects
       chapters:
-        - file: notebooks/projects/NWA
-        - file: notebooks/projects/CICE
-        - file: notebooks/projects/choose_your_own_adventure
+        - file: notebooks/projects/CrocoDash
     - caption: Use Cases
       chapters:
       - file: notebooks/use_cases/index 
