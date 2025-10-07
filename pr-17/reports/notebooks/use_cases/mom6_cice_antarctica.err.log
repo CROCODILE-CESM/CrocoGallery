@@ -42,8 +42,6 @@ case = Case(
 ------------------
 
 ----- stderr -----
-WARNING:  cime_interface:CIME_OUTPUT_ROOT doesn't exist. Creating it at /home/runner/cesm/scratch
------ stderr -----
 ERROR:  cime_interface:DIN_LOC_ROOT doesn't exist: /home/runner/cesm/inputdata
 ----- stderr -----
 INFO:  csp_solver:CspSolver initialized.
@@ -54,7 +52,7 @@ INFO:  csp_solver:CspSolver initialized.
  atm grid: "TL319", lnd grid: "TL319", ocn grid: "antarctica2".
 
 • Updating ccs_config/component_grids_nuopc.xml file to include newly generated ocean grid "antarctica2" with the following properties:
- nx: 400, ny: 400. ocean mesh: /home/runner/input/antarctica-tutorial/ocnice/ESMF_mesh_antarctica2_50e868.nc.[0m
+ nx: 400, ny: 400. ocean mesh: /home/runner/input/antarctica-tutorial/ocnice/ESMF_mesh_antarctica2_0d6c21.nc.[0m
 
 [01;96mRunning the create_newcase tool with the following command:[0m
 

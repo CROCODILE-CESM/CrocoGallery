@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/diagnostics/standalone_CUPiD';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Running CUPiD within CESM" href="CUPiD_in_CESM_Workflow.html" />
+    <link rel="next" title="Add Components" href="../features/add_components.html" />
     <link rel="prev" title="Installing CUPiD" href="CUPiD_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -193,7 +193,7 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Feature Tutorials</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../features/coupling.html">Coupling Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../features/add_bgc.html">Run a coupled biogeochemistry (MARBL) &amp; ocean (MOM6) model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../features/add_cice.html">Run a coupled sea ice (CICE) &amp; ocean (MOM6) model</a></li>
@@ -210,6 +210,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../features/add_data_products.html">Use different data products w/ the CrocoDash Data Access Module</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="CUPiD_for_regional_MOM6.html">CUPiD Diagnostics Tutorial</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="CUPiD_intro.html">Installing CUPiD</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Running a CUPiD Example</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../features/add_components.html">Additional Component Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../features/add_rof.html">Add data runoff from GLOFAS to the Run</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../features/add_runoff_product.html">Adding your own runoff product to the CESM (Advanced)</a></li>
@@ -219,7 +224,7 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2025 CROCODILE Workshop Projects</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../projects/NWA.html">NWA</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../projects/CICE.html">CICE-MOM6</a></li>
@@ -227,18 +232,16 @@
 
 
 
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="CUPiD_for_regional_MOM6.html">Using CUPiD to Diagnose Regional MOM6 runs</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="CUPiD_intro.html">Installing CUPiD</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Running a CUPiD Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CUPiD_in_CESM_Workflow.html">Running CUPiD within CESM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing_to_CUPiD.html">Contributing to CUPiD</a></li>
-</ul>
-</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../projects/choose_your_own_adventure.html">Choose your own adventure!</a></li>
 
 
 
 
+<li class="toctree-l1 has-children"><a class="reference internal" href="CUPiD_projects.html">Advanced CUPiD Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="CUPiD_in_CESM_Workflow.html">Running CUPiD within CESM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing_to_CUPiD.html">Contributing to CUPiD</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Use Cases</span></p>
 <ul class="nav bd-sidenav">
@@ -456,7 +459,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-let-s-run-cupid">Task 2: Let’s Run CUPiD</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-1-peak-at-the-config-yml">Task 2.1: Peak at the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-1-peek-at-the-config-yml">Task 2.1: Peek at the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#global-params">Global Params</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-parameters">Notebook Parameters</a></li>
 </ul>
@@ -529,8 +532,8 @@ Change into the <code class="docutils literal notranslate"><span class="pre">reg
 </div>
 <p>For a standalone CUPiD run (i.e. not part of a CESM case run) we will run <code class="docutils literal notranslate"><span class="pre">cupid-diagnostics</span></code> from the same directory as a <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file.
 CUPiD will automatically recognize the file is in the current directory, and the output will also be in the same directory. Each example has a specific <code class="docutils literal notranslate"><span class="pre">config.yml</span></code>, let’s look at the one in <code class="docutils literal notranslate"><span class="pre">regional_ocean</span></code>.</p>
-<section id="task-2-1-peak-at-the-config-yml">
-<h3>Task 2.1: Peak at the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code><a class="headerlink" href="#task-2-1-peak-at-the-config-yml" title="Link to this heading">#</a></h3>
+<section id="task-2-1-peek-at-the-config-yml">
+<h3>Task 2.1: Peek at the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code><a class="headerlink" href="#task-2-1-peek-at-the-config-yml" title="Link to this heading">#</a></h3>
 <p>There are multiple tools that you can use to view files in JupyterHub and Linux, we recommend using <code class="docutils literal notranslate"><span class="pre">cat</span></code> or <code class="docutils literal notranslate"><span class="pre">less</span></code> from the terminal, or opening it directly in JupyterLab.
 You can also view this config file <a class="reference external" href="https://gist.github.com/AidanJanney/92e34fdae16bf993a57fac7112ab818c">here</a> (it may be outdated).</p>
 <p>Most of the settings in <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> stay the same or similar from the other examples, but there are a few key changes to note.</p>
@@ -623,11 +626,11 @@ Here we pass in the specific variables for each notebook. Read more about specif
       </div>
     </a>
     <a class="right-next"
-       href="CUPiD_in_CESM_Workflow.html"
+       href="../features/add_components.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Running CUPiD within CESM</p>
+        <p class="prev-next-title">Add Components</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -648,7 +651,7 @@ Here we pass in the specific variables for each notebook. Read more about specif
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-let-s-run-cupid">Task 2: Let’s Run CUPiD</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-1-peak-at-the-config-yml">Task 2.1: Peak at the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-1-peek-at-the-config-yml">Task 2.1: Peek at the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#global-params">Global Params</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-parameters">Notebook Parameters</a></li>
 </ul>

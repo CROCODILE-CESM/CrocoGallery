@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>CUPiD Diagnostics Tutorial &#8212; CrocoDash Gallery</title>
+    <title>Advanced CUPiD Tutorial &#8212; CrocoDash Gallery</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/diagnostics/CUPiD_for_regional_MOM6';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/diagnostics/CUPiD_projects';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Installing CUPiD" href="CUPiD_intro.html" />
-    <link rel="prev" title="Use different data products w/ the CrocoDash Data Access Module" href="../features/add_data_products.html" />
+    <link rel="next" title="Running CUPiD within CESM" href="CUPiD_in_CESM_Workflow.html" />
+    <link rel="prev" title="Choose your own adventure!" href="../projects/choose_your_own_adventure.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -193,7 +193,7 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Feature Tutorials</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../features/coupling.html">Coupling Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../features/add_bgc.html">Run a coupled biogeochemistry (MARBL) &amp; ocean (MOM6) model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../features/add_cice.html">Run a coupled sea ice (CICE) &amp; ocean (MOM6) model</a></li>
@@ -210,7 +210,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../features/add_data_products.html">Use different data products w/ the CrocoDash Data Access Module</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">CUPiD Diagnostics Tutorial</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="CUPiD_for_regional_MOM6.html">CUPiD Diagnostics Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="CUPiD_intro.html">Installing CUPiD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="standalone_CUPiD.html">Running a CUPiD Example</a></li>
 </ul>
@@ -224,7 +224,7 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2025 CROCODILE Workshop Projects</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../projects/NWA.html">NWA</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="../projects/CICE.html">CICE-MOM6</a></li>
@@ -237,7 +237,7 @@
 
 
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="CUPiD_projects.html">Advanced CUPiD Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Advanced CUPiD Tutorial</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="CUPiD_in_CESM_Workflow.html">Running CUPiD within CESM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing_to_CUPiD.html">Contributing to CUPiD</a></li>
 </ul>
@@ -334,7 +334,7 @@
       
       
       
-      <li><a href="https://github.com/CROCODILE-CESM/CrocoGallery/issues/new?title=Issue%20on%20page%20%2Fnotebooks/diagnostics/CUPiD_for_regional_MOM6.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/CROCODILE-CESM/CrocoGallery/issues/new?title=Issue%20on%20page%20%2Fnotebooks/diagnostics/CUPiD_projects.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -364,7 +364,7 @@
       
       
       
-      <li><a href="../../_sources/notebooks/diagnostics/CUPiD_for_regional_MOM6.md" target="_blank"
+      <li><a href="../../_sources/notebooks/diagnostics/CUPiD_projects.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -435,9 +435,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -448,23 +446,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>CUPiD Diagnostics Tutorial</h1>
+    <h1>Advanced CUPiD Tutorial</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cupid-for-regional-mom6">CUPiD for Regional MOM6</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">Your Turn!</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ideas-for-new-notebooks">Ideas for New Notebooks</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -474,61 +460,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="cupid-diagnostics-tutorial">
-<h1>CUPiD Diagnostics Tutorial<a class="headerlink" href="#cupid-diagnostics-tutorial" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="advanced-cupid-tutorial">
+<h1>Advanced CUPiD Tutorial<a class="headerlink" href="#advanced-cupid-tutorial" title="Link to this heading">#</a></h1>
 <p><img alt="CUPiD Logo" src="../../_images/logo.png" /></p>
-<div class="alert alert-info">
-<details>
-<summary> <h4 style="margin-top: 0; padding-top: 0; margin-bottom: 0; padding-bottom: 0; display: inline-flex"> &nbsp; Warm up the Engine – Start a JupyterHub Server </h4> </summary>
-If you are not already logged into <a href="https://jupyterhub.hpc.ucar.edu/" target="_blank" rel="noopener noreferrer"> jupter.hub.ucar.edu </a>, please navigate there and start a new server. 
-<strong>Required Settings</strong>
-  <ul>
-    <li>Resource Selection: <strong>Casper PBS Batch</strong></li>  
-    <li>Queue or Reservation: <strong>tutorial</strong>
-    <li>Project Account: <strong>CESM0030</strong> </li>
-    ...
-    <li> Specify Memory per Node in GB: <strong>20</strong>
-  </ul>
-  Leave everything else the same!
-</details>
-</div>
-<p>CESM3 includes a python-based postprocessing tool, CESM Unified Postprocessing and Diagnostics (<a class="reference external" href="https://ncar.github.io/CUPiD/">CUPiD</a>).
-Development is guided by its vision statement:</p>
-<blockquote>
-<div><p>CUPiD is a “one stop shop” that enables and integrates timeseries file generation, data standardization, diagnostics, and metrics from all CESM components.</p>
-<p>This collaborative effort aims to simplify the user experience of running diagnostics by calling post-processing tools directly from CUPiD,
-running all component diagnostics from the same tool as either part of the CIME workflow or independently,
-and sharing python code and a standard conda environment across components.</p>
-</div></blockquote>
-<section id="cupid-for-regional-mom6">
-<h2>CUPiD for Regional MOM6<a class="headerlink" href="#cupid-for-regional-mom6" title="Link to this heading">#</a></h2>
-<p><strong>IMAGE/GIF NEEDED HERE</strong></p>
-<p>CUPiD is a broad package designed to pull many independent tasks together and standardize common parts of a postprocessing workflow.
-For postprocessing, CUPiD is automating the process of converting CESM output to the standard format required for the Coupled Model Intercomparison Project (<a class="reference external" href="https://wcrp-cmip.org/">CMIP</a>).</p>
-<p>This tutorial is going to focus on the diagnostic side of CUPiD and tools for accessing and manipulating MOM6 output.
-CUPiD is designed to make it easy for users to run existing notebooks to look at output from all components of CESM,
-but we will focus on a set of MOM6 notebooks meant to analyze regional runs.
-Participants will install CUPiD and then familiarize themselves with it by</p>
-<ol class="arabic simple">
-<li><p>looking at diagnostics from an existing regional MOM6 run in stand-alone mode (no CESM integration),</p></li>
-<li><p>running the same diagnostics on their own regional MOM6 run (with CESM integration), and</p></li>
-<li><p>learning how to add their own diagnostic notebooks to the CUPiD suite.</p></li>
-</ol>
-<p>We will touch briefly on generating time series files from CESM history files as well.</p>
-</section>
-<section id="your-turn">
-<h2>Your Turn!<a class="headerlink" href="#your-turn" title="Link to this heading">#</a></h2>
-<p>As we progress through this tutorial, think about what kinds of diagnostics might be helpful for general regions and your specific regions of interest.</p>
-<section id="ideas-for-new-notebooks">
-<h3>Ideas for New Notebooks<a class="headerlink" href="#ideas-for-new-notebooks" title="Link to this heading">#</a></h3>
-<p>This is a brief list of some possible topics/notebooks to contribute from a regional ocean perspective. Add your own!</p>
-<ul class="simple">
-<li><p><strong>Comparison to Other Model Output/Reanalysis Products:</strong> compare model output to other model output or a reanalysis product (<a class="reference external" href="https://github.com/NCAR/CUPiD/blob/main/nblibrary/atm/Global_PSL_NMSE_compare_obs_lens.ipynb">Global Atmspheric Observations Example</a>). CUPiD is already setup with this in mind with the <code class="docutils literal notranslate"><span class="pre">base_case</span></code> global parameters.</p></li>
-<li><p><strong>Transport through Passages:</strong> MOM6 lets you define transects to calculate transport through different passages. These transects are defined in the <code class="docutils literal notranslate"><span class="pre">diag_table</span></code> so a notebook would need to chek if any transects are defined and then visualize/analyze them appropriately. Comparing to observations could be tricky and very helpful!</p></li>
-<li><p><strong>Region Aware Diagnostics:</strong> Different regions might benefit from a different standard sets of diagnostics. Even simple adjustments like choosing a different projection for plotting or looking at sea ice in the arctic.</p></li>
-</ul>
-</section>
-</section>
+<p>We walked through CUPiD basics and how to use it to analyze specific curated examples.
+It can also be used to <a class="reference internal" href="CUPiD_in_CESM_Workflow.html"><span class="doc std std-doc">analyze CESM runs</span></a> directly from the case directory,
+and you can create your own notebooks to run via CUPiD.
+If you do that, you can also <a class="reference internal" href="contributing_to_CUPiD.html"><span class="doc std std-doc">share those notebooks with the community</span></a>.</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -564,20 +502,20 @@ Participants will install CUPiD and then familiarize themselves with it by</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../features/add_data_products.html"
+       href="../projects/choose_your_own_adventure.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Use different data products w/ the CrocoDash Data Access Module</p>
+        <p class="prev-next-title">Choose your own adventure!</p>
       </div>
     </a>
     <a class="right-next"
-       href="CUPiD_intro.html"
+       href="CUPiD_in_CESM_Workflow.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Installing CUPiD</p>
+        <p class="prev-next-title">Running CUPiD within CESM</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -587,25 +525,6 @@ Participants will install CUPiD and then familiarize themselves with it by</p>
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cupid-for-regional-mom6">CUPiD for Regional MOM6</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">Your Turn!</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ideas-for-new-notebooks">Ideas for New Notebooks</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

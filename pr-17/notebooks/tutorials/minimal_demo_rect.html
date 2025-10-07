@@ -210,6 +210,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../features/add_data_products.html">Use different data products w/ the CrocoDash Data Access Module</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../diagnostics/CUPiD_for_regional_MOM6.html">CUPiD Diagnostics Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../diagnostics/CUPiD_intro.html">Installing CUPiD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../diagnostics/standalone_CUPiD.html">Running a CUPiD Example</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../features/add_components.html">Additional Component Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../features/add_rof.html">Add data runoff from GLOFAS to the Run</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../features/add_runoff_product.html">Adding your own runoff product to the CESM (Advanced)</a></li>
@@ -227,18 +232,16 @@
 
 
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../diagnostics/CUPiD_for_regional_MOM6.html">Using CUPiD to Diagnose Regional MOM6 runs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../diagnostics/CUPiD_intro.html">Installing CUPiD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../diagnostics/standalone_CUPiD.html">Running a CUPiD Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../diagnostics/CUPiD_in_CESM_Workflow.html">Running CUPiD within CESM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../diagnostics/contributing_to_CUPiD.html">Contributing to CUPiD</a></li>
-</ul>
-</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../projects/choose_your_own_adventure.html">Choose your own adventure!</a></li>
 
 
 
 
+<li class="toctree-l1 has-children"><a class="reference internal" href="../diagnostics/CUPiD_projects.html">Advanced CUPiD Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../diagnostics/CUPiD_in_CESM_Workflow.html">Running CUPiD within CESM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../diagnostics/contributing_to_CUPiD.html">Contributing to CUPiD</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Use Cases</span></p>
 <ul class="nav bd-sidenav">
@@ -670,10 +673,10 @@ Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Fill
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f3809910d50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fba6153fe90&gt;
 </pre></div>
 </div>
-<img alt="../../_images/95620e3d5410be8f5d47f12131c8d0556c48e04c7ed0d51029f13793adde460b.png" src="../../_images/95620e3d5410be8f5d47f12131c8d0556c48e04c7ed0d51029f13793adde460b.png" />
+<img alt="../../_images/277169b050cf9efbaa8e12697541beac6d2d4a9e12490beca3d325d480ea8816.png" src="../../_images/277169b050cf9efbaa8e12697541beac6d2d4a9e12490beca3d325d480ea8816.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -685,41 +688,7 @@ Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Fill
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">Input In [5],</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;ipympl&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.topo_editor</span><span class="w"> </span><span class="kn">import</span> <span class="n">TopoEditor</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">TopoEditor</span><span class="p">(</span><span class="n">topo</span><span class="p">)</span>
-
-<span class="nn">File ~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/mom6_bathy/topo_editor.py:19,</span> in <span class="ni">TopoEditor.__init__</span><span class="nt">(self, topo)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_cell</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># none or (i, j, patch)</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="bp">self</span><span class="o">.</span><span class="n">construct_control_panel</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">19</span> <span class="bp">self</span><span class="o">.</span><span class="n">construct_interactive_plot</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="bp">self</span><span class="o">.</span><span class="n">construct_observances</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">([</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_control_panel</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_plot</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="p">])</span>
-
-<span class="nn">File ~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/mom6_bathy/topo_editor.py:70,</span> in <span class="ni">TopoEditor.construct_interactive_plot</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span> <span class="bp">self</span><span class="o">.</span><span class="n">cbar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">im</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="c1"># colorbar title</span>
-<span class="ne">---&gt; </span><span class="mi">70</span> <span class="bp">self</span><span class="o">.</span><span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Depth (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">topo</span><span class="o">.</span><span class="n">depth</span><span class="o">.</span><span class="n">units</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span> <span class="c1"># Enforce Cbar integer values for easier mask/basinmask colorbar</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="bp">self</span><span class="o">.</span><span class="n">cbar</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">(</span><span class="n">MaxNLocator</span><span class="p">(</span><span class="n">integer</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>  <span class="c1"># Ensure ticks are integers </span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/core/common.py:280,</span> in <span class="ni">AttrAccessMixin.__getattr__</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span>         <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">KeyError</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">279</span>             <span class="k">return</span> <span class="n">source</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">280</span> <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">281</span>     <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">!r}</span><span class="s2"> object has no attribute </span><span class="si">{</span><span class="n">name</span><span class="si">!r}</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">282</span> <span class="p">)</span>
-
-<span class="ne">AttributeError</span>: &#39;DataArray&#39; object has no attribute &#39;units&#39;
-</pre></div>
-</div>
-</div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "df2b51515c3a4aa7921183402ef65a41"}</script></div>
 </div>
 </section>
 <section id="step-1-3-vertical-grid">
@@ -752,6 +721,8 @@ Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Fill
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "bbf171b286724e798f10cf4b74a8c0e9"}</script></div>
 </div>
 </section>
 </section>
@@ -813,6 +784,42 @@ The <code class="docutils literal notranslate"><span class="pre">caseroot</span>
     <span class="n">machine</span> <span class="o">=</span> <span class="s2">&quot;derecho&quot;</span><span class="p">,</span>
     <span class="n">compset</span> <span class="o">=</span> <span class="s2">&quot;1850_DATM%JRA_SLND_SICE_MOM6_SROF_SGLC_SWAV&quot;</span>
 <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:  cime_interface:CIME_OUTPUT_ROOT doesn&#39;t exist. Creating it at /home/runner/cesm/scratch
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ERROR:  cime_interface:DIN_LOC_ROOT doesn&#39;t exist: /home/runner/cesm/inputdata
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:  csp_solver:CspSolver initialized.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">Creating case...</span>
+
+• Updating ccs_config/modelgrid_aliases_nuopc.xml file to include the new resolution &quot;panama-not&quot; consisting of the following component grids.
+ atm grid: &quot;TL319&quot;, lnd grid: &quot;TL319&quot;, ocn grid: &quot;panama1&quot;.
+
+• Updating ccs_config/component_grids_nuopc.xml file to include newly generated ocean grid &quot;panama1&quot; with the following properties:
+ nx: 300, ny: 300. ocean mesh: /home/runner/croc_input/panama-not/ocnice/ESMF_mesh_panama1_fafba7.nc.
+
+<span class=" -Color -Color-Bold">Running the create_newcase tool with the following command:</span>
+
+/home/runner/work/CrocoGallery/CrocoGallery/CESM/cime/scripts/create_newcase --compset 1850_DATM%JRA_SLND_SICE_MOM6_SROF_SGLC_SWAV --res panama-not --case /home/runner/croc_cases/panama-not --machine derecho --run-unsupported --project NCGD0011 --non-local 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Red">Error creating case.</span>
+
+b&quot;ERROR: Undefined env var &#39;SCRATCH&#39;\n&quot;
+
+<span class=" -Color -Color-Bold -Color-Bold-Red">Error creating case.</span>
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">An</span> <span class="n">exception</span> <span class="n">has</span> <span class="n">occurred</span><span class="p">,</span> <span class="n">use</span> <span class="o">%</span><span class="k">tb</span> to see the full traceback.
+
+<span class="ne">CIMEError</span>: ERROR: Makes no sense to have empty read-only file: /home/runner/croc_cases/panama-not/env_case.xml
 </pre></div>
 </div>
 </div>

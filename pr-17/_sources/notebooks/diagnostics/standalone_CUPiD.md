@@ -60,7 +60,7 @@ cd regional_ocean
 For a standalone CUPiD run (i.e. not part of a CESM case run) we will run `cupid-diagnostics` from the same directory as a `config.yml` file. 
 CUPiD will automatically recognize the file is in the current directory, and the output will also be in the same directory. Each example has a specific `config.yml`, let's look at the one in `regional_ocean`.
 
-### Task 2.1: Peak at the `config.yml`
+### Task 2.1: Peek at the `config.yml`
 There are multiple tools that you can use to view files in JupyterHub and Linux, we recommend using `cat` or `less` from the terminal, or opening it directly in JupyterLab. 
 You can also view this config file [here](https://gist.github.com/AidanJanney/92e34fdae16bf993a57fac7112ab818c) (it may be outdated). 
 
