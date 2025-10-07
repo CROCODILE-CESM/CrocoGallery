@@ -37,38 +37,54 @@ case = Case(
     project = 'CESM0030',
     override = True,
     machine = "derecho",
-    compset = "1850_DATM%JRA_SLND_SICE_MOM6_SROF_SGLC_SWAV"
+    compset = "1850_DATM%JRA_SLND_SICE_MOM6_SROF_SGLC_SWAV" # Change this as necessary to include whatever models you want. BGC? change MOM6 to MOM6%MARBL-BIO, CICE? Change SICE to CICE, GLOFAS Runoff? Change SROF to DROF%GLOFAS
 )
 ------------------
 
------ stderr -----
-WARNING:  cime_interface:CIME_OUTPUT_ROOT doesn't exist. Creating it at /home/runner/cesm/scratch
------ stderr -----
-ERROR:  cime_interface:DIN_LOC_ROOT doesn't exist: /home/runner/cesm/inputdata
------ stderr -----
-INFO:  csp_solver:CspSolver initialized.
------ stdout -----
-[01;96mCreating case...[0m
 
-• Updating ccs_config/modelgrid_aliases_nuopc.xml file to include the new resolution "panama-not" consisting of the following component grids.
- atm grid: "TL319", lnd grid: "TL319", ocn grid: "panama1".
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mAssertionError[0m                            Traceback (most recent call last)
+Input [0;32mIn [10][0m, in [0;36m<cell line: 0>[0;34m()[0m
+[1;32m      1[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mCrocoDash[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcase[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m Case
+[0;32m----> 3[0m case [38;5;241m=[39m [43mCase[49m[43m([49m
+[1;32m      4[0m [43m    [49m[43mcesmroot[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mcesmroot[49m[43m,[49m
+[1;32m      5[0m [43m    [49m[43mcaseroot[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mcaseroot[49m[43m,[49m
+[1;32m      6[0m [43m    [49m[43minputdir[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43minputdir[49m[43m,[49m
+[1;32m      7[0m [43m    [49m[43mocn_grid[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mgrid[49m[43m,[49m
+[1;32m      8[0m [43m    [49m[43mocn_vgrid[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mvgrid[49m[43m,[49m
+[1;32m      9[0m [43m    [49m[43mocn_topo[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mtopo[49m[43m,[49m
+[1;32m     10[0m [43m    [49m[43mproject[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mCESM0030[39;49m[38;5;124;43m'[39;49m[43m,[49m
+[1;32m     11[0m [43m    [49m[43moverride[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;28;43;01mTrue[39;49;00m[43m,[49m
+[1;32m     12[0m [43m    [49m[43mmachine[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mderecho[39;49m[38;5;124;43m"[39;49m[43m,[49m
+[1;32m     13[0m [43m    [49m[43mcompset[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43m1850_DATM[39;49m[38;5;124;43m%[39;49m[38;5;124;43mJRA_SLND_SICE_MOM6_SROF_SGLC_SWAV[39;49m[38;5;124;43m"[39;49m[43m [49m[38;5;66;43;03m# Change this as necessary to include whatever models you want. BGC? change MOM6 to MOM6%MARBL-BIO, CICE? Change SICE to CICE, GLOFAS Runoff? Change SROF to DROF%GLOFAS[39;49;00m
+[1;32m     14[0m [43m)[49m
 
-• Updating ccs_config/component_grids_nuopc.xml file to include newly generated ocean grid "panama1" with the following properties:
- nx: 300, ny: 300. ocean mesh: /home/runner/croc_input/panama-not/ocnice/ESMF_mesh_panama1_69015a.nc.[0m
+File [0;32m~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/case.py:89[0m, in [0;36mCase.__init__[0;34m(self, cesmroot, caseroot, inputdir, compset, ocn_grid, ocn_topo, ocn_vgrid, datm_grid_name, ninst, machine, project, override)[0m
+[1;32m     55[0m [38;5;250m[39m[38;5;124;03m"""[39;00m
+[1;32m     56[0m [38;5;124;03mInitialize a new regional MOM6 case within the CESM framework.[39;00m
+[1;32m     57[0m 
+[0;32m   (...)[0m
+[1;32m     85[0m [38;5;124;03m    Whether to override existing caseroot and inputdir directories. Default is False.[39;00m
+[1;32m     86[0m [38;5;124;03m"""[39;00m
+[1;32m     88[0m [38;5;66;03m# Initialize the CIME interface object[39;00m
+[0;32m---> 89[0m [38;5;28mself[39m[38;5;241m.[39mcime [38;5;241m=[39m [43mCIME_interface[49m[43m([49m[43mcesmroot[49m[43m)[49m
+[1;32m     91[0m [38;5;28;01mif[39;00m machine [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[1;32m     92[0m     machine [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mcime[38;5;241m.[39mmachine
 
-[01;96mRunning the create_newcase tool with the following command:[0m
+File [0;32m~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/visualCaseGen/cime_interface.py:47[0m, in [0;36mCIME_interface.__init__[0;34m(self, cesmroot)[0m
+[1;32m     44[0m [38;5;28;01mdef[39;00m[38;5;250m [39m[38;5;21m__init__[39m([38;5;28mself[39m, cesmroot[38;5;241m=[39m[38;5;28;01mNone[39;00m):
+[1;32m     45[0m 
+[1;32m     46[0m     [38;5;66;03m# Set cimeroot attribute and import CIME modules[39;00m
+[0;32m---> 47[0m     [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_set_cimeroot[49m[43m([49m[43mcesmroot[49m[43m)[49m
+[1;32m     49[0m     [38;5;66;03m# Check CIME compatibility[39;00m
+[1;32m     50[0m     [38;5;28mself[39m[38;5;241m.[39m_check_cime_compatibility()
 
-/home/runner/work/CrocoGallery/CrocoGallery/CESM/cime/scripts/create_newcase --compset 1850_DATM%JRA_SLND_SICE_MOM6_SROF_SGLC_SWAV --res panama-not --case /home/runner/croc_cases/panama-not --machine derecho --run-unsupported --project CESM0030 --non-local
------ stdout -----
-[1;31mError creating case.[0m
+File [0;32m~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/visualCaseGen/cime_interface.py:95[0m, in [0;36mCIME_interface._set_cimeroot[0;34m(self, cesmroot)[0m
+[1;32m     93[0m [38;5;28;01mif[39;00m cesmroot [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[1;32m     94[0m     cesmroot [38;5;241m=[39m Path(cesmroot)
+[0;32m---> 95[0m     [38;5;28;01massert[39;00m cesmroot[38;5;241m.[39mis_dir(), [38;5;124m"[39m[38;5;124mGiven CESM root directory doesn[39m[38;5;124m'[39m[38;5;124mt exist![39m[38;5;124m"[39m
+[1;32m     96[0m [38;5;28;01melif[39;00m [38;5;124m"[39m[38;5;124mCESMROOT[39m[38;5;124m"[39m [38;5;129;01min[39;00m os[38;5;241m.[39menviron:
+[1;32m     97[0m     cesmroot [38;5;241m=[39m Path(os[38;5;241m.[39menviron[[38;5;124m"[39m[38;5;124mCESMROOT[39m[38;5;124m"[39m])
 
-b"ERROR: Undefined env var 'SCRATCH'\n"
-
-[1;31mError creating case.[0m
-------------------
-
-An exception has occurred, use %tb to see the full traceback.
-
-[0;31mCIMEError[0m[0;31m:[0m ERROR: Makes no sense to have empty read-only file: /home/runner/croc_cases/panama-not/env_case.xml
-
+[0;31mAssertionError[0m: Given CESM root directory doesn't exist!
 

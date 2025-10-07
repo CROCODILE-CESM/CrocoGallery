@@ -211,7 +211,7 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="add_components.html">Additional Component Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="add_rof.html">Add data runoff from GLOFAS to the Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_rof.html">Add data runoff from GLOFAS or JRA to the Run</a></li>
 <li class="toctree-l2"><a class="reference internal" href="add_runoff_product.html">Adding your own runoff product to the CESM (Advanced)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="add_chl.html">Add Chlorophyll Files to the Run</a></li>
 <li class="toctree-l2"><a class="reference internal" href="add_tides.html">Add Boundary Tides to the Run</a></li>
@@ -220,7 +220,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2025 CROCODILE Workshop Projects</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../projects/CrocoDash.html">CrocoDash Workshop Project 2025</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/CrocoDash.html">CrocoDash Workshop Project</a></li>
 
 
 
@@ -506,18 +506,27 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="o">.</span><span class="n">configure_forcings</span><span class="p">(</span>
     <span class="n">date_range</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;2000-01-01 00:00:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2000-02-01 00:00:00&quot;</span><span class="p">],</span>
-    <span class="n">data_input_path</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="n">data_input_path</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="c1"># Path to CESM OUTPUT data</span>
     <span class="n">product_name</span> <span class="o">=</span> <span class="s2">&quot;CESM_OUTPUT&quot;</span><span class="p">,</span>
-    <span class="n">marbl_ic_filepath</span> <span class="o">=</span> <span class="s2">&quot;</span>
+    <span class="n">marbl_ic_filepath</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="c1"># Path to MARBL Global IC File</span>
 <span class="p">)</span>
 
-<span class="c1"># For River Nutrients, add </span>
-<span class="c1">#    runoff_esmf_mesh_filepath = &quot;&quot;,</span>
-<span class="c1">#    global_river_nutrients_filepath = &quot;&quot;,</span>
+<span class="c1"># For River Nutrients, which should be used when runoff is also on, add</span>
+<span class="c1">#    runoff_esmf_mesh_filepath = &quot;&quot;, # For river nutrient mapping </span>
+<span class="c1">#    global_river_nutrients_filepath = &quot;&quot;, # Path to global river nutrients mapping</span>
  
 </pre></div>
 </div>
 </div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you’re <strong>Derecho</strong>, you can use the following paths!
+data_input_path = “/glade/campaign/collections/cmip/CMIP6/CESM-HR/FOSI_BGC/HR/g.e22.TL319_t13.G1850ECOIAF_JRA_HR.4p2z.001/ocn/proc/tseries/month_1”,
+product_name = “CESM_OUTPUT”,
+runoff_esmf_mesh_filepath = “/glade/campaign/cesm/cesmdata/cseg/inputdata/ocn/mom/croc/rof/glofas/dis24/GLOFAS_esmf_mesh_v4.nc”,
+global_river_nutrients_filepath = “/glade/campaign/cesm/cesmdata/cseg/inputdata/ocn/mom/croc/rof/river_nutrients/river_nutrients.GNEWS_GNM.glofas.20250916.64bit.nc”,
+marbl_ic_filepath = “/glade/campaign/collections/gdex/data/d651077/cesmdata/inputdata/ocn/mom/tx0.66v1/ecosys_jan_IC_omip_latlon_1x1_180W_c231221.nc”,</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
