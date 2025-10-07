@@ -15,6 +15,7 @@ execute:
     - NWA.ipynb
     - choose_your_own_adventure.ipynb
     - 'features/*'
+    - CrocoDash.ipynb
 
 
 # Define the name of the latex output file for PDF builds
