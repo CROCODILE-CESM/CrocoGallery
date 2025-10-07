@@ -4,6 +4,7 @@
 GLADE_EXCEPTIONS=(
   "gallery/notebooks/projects"        # whole folder
   "gallery/notebooks/features"   
+  "gallery/notebooks/tutorials"
 )
 
 # Exceptions for s3:// paths
