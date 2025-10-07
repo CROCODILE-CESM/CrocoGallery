@@ -522,7 +522,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.grid</span><span class="w"> </span><span class="kn">import</span> <span class="n">Grid</span>
 
 <span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span>
-  <span class="n">resolution</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">,</span> <span class="c1"># in degrees</span>
+  <span class="n">resolution</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span> <span class="c1"># in degrees</span>
   <span class="n">xstart</span> <span class="o">=</span> <span class="mf">278.0</span><span class="p">,</span> <span class="c1"># min longitude in [0, 360]</span>
   <span class="n">lenx</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">,</span> <span class="c1"># longitude extent in degrees</span>
   <span class="n">ystart</span> <span class="o">=</span> <span class="mf">7.0</span><span class="p">,</span> <span class="c1"># min latitude in [-90, 90]</span>
@@ -550,7 +550,13 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bathymetry_path</span><span class="o">=</span><span class="s1">&#39;s3://crocodile-cesm/CrocoDash/data/gebco/GEBCO_2024.zarr/&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="n">bathymetry_path</span><span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/data/gebco/GEBCO_2024.nc&quot;</span><span class="p">)</span>
+<span class="c1"># The GEBCO bathymetry path on Derecho is: /glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/data/gebco/GEBCO_2024.nc</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">bathymetry_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+    <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;Bathymetry file not found, please replace with path to bathymetry file&quot;</span><span class="p">)</span>
 
 <span class="n">topo</span><span class="o">.</span><span class="n">interpolate_from_file</span><span class="p">(</span>
     <span class="n">file_path</span> <span class="o">=</span> <span class="n">bathymetry_path</span><span class="p">,</span>
@@ -562,25 +568,20 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>If bathymetry setup fails, rerun this function with write_to_file = True
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Begin regridding bathymetry...
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># The GEBCO bathymetry path on Derecho is: /glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/data/gebco/GEBCO_2024.nc</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">bathymetry_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+<span class="ne">----&gt; </span><span class="mi">7</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;Bathymetry file not found, please replace with path to bathymetry file&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">topo</span><span class="o">.</span><span class="n">interpolate_from_file</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">file_path</span> <span class="o">=</span> <span class="n">bathymetry_path</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">longitude_coordinate_name</span><span class="o">=</span><span class="s2">&quot;lon&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">latitude_coordinate_name</span><span class="o">=</span><span class="s2">&quot;lat&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">vertical_coordinate_name</span><span class="o">=</span><span class="s2">&quot;elevation&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="p">)</span>
 
-Original bathymetry size: 7.39 Mb
-Regridded size: 2.16 Mb
-Automatic regridding may fail if your domain is too big! If this process hangs or crashes,make sure function argument write_to_file = True and,open a terminal with appropriate computational and resources try calling ESMF directly in the input directory None via
-
-`mpirun -np NUMBER_OF_CPUS ESMF_Regrid -s bathymetry_original.nc -d bathymetry_unfinished.nc -m bilinear --src_var depth --dst_var depth --netcdf4 --src_regional --dst_regional`
-
-For details see https://xesmf.readthedocs.io/en/latest/large_problems_on_HPC.html
-
-Afterwards, we run the &#39;expt.tidy_bathymetry&#39; method to skip the expensive interpolation step, and finishing metadata, encoding and cleanup.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Regridding successful! Now calling `tidy_bathymetry` method for some finishing touches...
-setup bathymetry has finished successfully.
-Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Filling in inland lakes and channels... 
+<span class="ne">FileNotFoundError</span>: Bathymetry file not found, please replace with path to bathymetry file
 </pre></div>
 </div>
 </div>
@@ -591,54 +592,12 @@ Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Fill
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f7b44de85d0&gt;
-</pre></div>
-</div>
-<img alt="../../_images/95620e3d5410be8f5d47f12131c8d0556c48e04c7ed0d51029f13793adde460b.png" src="../../_images/95620e3d5410be8f5d47f12131c8d0556c48e04c7ed0d51029f13793adde460b.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> ipympl
 <span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.topo_editor</span><span class="w"> </span><span class="kn">import</span> <span class="n">TopoEditor</span>
 <span class="n">TopoEditor</span><span class="p">(</span><span class="n">topo</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">Input In [5],</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;matplotlib&#39;</span><span class="p">,</span> <span class="s1">&#39;ipympl&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.topo_editor</span><span class="w"> </span><span class="kn">import</span> <span class="n">TopoEditor</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">TopoEditor</span><span class="p">(</span><span class="n">topo</span><span class="p">)</span>
-
-<span class="nn">File ~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/mom6_bathy/topo_editor.py:19,</span> in <span class="ni">TopoEditor.__init__</span><span class="nt">(self, topo)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="bp">self</span><span class="o">.</span><span class="n">_selected_cell</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># none or (i, j, patch)</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="bp">self</span><span class="o">.</span><span class="n">construct_control_panel</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">19</span> <span class="bp">self</span><span class="o">.</span><span class="n">construct_interactive_plot</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="bp">self</span><span class="o">.</span><span class="n">construct_observances</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">([</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_control_panel</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_interactive_plot</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="p">])</span>
-
-<span class="nn">File ~/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/mom6_bathy/topo_editor.py:70,</span> in <span class="ni">TopoEditor.construct_interactive_plot</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span> <span class="bp">self</span><span class="o">.</span><span class="n">cbar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">im</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="c1"># colorbar title</span>
-<span class="ne">---&gt; </span><span class="mi">70</span> <span class="bp">self</span><span class="o">.</span><span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Depth (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">topo</span><span class="o">.</span><span class="n">depth</span><span class="o">.</span><span class="n">units</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span> <span class="c1"># Enforce Cbar integer values for easier mask/basinmask colorbar</span>
-<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="bp">self</span><span class="o">.</span><span class="n">cbar</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">(</span><span class="n">MaxNLocator</span><span class="p">(</span><span class="n">integer</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>  <span class="c1"># Ensure ticks are integers </span>
-
-<span class="nn">File /usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xarray/core/common.py:280,</span> in <span class="ni">AttrAccessMixin.__getattr__</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">278</span>         <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">KeyError</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">279</span>             <span class="k">return</span> <span class="n">source</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">280</span> <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">281</span>     <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">!r}</span><span class="s2"> object has no attribute </span><span class="si">{</span><span class="n">name</span><span class="si">!r}</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">282</span> <span class="p">)</span>
-
-<span class="ne">AttributeError</span>: &#39;DataArray&#39; object has no attribute &#39;units&#39;
 </pre></div>
 </div>
 </div>
@@ -703,13 +662,13 @@ Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Fill
 <span class="n">casename</span> <span class="o">=</span> <span class="s2">&quot;panama-not&quot;</span>
 
 <span class="c1"># CESM source root (Update this path accordingly!!!)</span>
-<span class="n">cesmroot</span> <span class="o">=</span><span class="s2">&quot;/home/runner/work/CrocoGallery/CrocoGallery/CESM/&quot;</span>
+<span class="n">cesmroot</span> <span class="o">=</span><span class="s2">&quot;/glade/work/&lt;YOURUSERNAME&gt;/CROCESM&quot;</span>
 
 <span class="c1"># Place where all your input files go </span>
-<span class="n">inputdir</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;croc_input&quot;</span> <span class="o">/</span> <span class="n">casename</span>
+<span class="n">inputdir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/glade/work/&lt;YOURUSERNAME&gt;/crocodile_2025&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="s2">&quot;croc_input&quot;</span> <span class="o">/</span> <span class="n">casename</span>
     
 <span class="c1"># CESM case directory</span>
-<span class="n">caseroot</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;croc_cases&quot;</span> <span class="o">/</span> <span class="n">casename</span>
+<span class="n">caseroot</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/glade/work/&lt;YOURUSERNAME&gt;/crocodile_2025&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="s2">&quot;croc_cases&quot;</span> <span class="o">/</span> <span class="n">casename</span>
 </pre></div>
 </div>
 </div>
@@ -751,6 +710,7 @@ The <code class="docutils literal notranslate"><span class="pre">caseroot</span>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="o">.</span><span class="n">configure_forcings</span><span class="p">(</span>
     <span class="n">date_range</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;2020-01-01 00:00:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-01-09 00:00:00&quot;</span><span class="p">],</span>
+    <span class="n">boundaries</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;south&quot;</span><span class="p">,</span><span class="s2">&quot;east&quot;</span><span class="p">,</span><span class="s2">&quot;west&quot;</span><span class="p">],</span>
     <span class="n">function_name</span><span class="o">=</span><span class="s2">&quot;get_glorys_data_from_rda&quot;</span>
 <span class="p">)</span>
 </pre></div>
@@ -768,13 +728,20 @@ The <code class="docutils literal notranslate"><span class="pre">caseroot</span>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You can now build and run your case at&quot;</span><span class="p">,</span><span class="n">caseroot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="section-4-build-and-run-the-case">
 <h1>Section 4: Build and run the case<a class="headerlink" href="#section-4-build-and-run-the-case" title="Link to this heading">#</a></h1>
 <p>After completing the previous steps, you are ready to build and run your CESM case. Begin by navigating to the case root directory specified during the case creation. Before proceeding, review the <code class="docutils literal notranslate"><span class="pre">user_nl_mom</span></code> file located in the case directory. This file contains MOM6 parameter settings that were automatically generated by CrocoDash. Carefully examine these parameters and make any necessary adjustments to fine-tune the model for your specific requirements. While CrocoDash aims to provide a solid starting point, further tuning and adjustments are typically necessary to improve the model for your use case.</p>
 <p>Once you have reviewed and modified the parameters as needed, you can build and execute the case using the following commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcmd</span> <span class="o">--</span> <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span>
 <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">submit</span>
 </pre></div>
 </div>
