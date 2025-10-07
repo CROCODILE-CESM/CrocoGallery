@@ -181,7 +181,7 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="walkthrough.html">Basic Tutorial</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="walkthrough.html">Basic CrocoDash Tutorial</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="cesm_setup.html">CESM Setup</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Set up a rectangular regional CESM-MOM6 run</a></li>
 
@@ -205,14 +205,14 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../features/data_product.html">Data Product Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../features/too_much_data.html">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../features/too_much_data.html">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow (Advanced)</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../features/add_data_products.html">Use different data products w/ the CrocoDash Data Access Module</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../features/add_components.html">Additional Component Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../features/add_rof.html">Add data runoff from GLOFAS to the Run</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../features/add_runoff_product.html">Adding your own runoff product to the CESM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../features/add_runoff_product.html">Adding your own runoff product to the CESM (Advanced)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../features/add_chl.html">Add Chlorophyll Files to the Run</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../features/add_tides.html">Add Boundary Tides to the Run</a></li>
 </ul>
@@ -539,6 +539,70 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/profiles.py:303: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+  if positive is &#39;down&#39;:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:1406: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+  if var_dict[&#39;Ztype&#39;] is &#39;Fixed&#39;:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:1516: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+  if var_dict[&#39;Z&#39;] is not None and var_dict[&#39;Ztype&#39;] is &#39;Fixed&#39; and self.interfaces is None:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:1539: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+  if var_dict[&#39;Z&#39;] is not None and var_dict[&#39;Ztype&#39;] is &#39;Fixed&#39; and self.interfaces is not None:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:1545: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+  if var_dict[&#39;Z&#39;] is not None and var_dict[&#39;Ztype&#39;] is &#39;Generalized&#39; and self.interfaces is not None:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:1780: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
+  if self.var_dict[field][&#39;Ztype&#39;] is not &#39;Fixed&#39;:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2034: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+  if self.var_dict[field][&#39;Ztype&#39;] is &#39;Fixed&#39;:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2091: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+  if var_dict[&#39;Ztype&#39;] is &#39;Fixed&#39;:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2147: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+  if var_dict[&#39;Ztype&#39;] is &#39;Fixed&#39;:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2205: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+  if var_dict[&#39;Ztype&#39;] is &#39;Fixed&#39; and var_dict[&#39;Z&#39;] is not None:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2253: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+  if self.var_dict[field][&#39;Ztype&#39;] is &#39;Fixed&#39; and self.var_dict[field][&#39;Z&#39;] is not None:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2319: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+  if self.var_dict[field][&#39;Ztype&#39;] is &#39;Fixed&#39;:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2363: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
+  if var_dict[&#39;Z&#39;] is not &#39;Fixed&#39;:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2385: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
+  if var_dict[&#39;Ztype&#39;] is not &#39;Fixed&#39;:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2399: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+  if var_dict[&#39;Ztype&#39;] is &#39;Fixed&#39;:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2409: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
+  if var_dict[&#39;Ztype&#39;] is not &#39;Fixed&#39;:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2417: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
+  if var_dict[&#39;Ztype&#39;] is not &#39;Fixed&#39;:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2504: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+  if self.var_dict[field][&#39;Ztype&#39;] is &#39;Fixed&#39;:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2555: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
+  if var_dict[&#39;Ztype&#39;] is not &#39;Fixed&#39; and var_dict[&#39;z_interfaces&#39;] is not None:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2581: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
+  if var_dict[&#39;Ztype&#39;] is not &#39;Fixed&#39; and var_dict[&#39;z_interfaces&#39;] is not None:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2586: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
+  if var_dict[&#39;Ztype&#39;] is not &#39;Fixed&#39; and var_dict[&#39;z_interfaces&#39;] is not None:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2592: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
+  if var_dict[&#39;Ztype&#39;] is not &#39;Fixed&#39;:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2596: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+  if self.var_dict[field][&#39;Ztype&#39;] is &#39;Fixed&#39;:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2679: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+  if self.var_dict[field][&#39;Ztype&#39;] is &#39;Fixed&#39;:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:2813: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
+  if self.var_dict[temp_name][&#39;Ztype&#39;] is not &#39;Fixed&#39;:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:3254: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
+  if self.var_dict[field_x][&#39;Ztype&#39;] is not &#39;Fixed&#39;:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:3259: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
+  if self.var_dict[field][&#39;Ztype&#39;] is not &#39;Fixed&#39;:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:4481: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+  if  self.var_dict[field][&#39;stagger&#39;] is &#39;00&#39; and self.var_dict[field][&#39;Z&#39;] is not None:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:4529: SyntaxWarning: &quot;is&quot; with a literal. Did you mean &quot;==&quot;?
+  if write_interfaces and self.var_dict[field][&#39;Ztype&#39;] is &#39;Fixed&#39; and p == 0:
+/home/runner/work/CrocoGallery/CrocoGallery/CrocoDash/CrocoDash/visualCaseGen/external/mom6_bathy/midas/rectgrid.py:4531: SyntaxWarning: &quot;is not&quot; with a literal. Did you mean &quot;!=&quot;?
+  elif write_interfaces and self.var_dict[field][&#39;Ztype&#39;] is not &#39;Fixed&#39;:
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="step-1-2-topography">
@@ -599,7 +663,7 @@ Tidy bathymetry: Reading in regridded bathymetry to fix up metadata...done. Fill
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fd3b60129d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f6c643bdf90&gt;
 </pre></div>
 </div>
 <img alt="../../_images/95620e3d5410be8f5d47f12131c8d0556c48e04c7ed0d51029f13793adde460b.png" src="../../_images/95620e3d5410be8f5d47f12131c8d0556c48e04c7ed0d51029f13793adde460b.png" />

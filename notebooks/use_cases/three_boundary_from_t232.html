@@ -181,7 +181,7 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/walkthrough.html">Basic Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/walkthrough.html">Basic CrocoDash Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/cesm_setup.html">CESM Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/minimal_demo_rect.html">Set up a rectangular regional CESM-MOM6 run</a></li>
 
@@ -205,14 +205,14 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../features/data_product.html">Data Product Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../features/too_much_data.html">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../features/too_much_data.html">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow (Advanced)</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../features/add_data_products.html">Use different data products w/ the CrocoDash Data Access Module</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../features/add_components.html">Additional Component Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../features/add_rof.html">Add data runoff from GLOFAS to the Run</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../features/add_runoff_product.html">Adding your own runoff product to the CESM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../features/add_runoff_product.html">Adding your own runoff product to the CESM (Advanced)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../features/add_chl.html">Add Chlorophyll Files to the Run</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../features/add_tides.html">Add Boundary Tides to the Run</a></li>
 </ul>
@@ -540,7 +540,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>syntax error, unexpected WORD_WORD, expecting SCAN_ATTR or SCAN_DATASET or SCAN_ERROR
-context: &lt;?xml^ version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Error&gt;&lt;Code&gt;AccessDenied&lt;/Code&gt;&lt;Message&gt;Access Denied&lt;/Message&gt;&lt;RequestId&gt;PCFW8GWRJAZEM38D&lt;/RequestId&gt;&lt;HostId&gt;ZOIOl12lKpgDWaA5mFHITvWoqQp38HD6O/IUwr1Z+YI8hIGJw0kxU10y/KNkE9eSSZ6hh6d+NNY=&lt;/HostId&gt;&lt;/Error&gt;
+context: &lt;?xml^ version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Error&gt;&lt;Code&gt;AccessDenied&lt;/Code&gt;&lt;Message&gt;Access Denied&lt;/Message&gt;&lt;RequestId&gt;TJJ7DCFHXV6W99NV&lt;/RequestId&gt;&lt;HostId&gt;yzd9S2zQiAUO4Uj/cw9ESqoOp8YGWN2GqkSlGG64z8q1salWOnwfnxjC91VoSW0vYrNQ4Gj3LPRmnwj6/Vmy1EYFSv+ObHvHYvvI5y0aaT8=&lt;/HostId&gt;&lt;/Error&gt;
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -555,7 +555,7 @@ context: &lt;?xml^ version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Er
 <span class="ne">---&gt; </span><span class="mi">56</span>     <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">57</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="o">.</span><span class="n">move_to_end</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
-<span class="ne">KeyError</span>: [&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;, (&#39;s3://crocodile-cesm/CrocoDash/data/grids/ocean_hgrid_221123.nc&#39;,), &#39;r&#39;, ((&#39;clobber&#39;, True), (&#39;diskless&#39;, False), (&#39;format&#39;, &#39;NETCDF4&#39;), (&#39;persist&#39;, False)), &#39;86312d1e-ec0c-4b1f-9514-d81b5d70402e&#39;]
+<span class="ne">KeyError</span>: [&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;, (&#39;s3://crocodile-cesm/CrocoDash/data/grids/ocean_hgrid_221123.nc&#39;,), &#39;r&#39;, ((&#39;clobber&#39;, True), (&#39;diskless&#39;, False), (&#39;format&#39;, &#39;NETCDF4&#39;), (&#39;persist&#39;, False)), &#39;ad4b777c-0991-4c7e-900c-5801481c7fae&#39;]
 
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 

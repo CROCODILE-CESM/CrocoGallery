@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Add Components" href="add_components.html" />
-    <link rel="prev" title="Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the Large Data Workflow" href="too_much_data.html" />
+    <link rel="prev" title="Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the Large Data Workflow (Advanced)" href="too_much_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,7 +181,7 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/walkthrough.html">Basic Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/walkthrough.html">Basic CrocoDash Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/cesm_setup.html">CESM Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/minimal_demo_rect.html">Set up a rectangular regional CESM-MOM6 run</a></li>
 
@@ -205,14 +205,14 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="data_product.html">Data Product Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="too_much_data.html">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="too_much_data.html">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow (Advanced)</a></li>
 
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Use different data products w/ the CrocoDash Data Access Module</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="add_components.html">Additional Component Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="add_rof.html">Add data runoff from GLOFAS to the Run</a></li>
-<li class="toctree-l2"><a class="reference internal" href="add_runoff_product.html">Adding your own runoff product to the CESM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_runoff_product.html">Adding your own runoff product to the CESM (Advanced)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="add_chl.html">Add Chlorophyll Files to the Run</a></li>
 <li class="toctree-l2"><a class="reference internal" href="add_tides.html">Add Boundary Tides to the Run</a></li>
 </ul>
@@ -503,15 +503,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;GLORYS&#39;: {&#39;get_glorys_data_from_cds_api&#39;: &lt;function CrocoDash.raw_data_access.datasets.glorys.get_glorys_data_from_cds_api(dates, lat_min, lat_max, lon_min, lon_max, output_dir=None, output_file=None, dataset_varnames=[&#39;zos&#39;, &#39;uo&#39;, &#39;vo&#39;, &#39;so&#39;, &#39;thetao&#39;])&gt;,
-  &#39;get_glorys_data_from_rda&#39;: &lt;function CrocoDash.raw_data_access.datasets.glorys.get_glorys_data_from_rda(dates: list, lat_min, lat_max, lon_min, lon_max, output_dir=PosixPath(&#39;.&#39;), output_file=&#39;raw_glorys.nc&#39;, dataset_varnames=[&#39;time&#39;, &#39;latitude&#39;, &#39;longitude&#39;, &#39;depth&#39;, &#39;zos&#39;, &#39;uo&#39;, &#39;vo&#39;, &#39;so&#39;, &#39;thetao&#39;]) -&gt; xarray.core.dataset.Dataset&gt;,
-  &#39;get_glorys_data_script_for_cli&#39;: &lt;function CrocoDash.raw_data_access.datasets.glorys.get_glorys_data_script_for_cli(dates: tuple, lat_min, lat_max, lon_min, lon_max, output_dir, output_file) -&gt; None&gt;},
- &#39;SEAWIFS&#39;: {&#39;get_global_seawifs_script_for_cli&#39;: &lt;function CrocoDash.raw_data_access.datasets.seawifs.get_global_seawifs_script_for_cli(dates=&#39;UNUSED&#39;, lat_min=&#39;UNUSED&#39;, lat_max=&#39;UNUSED&#39;, lon_min=&#39;UNUSED&#39;, lon_max=&#39;UNUSED&#39;, output_dir=None, output_file=&#39;UNUSED&#39;, username=&#39;&#39;)&gt;,
-  &#39;get_processed_global_seawifs_script_for_cli&#39;: &lt;function CrocoDash.raw_data_access.datasets.seawifs.get_processed_global_seawifs_script_for_cli(dates=&#39;UNUSED&#39;, lat_min=&#39;UNUSED&#39;, lat_max=&#39;UNUSED&#39;, lon_min=&#39;UNUSED&#39;, lon_max=&#39;UNUSED&#39;, output_dir=PosixPath(&#39;.&#39;), output_file=&#39;processed_seawifs.nc&#39;)&gt;},
- &#39;GEBCO&#39;: {&#39;get_gebco_data_with_python&#39;: &lt;function CrocoDash.raw_data_access.datasets.gebco.get_gebco_data_with_python(dates=&#39;UNUSED&#39;, lat_min=&#39;UNUSED&#39;, lat_max=&#39;UNUSED&#39;, lon_min=&#39;UNUSED&#39;, lon_max=&#39;UNUSED&#39;, output_dir=None, output_file=None)&gt;,
-  &#39;get_gebco_data_script&#39;: &lt;function CrocoDash.raw_data_access.datasets.gebco.get_gebco_data_script(dates=&#39;UNUSED&#39;, lat_min=&#39;UNUSED&#39;, lat_max=&#39;UNUSED&#39;, lon_min=&#39;UNUSED&#39;, lon_max=&#39;UNUSED&#39;, output_dir=None, output_file=None)&gt;},
- &#39;GLOFAS&#39;: {&#39;get_processed_global_glofas_script_for_cli&#39;: &lt;function CrocoDash.raw_data_access.datasets.glofas.get_processed_global_glofas_script_for_cli(dates=&#39;UNUSED&#39;, lat_min=&#39;UNUSED&#39;, lat_max=&#39;UNUSED&#39;, lon_min=&#39;UNUSED&#39;, lon_max=&#39;UNUSED&#39;, output_dir=PosixPath(&#39;.&#39;), output_file=&#39;processed_glofas.nc&#39;)&gt;,
-  &#39;get_global_data_with_python&#39;: &lt;function CrocoDash.raw_data_access.datasets.glofas.get_global_data_with_python(dates, lat_min=&#39;UNUSED&#39;, lat_max=&#39;UNUSED&#39;, lon_min=&#39;UNUSED&#39;, lon_max=&#39;UNUSED&#39;, output_dir=PosixPath(&#39;.&#39;), output_file=&#39;glofas_data.nc&#39;)&gt;}}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;GLORYS&#39;: {&#39;get_glorys_data_from_cds_api&#39;: &lt;function CrocoDash.data_access.glorys.get_glorys_data_from_cds_api(dates, lat_min, lat_max, lon_min, lon_max, output_dir=None, output_file=None)&gt;,
+  &#39;get_glorys_data_from_rda&#39;: &lt;function CrocoDash.data_access.glorys.get_glorys_data_from_rda(dates: list, lat_min, lat_max, lon_min, lon_max, output_dir=PosixPath(&#39;.&#39;), output_file=&#39;raw_glorys.nc&#39;) -&gt; xarray.core.dataset.Dataset&gt;,
+  &#39;get_glorys_data_script_for_cli&#39;: &lt;function CrocoDash.data_access.glorys.get_glorys_data_script_for_cli(dates: tuple, lat_min, lat_max, lon_min, lon_max, output_dir, output_file) -&gt; None&gt;}}
 </pre></div>
 </div>
 </div>
@@ -528,8 +522,7 @@ document.write(`
  &#39;TPXO&#39;,
  &#39;GLOFAS&#39;,
  &#39;CESM Inputdata Repo (Bathymetry)&#39;,
- &#39;CESM Inputdata Repo (Grids)&#39;,
- &#39;SEAWIFS&#39;]
+ &#39;CESM Inputdata Repo (Grids)&#39;]
 </pre></div>
 </div>
 </div>
@@ -565,18 +558,6 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="o">.</span><span class="n">configure_forcing</span><span class="p">(</span><span class="n">date_range</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;2020-01-01 00:00:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-01-09 00:00:00&quot;</span><span class="p">],</span> 
                        <span class="n">product_name</span> <span class="o">=</span> <span class="s2">&quot;product_name&quot;</span><span class="p">,</span> 
                        <span class="n">function_name</span> <span class="o">=</span> <span class="s2">&quot;function_name&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [6],</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">case</span><span class="o">.</span><span class="n">configure_forcing</span><span class="p">(</span><span class="n">date_range</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;2020-01-01 00:00:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-01-09 00:00:00&quot;</span><span class="p">],</span> 
-<span class="g g-Whitespace">      </span><span class="mi">2</span>                        <span class="n">product_name</span> <span class="o">=</span> <span class="s2">&quot;product_name&quot;</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                        <span class="n">function_name</span> <span class="o">=</span> <span class="s2">&quot;function_name&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;case&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -619,7 +600,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow</p>
+        <p class="prev-next-title">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow (Advanced)</p>
       </div>
     </a>
     <a class="right-next"
