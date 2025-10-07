@@ -22,8 +22,13 @@ We will run the `regional_ocean` example included with CUPiD. This includes four
 - `Regional_Ocean_Atmospheric_Forcing.ipynb`: look at atmospheric forcing at the surface.
 - `Regional_Ocean_OBC.ipynb`: visualize surface fields and open boundary conditions.
 
-#### What We Need
-Make sure `(cupid-infrastructure)` and `(cupid-analysis)` conda environments are fully installed before starting this task.
+<div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
+<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint! </strong> </h4> 
+
+Make sure `(cupid-infrastructure)` and `(cupid-analysis)` conda environments are fully installed before starting this task. If you are unsure, try running `conda activate cupid-infrastructure` and `conda activate cupid-analysis` in the terminal.
+
+Let us know if you're running into any issues!
+</div>
 
 ## Task 2: Let's Run CUPiD
 Navigate to your installation of CUPiD, we will run the diagnostics in the example directory. 

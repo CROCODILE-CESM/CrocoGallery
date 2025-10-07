@@ -50,7 +50,7 @@ parts:
           - file: notebooks/diagnostics/CUPiD_in_CESM_Workflow
             title: Running CUPiD within CESM
           - file: notebooks/diagnostics/contributing_to_CUPiD
-            title: Contributing to CESM
+            title: Contributing to CUPiD
         - file: notebooks/projects/choose_your_own_adventure
     - caption: Use Cases
       chapters:

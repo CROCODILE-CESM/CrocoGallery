@@ -1,4 +1,20 @@
-# Using CUPiD to Diagnose Regional MOM6 runs
+# Using CUPiD to Diagnose Regional MOM6
+
+<div class="alert alert-info">
+<details>
+<summary> <h4 style="margin-top: 0; padding-top: 0; margin-bottom: 0; padding-bottom: 0; display: inline-flex"> &nbsp; Warm up the Engine – Start a JupyterHub Server </h4> </summary>
+If you are not already logged into <a href="https://jupyterhub.hpc.ucar.edu/" target="_blank" rel="noopener noreferrer"> jupter.hub.ucar.edu </a>, please navigate there and start a new server. 
+<strong>Required Settings</strong>
+  <ul>
+    <li>Resource Selection: <strong>Casper PBS Batch</strong></li>  
+    <li>Queue or Reservation: <strong>tutorial</strong>
+    <li>Project Account: <strong>CESM0030</strong> </li>
+    ...
+    <li> Specify Memory per Node in GB: <strong>20</strong>
+  </ul>
+  Leave everything else the same!
+</details>
+</div>
 
 ![CUPiD Logo](../../images/CUPiD/logo.png)
 
@@ -13,7 +29,7 @@ and sharing python code and a standard conda environment across components.
 
 ## CUPiD for Regional MOM6
 
-IMAGE/GIF NEEDED HERE
+**IMAGE/GIF NEEDED HERE**
 
 CUPiD is a broad package designed to pull many independent tasks together and standardize common parts of a postprocessing workflow.
 For postprocessing, CUPiD is automating the process of converting CESM output to the standard format required for the Coupled Model Intercomparison Project ([CMIP](https://wcrp-cmip.org/)).
@@ -30,7 +46,7 @@ Participants will install CUPiD and then familiarize themselves with it by
 We will touch briefly on generating time series files from CESM history files as well.
 
 ## Your Turn!
-As we progress through this tutorial, thin about what kinds of diagnostics might be helpful for general regions and your specific regions of interest. 
+As we progress through this tutorial, think about what kinds of diagnostics might be helpful for general regions and your specific regions of interest. 
 
 ### Ideas for New Notebooks
 This is a brief list of some possible topics/notebooks to contribute from a regional ocean perspective. Add your own!

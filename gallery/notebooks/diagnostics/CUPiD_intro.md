@@ -1,24 +1,12 @@
 # Installing CUPiD
 
-To get the most out of this tutorial, install CUPiD on the NCAR super computer.
+This page follows the [CUPiD Installation Documentation](https://ncar.github.io/CUPiD/#installing)
 
-## Task 0: Setup JupyterHub
-We first need to setup a JupyterHub instance and navigate to our directory for the workshop.
-### 0.1 Start a JupyterHub Server
-If you are not already logged into jupyter.hub.ucar.edu, please navigate there and start a new server. 
-<div class="alert alert-info">
-<strong>Required Settings</strong>
-  <ul>
-    <li>Resource Selection: <strong>Casper PBS Batch</strong></li>  
-    <li>Queue or Reservation: <strong>tutorial</strong>
-    <li>Project Account: <strong>CESM0030</strong> </li>
-    ...
-    <li> Specify Memory per Node in GB: <strong>20</strong>
-  </ul>
-  Leave everything else the same!
-</div>
+**To get the most out of this tutorial, install CUPiD on the NCAR super computer.**
 
-### 0.2 Navigate to `crocodile_2025` directory
+## Task 0: Setup Terminal and JupyterHub for this Activity
+
+### 0.1 Navigate to `crocodile_2025` directory
 We should have a directory named `crocodile_2025` in our work directory. The full path to this will be: `/glade/work/YOUR_USERNAME/crocodile_2025`.
 
 JupyterHub references the filesystem slightly differently. To access this directory:
@@ -27,11 +15,19 @@ JupyterHub references the filesystem slightly differently. To access this direct
 
 If JupyterHub tells you this path does not exist, let us know.
 
-### 0.3 Open a terminal
+### 0.2 Open a terminal
 Open a Terminal instance by scrolling all the way down in the launcher tab and selecting **Terminal**. 
 ![Jupyter Terminal](../../images/CUPiD/Jupyter_Terminal.png)
 This should open a terminal with the following prompt:
 `USERNAME@crhtcXX:/glade/work/USERNAME/crocodile_2025>`
+
+<div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
+<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint! </strong> </h4> 
+
+At this point you should have a running JupyterHub instance, an open terminal in JupyterHub, and you should be in your `crocodile_2025` workshop folder.
+
+Let us know <strong>now</strong> if you're running into any issues!
+</div>
 
 ## Task 1: Clone CUPiD and Install Environments
 
@@ -72,8 +68,8 @@ To set the environment variable run
 cd CUPiD
 export CUPID_ROOT=`pwd -P`
 ```
->**Note:** This environment variable only exists in this specific terminal. 
->It will disappear after this tutorial (see [Personalizing start files - NCAR Docs](https://ncar-hpc-docs.readthedocs.io/en/latest/environment-and-software/user-environment/customizing/) for more information).
+**Note:** This environment variable only exists in this specific terminal. 
+It will disappear after this tutorial (see [Personalizing start files - NCAR Docs](https://ncar-hpc-docs.readthedocs.io/en/latest/environment-and-software/user-environment/customizing/) for more information).
 
 <div class="alert alert-warning">  
 <details>  
@@ -115,11 +111,13 @@ To run CUPiD itself we use the `(cupid-infrastructure)` environment, then CUPiD 
 
 ```bash
 cd ${CUPID_ROOT}
-mamba env create -f environments/cupid-infrastructure.yml
+mamba env create -f environments/cupid-infrastructure.yml --yes
 ```
 
-This step may take a while, and you may need to confirm prompts in the terminal.
+This step may take a while.
 When it completes you can verify it was successful by running
+
+**Note:** Remove the `--yes` flag if you would like to confirm the installation manually.
 
 ```bash
 conda activate cupid-infrastructure
@@ -134,7 +132,7 @@ If the environment did not install correctly,
 #### Install `(cupid-analysis)`
 
 ```bash
-mamba env create -f environments/cupid-analysis.yml
+mamba env create -f environments/cupid-analysis.yml --yes
 ```
 
 This may also take a while,

@@ -1,18 +1,58 @@
 # Running CUPiD within CESM
 
 CUPiD has been included in the CESM workflow,
-which means you can run CUPiD from a CESM case directory with the familiar `case.submit` command.
+which means you can run CUPiD from a CESM case directory with the familiar `case.submit` command. 
 For this exercise, we will run the notebooks Aidan put together on the case you ran with Manish.
+
+<div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
+<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint! </strong> </h4> 
+<ol>
+<li> Are the standalone diagnostics from the previous activity done running? </li>
+<li>Do you have a case that successfully ran and produced output from Monday's <strong>Practicum: Using CrocoDash</strong>? </li>
+</ol>
+
+Let us know if you need any help!
+</div>
 
 ## Task 3:
 
-### Task 3.1: Explore how CUPiD is Incorporated in a CESM Case
+### Task 3.1: Moving to Derecho and Navigating to your CESM case
+We have been working on NCAR's Casper machine, which is very useful for diagnostics, data analysis, and visualization. The CESM case that we made in Monday's practicum, **Using CrocoDash**, was set up to run on Derecho. CESM is picky about what machine it runs one bcause it tailors the configuration and run accordingly, so we need to move to Derecho for this next step.
+
+#### Moving to Derecho
+There are two options for this step:
+<div class="alert alert-info">  
+<details>  
+<summary>A. Access Derecho through our current JupyterHub instance with <code>ssh</code>.</summary><br>
+Casper is on the same network as Derecho, so in a new terminal you can simply type:
+<pre> ssh USERNAME@derecho </pre>
+
+You will be prompted to enter your password and authenticate with DUO, and then you will be connected to a login node on Derecho.
+</div>
+
+<div class="alert alert-info">  
+<details>  
+<summary>B. Access Derecho through a separate terminal with <code>ssh</code>.</summary><br>
+You can directly login to Derecho through any terminal using <code>ssh</code>. Run the command:
+<pre> ssh USERNAME@derecho.hpc.ucar.edu </pre>
+
+You will be prompted to enter your password and authenticate with DUO, and then you will be connected to a login node on Derecho.
+</div>
+
+Look for the prompt on your terminal to say `USERNAME@derecho#:~>`.
+
+#### Navigating to CESM Case
+Change into the directory for your case from Monday's practicum. The path to this directory might vary, but it will likely be located in the same `crocodile_2025` directory we have been working in so far. You will likely run a command like:
+```bash
+cd /glade/work/USERNAME/crocodile_2025/CASENAME
+```
+
+### Task 3.2: Explore how CUPiD is Incorporated in a CESM Case
 
 As you saw in previous tutorials, CESM uses XML files to manage the environment in which your case is run.
 Each file contains variables pertaining to a different phase of the case generation process:
 
 ```bash
-$ ls -1 env_*
 env_archive.xml
 env_batch.xml
 env_build.xml
@@ -23,11 +63,11 @@ env_postprocessing.xml
 env_run.xml
 env_workflow.xml
 ```
-Note: run the above inside your CESM installation if interested
+**Note:** run `ls -1 env_*` inside your CESM installation if you want to produce this output.
 
 We are interested in the CUPiD variables,
 which are all defined in `env_postprocessing.xml`.
-XML variables plain-text files so we could inspect them directly,
+XML variables are all in plain-text files so we could inspect them directly,
 but let's use the provided `xmlquery` tool instead.
 
 <div class="alert alert-warning">  
@@ -76,7 +116,57 @@ Results in group cupid_run_components
 </details>
 </div>
 
-### Side Quest: How Does CUPiD Tie in to CESM?
+### Task 3.3: Configure and Run CUPiD
+
+The first variable to talk about is `CUPID_ROOT`.
+CUPiD is distributed with CESM in the `tools/CUPiD` subdirectory,
+but you may wish to use a more recent version of CUPiD.
+This could be handy if, for example,
+you are taking a tutorial and the first exercises were cloning CUPiD,
+installing environments from this clone and then running a few examples.
+In that case, you want to run
+
+```bash
+./xmlchange CUPID_ROOT=${CUPID_ROOT}
+```
+
+We also want to run the `regional_ocean` example and use 10 GB of memory.
+These are set by the `CUPID_EXAMPLE` and `CUPID_MEM_PER_TASK` variables, respectively.
+
+<div class="alert alert-warning">  
+🚨 <strong>POP QUIZ #2!</strong> 🚨 
+
+How do we set `CUPID_EXAMPLE = regional_ocean`? 
+How can we check the value of `CUPID_MEM_PER_TASK` to make sure we have enough memory?
+<details>  
+
+<summary>Solution</summary><br>
+
+```bash
+./xmlchange CUPID_EXAMPLE=regional_ocean
+./xmlquery CUPID_MEM_PER_TASK
+```
+</details>
+</div>
+
+Lastly, we don't need to generate time series files or build a webpage
+
+```bash
+./xmlchange CUPID_GEN_TIMESERIES=FALSE,CUPID_GEN_HTML=FALSE
+```
+
+When you are ready to run CUPiD, you can tell `case.submit` that you want to run the `case.cupid` job in the workflow.
+Make sure you are logged in to Derecho (not Casper) and then run:
+
+```bash
+./case.submit --job case.cupid
+```
+
+This will add a job to the development queue on derecho,
+and it hopefully will start running quickly.
+When it finishes, output will be in the `computed_notebooks` subdirectory of your case directory.
+
+## Side Quest: How Does CUPiD Tie in to CESM?
 
 The details look complicated, but it's pretty simple from the user's perspective
 (we're going to look at several files to understand what CESM is doing,
@@ -174,52 +264,3 @@ fi
 
 You can see how the variables defined in `env_postprocessing.xml` impact what parts of CUPiD are run.
 In the next task we will make sure these XML variables are set correctly and then ask CESM to run `case.cupid`.
-
-### Task 3.2: Configure and Run CUPiD
-
-The first variable to talk about is `CUPID_ROOT`.
-CUPiD is distributed with CESM in the `tools/CUPiD` subdirectory,
-but you may wish to use a more recent version of CUPiD.
-This could be handy if, for example,
-you are taking a tutorial and the first exercises were cloning CUPiD,
-installing environments from this clone and then running a few examples.
-In that case, you want to run
-
-```bash
-./xmlchange CUPID_ROOT=${CUPID_ROOT}
-```
-
-Also, as we saw in the last section of this tutorial,
-we want to run the `regional_ocean` example and use 100 GB of memory.
-These are set by the `CUPID_EXAMPLE` and `CUPID_MEM_PER_TASK` variables, respectively.
-
-<div class="alert alert-warning">  
-🚨 <strong>POP QUIZ #2!</strong> 🚨 
-
-How do we use `xmlchange` to set `CUPID_EXAMPLE = regional_ocean` and `CUPID_MEM_PER_TASK = 100`?
-<details>  
-
-<summary>Solution</summary><br>
-
-```bash
-./xmlchange CUPID_EXAMPLE=regional_ocean,CUPID_MEM_PER_TASK=100
-```
-</details>
-</div>
-
-Lastly, we don't need to generate time series files or build a webpage
-
-```bash
-./xmlchange CUPID_GEN_TIMESERIES=FALSE,CUPID_GEN_HTML=FALSE
-```
-
-When you are ready to run CUPiD, you can tell `case.submit` that you want to run the `case.cupid` job in the workflow.
-Make sure you are logged in to Derecho (not Casper) and then run:
-
-```bash
-./case.submit --job case.cupid
-```
-
-This will add a job to the development queue on derecho,
-and it hopefully will start running quickly.
-When it finishes, output will be in the `computed_notebooks` subdirectory of your case directory.
