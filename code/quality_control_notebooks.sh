@@ -3,9 +3,8 @@
 # Exceptions for /glade paths
 GLADE_EXCEPTIONS=(
   "gallery/notebooks/projects",        # whole folder
-  "gallery/notebooks/features/tutorial2_MOM6-CL-comparison-float.ipynb",
-  "gallery/notebooks/features/tutorial3_CrocoLake_map_temperature.ipynb",
-  "gallery/notebooks/features/tutorial4_MOM6-WOD13-comparison.ipynb"
+  "gallery/notebooks/features/tutorial1_MOM6-CL-comparison.ipynb",
+  "gallery/notebooks/features/tutorial2_MOM6-CL-comparison-float.ipynb"
 )
 
 # Exceptions for s3:// paths
