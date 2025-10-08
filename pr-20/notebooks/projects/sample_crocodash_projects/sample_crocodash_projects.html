@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>NWA &#8212; CrocoDash Gallery</title>
+    <title>Sample CrocoDash Projects &#8212; CrocoDash Gallery</title>
   
   
   
@@ -57,7 +57,7 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/projects/specific_notebooks/NWA';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/projects/sample_crocodash_projects/sample_crocodash_projects';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -293,37 +293,6 @@
 
 
 
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://mybinder.org/v2/gh/CROCODILE-CESM/CrocoGallery/main?urlpath=lab/tree/gallery/notebooks/projects/specific_notebooks/NWA.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch on Binder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="Binder logo" src="../../../_static/images/logo_binder.svg">
-  </span>
-<span class="btn__text-container">Binder</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -349,7 +318,7 @@
       
       
       
-      <li><a href="https://github.com/CROCODILE-CESM/CrocoGallery/issues/new?title=Issue%20on%20page%20%2Fnotebooks/projects/specific_notebooks/NWA.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/CROCODILE-CESM/CrocoGallery/issues/new?title=Issue%20on%20page%20%2Fnotebooks/projects/sample_crocodash_projects/sample_crocodash_projects.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -379,7 +348,7 @@
       
       
       
-      <li><a href="../../../_sources/notebooks/projects/specific_notebooks/NWA.ipynb" target="_blank"
+      <li><a href="../../../_sources/notebooks/projects/sample_crocodash_projects/sample_crocodash_projects.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -389,7 +358,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -450,9 +419,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -463,24 +430,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>NWA</h1>
+    <h1>Sample CrocoDash Projects</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">NWA</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-forcings">Configure Forcings</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#post-setup">Post Setup</a></li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -490,127 +444,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="nwa">
-<h1>NWA<a class="headerlink" href="#nwa" title="Link to this heading">#</a></h1>
-<p>This project recreates the 1/12th degree Northwest Atlantic Domain CROCODILE has been testing. To do that, we import previously generated grids, and use the same configuration options</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.grid</span><span class="w"> </span><span class="kn">import</span> <span class="n">Grid</span>
-
-<span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="o">.</span><span class="n">from_supergrid</span><span class="p">(</span><span class="s2">&quot;/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/grids/nwa/ocean_hgrid.nc&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.topo</span><span class="w"> </span><span class="kn">import</span> <span class="n">Topo</span>
-
-<span class="n">bathymetry_path</span><span class="o">=</span><span class="s1">&#39;/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/grids/nwa/ocean_topo.nc&#39;</span>
-
-<span class="n">topo</span> <span class="o">=</span> <span class="n">Topo</span><span class="o">.</span><span class="n">from_topo_file</span><span class="p">(</span>
-    <span class="n">grid</span> <span class="o">=</span> <span class="n">grid</span><span class="p">,</span>
-    <span class="n">topo_file_path</span><span class="o">=</span><span class="n">bathymetry_path</span><span class="p">,</span>
-    <span class="n">min_depth</span> <span class="o">=</span> <span class="mf">9.5</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.vgrid</span><span class="w"> </span><span class="kn">import</span> <span class="n">VGrid</span>
-
-<span class="n">vgrid_path</span><span class="o">=</span><span class="s1">&#39;/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/grids/nwa/vgrid_75_2m.nc&#39;</span>
-
-<span class="n">vgrid</span>  <span class="o">=</span> <span class="n">VGrid</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">vgrid_path</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
-
-<span class="c1"># CESM case (experiment) name</span>
-<span class="n">casename</span> <span class="o">=</span> <span class="s2">&quot;nwa.1&quot;</span>
-
-<span class="c1"># CESM source root (Update this path accordingly!!!)</span>
-<span class="n">cesmroot</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;&lt;YOUR SANDBOX&gt;&quot;</span><span class="p">)</span>
-
-<span class="c1"># Place where all your input files go </span>
-<span class="n">inputdir</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;croc_input&quot;</span> <span class="o">/</span> <span class="n">casename</span>
-    
-<span class="c1"># CESM case directory</span>
-<span class="n">caseroot</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;croc_cases&quot;</span> <span class="o">/</span> <span class="n">casename</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.case</span><span class="w"> </span><span class="kn">import</span> <span class="n">Case</span>
-<span class="n">grid</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;nwa_1&quot;</span>
-<span class="n">case</span> <span class="o">=</span> <span class="n">Case</span><span class="p">(</span>
-    <span class="n">cesmroot</span> <span class="o">=</span> <span class="n">cesmroot</span><span class="p">,</span>
-    <span class="n">caseroot</span> <span class="o">=</span> <span class="n">caseroot</span><span class="p">,</span>
-    <span class="n">inputdir</span> <span class="o">=</span> <span class="n">inputdir</span><span class="p">,</span>
-    <span class="n">ocn_grid</span> <span class="o">=</span> <span class="n">grid</span><span class="p">,</span>
-    <span class="n">ocn_vgrid</span> <span class="o">=</span> <span class="n">vgrid</span><span class="p">,</span>
-    <span class="n">ocn_topo</span> <span class="o">=</span> <span class="n">topo</span><span class="p">,</span>
-    <span class="n">project</span> <span class="o">=</span> <span class="s1">&#39;NCGD0011&#39;</span><span class="p">,</span>
-    <span class="n">override</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="n">machine</span> <span class="o">=</span> <span class="s2">&quot;derecho&quot;</span><span class="p">,</span>
-    <span class="n">compset</span> <span class="o">=</span> <span class="s2">&quot;1850_DATM%JRA_SLND_SICE_MOM6_DROF</span><span class="si">%G</span><span class="s2">LOFAS_SGLC_SWAV&quot;</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="o">.</span><span class="n">configure_forcings</span><span class="p">(</span>
-    <span class="n">date_range</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;2000-01-01 00:00:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2000-01-31 00:00:00&quot;</span><span class="p">],</span>
-    <span class="n">tidal_constituents</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;M2&#39;</span><span class="p">,</span><span class="s1">&#39;S2&#39;</span><span class="p">,</span><span class="s1">&#39;N2&#39;</span><span class="p">,</span><span class="s1">&#39;K2&#39;</span><span class="p">,</span><span class="s1">&#39;K1&#39;</span><span class="p">,</span><span class="s1">&#39;O1&#39;</span><span class="p">,</span><span class="s1">&#39;P1&#39;</span><span class="p">,</span><span class="s1">&#39;Q1&#39;</span><span class="p">,</span><span class="s1">&#39;MM&#39;</span><span class="p">,</span><span class="s1">&#39;MF&#39;</span><span class="p">],</span>
-    <span class="n">tpxo_elevation_filepath</span> <span class="o">=</span> <span class="s2">&quot;/glade/u/home/manishrv/scratch/ice/croc/tpxo/h_tpxo9.v1.nc&quot;</span><span class="p">,</span>
-    <span class="n">tpxo_velocity_filepath</span> <span class="o">=</span> <span class="s2">&quot;/glade/u/home/manishrv/scratch/ice/croc/tpxo/u_tpxo9.v1.nc&quot;</span><span class="p">,</span>
-    <span class="n">chl_processed_filepath</span> <span class="o">=</span> <span class="s2">&quot;/glade/campaign/cesm/cesmdata/cseg/inputdata/ocn/mom/croc/chl/data/SeaWIFS.L3m.MC.CHL.chlor_a.0.25deg.nc&quot;</span><span class="p">,</span>
-    <span class="n">runoff_esmf_mesh_filepath</span> <span class="o">=</span> <span class="s2">&quot;/glade/campaign/cesm/cesmdata/cseg/inputdata/ocn/mom/croc/rof/glofas/dis24/GLOFAS_esmf_mesh_v4.nc&quot;</span><span class="p">,</span>
-    <span class="n">too_much_data</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> 
-    <span class="n">boundaries</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;south&quot;</span><span class="p">,</span> <span class="s2">&quot;north&quot;</span><span class="p">,</span> <span class="s2">&quot;east&quot;</span><span class="p">]</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="configure-forcings">
-<h2>Configure Forcings<a class="headerlink" href="#configure-forcings" title="Link to this heading">#</a></h2>
-<p>The previous forcing configuration is how the NWA domain was setup. The use of too_much_data will copy a folder of code into your input directory to generate the initial &amp; boundary conditions outside of the notebook (We do this because NWA is a large domain and many times is too large to run inside the resources for this notebook). Please go there to generate those after finishing running the notebook.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="o">.</span><span class="n">process_forcings</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="post-setup">
-<h1>Post Setup<a class="headerlink" href="#post-setup" title="Link to this heading">#</a></h1>
-<ol class="arabic simple">
-<li><p>Copy the datm_streams.xml</p></li>
-<li><p>Build &amp; Submit!</p></li>
-</ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
-<span class="n">source_file</span> <span class="o">=</span> <span class="s2">&quot;/glade/u/home/manishrv/croc_cases/gustavo-glorys-2/datm.streams.xml&quot;</span>
-<span class="n">destination_file</span> <span class="o">=</span> <span class="n">caseroot</span><span class="o">/</span><span class="s2">&quot;datm.streams.xml&quot;</span>
-<span class="n">shutil</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">source_file</span><span class="p">,</span> <span class="n">destination_file</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="sample-crocodash-projects">
+<h1>Sample CrocoDash Projects<a class="headerlink" href="#sample-crocodash-projects" title="Link to this heading">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -626,7 +461,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks/projects/specific_notebooks"
+            path: "./notebooks/projects/sample_crocodash_projects"
         },
         predefinedOutput: true
     }
@@ -649,26 +484,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">NWA</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-forcings">Configure Forcings</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#post-setup">Post Setup</a></li>
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Choose your own adventure! &#8212; CrocoDash Gallery</title>
+    <title>CICE Sample Project &#8212; CrocoDash Gallery</title>
   
   
   
@@ -57,7 +57,7 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/projects/specific_notebooks/choose_your_own_adventure';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/projects/sample_crocodash_projects/CICE';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -301,7 +301,7 @@
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/CROCODILE-CESM/CrocoGallery/main?urlpath=lab/tree/gallery/notebooks/projects/specific_notebooks/choose_your_own_adventure.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/CROCODILE-CESM/CrocoGallery/main?urlpath=lab/tree/gallery/notebooks/projects/sample_crocodash_projects/CICE.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -349,7 +349,7 @@
       
       
       
-      <li><a href="https://github.com/CROCODILE-CESM/CrocoGallery/issues/new?title=Issue%20on%20page%20%2Fnotebooks/projects/specific_notebooks/choose_your_own_adventure.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/CROCODILE-CESM/CrocoGallery/issues/new?title=Issue%20on%20page%20%2Fnotebooks/projects/sample_crocodash_projects/CICE.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -379,7 +379,7 @@
       
       
       
-      <li><a href="../../../_sources/notebooks/projects/specific_notebooks/choose_your_own_adventure.ipynb" target="_blank"
+      <li><a href="../../../_sources/notebooks/projects/sample_crocodash_projects/CICE.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -463,7 +463,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Choose your own adventure!</h1>
+    <h1>CICE Sample Project</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -473,10 +473,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Choose your own adventure!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">CICE Sample Project</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#section-1-generate-a-regional-mom6-domain">SECTION 1: Generate a regional MOM6 domain</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-1-horizontal-grid">Step 1.1: Horizontal Grid</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-2-topography">Step 1.2: Topography</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-2-topography">Step 1.2: Topography</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#editing-the-topography">Editing the topography</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-3-vertical-grid">Step 1.3: Vertical Grid</a></li>
 </ul>
 </li>
@@ -490,7 +493,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-3-process-forcing-data">Step 3.3: Process forcing data</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#section-4-build-and-run-the-case">Section 4: Build and run the case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#section-4-build-and-run-the-case">Section 4: Build and run the case</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-use-restart-files-as-initial-condition-for-your-run-after-you-run-for-the-first-time">Optional: Use restart files as initial condition for your run (after you run for the first time!)</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -503,41 +509,61 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="choose-your-own-adventure">
-<h1>Choose your own adventure!<a class="headerlink" href="#choose-your-own-adventure" title="Link to this heading">#</a></h1>
-<p>Use this notebook to setup your OWN domain! Since this is the least protected notebook, expect to run into errors!</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="cice-sample-project">
+<h1>CICE Sample Project<a class="headerlink" href="#cice-sample-project" title="Link to this heading">#</a></h1>
+<p>In this notebook, the code has the simplest regional ocean model setup possible through CrocoDash. In the comments and descriptions, we’ll provide some of the ways you can add and build on this demo (recreate a specific domain - like GFDL’s NWA12, run with CICE - the sea-ice model in CESM, run with MARBL - the ocean BGC model in CESM, and beyond!)</p>
+<p>This notebook is designed for new users of CrocoDash and CESM who want to set up a simple regional ocean model. By following the steps, you will learn how to generate a domain, configure a CESM case, prepare ocean forcing data, and run your simulation.</p>
+<p>A typical workflow of utilizing CrocoDash consists of four main steps:</p>
+<ol class="arabic simple">
+<li><p>Generate a regional MOM6 domain.</p></li>
+<li><p>Create the CESM case.</p></li>
+<li><p>Prepare ocean forcing data.</p></li>
+<li><p>Build and run the case.</p></li>
+</ol>
+<p>Every specialization of CrocoDash will use this framework.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="section-1-generate-a-regional-mom6-domain">
 <h1>SECTION 1: Generate a regional MOM6 domain<a class="headerlink" href="#section-1-generate-a-regional-mom6-domain" title="Link to this heading">#</a></h1>
+<p>We begin by defining a regional MOM6 domain using CrocoDash. To do so, we first generate a horizontal grid. We then generate the topography by remapping an existing bathymetric dataset to our horizontal grid. Finally, we define a vertical grid.</p>
 <section id="step-1-1-horizontal-grid">
 <h2>Step 1.1: Horizontal Grid<a class="headerlink" href="#step-1-1-horizontal-grid" title="Link to this heading">#</a></h2>
+<p>CROCODILE grid generator tools cannot create domains over the poles (but will soon!), instead we pass in previously generated grids over the Artic/Antartic (If you’re interested in how we generated these, please reach out!).
+As a quick reminder, sea ice OBCs are not well understood, and it is common practice to have a domain where sea ice does not reach the boundaries.</p>
+<p>Grids:</p>
+<ul class="simple">
+<li><p>Arctic Grid: /glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/grids/cice_grids/replica_grid_3413.nc</p></li>
+<li><p>Arctic Bathy: /glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/grids/cice_grids/bathy_3413.nc</p></li>
+<li><p>Antarctic Grid: /glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/grids/cice_grids/replica_grid_3031.nc</p></li>
+<li><p>Antarctic Bathy: /glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/grids/cice_grids/bathy_3031.nc</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.grid</span><span class="w"> </span><span class="kn">import</span> <span class="n">Grid</span>
 
-<span class="c1"># This is one way to create a grid object. You can also check out the API documentation for more ways!</span>
-<span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span>
-  <span class="n">resolution</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="n">xstart</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="n">lenx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="n">ystart</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="n">leny</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;&lt;INSERT NAME HERE&gt;&quot;</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="o">.</span><span class="n">from_supergrid</span><span class="p">(</span><span class="s2">&quot;/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/grids/cice_grids/replica_grid_3413.nc&quot;</span><span class="p">)</span>
+<span class="n">grid</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Arctic_Grid&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>The above cell is a way to generate a rectangular lat/lon grid through CrocoDash</p>
+<p>If you’re interested in using an already generated regional grid, you can do that by passing in a supergrid, like in <a class="reference external" href="https://crocodile-cesm.github.io/CrocoGallery/notebooks/features/add_grids.html">this demo</a>.</p>
+<p>If you’re interested in subsetting an already generated global grid, you can do that by passing in lat/lon args, like in <a class="reference external" href="https://crocodile-cesm.github.io/CrocoGallery/notebooks/features/subset_global.html">this demo</a>.</p>
 </section>
 <section id="step-1-2-topography">
 <h2>Step 1.2: Topography<a class="headerlink" href="#step-1-2-topography" title="Link to this heading">#</a></h2>
+<p>The below three cells are a way to generate topography with a given grid using the <a class="reference external" href="https://www.gebco.net/">GEBCO</a> dataset.</p>
+<p>If you’re interested in using a previously generated topography for your grid, you can do that by passing in a topography file, like in <a class="reference external" href="https://crocodile-cesm.github.io/CrocoGallery/notebooks/features/add_grids.html">this demo.</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.topo</span><span class="w"> </span><span class="kn">import</span> <span class="n">Topo</span>
 
-<span class="n">topo</span> <span class="o">=</span> <span class="n">Topo</span><span class="p">(</span>
+<span class="n">bathymetry_path</span><span class="o">=</span><span class="s1">&#39;/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/grids/cice_grids/bathy_3413.nc&#39;</span>
+
+<span class="n">topo</span> <span class="o">=</span> <span class="n">Topo</span><span class="o">.</span><span class="n">from_topo_file</span><span class="p">(</span>
     <span class="n">grid</span> <span class="o">=</span> <span class="n">grid</span><span class="p">,</span>
-    <span class="n">min_depth</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="c1"># Insert your minimum depth (10m is a good value for most domains)</span>
+    <span class="n">topo_file_path</span><span class="o">=</span><span class="n">bathymetry_path</span><span class="p">,</span>
+    <span class="n">min_depth</span> <span class="o">=</span> <span class="mf">9.5</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -545,31 +571,18 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This function uses the GEBCO 2024 bathymetry to set up topography -&gt; pass in your GEBCO bathymetry to the path!</span>
-
-<span class="n">bathymetry_path</span><span class="o">=</span><span class="s1">&#39;s3://crocodile-cesm/CrocoDash/data/gebco/GEBCO_2024.zarr/&#39;</span>
-
-<span class="n">topo</span><span class="o">.</span><span class="n">interpolate_from_file</span><span class="p">(</span>
-    <span class="n">file_path</span> <span class="o">=</span> <span class="n">bathymetry_path</span><span class="p">,</span>
-    <span class="n">longitude_coordinate_name</span><span class="o">=</span><span class="s2">&quot;lon&quot;</span><span class="p">,</span>
-    <span class="n">latitude_coordinate_name</span><span class="o">=</span><span class="s2">&quot;lat&quot;</span><span class="p">,</span>
-    <span class="n">vertical_coordinate_name</span><span class="o">=</span><span class="s2">&quot;elevation&quot;</span>
-<span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Validate that the topography looks right!</span>
+<span class="n">topo</span><span class="o">.</span><span class="n">depth</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
+<section id="editing-the-topography">
+<h3>Editing the topography<a class="headerlink" href="#editing-the-topography" title="Link to this heading">#</a></h3>
+<p>Regridding topography from GEBCO may result in features we do not necessarily want. The Topo Editor is a tool to edit the bathymetry as wanted. You can do things like erasing basins, opening or closing bays, or adjusting the minimum depth. On JupyterHub, remember we need the ipympl extension, which can be installed as shown on <a class="reference external" href="https://docs.google.com/presentation/d/1ZwM2YKmMumM0kggT9QpgXnizHzCdIaUdO8PBH9TR2ls/edit?slide=id.g38d23f5381c_0_0#slide=id.g38d23f5381c_0_0">this slide.</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topo</span><span class="o">.</span><span class="n">depth</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Edit your topography as you see fit!</span>
-<span class="o">%</span><span class="k">matplotlib</span> ipympl
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> ipympl
 <span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.topo_editor</span><span class="w"> </span><span class="kn">import</span> <span class="n">TopoEditor</span>
 <span class="n">TopoEditor</span><span class="p">(</span><span class="n">topo</span><span class="p">)</span>
 </pre></div>
@@ -577,25 +590,19 @@ document.write(`
 </div>
 </div>
 </section>
+</section>
 <section id="step-1-3-vertical-grid">
 <h2>Step 1.3: Vertical Grid<a class="headerlink" href="#step-1-3-vertical-grid" title="Link to this heading">#</a></h2>
+<p>The below cell generates a vertical grid using a hyperbolic function. We can also create a uniform grid instance, or use a previously generated vertical grid, like in <a class="reference external" href="https://crocodile-cesm.github.io/CrocoGallery/notebooks/features/add_grids.html">this demo.</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.vgrid</span><span class="w"> </span><span class="kn">import</span> <span class="n">VGrid</span>
 
-<span class="c1"># This is one way to make a vertical grid, but you can also check out the API documentation for more ways!</span>
 <span class="n">vgrid</span>  <span class="o">=</span> <span class="n">VGrid</span><span class="o">.</span><span class="n">hyperbolic</span><span class="p">(</span>
-    <span class="n">nk</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="c1"># Insert your number of vertical levels (e.g., 75)</span>
+    <span class="n">nk</span> <span class="o">=</span> <span class="mi">75</span><span class="p">,</span> <span class="c1"># number of vertical levels</span>
     <span class="n">depth</span> <span class="o">=</span> <span class="n">topo</span><span class="o">.</span><span class="n">max_depth</span><span class="p">,</span>
-    <span class="n">ratio</span><span class="o">=</span>  <span class="mi">0</span><span class="p">,</span> <span class="c1"># Insert your stretching factor (e.g., 20)</span>
+    <span class="n">ratio</span><span class="o">=</span><span class="mf">20.0</span> <span class="c1"># target ratio of top to bottom layer thicknesses</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">vgrid</span><span class="o">.</span><span class="n">dz</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -620,23 +627,38 @@ document.write(`
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="section-2-create-the-cesm-case">
 <h1>SECTION 2: Create the CESM case<a class="headerlink" href="#section-2-create-the-cesm-case" title="Link to this heading">#</a></h1>
+<p>After generating the MOM6 domain, the next step is to create a CESM case using CrocoDash. This process is straightforward and involves instantiating the CrocoDash Case object. The Case object requires the following inputs:</p>
+<ul class="simple">
+<li><p>CESM Source Directory: A local path to a compatible CESM source copy.</p></li>
+<li><p>Case Name: A unique name for the CESM case.</p></li>
+<li><p>Input Directory: The directory where all necessary input files will be written.</p></li>
+<li><p>MOM6 Domain Objects: The horizontal grid, topography, and vertical grid created in the previous section.</p></li>
+<li><p>Project ID: (Optional) A project ID, if required by the machine.</p></li>
+<li><p>Compset: The set of models to be used in the Case. Standalone Ocean, Ocean-BGC, Ocean-Seaice, Ocean-Runoff, etc…</p></li>
+</ul>
 <section id="step-2-1-specify-case-name-and-directories">
 <h2>Step 2.1: Specify case name and directories:<a class="headerlink" href="#step-2-1-specify-case-name-and-directories" title="Link to this heading">#</a></h2>
+<p>Begin by specifying the case name and the necessary directory paths. Ensure the CESM root directory points to your own local copy of CESM. Below is an example setup:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
-
-<span class="c1"># CESM case (experiment) name</span>
-<span class="n">casename</span> <span class="o">=</span> <span class="s2">&quot;&lt;INSERT NAME HERE!&gt;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># CESM case (experiment) name</span>
+<span class="n">casename</span> <span class="o">=</span> <span class="s2">&quot;arctic_cice&quot;</span>
 
 <span class="c1"># CESM source root (Update this path accordingly!!!)</span>
-<span class="n">cesmroot</span> <span class="o">=</span><span class="s2">&quot;/home/runner/work/CrocoGallery/CrocoGallery/CESM/&quot;</span>
+<span class="n">cesmroot</span> <span class="o">=</span><span class="s2">&quot;/glade/work/&lt;YOURUSERNAME&gt;/CROCESM&quot;</span>
 
 <span class="c1"># Place where all your input files go </span>
-<span class="n">inputdir</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;croc_input&quot;</span> <span class="o">/</span> <span class="n">casename</span>
+<span class="n">inputdir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/glade/work/&lt;YOURUSERNAME&gt;/crocodile_2025&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="s2">&quot;croc_input&quot;</span> <span class="o">/</span> <span class="n">casename</span>
     
 <span class="c1"># CESM case directory</span>
-<span class="n">caseroot</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;croc_cases&quot;</span> <span class="o">/</span> <span class="n">casename</span>
+<span class="n">caseroot</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/glade/work/&lt;YOURUSERNAME&gt;/crocodile_2025&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="s2">&quot;croc_cases&quot;</span> <span class="o">/</span> <span class="n">casename</span>
 </pre></div>
 </div>
 </div>
@@ -644,9 +666,18 @@ document.write(`
 </section>
 <section id="step-2-2-create-the-case">
 <h2>Step 2.2: Create the Case<a class="headerlink" href="#step-2-2-create-the-case" title="Link to this heading">#</a></h2>
+<p>To create the CESM case, instantiate the <code class="docutils literal notranslate"><span class="pre">Case</span></code> object as shown below. This will automatically set up the CESM case based on the provided inputs: The <code class="docutils literal notranslate"><span class="pre">cesmroot</span></code> argument specifies the path to your local CESM source directory.
+The <code class="docutils literal notranslate"><span class="pre">caseroot</span></code> argument defines the directory where the case will be created. CrocoDash will handle all necessary namelist modifications and XML changes to align with the MOM6 domain objects generated earlier.</p>
+<p>This is where we can change the model setup to what we want:</p>
+<ul class="simple">
+<li><p>Interested in BGC? Check out <a class="reference external" href="https://crocodile-cesm.github.io/CrocoGallery/notebooks/features/add_bgc.html">the demo for how to modify this notebook for BGC.</a></p></li>
+<li><p>Interested in CICE? Check out <a class="reference external" href="https://crocodile-cesm.github.io/CrocoGallery/notebooks/features/add_cice.html">the demo for how to modify this notebook for CICE.</a></p></li>
+<li><p>Interested in Data Runoff from GLOFAS (or JRA)? Check out <a class="reference external" href="https://crocodile-cesm.github.io/CrocoGallery/notebooks/features/add_rof.html">the demo for how to modify this notebook for Data Runoff.</a></p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.case</span><span class="w"> </span><span class="kn">import</span> <span class="n">Case</span>
+
 <span class="n">case</span> <span class="o">=</span> <span class="n">Case</span><span class="p">(</span>
     <span class="n">cesmroot</span> <span class="o">=</span> <span class="n">cesmroot</span><span class="p">,</span>
     <span class="n">caseroot</span> <span class="o">=</span> <span class="n">caseroot</span><span class="p">,</span>
@@ -654,10 +685,10 @@ document.write(`
     <span class="n">ocn_grid</span> <span class="o">=</span> <span class="n">grid</span><span class="p">,</span>
     <span class="n">ocn_vgrid</span> <span class="o">=</span> <span class="n">vgrid</span><span class="p">,</span>
     <span class="n">ocn_topo</span> <span class="o">=</span> <span class="n">topo</span><span class="p">,</span>
-    <span class="n">project</span> <span class="o">=</span> <span class="s1">&#39;NCGD0011&#39;</span><span class="p">,</span>
-    <span class="n">override</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> 
+    <span class="n">project</span> <span class="o">=</span> <span class="s1">&#39;CESM0030&#39;</span><span class="p">,</span>
+    <span class="n">override</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">machine</span> <span class="o">=</span> <span class="s2">&quot;derecho&quot;</span><span class="p">,</span>
-    <span class="n">compset</span> <span class="o">=</span> <span class="s2">&quot;1850_DATM%JRA_SLND_SICE_MOM6_SROF_SGLC_SWAV&quot;</span>  <span class="c1"># This is the standalone MOM6 compset! Change this to add BGC or DROF if you want either!</span>
+    <span class="n">compset</span> <span class="o">=</span> <span class="s2">&quot;1850_DATM%JRA_SLND_CICE_MOM6_SROF_SGLC_SWAV&quot;</span> <span class="c1"># Change this as necessary to include whatever models you want. BGC? change MOM6 to MOM6%MARBL-BIO, CICE? Change SICE to CICE, GLOFAS Runoff? Change SROF to DROF%GLOFAS</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -667,13 +698,22 @@ document.write(`
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="section-3-prepare-ocean-forcing-data">
 <h1>Section 3: Prepare ocean forcing data<a class="headerlink" href="#section-3-prepare-ocean-forcing-data" title="Link to this heading">#</a></h1>
+<p>We need to cut out our ocean forcing. The package expects an initial condition and one time-dependent segment per non-land boundary.</p>
+<p>In this notebook, we are forcing with the Copernicus Marine “Glorys” reanalysis dataset.</p>
 <section id="step-3-1-configure-initial-conditions-and-forcings">
 <h2>Step 3.1 Configure Initial Conditions and Forcings<a class="headerlink" href="#step-3-1-configure-initial-conditions-and-forcings" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Interested in adding tides? Check out <a class="reference external" href="https://crocodile-cesm.github.io/CrocoGallery/notebooks/features/add_tides.html">the demo.</a></p></li>
+<li><p>Interested in adding chlorophyll? Check out <a class="reference external" href="https://crocodile-cesm.github.io/CrocoGallery/notebooks/features/add_chl.html">the demo.</a></p></li>
+<li><p>Is the GLORYS data access function not working? Check out alternative options in <a class="reference external" href="https://crocodile-cesm.github.io/CrocoGallery/notebooks/features/add_data_products.html">this demo.</a></p></li>
+</ul>
+<p>Configure Forcings MUST be modified if BGC or Data Runoff are part of the compset (and will throw an error). Check out the demos to see the changes required: <a class="reference external" href="https://crocodile-cesm.github.io/CrocoGallery/notebooks/features/add_bgc.html">BGC Demo</a>, <a class="reference external" href="https://crocodile-cesm.github.io/CrocoGallery/notebooks/features/add_rof.html">DROF Demo</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Update this function with all kinds of forcing options based on your compset (chlorophyll, tides, bgc, etc)! You can see all the options in the API Documentation!</span>
-<span class="k">case</span><span class="o">.</span><span class="n">configure_forcings</span><span class="p">(</span>
-    <span class="n">date_range</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&lt;CHOOSE DATES!&gt; START(format %Y-%m-</span><span class="si">%d</span><span class="s2"> 00:00:00)&quot;</span><span class="p">,</span><span class="s2">&quot;END(format %Y-%m-</span><span class="si">%d</span><span class="s2"> 00:00:00)&quot;</span><span class="p">],</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="o">.</span><span class="n">configure_forcings</span><span class="p">(</span>
+    <span class="n">date_range</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;2020-01-01 00:00:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-01-06 00:00:00&quot;</span><span class="p">],</span>
+    <span class="n">product_name</span> <span class="o">=</span> <span class="s2">&quot;GLORYS&quot;</span><span class="p">,</span>
+    <span class="n">function_name</span><span class="o">=</span><span class="s2">&quot;get_glorys_data_from_rda&quot;</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -685,7 +725,7 @@ document.write(`
 <p>In this final step, we call the <code class="docutils literal notranslate"><span class="pre">process_forcings</span></code> method of CrocoDash to cut out and interpolate the initial condition as well as all boundaries. CrocoDash also updates MOM6 runtime parameters and CESM xml variables accordingly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="o">.</span><span class="n">process_forcings</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">case</span><span class="o">.</span><span class="n">process_forcings</span><span class="p">()</span> <span class="c1"># You can turn off specific processing if it&#39;s already been processed previously with process_*name* = False. Ex. case.process_forcings(process_chl = False)</span>
 </pre></div>
 </div>
 </div>
@@ -694,11 +734,23 @@ document.write(`
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="section-4-build-and-run-the-case">
 <h1>Section 4: Build and run the case<a class="headerlink" href="#section-4-build-and-run-the-case" title="Link to this heading">#</a></h1>
+<p>After completing the previous steps, you are ready to build and run your CESM case. Begin by navigating to the case root directory specified during the case creation. Before proceeding, review the <code class="docutils literal notranslate"><span class="pre">user_nl_mom</span></code> file located in the case directory. This file contains MOM6 parameter settings that were automatically generated by CrocoDash. Carefully examine these parameters and make any necessary adjustments to fine-tune the model for your specific requirements. While CrocoDash aims to provide a solid starting point, further tuning and adjustments are typically necessary to improve the model for your use case.</p>
 <p>Once you have reviewed and modified the parameters as needed, you can build and execute the case using the following commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">qcmd</span> <span class="o">--</span> <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">build</span>
 <span class="o">./</span><span class="n">case</span><span class="o">.</span><span class="n">submit</span>
 </pre></div>
 </div>
+<section id="optional-use-restart-files-as-initial-condition-for-your-run-after-you-run-for-the-first-time">
+<h2>Optional: Use restart files as initial condition for your run (after you run for the first time!)<a class="headerlink" href="#optional-use-restart-files-as-initial-condition-for-your-run-after-you-run-for-the-first-time" title="Link to this heading">#</a></h2>
+<p>In case you want to start the model with a restart file instead of using the generated initial condition, follow the below steps. Note that you have to have finished a run beforehand for the restart files to appear.</p>
+<ol class="arabic simple">
+<li><p>Locate your restart file - they are usually in your previous case’s <code class="docutils literal notranslate"><span class="pre">/archive/rest/&lt;year&gt;</span></code> folder with a <code class="docutils literal notranslate"><span class="pre">.r</span></code> infix, e.g., <code class="docutils literal notranslate"><span class="pre">cice.test.cice.r.1994-01-01-00000.nc</span></code>.
+If you do not know your <code class="docutils literal notranslate"><span class="pre">/archive</span></code> folder location, run <code class="docutils literal notranslate"><span class="pre">./xmlquery</span> <span class="pre">DOUT_S_ROOT</span></code> in your (previous) case folder, which will return a path similar to <code class="docutils literal notranslate"><span class="pre">DOUT_S_ROOT:</span> <span class="pre">&lt;PATH</span> <span class="pre">TO</span> <span class="pre">ARCHIVE&gt;</span></code>.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">cp</span></code> command to copy the file to your current case <code class="docutils literal notranslate"><span class="pre">/run</span></code> directory, e.g., <code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">cice.test.cice.r.1994-01-01-00000.nc</span> <span class="pre">&lt;your_run_dir&gt;</span></code>.</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">user_nl_cice</span></code> in your case directory again and change the <code class="docutils literal notranslate"><span class="pre">ice_ic</span></code> variable from <code class="docutils literal notranslate"><span class="pre">&quot;UNSET&quot;</span></code> to your file name, e.g., <code class="docutils literal notranslate"><span class="pre">ice_ic=cice.test.cice.r.1994-01-01-00000.nc</span></code></p></li>
+</ol>
+<p>Your file will now be used automatically as the ice initial condition for your next run. Note that <code class="docutils literal notranslate"><span class="pre">.h</span></code> and <code class="docutils literal notranslate"><span class="pre">.h1</span></code> files (i.e. history files) currently <strong>cannot be used</strong> as initial conditions for CICE.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -714,7 +766,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks/projects/specific_notebooks"
+            path: "./notebooks/projects/sample_crocodash_projects"
         },
         predefinedOutput: true
     }
@@ -747,10 +799,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Choose your own adventure!</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">CICE Sample Project</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#section-1-generate-a-regional-mom6-domain">SECTION 1: Generate a regional MOM6 domain</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-1-horizontal-grid">Step 1.1: Horizontal Grid</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-2-topography">Step 1.2: Topography</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-2-topography">Step 1.2: Topography</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#editing-the-topography">Editing the topography</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-3-vertical-grid">Step 1.3: Vertical Grid</a></li>
 </ul>
 </li>
@@ -764,7 +819,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-3-process-forcing-data">Step 3.3: Process forcing data</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#section-4-build-and-run-the-case">Section 4: Build and run the case</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#section-4-build-and-run-the-case">Section 4: Build and run the case</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-use-restart-files-as-initial-condition-for-your-run-after-you-run-for-the-first-time">Optional: Use restart files as initial condition for your run (after you run for the first time!)</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>

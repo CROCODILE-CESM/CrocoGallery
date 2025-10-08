@@ -37,7 +37,7 @@ grid = Grid.subgrid_from_supergrid(
 
 ----- stderr -----
 syntax error, unexpected WORD_WORD, expecting SCAN_ATTR or SCAN_DATASET or SCAN_ERROR
-context: <?xml^ version="1.0" encoding="UTF-8"?><Error><Code>AccessDenied</Code><Message>Access Denied</Message><RequestId>9ETHB644FHMKPC3C</RequestId><HostId>kMU0dC2WK5tgcE4fm8320jhGeTuoEK6u3ElSG+Ro6/W4nAi1FlLAxqZCb74Hup3QGLXvGHlQtaw=</HostId></Error>
+context: <?xml^ version="1.0" encoding="UTF-8"?><Error><Code>AccessDenied</Code><Message>Access Denied</Message><RequestId>AKY9CH484E0APA21</RequestId><HostId>C8gDun8NE2Un5A30aTkJlbJz6yHOj8b/Jgrvs1N9XKGlsb+rnKvA99RjCVEZegaWrNPtYiDf5+kEBP7ekzGAMlWW+gD+TYbR</HostId></Error>
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
@@ -52,7 +52,7 @@ File [0;32m/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/xar
 [0;32m---> 56[0m     value [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_cache[49m[43m[[49m[43mkey[49m[43m][49m
 [1;32m     57[0m     [38;5;28mself[39m[38;5;241m.[39m_cache[38;5;241m.[39mmove_to_end(key)
 
-[0;31mKeyError[0m: [<class 'netCDF4._netCDF4.Dataset'>, ('s3://crocodile-cesm/CrocoDash/data/grids/ocean_hgrid_221123.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '13205b84-df7c-4f8d-9a1b-897846ae9756']
+[0;31mKeyError[0m: [<class 'netCDF4._netCDF4.Dataset'>, ('s3://crocodile-cesm/CrocoDash/data/grids/ocean_hgrid_221123.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '2ef39f47-d2ed-47a5-978d-f90c17859c23']
 
 During handling of the above exception, another exception occurred:
 
