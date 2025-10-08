@@ -2,8 +2,8 @@
 
 # Exceptions for /glade paths
 GLADE_EXCEPTIONS=(
-  "gallery/notebooks/projects",        # whole folder
-  "gallery/notebooks/features/tutorial1_MOM6-CL-comparison.ipynb",
+  "gallery/notebooks/projects"
+  "gallery/notebooks/features/tutorial1_MOM6-CL-comparison.ipynb"
   "gallery/notebooks/features/tutorial2_MOM6-CL-comparison-float.ipynb"
 )
 
