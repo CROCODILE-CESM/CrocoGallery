@@ -137,6 +137,8 @@ We recommend viewing the completed notebooks in JupyterHub.
 This is the easiest way to see CUPiD output on the NCAR super computer,
 and also makes it easy to re-run the notebooks manually if you want to play with the output.
 
+**Note:** make sure to select the `cupid-analysis` kernel in the top right if you want to rerun the notebooks.
+
 If you want to use CUPiD's webpage feature, however, run
 
 ```bash
