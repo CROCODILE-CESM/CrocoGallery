@@ -29,7 +29,8 @@ and sharing python code and a standard conda environment across components.
 
 ## CUPiD for Regional MOM6
 
-**IMAGE/GIF NEEDED HERE**
+![CUPiD Logo](../../images/CUPiD/tos_animation.gif)
+<!-- ![CUPiD Logo](../../images/CUPiD/SSH_animation.gif) -->
 
 CUPiD is a broad package designed to pull many independent tasks together and standardize common parts of the CESM postprocessing workflow.
 For postprocessing, CUPiD is automating the process of converting CESM output to the standard format required for the Coupled Model Intercomparison Project ([CMIP](https://wcrp-cmip.org/)).
@@ -41,7 +42,7 @@ Participants will install CUPiD and then familiarize themselves with it by looki
 During project worktime there are also instructions for
 
 1. running the same diagnostics on a user-generated regional MOM6 run (with CESM integration), and
-1. contributing more diagnostics to the CUPiD project.
+2. contributing more diagnostics to the CUPiD project.
 
 ## Your Turn!
 As we progress through this tutorial, think about what kinds of diagnostics might be helpful for general regions and your specific regions of interest.
