@@ -1,0 +1,777 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Model-Observation comparison: use your own MOM6 run &#8212; CrocoDash Gallery</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/projects/model-obs_your_own_model';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Use Cases" href="../use_cases/index.html" />
+    <link rel="prev" title="Model-Observation comparison with MOM6 and World Ocean Database" href="tutorial4_MOM6-WOD13-comparison.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/crocodile.png" class="logo__image only-light" alt="CrocoDash Gallery - Home"/>
+    <script>document.write(`<img src="../../_static/crocodile.png" class="logo__image only-dark" alt="CrocoDash Gallery - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Welcome to the CrocoDash Gallery!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/walkthrough.html">Basic CrocoDash Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/cesm_setup.html">CESM Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/minimal_demo_rect.html">Set up a rectangular regional CESM-MOM6 run</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/input_params.html">Input Parameters</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Feature Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../features/coupling.html">Coupling Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../features/add_bgc.html">Run a coupled biogeochemistry (MARBL) &amp; ocean (MOM6) model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../features/add_cice.html">Run a coupled sea ice (CICE) &amp; ocean (MOM6) model</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../features/custom_grid.html">Grid Customization Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../features/subset_global.html">Add Global Subset Grids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../features/add_grids.html">Use Custom Pre-Generated Grids</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../features/data_product.html">Data Product Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../features/too_much_data.html">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow (Advanced)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../features/add_data_products.html">Use different data products w/ the CrocoDash Data Access Module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../features/add_components.html">Additional Component Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../features/add_rof.html">Add data runoff from GLOFAS to the Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../features/add_runoff_product.html">Adding your own runoff product to the CESM (Advanced)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../features/add_chl.html">Add Chlorophyll Files to the Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../features/add_tides.html">Add Boundary Tides to the Run</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../features/model-obs_comparison.html">Model-Observation Comparison Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../features/tutorial1_MOM6-CL-comparison.html">Tutorial 1: Model-Observation comparison with MOM6 and CrocoLake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../features/tutorial2_MOM6-CL-comparison-float.html">Tutorial 2: Model-Observation comparison with MOM6 and a single Argo float from CrocoLake</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2025 CROCODILE Workshop Projects</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="NWA.html">NWA</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="CICE.html">CICE-MOM6</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="choose_your_own_adventure.html">Choose your own adventure!</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="tutorial3_CrocoLake_map_temperature.html">Tutorial 3 - Temperature map in the North West Atlantic with CrocoLake</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="tutorial4_MOM6-WOD13-comparison.html">Model-Observation comparison with MOM6 and World Ocean Database</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Model-Observation comparison: use your own MOM6 run</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use Cases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../use_cases/index.html">Development Cases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../use_cases/three_boundary_from_t232.html">Make a lowres domain for DA dev work!</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../use_cases/three_boundary.html">Setup the NWA12 domain through CrocoDash</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../use_cases/mom6_cice_antarctica.html">Set up a rectangular regional CESM-MOM6-CICE coupled run</a></li>
+
+
+
+
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/CROCODILE-CESM/CrocoGallery/main?urlpath=lab/tree/gallery/notebooks/projects/model-obs_your_own_model.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/CROCODILE-CESM/CrocoGallery" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/CROCODILE-CESM/CrocoGallery/issues/new?title=Issue%20on%20page%20%2Fnotebooks/projects/model-obs_your_own_model.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/projects/model-obs_your_own_model.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Model-Observation comparison: use your own MOM6 run</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crocolake-observation-sequence-files">CrocoLake observation sequence files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-configuration-file">The configuration file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-workflow">Running the workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#displaying-the-interactive-map">Displaying the interactive map</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="model-observation-comparison-use-your-own-mom6-run">
+<h1>Model-Observation comparison: use your own MOM6 run<a class="headerlink" href="#model-observation-comparison-use-your-own-mom6-run" title="Link to this heading">#</a></h1>
+<p>This notebooks is a stripped down version of CrocoCamp’s Tutorial 1 notebook, and you can use it as starting point for a model-obs comparison between your own CESM-MOM6 run and CrocoLake or WOD.</p>
+<section id="crocolake-observation-sequence-files">
+<h2>CrocoLake observation sequence files<a class="headerlink" href="#crocolake-observation-sequence-files" title="Link to this heading">#</a></h2>
+<p>If you want to use CrocoLake, generate your own observation files by adapting the code below (NB: the cell returns errors as is now, some fields are intentionally left blank).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">crocolake_path</span> <span class="o">=</span> <span class="s1">&#39;/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoCamp/CrocoLakePHY&#39;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">convert_crocolake_obs</span><span class="w"> </span><span class="kn">import</span> <span class="n">ObsSequence</span>
+<span class="n">basename</span> <span class="o">=</span> <span class="s2">&quot;myCL_obs_seq_&quot;</span>
+<span class="n">outdir</span> <span class="o">=</span> <span class="s2">&quot;$WORK/crocodile_2025/CrocoCamp/my_project/in_CL/&quot;</span>
+<span class="n">basename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expandvars</span><span class="p">(</span><span class="n">outdir</span><span class="o">+</span><span class="n">basename</span><span class="p">)</span>
+<span class="n">outdir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expandvars</span><span class="p">(</span><span class="n">outdir</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">outdir</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">outdir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># define horizontal region</span>
+<span class="n">LAT0</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">LAT1</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">LON0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
+<span class="n">LON1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">30</span>
+
+<span class="c1"># define depth in dbar</span>
+<span class="n">PRES0</span> <span class="o">=</span> 
+<span class="n">PRES1</span> <span class="o">=</span>
+
+<span class="c1"># define variables to import from CrocoLake</span>
+<span class="n">selected_variables</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;DB_NAME&quot;</span><span class="p">,</span>  <span class="c1"># ARGO, GLODAP, SprayGliders, OleanderXBT, Saildrones</span>
+    <span class="s2">&quot;JULD&quot;</span><span class="p">,</span> <span class="c1"># this contains timestamp</span>
+    <span class="s2">&quot;LATITUDE&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;LONGITUDE&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PRES&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TEMP&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PRES_QC&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TEMP_QC&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PRES_ERROR&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TEMP_ERROR&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PSAL&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PSAL_QC&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PSAL_ERROR&quot;</span>
+<span class="p">]</span>
+
+<span class="c1"># month and year are constant in out case</span>
+<span class="n">year0</span> <span class="o">=</span> 
+<span class="n">month0</span> <span class="o">=</span> 
+<span class="n">N</span> <span class="o">=</span>
+
+<span class="c1"># we loop to generate one file per day</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+
+    <span class="c1"># set date range</span>
+    <span class="n">day0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="n">j</span>
+    <span class="n">day1</span> <span class="o">=</span> <span class="n">day0</span><span class="o">+</span><span class="mi">1</span>
+    <span class="n">date0</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">year0</span><span class="p">,</span> <span class="n">month0</span><span class="p">,</span> <span class="n">day0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">date1</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">year0</span><span class="p">,</span> <span class="n">month0</span><span class="p">,</span> <span class="n">day1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Converting obs between </span><span class="si">{</span><span class="n">date0</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">date1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># this defines AND filters, i.e. we want to load each observation that has latitude within the given range AND longitude within the given range, etc.</span>
+    <span class="c1"># to exclude NaNs, impose a range to a variable</span>
+    <span class="n">and_filters</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="s2">&quot;LATITUDE&quot;</span><span class="p">,</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span><span class="n">LAT0</span><span class="p">),</span>  <span class="p">(</span><span class="s2">&quot;LATITUDE&quot;</span><span class="p">,</span><span class="s1">&#39;&lt;&#39;</span><span class="p">,</span><span class="n">LAT1</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;LONGITUDE&quot;</span><span class="p">,</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span><span class="n">LON0</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;LONGITUDE&quot;</span><span class="p">,</span><span class="s1">&#39;&lt;&#39;</span><span class="p">,</span><span class="n">LON1</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;PRES&quot;</span><span class="p">,</span><span class="s1">&#39;&gt;&#39;</span><span class="p">,</span><span class="n">PRES0</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;PRES&quot;</span><span class="p">,</span><span class="s1">&#39;&lt;&#39;</span><span class="p">,</span><span class="n">PRES1</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;JULD&quot;</span><span class="p">,</span><span class="s2">&quot;&gt;&quot;</span><span class="p">,</span><span class="n">date0</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;JULD&quot;</span><span class="p">,</span><span class="s2">&quot;&lt;&quot;</span><span class="p">,</span><span class="n">date1</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># this adds OR conditions to the and_filters, i.e. we want to load all observations that statisfy the AND conditions above, AND that have finite salinity OR temperature values</span>
+    <span class="n">db_filters</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="nb">list</span><span class="p">(</span><span class="n">and_filters</span><span class="p">)</span> <span class="o">+</span> <span class="p">[(</span><span class="s2">&quot;PSAL&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mf">1e30</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;PSAL&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;&quot;</span><span class="p">,</span> <span class="mf">1e30</span><span class="p">)],</span>
+        <span class="nb">list</span><span class="p">(</span><span class="n">and_filters</span><span class="p">)</span> <span class="o">+</span> <span class="p">[(</span><span class="s2">&quot;TEMP&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mf">1e30</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;TEMP&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;&quot;</span><span class="p">,</span> <span class="mf">1e30</span><span class="p">)],</span>
+    <span class="p">]</span>
+
+    <span class="c1"># generate output filename</span>
+    <span class="n">obs_seq_out</span> <span class="o">=</span> <span class="n">basename</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;.</span><span class="si">{</span><span class="n">year0</span><span class="si">}{</span><span class="n">month0</span><span class="si">:</span><span class="s2">02d</span><span class="si">}{</span><span class="n">day0</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">.out&quot;</span>
+
+    <span class="c1"># generate obs_seq.in file</span>
+    <span class="n">obsSeq</span> <span class="o">=</span> <span class="n">ObsSequence</span><span class="p">(</span>
+        <span class="n">crocolake_path</span><span class="p">,</span>
+        <span class="n">selected_variables</span><span class="p">,</span>
+        <span class="n">db_filters</span><span class="p">,</span>
+        <span class="n">obs_seq_out</span><span class="o">=</span><span class="n">obs_seq_out</span><span class="p">,</span>
+        <span class="n">loose</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">obsSeq</span><span class="o">.</span><span class="n">write_obs_seq</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-configuration-file">
+<h2>The configuration file<a class="headerlink" href="#the-configuration-file" title="Link to this heading">#</a></h2>
+<p>Remember to generate a new config file for your workflow:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>cp<span class="w"> </span>../configs/config_template.yaml<span class="w"> </span>../configs/config_my_workflow.yaml
+</pre></div>
+</div>
+</div>
+</div>
+<p>and to customize the paths as needed.</p>
+</section>
+<section id="running-the-workflow">
+<h2>Running the workflow<a class="headerlink" href="#running-the-workflow" title="Link to this heading">#</a></h2>
+<p>Generate and run the workflow from your config file:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">crococamp.workflows</span><span class="w"> </span><span class="kn">import</span> <span class="n">WorkflowModelObs</span>
+
+<span class="c1"># Create and run workflow to interpolate MOM6 model onto World Ocean Database obs space</span>
+<span class="n">my_workflow</span> <span class="o">=</span> <span class="n">WorkflowModelObs</span><span class="o">.</span><span class="n">from_config_file</span><span class="p">(</span><span class="s1">&#39;../configs/config_my_workflow.yaml&#39;</span><span class="p">)</span>
+<span class="n">my_workflow</span><span class="o">.</span><span class="n">run</span><span class="p">()</span> <span class="c1">#use flag clear_output=True if you want to re-run it and automatically clean all previous output</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="displaying-the-interactive-map">
+<h2>Displaying the interactive map<a class="headerlink" href="#displaying-the-interactive-map" title="Link to this heading">#</a></h2>
+<p>Load and explore the data using pandas or dask:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">good_model_obs_df</span> <span class="o">=</span> <span class="n">workflow_float</span><span class="o">.</span><span class="n">get_good_model_obs_df</span><span class="p">(</span><span class="n">compute</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># compute=True triggers the compute of the dask dataframe, returning a pandas dataframe with data loaded in memory</span>
+<span class="n">good_model_obs_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>                                                <span class="c1"># displays first 5 rows in the dataframe</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Load the interactive map:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">crococamp.viz</span><span class="w"> </span><span class="kn">import</span> <span class="n">InteractiveWidgetMap</span>
+<span class="c1"># Create an interactive map widget to visualize model-observation comparisons</span>
+<span class="c1"># The widget provides controls for selecting variables, observation types, and time ranges</span>
+<span class="n">widget</span> <span class="o">=</span> <span class="n">InteractiveWidgetMap</span><span class="p">(</span><span class="n">dgood_model_obs_f</span><span class="p">)</span>
+<span class="n">widget</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-crococamp-2025-py"
+        },
+        kernelOptions: {
+            name: "conda-env-crococamp-2025-py",
+            path: "./notebooks/projects"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-crococamp-2025-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tutorial4_MOM6-WOD13-comparison.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Model-Observation comparison with MOM6 and World Ocean Database</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../use_cases/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Use Cases</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crocolake-observation-sequence-files">CrocoLake observation sequence files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-configuration-file">The configuration file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-workflow">Running the workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#displaying-the-interactive-map">Displaying the interactive map</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By CROCODILE-CESM
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
