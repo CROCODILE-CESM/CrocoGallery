@@ -232,16 +232,16 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../projects/choose_your_own_adventure.html">Choose your own adventure!</a></li>
-
-
-
-
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="CUPiD_projects.html">Advanced CUPiD Tutorial</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Running CUPiD within CESM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing_to_CUPiD.html">Contributing to CUPiD</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/choose_your_own_adventure.html">Choose your own adventure!</a></li>
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Use Cases</span></p>
 <ul class="nav bd-sidenav">
@@ -486,7 +486,7 @@ document.write(`
 which means you can run CUPiD from a CESM case directory with the familiar <code class="docutils literal notranslate"><span class="pre">case.submit</span></code> command.
 For this exercise, we will run the notebooks Aidan put together on the case you ran with Manish.</p>
 <div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
-<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint! </strong> </h4> 
+<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint! </strong> </h4>
 <ol>
 <li> Are the standalone diagnostics from the previous activity done running? </li>
 <li>Do you have a case that successfully ran and produced output from Monday's <strong>Practicum: Using CrocoDash</strong>? </li>
@@ -501,15 +501,15 @@ For this exercise, we will run the notebooks Aidan put together on the case you 
 <section id="moving-to-derecho">
 <h4>Moving to Derecho<a class="headerlink" href="#moving-to-derecho" title="Link to this heading">#</a></h4>
 <p>There are two options for this step:</p>
-<div class="alert alert-info">  
-<details>  
+<div class="alert alert-info">
+<details>
 <summary>A. Access Derecho through our current JupyterHub instance with <code>ssh</code>.</summary><br>
 Casper is on the same network as Derecho, so in a new terminal you can simply type:
 <pre> ssh USERNAME@derecho </pre>
 <p>You will be prompted to enter your password and authenticate with DUO, and then you will be connected to a login node on Derecho.</p>
 </div>
-<div class="alert alert-info">  
-<details>  
+<div class="alert alert-info">
+<details>
 <summary>B. Access Derecho through a separate terminal with <code>ssh</code>.</summary><br>
 You can directly login to Derecho through any terminal using <code>ssh</code>. Run the command:
 <pre> ssh USERNAME@derecho.hpc.ucar.edu </pre>
@@ -545,10 +545,10 @@ env_workflow.xml
 which are all defined in <code class="docutils literal notranslate"><span class="pre">env_postprocessing.xml</span></code>.
 XML variables are all in plain-text files so we could inspect them directly,
 but let’s use the provided <code class="docutils literal notranslate"><span class="pre">xmlquery</span></code> tool instead.</p>
-<div class="alert alert-warning">  
-🚨 <strong>POP QUIZ #1!</strong> 🚨 
+<div class="alert alert-warning">
+🚨 <strong>POP QUIZ #1!</strong> 🚨
 <p>How do you use <code class="docutils literal notranslate"><span class="pre">xmlquery</span></code> to see all the variables that contain <code class="docutils literal notranslate"><span class="pre">CUPID</span></code> in their name (along with their values)?</p>
-<details>  
+<details>
 <summary>Solution</summary><br>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./xmlquery -p CUPID
 Results in group cupid_analysis
@@ -602,11 +602,11 @@ In that case, you want to run</p>
 </div>
 <p>We also want to run the <code class="docutils literal notranslate"><span class="pre">regional_ocean</span></code> example and use 10 GB of memory.
 These are set by the <code class="docutils literal notranslate"><span class="pre">CUPID_EXAMPLE</span></code> and <code class="docutils literal notranslate"><span class="pre">CUPID_MEM_PER_TASK</span></code> variables, respectively.</p>
-<div class="alert alert-warning">  
-🚨 <strong>POP QUIZ #2!</strong> 🚨 
+<div class="alert alert-warning">
+🚨 <strong>POP QUIZ #2!</strong> 🚨
 <p>How do we set <code class="docutils literal notranslate"><span class="pre">CUPID_EXAMPLE</span> <span class="pre">=</span> <span class="pre">regional_ocean</span></code>?
 How can we check the value of <code class="docutils literal notranslate"><span class="pre">CUPID_MEM_PER_TASK</span></code> to make sure we have enough memory?</p>
-<details>  
+<details>
 <summary>Solution</summary><br>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./xmlchange<span class="w"> </span><span class="nv">CUPID_EXAMPLE</span><span class="o">=</span>regional_ocean
 ./xmlquery<span class="w"> </span>CUPID_MEM_PER_TASK

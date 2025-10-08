@@ -232,16 +232,16 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../projects/choose_your_own_adventure.html">Choose your own adventure!</a></li>
-
-
-
-
 <li class="toctree-l1 has-children"><a class="reference internal" href="CUPiD_projects.html">Advanced CUPiD Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="CUPiD_in_CESM_Workflow.html">Running CUPiD within CESM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing_to_CUPiD.html">Contributing to CUPiD</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/choose_your_own_adventure.html">Choose your own adventure!</a></li>
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Use Cases</span></p>
 <ul class="nav bd-sidenav">
@@ -459,15 +459,15 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-let-s-run-cupid">Task 2: Let’s Run CUPiD</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-1-peek-at-the-config-yml">Task 2.1: Peek at the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confirm-the-conda-environments-installed-correctly">2.1 Confirm the Conda Environments Installed Correctly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#peek-at-the-config-yml">2.2: Peek at the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#global-params">Global Params</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-parameters">Notebook Parameters</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-to-run-cupid">Time to Run CUPiD!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-to-run-cupid">2.3 Time to Run CUPiD!</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task-2-2-cupid-webpage">Optional Task 2.2: CUPiD Webpage</a></li>
 </ul>
             </nav>
         </div>
@@ -484,71 +484,86 @@ document.write(`
 <p>CUPiD provides examples of configuration files to allow users to look at a variety of diagnostics in <code class="docutils literal notranslate"><span class="pre">CUPiD/examples</span></code>.
 These examples are designed to be run on the NCAR supercomputers,
 using output curated from CESM development runs and stored in <code class="docutils literal notranslate"><span class="pre">/glade/campaign/cesm/development/cross-wg/diagnostic_framework/CESM_output_for_testing/</span></code>.
-These example configuration files also act as templates for the CESM workflow discussed in the next section.</p>
+The provided configuration files also act as templates for the CESM workflow, as discussed in the CUPiD project pages.</p>
 <blockquote>
 <div><p><strong>Note:</strong> we actually access the example output through the CROCODILE workshop directory for simplicity: <code class="docutils literal notranslate"><span class="pre">/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/Diagnostics/CESM_Output/</span></code>.
 It just links back to <code class="docutils literal notranslate"><span class="pre">CESM_output_for_testing</span></code>.</p>
 </div></blockquote>
-<p>We have added a <code class="docutils literal notranslate"><span class="pre">regional_mom6</span></code> example to CUPiD that provides diagnostics for a 10-month run.
+<p>There is a <code class="docutils literal notranslate"><span class="pre">regional_ocean</span></code> example in CUPiD that provides diagnostics for a 10-month CESM run created with CrocoDash.
 This run uses a 1/12° grid over the northwest Atlantic domain, and includes ocean biogeochemistry tracers from the Marine Biogeochemistry library (MARBL).
-The compset used for this run was</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1850</span><span class="n">_DATM</span><span class="o">%</span><span class="n">JRA_SLND_SICE_MOM6</span><span class="o">%</span><span class="n">MARBL</span><span class="o">-</span><span class="n">BIO_SROF_SGLC_SWAV_SESP</span>
-</pre></div>
-</div>
-<p>We will run the <code class="docutils literal notranslate"><span class="pre">regional_ocean</span></code> example included with CUPiD. This includes four notebooks:</p>
+(The compset used was <code class="docutils literal notranslate"><span class="pre">1850_DATM%JRA_SLND_SICE_MOM6%MARBL-BIO_SROF_SGLC_SWAV_SESP</span></code>.)</p>
+<p>For this exercise, we will run the <code class="docutils literal notranslate"><span class="pre">regional_ocean</span></code> example in CUPiD.
+This includes four notebooks:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Regional_Ocean_Report_Card.ipynb</span></code>: basic plotting and analysis utilities, primarily focused on surface fields.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Regional_Ocean_Animations.ipynb</span></code>: create animations.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Regional_Ocean_Atmospheric_Forcing.ipynb</span></code>: look at atmospheric forcing at the surface.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Regional_Ocean_OBC.ipynb</span></code>: visualize surface fields and open boundary conditions.</p></li>
 </ul>
-<div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
-<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint! </strong> </h4> 
-<p>Make sure <code class="docutils literal notranslate"><span class="pre">(cupid-infrastructure)</span></code> and <code class="docutils literal notranslate"><span class="pre">(cupid-analysis)</span></code> conda environments are fully installed before starting this task. If you are unsure, try running <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">cupid-infrastructure</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">cupid-analysis</span></code> in the terminal.</p>
-<p>Let us know if you’re running into any issues!</p>
-</div>
 <section id="task-2-let-s-run-cupid">
 <h2>Task 2: Let’s Run CUPiD<a class="headerlink" href="#task-2-let-s-run-cupid" title="Link to this heading">#</a></h2>
-<p>Navigate to your installation of CUPiD, we will run the diagnostics in the example directory.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">CUPID_ROOT</span><span class="si">}</span>
-</pre></div>
-</div>
-<p>Now change to the <code class="docutils literal notranslate"><span class="pre">examples</span></code> directory, and look at what’s inside.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>examples
+<p>Navigate to the examples subdirectory of your installation of CUPiD and look at what’s inside:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">CUPID_ROOT</span><span class="si">}</span>/examples
 ls
 </pre></div>
 </div>
-<div class="alert alert-warning">  
-<details>  
+<div class="alert alert-warning">
+<details>
 <summary>Output</summary><br>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>additional_metrics<span class="w">  </span>external_diag_packages<span class="w">  </span>key_metrics<span class="w">  </span>regional_ocean
 </pre></div>
 </div>
 </div>
-<p>We will be using the <code class="docutils literal notranslate"><span class="pre">regional_ocean</span></code> example for this demo and the workshop; if this example is not in your <code class="docutils literal notranslate"><span class="pre">examples</span></code> directory, let us know.
-Change into the <code class="docutils literal notranslate"><span class="pre">regional_ocean</span></code> directory.</p>
+<p>We will be using the <code class="docutils literal notranslate"><span class="pre">regional_ocean</span></code> example for this demo and the workshop:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>regional_ocean
 </pre></div>
 </div>
-<p>For a standalone CUPiD run (i.e. not part of a CESM case run) we will run <code class="docutils literal notranslate"><span class="pre">cupid-diagnostics</span></code> from the same directory as a <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file.
-CUPiD will automatically recognize the file is in the current directory, and the output will also be in the same directory. Each example has a specific <code class="docutils literal notranslate"><span class="pre">config.yml</span></code>, let’s look at the one in <code class="docutils literal notranslate"><span class="pre">regional_ocean</span></code>.</p>
-<section id="task-2-1-peek-at-the-config-yml">
-<h3>Task 2.1: Peek at the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code><a class="headerlink" href="#task-2-1-peek-at-the-config-yml" title="Link to this heading">#</a></h3>
-<p>There are multiple tools that you can use to view files in JupyterHub and Linux, we recommend using <code class="docutils literal notranslate"><span class="pre">cat</span></code> or <code class="docutils literal notranslate"><span class="pre">less</span></code> from the terminal, or opening it directly in JupyterLab.
-You can also view this config file <a class="reference external" href="https://gist.github.com/AidanJanney/92e34fdae16bf993a57fac7112ab818c">here</a> (it may be outdated).</p>
-<p>Most of the settings in <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> stay the same or similar from the other examples, but there are a few key changes to note.</p>
+<section id="confirm-the-conda-environments-installed-correctly">
+<h3>2.1 Confirm the Conda Environments Installed Correctly<a class="headerlink" href="#confirm-the-conda-environments-installed-correctly" title="Link to this heading">#</a></h3>
+<p>For a standalone CUPiD run (as opposed to running it from a CESM case),
+run the <code class="docutils literal notranslate"><span class="pre">cupid-diagnostics</span></code> command from the same directory as a <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file.
+CUPiD will create a <code class="docutils literal notranslate"><span class="pre">computed_notebooks</span></code> directory for output.
+This command will only be recognized in the <code class="docutils literal notranslate"><span class="pre">(cupid-infrastructure)</span></code> environment,
+so let’s make sure the <code class="docutils literal notranslate"><span class="pre">(cupid-infrastructure)</span></code> and <code class="docutils literal notranslate"><span class="pre">(cupid-analysis)</span></code> conda environments are fully installed for everyone.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>cupid-infrastructure
+which<span class="w"> </span>cupid-diagnostics
+</pre></div>
+</div>
+<p>If the environment installed correctly,
+<code class="docutils literal notranslate"><span class="pre">which</span></code> will return a path to <code class="docutils literal notranslate"><span class="pre">cupid-diagnostics</span></code>.
+If the environment did not install correctly,
+<code class="docutils literal notranslate"><span class="pre">which</span></code> will return an error like <code class="docutils literal notranslate"><span class="pre">which:</span> <span class="pre">no</span> <span class="pre">cupid-diagnostics</span> <span class="pre">in</span> <span class="pre">[long</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">directories]</span></code>.</p>
+<div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
+<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint #3 </strong> </h4>
+<p>At this point the following should all be true:</p>
+<ol class="arabic simple">
+<li><p>your terminal is in CUPiD’s <code class="docutils literal notranslate"><span class="pre">examples/regional_ocean</span></code> directory,</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">(cupid-infrastructure)</span></code> conda environment is active, and</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">cupid-diagnostics</span></code> command found the <code class="docutils literal notranslate"><span class="pre">cupid-diagnostics</span></code> script.</p></li>
+</ol>
+</div>
+</section>
+<section id="peek-at-the-config-yml">
+<h3>2.2: Peek at the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code><a class="headerlink" href="#peek-at-the-config-yml" title="Link to this heading">#</a></h3>
+<p>While waiting for <a class="reference internal" href="CUPiD_intro.html"><span class="doc std std-doc">CUPiD to install</span></a> we saw that each example has a specific <code class="docutils literal notranslate"><span class="pre">config.yml</span></code>,
+and we looked at the one in the <code class="docutils literal notranslate"><span class="pre">regional_ocean</span></code> example.
+Let’s open this file in the JupyterHub window and look a little closer.
+Most of the settings in <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> stay the same or similar from the other examples, but there are a few key changes to note.</p>
 <section id="global-params">
 <h4>Global Params<a class="headerlink" href="#global-params" title="Link to this heading">#</a></h4>
 <p><img alt="Regional Ocean Global Params" src="../../_images/standalone_global_params.png" />
 Here is where we specify that CUPiD should run diagnostics on the example output discussed above.</p>
-<div class="alert alert-warning">  
-<details>  
+<div class="alert alert-warning">
+<details>
 <summary>Want to generate timeseries?</summary><br>
 <p>Note that the timeseries output directory <code class="docutils literal notranslate"><span class="pre">ts_dir</span></code> is not instantiated.
 You are able to create timeseries files, but you are not able to save them to the <code class="docutils literal notranslate"><span class="pre">CESM_output_dir</span></code> as you normally would because we only have read permissions there.</p>
-<p>If you want to run the timeseries tool, set <code class="docutils literal notranslate"><span class="pre">ts_dir:</span> <span class="pre">/glade/derecho/scratch/USERNAME/archive</span></code> or another directory
-(you can check what your username is with <code class="docutils literal notranslate"><span class="pre">echo</span> <span class="pre">${USER}</span></code> in the terminal).</p>
-<p><strong>Not recommended this for this example; it contains multiple terabytes of output.</strong></p>
+<p>If you want to run the timeseries tool,
+set <code class="docutils literal notranslate"><span class="pre">ts_dir:</span> <span class="pre">/glade/derecho/scratch/${USER}/archive</span></code>
+(or another directory you have write access to) and then run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cupid-timeseries
+</pre></div>
+</div>
 </div>
 </section>
 <section id="notebook-parameters">
@@ -563,26 +578,34 @@ Here we pass in the specific variables for each notebook. Read more about specif
 </section>
 </section>
 <section id="time-to-run-cupid">
-<h3>Time to Run CUPiD!<a class="headerlink" href="#time-to-run-cupid" title="Link to this heading">#</a></h3>
-<p>Now we understand the processes and notebooks will run, it is time to run CUPiD. From the same <code class="docutils literal notranslate"><span class="pre">${CUPID_ROOT}/examples/regional_ocean</span></code> directory, run on one processor with:</p>
+<h3>2.3 Time to Run CUPiD!<a class="headerlink" href="#time-to-run-cupid" title="Link to this heading">#</a></h3>
+<p>Now that we understand the processes and notebooks will run, it is time to run CUPiD.
+From the same <code class="docutils literal notranslate"><span class="pre">${CUPID_ROOT}/examples/regional_ocean</span></code> directory, run on one processor with:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cupid-diagnostics<span class="w"> </span>--serial
 </pre></div>
 </div>
 <p>This step might take some time, and we can track the progress with the output to terminal.</p>
-<p>The notebooks will be run in <code class="docutils literal notranslate"><span class="pre">nblibrary</span></code> and then copied to the current directory under <code class="docutils literal notranslate"><span class="pre">computed_notebooks/ocn</span></code>. If you want to rerun the notebooks, make sure to manually copy the <code class="docutils literal notranslate"><span class="pre">regional_utils.py</span></code> file with</p>
+<p>The notebooks will be run in <code class="docutils literal notranslate"><span class="pre">nblibrary</span></code> and then copied to <code class="docutils literal notranslate"><span class="pre">computed_notebooks/ocn</span></code> under the example directory.
+If you want to rerun the notebooks, make sure to manually copy the <code class="docutils literal notranslate"><span class="pre">regional_utils.py</span></code> file with</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>../../nblibrary/ocn/regional_utils.py<span class="w"> </span>computed_notebooks/ocn/
 </pre></div>
 </div>
-</section>
-</section>
-<section id="optional-task-2-2-cupid-webpage">
-<h2>Optional Task 2.2: CUPiD Webpage<a class="headerlink" href="#optional-task-2-2-cupid-webpage" title="Link to this heading">#</a></h2>
-<p>We recommend viewing at the notebooks in JupyterHub and rerunning them in JupyterHub if you want to play with the output.</p>
-<p>If you want to use CUPiD’s webpage feature, in the same directory, <code class="docutils literal notranslate"><span class="pre">${CUPID_ROOT}/examples/regional_ocean</span></code>, run:</p>
+<div class="alert alert-warning">
+<details>
+<summary>Want to generate a webpage?</summary><br>
+We recommend viewing the completed notebooks in JupyterHub.
+This is the easiest way to see CUPiD output on the NCAR super computer,
+and also makes it easy to re-run the notebooks manually if you want to play with the output.
+<p>If you want to use CUPiD’s webpage feature, however, run</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cupid-webpage
 </pre></div>
 </div>
-<p>Reference the <a class="reference external" href="https://ncar.github.io/CUPiD/ncar_tips.html#looking-at-output">CUPiD Documentation for Looking at Output</a>.</p>
+<p>after <code class="docutils literal notranslate"><span class="pre">cupid-diagnostics</span></code> completes.
+Like <code class="docutils literal notranslate"><span class="pre">cupid-diagnostics</span></code>, this command is part of the <code class="docutils literal notranslate"><span class="pre">(cupid-infrastructure)</span></code> environment and should be run from the directory containing <code class="docutils literal notranslate"><span class="pre">config.yml</span></code>.</p>
+<p>Unfortunately, it is not easy to view webpages on the NCAR super computer.
+Your best bet is probably copying the entire <code class="docutils literal notranslate"><span class="pre">computed_notebooks/_build/html</span></code> directory to your local computer.
+More options are discussed in the CUPiD documentation for <a class="reference external" href="https://ncar.github.io/CUPiD/ncar_tips.html#looking-at-output">Looking at Output</a>.</p>
+</div></section>
 </section>
 </section>
 
@@ -651,15 +674,15 @@ Here we pass in the specific variables for each notebook. Read more about specif
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-let-s-run-cupid">Task 2: Let’s Run CUPiD</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-1-peek-at-the-config-yml">Task 2.1: Peek at the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confirm-the-conda-environments-installed-correctly">2.1 Confirm the Conda Environments Installed Correctly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#peek-at-the-config-yml">2.2: Peek at the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#global-params">Global Params</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-parameters">Notebook Parameters</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-to-run-cupid">Time to Run CUPiD!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-to-run-cupid">2.3 Time to Run CUPiD!</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task-2-2-cupid-webpage">Optional Task 2.2: CUPiD Webpage</a></li>
 </ul>
   </nav></div>
 

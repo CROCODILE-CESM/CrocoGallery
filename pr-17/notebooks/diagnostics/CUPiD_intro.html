@@ -232,16 +232,16 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../projects/choose_your_own_adventure.html">Choose your own adventure!</a></li>
-
-
-
-
 <li class="toctree-l1 has-children"><a class="reference internal" href="CUPiD_projects.html">Advanced CUPiD Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="CUPiD_in_CESM_Workflow.html">Running CUPiD within CESM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing_to_CUPiD.html">Contributing to CUPiD</a></li>
 </ul>
 </details></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/choose_your_own_adventure.html">Choose your own adventure!</a></li>
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Use Cases</span></p>
 <ul class="nav bd-sidenav">
@@ -458,16 +458,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-0-setup-terminal-and-jupyterhub-for-this-activity">Task 0: Setup Terminal and JupyterHub for this Activity</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigate-to-crocodile-2025-directory">0.1 Navigate to <code class="docutils literal notranslate"><span class="pre">crocodile_2025</span></code> directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-0-open-a-terminal-in-jupyterhub-for-this-activity">Task 0: Open a Terminal in JupyterHub for this Activity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigate-to-your-crocodile-2025-directory">0.1 Navigate to your <code class="docutils literal notranslate"><span class="pre">crocodile_2025</span></code> directory</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-a-terminal">0.2 Open a terminal</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-clone-cupid-and-install-environments">Task 1: Clone CUPiD and Install Environments</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-repository-from-github">1.1: Clone the repository from github</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-two-conda-environments">1.2: Install two conda environments</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-cupid-infrastructure">Install <code class="docutils literal notranslate"><span class="pre">(cupid-infrastructure)</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-cupid-analysis">Install <code class="docutils literal notranslate"><span class="pre">(cupid-analysis)</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-cupid-infrastructure-and-cupid-analysis">Install <code class="docutils literal notranslate"><span class="pre">(cupid-infrastructure)</span></code> and <code class="docutils literal notranslate"><span class="pre">(cupid-analysis)</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -495,30 +494,36 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="installing-cupid">
 <h1>Installing CUPiD<a class="headerlink" href="#installing-cupid" title="Link to this heading">#</a></h1>
-<p>This page follows the <a class="reference external" href="https://ncar.github.io/CUPiD/#installing">CUPiD Installation Documentation</a></p>
-<p><strong>To get the most out of this tutorial, install CUPiD on the NCAR super computer.</strong></p>
-<section id="task-0-setup-terminal-and-jupyterhub-for-this-activity">
-<h2>Task 0: Setup Terminal and JupyterHub for this Activity<a class="headerlink" href="#task-0-setup-terminal-and-jupyterhub-for-this-activity" title="Link to this heading">#</a></h2>
-<section id="navigate-to-crocodile-2025-directory">
-<h3>0.1 Navigate to <code class="docutils literal notranslate"><span class="pre">crocodile_2025</span></code> directory<a class="headerlink" href="#navigate-to-crocodile-2025-directory" title="Link to this heading">#</a></h3>
-<p>We should have a directory named <code class="docutils literal notranslate"><span class="pre">crocodile_2025</span></code> in our work directory. The full path to this will be: <code class="docutils literal notranslate"><span class="pre">/glade/work/YOUR_USERNAME/crocodile_2025</span></code>.</p>
-<p>JupyterHub references the filesystem slightly differently. To access this directory:</p>
+<p>This page follows the <a class="reference external" href="https://ncar.github.io/CUPiD/#installing">CUPiD Installation Documentation</a>,
+with some tweaks specific to the NCAR super computer.</p>
+<div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
+<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint #1 </strong> </h4>
+<p>At this point you should have a running JupyterHub instance.</p>
+</div>
+<section id="task-0-open-a-terminal-in-jupyterhub-for-this-activity">
+<h2>Task 0: Open a Terminal in JupyterHub for this Activity<a class="headerlink" href="#task-0-open-a-terminal-in-jupyterhub-for-this-activity" title="Link to this heading">#</a></h2>
+<section id="navigate-to-your-crocodile-2025-directory">
+<h3>0.1 Navigate to your <code class="docutils literal notranslate"><span class="pre">crocodile_2025</span></code> directory<a class="headerlink" href="#navigate-to-your-crocodile-2025-directory" title="Link to this heading">#</a></h3>
+<p>We all have a directory that we have been using all week for the practical exercises.
+The full path to this should be: <code class="docutils literal notranslate"><span class="pre">/glade/work/${USER}/crocodile_2025</span></code>.
+To access this directory:</p>
 <ol class="arabic simple">
 <li><p>Click <strong>File</strong> in the top left and select <strong>Open from Path…</strong></p></li>
-<li><p>In the pop-up field enter: <code class="docutils literal notranslate"><span class="pre">/work/USERNAME/crocodile_2025</span></code></p></li>
+<li><p>In the pop-up field enter: <code class="docutils literal notranslate"><span class="pre">/work/${USER}/crocodile_2025</span></code></p></li>
 </ol>
-<p>If JupyterHub tells you this path does not exist, let us know.</p>
+<p>Note that JupyterHub references the filesystem relative to <code class="docutils literal notranslate"><span class="pre">/glade</span></code>,
+so we don’t need include that part of the path in step 2 above.</p>
 </section>
 <section id="open-a-terminal">
 <h3>0.2 Open a terminal<a class="headerlink" href="#open-a-terminal" title="Link to this heading">#</a></h3>
 <p>Open a Terminal instance by scrolling all the way down in the launcher tab and selecting <strong>Terminal</strong>.
 <img alt="Jupyter Terminal" src="../../_images/Jupyter_Terminal.png" />
-This should open a terminal with the following prompt:
+This will open a terminal with the following prompt:
 <code class="docutils literal notranslate"><span class="pre">USERNAME&#64;crhtcXX:/glade/work/USERNAME/crocodile_2025&gt;</span></code></p>
 <div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
-<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint! </strong> </h4> 
-<p>At this point you should have a running JupyterHub instance, an open terminal in JupyterHub, and you should be in your <code class="docutils literal notranslate"><span class="pre">crocodile_2025</span></code> workshop folder.</p>
-<p>Let us know <strong>now</strong> if you’re running into any issues!</p>
+<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint #2 </strong> </h4>
+<p>At this point you should have an open terminal in JupyterHub,
+and the current working directory should be your <code class="docutils literal notranslate"><span class="pre">crocodile_2025</span></code> workshop directory.</p>
 </div>
 </section>
 </section>
@@ -527,18 +532,10 @@ This should open a terminal with the following prompt:
 <p>CUPiD is available from the NCAR organization on <a class="reference external" href="https://github.com/NCAR/CUPiD">github.com</a>.
 It requires conda to manage a few different python environments.
 The NCAR system administrators provide conda through a module,
-you can access it by running</p>
+which you can access by running</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>conda
 </pre></div>
 </div>
-<p>If you need to install conda on a different computer,
-we recommend <a class="reference external" href="https://www.anaconda.com/docs/getting-started/miniconda/main">miniconda</a>
-(but this tutorial assumes you already have access to conda).
-We also recommend installing <code class="docutils literal notranslate"><span class="pre">mamba</span></code>,
-which is basically a parallelized version of <code class="docutils literal notranslate"><span class="pre">conda</span></code>
-(and is part of the NCAR <code class="docutils literal notranslate"><span class="pre">conda</span></code> module).
-Instructions for installing CUPiD are available <a class="reference external" href="https://ncar.github.io/CUPiD/#installing">on the CUPiD website</a>,
-but we will cover the key steps here.</p>
 <section id="clone-the-repository-from-github">
 <h3>1.1: Clone the repository from github<a class="headerlink" href="#clone-the-repository-from-github" title="Link to this heading">#</a></h3>
 <p>Running the following command will create a subdirectory named <code class="docutils literal notranslate"><span class="pre">CUPiD</span></code> in your current working directory:</p>
@@ -546,7 +543,7 @@ but we will cover the key steps here.</p>
 </pre></div>
 </div>
 <p>The rest of this tutorial will refer to the location you installed CUPiD as <code class="docutils literal notranslate"><span class="pre">${CUPID_ROOT}</span></code>.
-To be able to copy and paste blocks of commands directly, we need to add the variable to your environment (see <a class="reference external" href="https://www.tutorialspoint.com/bash-export-variable">Bash Export Variable</a>).</p>
+To be able to copy and paste blocks of commands directly, we need to add the variable to your environment.</p>
 <p>Most of you are using <code class="docutils literal notranslate"><span class="pre">bash</span></code> or <code class="docutils literal notranslate"><span class="pre">zsh</span></code>,
 which have been the default shell on Linux and Unix computers for a while now.
 To set the environment variable run</p>
@@ -555,9 +552,11 @@ To set the environment variable run</p>
 </pre></div>
 </div>
 <p><strong>Note:</strong> This environment variable only exists in this specific terminal.
-It will disappear after this tutorial (see <a class="reference external" href="https://ncar-hpc-docs.readthedocs.io/en/latest/environment-and-software/user-environment/customizing/">Personalizing start files - NCAR Docs</a> for more information).</p>
-<div class="alert alert-warning">  
-<details>  
+It will need to exported again if you open a separate terminal,
+unless you modify your start files
+(see the <a class="reference external" href="https://ncar-hpc-docs.readthedocs.io/en/latest/environment-and-software/user-environment/customizing/">NCAR documentation for this process</a> for more information).</p>
+<div class="alert alert-warning">
+<details>
 <summary>Using a different shell?</summary><br>
 <p>If you have changed your shell to <code class="docutils literal notranslate"><span class="pre">csh</span></code> or <code class="docutils literal notranslate"><span class="pre">tcsh</span></code>,
 you will want to run the following instead:</p>
@@ -582,32 +581,23 @@ git<span class="w"> </span>checkout<span class="w"> </span>CROCODILE_Workshop_20
 <h3>1.2: Install two conda environments<a class="headerlink" href="#install-two-conda-environments" title="Link to this heading">#</a></h3>
 <p>CUPiD needs a python environment with specific packages installed to run the CUPiD tools,
 while the diagnostic notebooks provided with CUPiD need a different set of packages.</p>
-<p>To run CUPiD itself we use the <code class="docutils literal notranslate"><span class="pre">(cupid-infrastructure)</span></code> environment, then CUPiD runs the diagnostics notebooks with <code class="docutils literal notranslate"><span class="pre">(cupid-analysis)</span></code>.</p>
-<section id="install-cupid-infrastructure">
-<h4>Install <code class="docutils literal notranslate"><span class="pre">(cupid-infrastructure)</span></code><a class="headerlink" href="#install-cupid-infrastructure" title="Link to this heading">#</a></h4>
+<p>To run CUPiD itself we use the <code class="docutils literal notranslate"><span class="pre">(cupid-infrastructure)</span></code> environment, then CUPiD runs the diagnostics notebooks with <code class="docutils literal notranslate"><span class="pre">(cupid-analysis)</span></code>.
+We will use <code class="docutils literal notranslate"><span class="pre">mamba</span></code> to install these environments and the <code class="docutils literal notranslate"><span class="pre">--yes</span></code> option to avoid <code class="docutils literal notranslate"><span class="pre">mamba</span></code> waiting for approval before continuing with the install:</p>
+<section id="install-cupid-infrastructure-and-cupid-analysis">
+<h4>Install <code class="docutils literal notranslate"><span class="pre">(cupid-infrastructure)</span></code> and <code class="docutils literal notranslate"><span class="pre">(cupid-analysis)</span></code><a class="headerlink" href="#install-cupid-infrastructure-and-cupid-analysis" title="Link to this heading">#</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">CUPID_ROOT</span><span class="si">}</span>
-mamba<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environments/cupid-infrastructure.yml<span class="w"> </span>--yes
+mamba<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environments/cupid-infrastructure.yml<span class="w"> </span>--yes<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+mamba<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environments/cupid-analysis.yml<span class="w"> </span>--yes
 </pre></div>
 </div>
-<p>This step may take a while.
-When it completes you can verify it was successful by running</p>
-<p><strong>Note:</strong> Remove the <code class="docutils literal notranslate"><span class="pre">--yes</span></code> flag if you would like to confirm the installation manually.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>cupid-infrastructure
-which<span class="w"> </span>cupid-diagnostics
-</pre></div>
-</div>
-<p>If the environment installed correctly,
-<code class="docutils literal notranslate"><span class="pre">which</span></code> will return a path to <code class="docutils literal notranslate"><span class="pre">cupid-diagnostics</span></code>.
-If the environment did not install correctly,
-<code class="docutils literal notranslate"><span class="pre">which</span></code> will return an error like <code class="docutils literal notranslate"><span class="pre">which:</span> <span class="pre">no</span> <span class="pre">cupid-diagnostics</span> <span class="pre">in</span> <span class="pre">[long</span> <span class="pre">list</span> <span class="pre">of</span> <span class="pre">directories]</span></code>.</p>
-</section>
-<section id="install-cupid-analysis">
-<h4>Install <code class="docutils literal notranslate"><span class="pre">(cupid-analysis)</span></code><a class="headerlink" href="#install-cupid-analysis" title="Link to this heading">#</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environments/cupid-analysis.yml<span class="w"> </span>--yes
-</pre></div>
-</div>
-<p>This may also take a while,
-but when it finishes you will be ready to run CUPiD!</p>
+<p><strong>Notes:</strong></p>
+<ol class="arabic simple">
+<li><p>This is two separate commands separated by <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>;
+the second command (installing <code class="docutils literal notranslate"><span class="pre">(cupid-analysis)</span></code>) will only run if the first command (installing <code class="docutils literal notranslate"><span class="pre">(cupid-infrastructure)</span></code> finishes successfully).
+Also, the <code class="docutils literal notranslate"><span class="pre">\</span></code> is a line continuation operator -
+without it, the command would be on a single line and very long.</p></li>
+<li><p>If you remove the <code class="docutils literal notranslate"><span class="pre">--yes</span></code> flag, <code class="docutils literal notranslate"><span class="pre">mamba</span></code> will ask you to confirm the installation after it determines what packages will be installed.</p></li>
+</ol>
 </section>
 </section>
 </section>
@@ -779,16 +769,15 @@ or maybe it should be a command line argument instead.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-0-setup-terminal-and-jupyterhub-for-this-activity">Task 0: Setup Terminal and JupyterHub for this Activity</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigate-to-crocodile-2025-directory">0.1 Navigate to <code class="docutils literal notranslate"><span class="pre">crocodile_2025</span></code> directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-0-open-a-terminal-in-jupyterhub-for-this-activity">Task 0: Open a Terminal in JupyterHub for this Activity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigate-to-your-crocodile-2025-directory">0.1 Navigate to your <code class="docutils literal notranslate"><span class="pre">crocodile_2025</span></code> directory</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-a-terminal">0.2 Open a terminal</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-clone-cupid-and-install-environments">Task 1: Clone CUPiD and Install Environments</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-repository-from-github">1.1: Clone the repository from github</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-two-conda-environments">1.2: Install two conda environments</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-cupid-infrastructure">Install <code class="docutils literal notranslate"><span class="pre">(cupid-infrastructure)</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-cupid-analysis">Install <code class="docutils literal notranslate"><span class="pre">(cupid-analysis)</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-cupid-infrastructure-and-cupid-analysis">Install <code class="docutils literal notranslate"><span class="pre">(cupid-infrastructure)</span></code> and <code class="docutils literal notranslate"><span class="pre">(cupid-analysis)</span></code></a></li>
 </ul>
 </li>
 </ul>
