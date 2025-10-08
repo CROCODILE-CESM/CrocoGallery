@@ -8,7 +8,7 @@ These example configuration files also act as templates for the CESM workflow di
 > **Note:** we actually access the example output through the CROCODILE workshop directory for simplicity: `/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/Diagnostics/CESM_Output/`.
 > It just links back to `CESM_output_for_testing`.
 
-We have added a `regional_mom6` example to CUPiD that provides diagnostics for a 10-month run.
+We have added a `regional_ocean` example to CUPiD that provides diagnostics for a 10-month run.
 This run uses a 1/12° grid over the northwest Atlantic domain, and includes ocean biogeochemistry tracers from the Marine Biogeochemistry library (MARBL).
 The compset used for this run was
 
@@ -22,15 +22,9 @@ We will run the `regional_ocean` example included with CUPiD. This includes four
 - `Regional_Ocean_Atmospheric_Forcing.ipynb`: look at atmospheric forcing at the surface.
 - `Regional_Ocean_OBC.ipynb`: visualize surface fields and open boundary conditions.
 
-<div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
-<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint! </strong> </h4> 
-
-Make sure `(cupid-infrastructure)` and `(cupid-analysis)` conda environments are fully installed before starting this task. If you are unsure, try running `conda activate cupid-infrastructure` and `conda activate cupid-analysis` in the terminal.
-
-Let us know if you're running into any issues!
-</div>
 
 ## Task 2: Let's Run CUPiD
+
 Navigate to your installation of CUPiD, we will run the diagnostics in the example directory. 
 
 ```bash
@@ -60,7 +54,25 @@ cd regional_ocean
 For a standalone CUPiD run (i.e. not part of a CESM case run) we will run `cupid-diagnostics` from the same directory as a `config.yml` file. 
 CUPiD will automatically recognize the file is in the current directory, and the output will also be in the same directory. Each example has a specific `config.yml`, let's look at the one in `regional_ocean`.
 
-### Task 2.1: Peek at the `config.yml`
+<div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
+<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint! </strong> </h4>
+
+Let's make sure `(cupid-infrastructure)` and `(cupid-analysis)` conda environments are fully installed for everyone starting the next task.
+</div>
+
+### 2.1 Confirm the Conda Environments Installed Correctly
+
+```bash
+conda activate cupid-infrastructure
+which cupid-diagnostics
+```
+
+If the environment installed correctly,
+`which` will return a path to `cupid-diagnostics`.
+If the environment did not install correctly,
+`which` will return an error like `which: no cupid-diagnostics in [long list of directories]`.
+
+### 2.2: Peek at the `config.yml`
 There are multiple tools that you can use to view files in JupyterHub and Linux, we recommend using `cat` or `less` from the terminal, or opening it directly in JupyterLab. 
 You can also view this config file [here](https://gist.github.com/AidanJanney/92e34fdae16bf993a57fac7112ab818c) (it may be outdated). 
 
@@ -94,7 +106,7 @@ This section also tells us this example will run four notebooks:
 `Regional_Ocean_OBC.ipynb`, and
 `Regional_Ocean_Report_Card.ipynb`.
 
-### Time to Run CUPiD!
+### 2.3 Time to Run CUPiD!
 Now we understand the processes and notebooks will run, it is time to run CUPiD. From the same `${CUPID_ROOT}/examples/regional_ocean` directory, run on one processor with:
 ```bash
 cupid-diagnostics --serial
@@ -106,7 +118,7 @@ The notebooks will be run in `nblibrary` and then copied to the current director
 cp ../../nblibrary/ocn/regional_utils.py computed_notebooks/ocn/
 ```
 
-## Optional Task 2.2: CUPiD Webpage
+### 2.4 [Optional Task]: CUPiD Webpage
 We recommend viewing at the notebooks in JupyterHub and rerunning them in JupyterHub if you want to play with the output. 
 
 If you want to use CUPiD's webpage feature, in the same directory, `${CUPID_ROOT}/examples/regional_ocean`, run:

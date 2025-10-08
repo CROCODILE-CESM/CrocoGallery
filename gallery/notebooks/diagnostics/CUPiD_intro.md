@@ -1,32 +1,41 @@
 # Installing CUPiD
 
-This page follows the [CUPiD Installation Documentation](https://ncar.github.io/CUPiD/#installing)
+This page follows the [CUPiD Installation Documentation](https://ncar.github.io/CUPiD/#installing),
+with some tweaks specific to the NCAR super computer.
 
-**To get the most out of this tutorial, install CUPiD on the NCAR super computer.**
+<div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
+<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint! </strong> </h4>
 
-## Task 0: Setup Terminal and JupyterHub for this Activity
+At this point you should have a running JupyterHub instance.
+We'll wait for everyone to be ready.
+</div>
 
-### 0.1 Navigate to `crocodile_2025` directory
-We should have a directory named `crocodile_2025` in our work directory. The full path to this will be: `/glade/work/YOUR_USERNAME/crocodile_2025`.
+## Task 0: Open a Terminal in JupyterHub for this Activity
 
-JupyterHub references the filesystem slightly differently. To access this directory:
+### 0.1 Navigate to your `crocodile_2025` directory
+We all have a directory that we have been using all week for the practical exercises.
+The full path to this should be: `/glade/work/${USER}/crocodile_2025`.
+To access this directory:
+
 1. Click **File** in the top left and select **Open from Path...**
-2. In the pop-up field enter: `/work/USERNAME/crocodile_2025`
+2. In the pop-up field enter: `/work/${USER}/crocodile_2025`
 
-If JupyterHub tells you this path does not exist, let us know.
+Note that JupyterHub references the filesystem relative to `/glade`,
+so we don't need include that part of the path in step 2 above.
+
 
 ### 0.2 Open a terminal
 Open a Terminal instance by scrolling all the way down in the launcher tab and selecting **Terminal**. 
 ![Jupyter Terminal](../../images/CUPiD/Jupyter_Terminal.png)
-This should open a terminal with the following prompt:
+This will open a terminal with the following prompt:
 `USERNAME@crhtcXX:/glade/work/USERNAME/crocodile_2025>`
 
 <div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
-<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint! </strong> </h4> 
+<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint! </strong> </h4>
 
-At this point you should have a running JupyterHub instance, an open terminal in JupyterHub, and you should be in your `crocodile_2025` workshop folder.
-
-Let us know <strong>now</strong> if you're running into any issues!
+At this point you should have an open terminal in JupyterHub,
+and the current working directory should be your `crocodile_2025` workshop directory.
+Again, we will wait for everyone to be ready before continuing.
 </div>
 
 ## Task 1: Clone CUPiD and Install Environments
@@ -34,20 +43,11 @@ Let us know <strong>now</strong> if you're running into any issues!
 CUPiD is available from the NCAR organization on [github.com](https://github.com/NCAR/CUPiD).
 It requires conda to manage a few different python environments.
 The NCAR system administrators provide conda through a module,
-you can access it by running
+which you can access by running
 
 ```bash
 module load conda
 ```
-
-If you need to install conda on a different computer,
-we recommend [miniconda](https://www.anaconda.com/docs/getting-started/miniconda/main)
-(but this tutorial assumes you already have access to conda).
-We also recommend installing `mamba`,
-which is basically a parallelized version of `conda`
-(and is part of the NCAR `conda` module).
-Instructions for installing CUPiD are available [on the CUPiD website](https://ncar.github.io/CUPiD/#installing),
-but we will cover the key steps here.
 
 ### 1.1: Clone the repository from github
 
@@ -58,7 +58,7 @@ git clone --recurse-submodules https://github.com/NCAR/CUPiD.git
 ```
 
 The rest of this tutorial will refer to the location you installed CUPiD as `${CUPID_ROOT}`.
-To be able to copy and paste blocks of commands directly, we need to add the variable to your environment (see [Bash Export Variable](https://www.tutorialspoint.com/bash-export-variable)).
+To be able to copy and paste blocks of commands directly, we need to add the variable to your environment.
 
 Most of you are using `bash` or `zsh`,
 which have been the default shell on Linux and Unix computers for a while now.
@@ -68,8 +68,11 @@ To set the environment variable run
 cd CUPiD
 export CUPID_ROOT=`pwd -P`
 ```
+
 **Note:** This environment variable only exists in this specific terminal. 
-It will disappear after this tutorial (see [Personalizing start files - NCAR Docs](https://ncar-hpc-docs.readthedocs.io/en/latest/environment-and-software/user-environment/customizing/) for more information).
+It will need to exported again if you open a separate terminal,
+unless you modify your start files
+(see the [NCAR documentation for this process](https://ncar-hpc-docs.readthedocs.io/en/latest/environment-and-software/user-environment/customizing/) for more information).
 
 <div class="alert alert-warning">  
 <details>  
@@ -106,37 +109,24 @@ CUPiD needs a python environment with specific packages installed to run the CUP
 while the diagnostic notebooks provided with CUPiD need a different set of packages.
 
 To run CUPiD itself we use the `(cupid-infrastructure)` environment, then CUPiD runs the diagnostics notebooks with `(cupid-analysis)`.
+We will use `mamba` to install these environments and the `--yes` option to avoid `mamba` waiting for approval before continuing with the install:
 
-#### Install `(cupid-infrastructure)`
+#### Install `(cupid-infrastructure)` and `(cupid-analysis)`
 
 ```bash
 cd ${CUPID_ROOT}
-mamba env create -f environments/cupid-infrastructure.yml --yes
-```
-
-This step may take a while.
-When it completes you can verify it was successful by running
-
-**Note:** Remove the `--yes` flag if you would like to confirm the installation manually.
-
-```bash
-conda activate cupid-infrastructure
-which cupid-diagnostics
-```
-
-If the environment installed correctly,
-`which` will return a path to `cupid-diagnostics`.
-If the environment did not install correctly,
-`which` will return an error like `which: no cupid-diagnostics in [long list of directories]`.
-
-#### Install `(cupid-analysis)`
-
-```bash
+mamba env create -f environments/cupid-infrastructure.yml --yes && \
 mamba env create -f environments/cupid-analysis.yml --yes
 ```
 
-This may also take a while,
-but when it finishes you will be ready to run CUPiD!
+**Notes:**
+
+1. This is two separate commands separated by `&&`;
+the second command (installing `(cupid-analysis)`) will only run if the first command (installing `(cupid-infrastructure)` finishes successfully).
+Also, the `\` is a line continuation operator -
+without it, the command would be on a single line and very long.
+1. If you remove the `--yes` flag, `mamba` will ask you to confirm the installation after it determines what packages will be installed.
+
 
 ## CUPiD Configuration
 
