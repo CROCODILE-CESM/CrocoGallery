@@ -19,26 +19,54 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^^
   File "/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/nbclient/client.py", line 1005, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/nbclient/client.py", line 806, in _async_poll_for_reply
-    error_on_timeout_execute_reply = await self._async_handle_timeout(timeout, cell)
-                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/nbclient/client.py", line 856, in _async_handle_timeout
-    raise CellTimeoutError.error_from_timeout_and_cell(
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
-bathymetry_path='s3://crocodile-cesm/CrocoDash/data/gebco/GEBCO_2024.zarr/' # Swap this!
+  File "/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/share/miniconda/envs/CrocoDash/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from CrocoDash.case import Case
 
-topo.interpolate_from_file(
-    file_path = bathymetry_path,
-    longitude_coordinate_name="lon",
-    latitude_coordinate_name="lat",
-    vertical_coordinate_name="elevation",
-    write_to_file = True
+case = Case(
+    cesmroot = cesmroot,
+    caseroot = caseroot,
+    inputdir = inputdir,
+    ocn_grid = grid,
+    ocn_vgrid = vgrid,
+    ocn_topo = topo,
+    project = 'P93300012', # Switch this
+    override = True,
+    machine = "derecho", # And this
+    compset = "1850_DATM%JRA_SLND_CICE_MOM6_SROF_SGLC_SWAV", 
 )
--------------------
+------------------
+
+----- stderr -----
+ERROR:  cime_interface:DIN_LOC_ROOT doesn't exist: /home/runner/cesm/inputdata
+----- stderr -----
+INFO:  csp_solver:CspSolver initialized.
+----- stdout -----
+[01;96mCreating case...[0m
+
+• Updating ccs_config/modelgrid_aliases_nuopc.xml file to include the new resolution "antarctica-tutorial" consisting of the following component grids.
+ atm grid: "TL319", lnd grid: "TL319", ocn grid: "antarctica2".
+
+• Updating ccs_config/component_grids_nuopc.xml file to include newly generated ocean grid "antarctica2" with the following properties:
+ nx: 400, ny: 400. ocean mesh: /home/runner/input/antarctica-tutorial/ocnice/ESMF_mesh_antarctica2_cf0ef1.nc.[0m
+
+[01;96mRunning the create_newcase tool with the following command:[0m
+
+/home/runner/work/CrocoGallery/CrocoGallery/CESM/cime/scripts/create_newcase --compset 1850_DATM%JRA_SLND_CICE_MOM6_SROF_SGLC_SWAV --res antarctica-tutorial --case /home/runner/cases/antarctica-tutorial --machine derecho --run-unsupported --project P93300012 --non-local
+----- stdout -----
+[1;31mError creating case.[0m
+
+b"ERROR: Undefined env var 'SCRATCH'\n"
+
+[1;31mError creating case.[0m
+------------------
+
+An exception has occurred, use %tb to see the full traceback.
+
+[0;31mCIMEError[0m[0;31m:[0m ERROR: Makes no sense to have empty read-only file: /home/runner/cases/antarctica-tutorial/env_case.xml
+
 
