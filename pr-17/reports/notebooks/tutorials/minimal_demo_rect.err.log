@@ -54,7 +54,7 @@ INFO:  csp_solver:CspSolver initialized.
  atm grid: "TL319", lnd grid: "TL319", ocn grid: "panama1".
 
 • Updating ccs_config/component_grids_nuopc.xml file to include newly generated ocean grid "panama1" with the following properties:
- nx: 300, ny: 300. ocean mesh: /home/runner/croc_input/panama-not/ocnice/ESMF_mesh_panama1_de18e2.nc.[0m
+ nx: 300, ny: 300. ocean mesh: /home/runner/croc_input/panama-not/ocnice/ESMF_mesh_panama1_db6d32.nc.[0m
 
 [01;96mRunning the create_newcase tool with the following command:[0m
 

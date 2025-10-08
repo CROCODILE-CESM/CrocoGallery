@@ -636,7 +636,8 @@ but the <code class="docutils literal notranslate"><span class="pre">CONFIG_PATH
 This YAML file (YAML is a recursive acronym, standing for <a class="reference external" href="https://yaml.org/">“YAML Ain’t Markup Language”</a>;
 you have encountered it when dealing with conda environment files as well)
 contains all the details about what CUPiD should do.</p>
-<p>This can also be found on the CUPiD webpage, on the <a class="reference external" href="https://ncar.github.io/CUPiD/config.html">Configuration File</a> page.</p>
+<p>The <a class="reference external" href="https://ncar.github.io/CUPiD/config.html">Configuration File</a> page of the CUPiD website goes into more detail looking at the <code class="docutils literal notranslate"><span class="pre">key_metrics</span></code> example,
+but in the following subsections we will look at the <a class="reference external" href="https://github.com/AidanJanney/CUPiD/blob/CROCODILE_Workshop_2025/examples/regional_ocean/config.yml"><code class="docutils literal notranslate"><span class="pre">config.yml</span></code></a> file associated with the <code class="docutils literal notranslate"><span class="pre">regional_ocean</span></code> example.</p>
 <section id="data-sources-section">
 <h3><code class="docutils literal notranslate"><span class="pre">data_sources</span></code> Section<a class="headerlink" href="#data-sources-section" title="Link to this heading">#</a></h3>
 <p>The first section in the <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file is <code class="docutils literal notranslate"><span class="pre">data_sources</span></code>:</p>
@@ -658,7 +659,8 @@ and it also sets logging information:</p>
 <h3><code class="docutils literal notranslate"><span class="pre">global_params</span></code> Section<a class="headerlink" href="#global-params-section" title="Link to this heading">#</a></h3>
 <p>There are some parameters that are passed to every notebook.
 These are typically variables associated with the runs being compared
-(things like CESM case names, location of data, length of the run, and so on):</p>
+(things like CESM case names, location of data, length of the run, and so on).
+For <code class="docutils literal notranslate"><span class="pre">regional_ocean</span></code>, there are some parameters we want to pass to every ocean notebook and they are included here as well:</p>
 <p><img alt="global parameters section of config.yml" src="../../_images/global_params.png" /></p>
 </section>
 <section id="time-series-section">

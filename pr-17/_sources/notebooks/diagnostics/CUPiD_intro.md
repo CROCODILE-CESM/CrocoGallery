@@ -164,7 +164,8 @@ This YAML file (YAML is a recursive acronym, standing for ["YAML Ain't Markup La
 you have encountered it when dealing with conda environment files as well)
 contains all the details about what CUPiD should do.
 
-This can also be found on the CUPiD webpage, on the [Configuration File](https://ncar.github.io/CUPiD/config.html) page.
+The [Configuration File](https://ncar.github.io/CUPiD/config.html) page of the CUPiD website goes into more detail looking at the `key_metrics` example,
+but in the following subsections we will look at the [`config.yml`](https://github.com/AidanJanney/CUPiD/blob/CROCODILE_Workshop_2025/examples/regional_ocean/config.yml) file associated with the `regional_ocean` example.
 
 ### `data_sources` Section
 
@@ -190,7 +191,8 @@ and it also sets logging information:
 
 There are some parameters that are passed to every notebook.
 These are typically variables associated with the runs being compared
-(things like CESM case names, location of data, length of the run, and so on):
+(things like CESM case names, location of data, length of the run, and so on).
+For `regional_ocean`, there are some parameters we want to pass to every ocean notebook and they are included here as well:
 
 ![global parameters section of config.yml](../../images/CUPiD/global_params.png)
 
