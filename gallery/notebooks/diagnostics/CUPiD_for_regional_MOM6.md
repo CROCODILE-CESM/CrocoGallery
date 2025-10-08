@@ -5,10 +5,10 @@
 <div class="alert alert-info">
 <details>
 <summary> <h4 style="margin-top: 0; padding-top: 0; margin-bottom: 0; padding-bottom: 0; display: inline-flex"> &nbsp; Warm up the Engine – Start a JupyterHub Server </h4> </summary>
-If you are not already logged into <a href="https://jupyterhub.hpc.ucar.edu/" target="_blank" rel="noopener noreferrer"> jupter.hub.ucar.edu </a>, please navigate there and start a new server. 
+If you are not already logged into <a href="https://jupyterhub.hpc.ucar.edu/" target="_blank" rel="noopener noreferrer"> jupter.hub.ucar.edu </a>, please navigate there and start a new server.
 <strong>Required Settings</strong>
   <ul>
-    <li>Resource Selection: <strong>Casper PBS Batch</strong></li>  
+    <li>Resource Selection: <strong>Casper PBS Batch</strong></li>
     <li>Queue or Reservation: <strong>tutorial</strong>
     <li>Project Account: <strong>CESM0030</strong> </li>
     ...
@@ -44,10 +44,10 @@ During project worktime there are also instructions for
 1. contributing more diagnostics to the CUPiD project.
 
 ## Your Turn!
-As we progress through this tutorial, think about what kinds of diagnostics might be helpful for general regions and your specific regions of interest. 
+As we progress through this tutorial, think about what kinds of diagnostics might be helpful for general regions and your specific regions of interest.
 
 ### Ideas for New Notebooks
 This is a brief list of some possible topics/notebooks to contribute from a regional ocean perspective. Add your own!
 - **Comparison to Other Model Output/Reanalysis Products:** compare model output to other model output or a reanalysis product ([Global Atmspheric Observations Example](https://github.com/NCAR/CUPiD/blob/main/nblibrary/atm/Global_PSL_NMSE_compare_obs_lens.ipynb)). CUPiD is already setup with this in mind with the `base_case` global parameters.
 - **Transport through Passages:** MOM6 lets you define transects to calculate transport through different passages. These transects are defined in the `diag_table` so a notebook would need to chek if any transects are defined and then visualize/analyze them appropriately. Comparing to observations could be tricky and very helpful!
-- **Region Aware Diagnostics:** Different regions might benefit from a different standard sets of diagnostics. Even simple adjustments like choosing a different projection for plotting or looking at sea ice in the arctic. 
+- **Region Aware Diagnostics:** Different regions might benefit from a different standard sets of diagnostics. Even simple adjustments like choosing a different projection for plotting or looking at sea ice in the arctic.

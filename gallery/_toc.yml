@@ -47,7 +47,6 @@ parts:
       chapters:
         - file: notebooks/projects/NWA
         - file: notebooks/projects/CICE
-        - file: notebooks/projects/choose_your_own_adventure
         - file: notebooks/diagnostics/CUPiD_projects
           title: Advanced CUPiD Tutorial
           sections:
@@ -55,6 +54,7 @@ parts:
             title: Running CUPiD within CESM
           - file: notebooks/diagnostics/contributing_to_CUPiD
             title: Contributing to CUPiD
+        - file: notebooks/projects/choose_your_own_adventure
     - caption: Use Cases
       chapters:
       - file: notebooks/use_cases/index 

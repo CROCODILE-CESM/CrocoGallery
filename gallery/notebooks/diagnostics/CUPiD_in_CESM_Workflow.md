@@ -1,11 +1,11 @@
 # Running CUPiD within CESM
 
 CUPiD has been included in the CESM workflow,
-which means you can run CUPiD from a CESM case directory with the familiar `case.submit` command. 
+which means you can run CUPiD from a CESM case directory with the familiar `case.submit` command.
 For this exercise, we will run the notebooks Aidan put together on the case you ran with Manish.
 
 <div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
-<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint! </strong> </h4> 
+<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint! </strong> </h4>
 <ol>
 <li> Are the standalone diagnostics from the previous activity done running? </li>
 <li>Do you have a case that successfully ran and produced output from Monday's <strong>Practicum: Using CrocoDash</strong>? </li>
@@ -21,8 +21,8 @@ We have been working on NCAR's Casper machine, which is very useful for diagnost
 
 #### Moving to Derecho
 There are two options for this step:
-<div class="alert alert-info">  
-<details>  
+<div class="alert alert-info">
+<details>
 <summary>A. Access Derecho through our current JupyterHub instance with <code>ssh</code>.</summary><br>
 Casper is on the same network as Derecho, so in a new terminal you can simply type:
 <pre> ssh USERNAME@derecho </pre>
@@ -30,8 +30,8 @@ Casper is on the same network as Derecho, so in a new terminal you can simply ty
 You will be prompted to enter your password and authenticate with DUO, and then you will be connected to a login node on Derecho.
 </div>
 
-<div class="alert alert-info">  
-<details>  
+<div class="alert alert-info">
+<details>
 <summary>B. Access Derecho through a separate terminal with <code>ssh</code>.</summary><br>
 You can directly login to Derecho through any terminal using <code>ssh</code>. Run the command:
 <pre> ssh USERNAME@derecho.hpc.ucar.edu </pre>
@@ -70,11 +70,11 @@ which are all defined in `env_postprocessing.xml`.
 XML variables are all in plain-text files so we could inspect them directly,
 but let's use the provided `xmlquery` tool instead.
 
-<div class="alert alert-warning">  
-🚨 <strong>POP QUIZ #1!</strong> 🚨 
+<div class="alert alert-warning">
+🚨 <strong>POP QUIZ #1!</strong> 🚨
 
 How do you use `xmlquery` to see all the variables that contain `CUPID` in their name (along with their values)?
-<details>  
+<details>
 
 <summary>Solution</summary><br>
 
@@ -133,12 +133,12 @@ In that case, you want to run
 We also want to run the `regional_ocean` example and use 10 GB of memory.
 These are set by the `CUPID_EXAMPLE` and `CUPID_MEM_PER_TASK` variables, respectively.
 
-<div class="alert alert-warning">  
-🚨 <strong>POP QUIZ #2!</strong> 🚨 
+<div class="alert alert-warning">
+🚨 <strong>POP QUIZ #2!</strong> 🚨
 
-How do we set `CUPID_EXAMPLE = regional_ocean`? 
+How do we set `CUPID_EXAMPLE = regional_ocean`?
 How can we check the value of `CUPID_MEM_PER_TASK` to make sure we have enough memory?
-<details>  
+<details>
 
 <summary>Solution</summary><br>
 

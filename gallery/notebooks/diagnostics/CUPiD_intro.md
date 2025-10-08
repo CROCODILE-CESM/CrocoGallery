@@ -4,10 +4,9 @@ This page follows the [CUPiD Installation Documentation](https://ncar.github.io/
 with some tweaks specific to the NCAR super computer.
 
 <div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
-<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint! </strong> </h4>
+<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint #1 </strong> </h4>
 
 At this point you should have a running JupyterHub instance.
-We'll wait for everyone to be ready.
 </div>
 
 ## Task 0: Open a Terminal in JupyterHub for this Activity
@@ -25,17 +24,16 @@ so we don't need include that part of the path in step 2 above.
 
 
 ### 0.2 Open a terminal
-Open a Terminal instance by scrolling all the way down in the launcher tab and selecting **Terminal**. 
+Open a Terminal instance by scrolling all the way down in the launcher tab and selecting **Terminal**.
 ![Jupyter Terminal](../../images/CUPiD/Jupyter_Terminal.png)
 This will open a terminal with the following prompt:
 `USERNAME@crhtcXX:/glade/work/USERNAME/crocodile_2025>`
 
 <div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
-<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint! </strong> </h4>
+<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint #2 </strong> </h4>
 
 At this point you should have an open terminal in JupyterHub,
 and the current working directory should be your `crocodile_2025` workshop directory.
-Again, we will wait for everyone to be ready before continuing.
 </div>
 
 ## Task 1: Clone CUPiD and Install Environments
@@ -69,13 +67,13 @@ cd CUPiD
 export CUPID_ROOT=`pwd -P`
 ```
 
-**Note:** This environment variable only exists in this specific terminal. 
+**Note:** This environment variable only exists in this specific terminal.
 It will need to exported again if you open a separate terminal,
 unless you modify your start files
 (see the [NCAR documentation for this process](https://ncar-hpc-docs.readthedocs.io/en/latest/environment-and-software/user-environment/customizing/) for more information).
 
-<div class="alert alert-warning">  
-<details>  
+<div class="alert alert-warning">
+<details>
 
 <summary>Using a different shell?</summary><br>
 
