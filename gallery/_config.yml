@@ -14,6 +14,10 @@ execute:
     - CICE.ipynb
     - NWA.ipynb
     - choose_your_own_adventure.ipynb
+    - Regional_Ocean_Report_Card.ipynb
+    - Regional_Ocean_Animations.ipynb
+    - Regional_Ocean_Atmospheric_Forcing.ipynb
+    - Regional_Ocean_OBC.ipynb
     # - 'add_grids.ipynb'
     # - 'add_tides.ipynb'
     # - 'add_chl.ipynb'

@@ -35,7 +35,16 @@ parts:
         - file: notebooks/diagnostics/CUPiD_intro
           title: Installing CUPiD
         - file: notebooks/diagnostics/standalone_CUPiD
-          title: Running a CUPiD Example
+          title: Running a CUPiD Example 
+          sections:
+          - file: notebooks/diagnostics/Regional_Ocean_Report_Card
+            title: Regional Ocean Report Card with CUPiD
+          - file: notebooks/diagnostics/Regional_Ocean_Animations
+            title: Regional Ocean Animations with CUPiD
+          - file: notebooks/diagnostics/Regional_Ocean_Atmospheric_Forcing
+            title: Regional Ocean Atmospheric Forcing with CUPiD
+          - file: notebooks/diagnostics/Regional_Ocean_OBC
+            title: Regional Ocean OBC with CUPiD
       - file: notebooks/features/add_components
         title: Additional Component Tutorials
         sections:
