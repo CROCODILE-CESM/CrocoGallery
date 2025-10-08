@@ -12,6 +12,7 @@ parts:
         - file: notebooks/tutorials/cesm_setup
         - file: notebooks/tutorials/minimal_demo_rect
         - file: notebooks/tutorials/input_params
+
     - caption: Feature Tutorials
       chapters:
       - file: notebooks/features/coupling 
@@ -36,15 +37,17 @@ parts:
         - file: notebooks/features/add_runoff_product
         - file: notebooks/features/add_chl
         - file: notebooks/features/add_tides
+
     - caption: 2025 CROCODILE Workshop Projects
       chapters:
         - file: notebooks/projects/CrocoDash
-        - file: notebooks/projects/sample_crocodash_projects
+        - file: notebooks/projects/sample_crocodash_projects/sample_crocodash_projects
           title: Sample CrocoDash Projects
           sections:
-          - file: notebooks/projects/sample_crocodash_projects/BGC
-          - file: notebooks/projects/sample_crocodash_projects/NWA
-          - file: notebooks/projects/sample_crocodash_projects/CICE
+            - file: notebooks/projects/sample_crocodash_projects/BGC
+            - file: notebooks/projects/sample_crocodash_projects/NWA
+            - file: notebooks/projects/sample_crocodash_projects/CICE
+
     - caption: Use Cases
       chapters:
       - file: notebooks/use_cases/index 
@@ -53,4 +56,3 @@ parts:
           - file: notebooks/use_cases/three_boundary_from_t232
           - file: notebooks/use_cases/three_boundary
           - file: notebooks/use_cases/mom6_cice_antarctica
- 
