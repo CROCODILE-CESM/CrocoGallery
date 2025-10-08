@@ -226,6 +226,24 @@
 
 
 
+<li class="toctree-l1 has-children"><a class="reference internal" href="../projects/sample_crocodash_projects/sample_crocodash_projects.html">Sample CrocoDash Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../projects/sample_crocodash_projects/BGC.html">BGC Sample Project</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../projects/sample_crocodash_projects/NWA.html">NWA12 Sample Project</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../projects/sample_crocodash_projects/CICE.html">CICE Sample Project</a></li>
+
+
+
+
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Use Cases</span></p>
 <ul class="nav bd-sidenav">
@@ -565,24 +583,6 @@ document.write(`
     <span class="n">latitude_coordinate_name</span><span class="o">=</span><span class="s2">&quot;lat&quot;</span><span class="p">,</span>
     <span class="n">vertical_coordinate_name</span><span class="o">=</span><span class="s2">&quot;elevation&quot;</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># The GEBCO bathymetry path on Derecho is: /glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/data/gebco/GEBCO_2024.nc</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">bathymetry_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
-<span class="ne">----&gt; </span><span class="mi">7</span>     <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;Bathymetry file not found, please replace with path to bathymetry file&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">topo</span><span class="o">.</span><span class="n">interpolate_from_file</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="n">file_path</span> <span class="o">=</span> <span class="n">bathymetry_path</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="n">longitude_coordinate_name</span><span class="o">=</span><span class="s2">&quot;lon&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="n">latitude_coordinate_name</span><span class="o">=</span><span class="s2">&quot;lat&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span>     <span class="n">vertical_coordinate_name</span><span class="o">=</span><span class="s2">&quot;elevation&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: Bathymetry file not found, please replace with path to bathymetry file
 </pre></div>
 </div>
 </div>
