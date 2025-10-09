@@ -2,8 +2,8 @@
 
 # Exceptions for /glade paths
 GLADE_EXCEPTIONS=(
-  "gallery/notebooks/projects",        # whole folder
-  "gallery/notebooks/diagnostics/cupid_output",        # whole folder
+  "gallery/notebooks/projects"        # whole folder
+  "gallery/notebooks/diagnostics/cupid_output"        # whole folder
 )
 
 # Exceptions for s3:// paths
