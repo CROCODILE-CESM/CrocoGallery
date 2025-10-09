@@ -213,6 +213,19 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../diagnostics/CUPiD_for_regional_MOM6.html">CUPiD Diagnostics Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../diagnostics/CUPiD_intro.html">Installing CUPiD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../diagnostics/standalone_CUPiD.html">Running a CUPiD Example</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../diagnostics/CUPiD_output.html">Output from CUPiD Example</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../diagnostics/cupid_output/Regional_Ocean_Report_Card.html">Regional Ocean: Basic Region and Surface Field Visualization</a></li>
+
+
+
+<li class="toctree-l3"><a class="reference internal" href="../diagnostics/cupid_output/Regional_Ocean_Animations.html">Regional Ocean: Animations of Surface Fields</a></li>
+
+
+<li class="toctree-l3"><a class="reference internal" href="../diagnostics/cupid_output/Regional_Ocean_Atmospheric_Forcing.html">Regional Ocean: Animations of Surface Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../diagnostics/cupid_output/Regional_Ocean_OBC.html">Regional Ocean: Checking Open Boundary Conditions</a></li>
+
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../features/add_components.html">Additional Component Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -543,7 +556,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>syntax error, unexpected WORD_WORD, expecting SCAN_ATTR or SCAN_DATASET or SCAN_ERROR
-context: &lt;?xml^ version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Error&gt;&lt;Code&gt;AccessDenied&lt;/Code&gt;&lt;Message&gt;Access Denied&lt;/Message&gt;&lt;RequestId&gt;787JRK596DYPE50E&lt;/RequestId&gt;&lt;HostId&gt;TmuV1TmU2Ww7nh+n+Rd/uHECMO7nYwAVqxBg5ji23vZb+qwdNB8EoH9JM9Ty11/fchHWH1/Ksik=&lt;/HostId&gt;&lt;/Error&gt;
+context: &lt;?xml^ version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Error&gt;&lt;Code&gt;AccessDenied&lt;/Code&gt;&lt;Message&gt;Access Denied&lt;/Message&gt;&lt;RequestId&gt;W1KV9HK02F2E7ZBH&lt;/RequestId&gt;&lt;HostId&gt;NADih3hoBKJ6CM17Xb7C0zpiTGmu8PvABjD5FFQj5GbcssD1ol+hhsPKcjrBPnU1LCzea0xlHhc=&lt;/HostId&gt;&lt;/Error&gt;
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -558,7 +571,7 @@ context: &lt;?xml^ version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;Er
 <span class="ne">---&gt; </span><span class="mi">56</span>     <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">57</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="o">.</span><span class="n">move_to_end</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
-<span class="ne">KeyError</span>: [&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;, (&#39;s3://crocodile-cesm/CrocoDash/data/grids/ocean_hgrid_trimmed.nc&#39;,), &#39;r&#39;, ((&#39;clobber&#39;, True), (&#39;diskless&#39;, False), (&#39;format&#39;, &#39;NETCDF4&#39;), (&#39;persist&#39;, False)), &#39;bb6d9f44-77da-4b91-925d-97462804566a&#39;]
+<span class="ne">KeyError</span>: [&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;, (&#39;s3://crocodile-cesm/CrocoDash/data/grids/ocean_hgrid_trimmed.nc&#39;,), &#39;r&#39;, ((&#39;clobber&#39;, True), (&#39;diskless&#39;, False), (&#39;format&#39;, &#39;NETCDF4&#39;), (&#39;persist&#39;, False)), &#39;c65e6542-d29f-49bc-963d-fab5ed06f3d6&#39;]
 
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 

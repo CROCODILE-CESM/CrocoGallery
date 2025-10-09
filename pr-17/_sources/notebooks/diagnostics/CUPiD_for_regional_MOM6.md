@@ -1,6 +1,7 @@
-# CUPiD Diagnostics Tutorial
+# ![CUPiD Logo](../../images/CUPiD/logo.png) CUPiD Diagnostics Tutorial ![CUPiD Logo](../../images/CUPiD/logo.png)
 
-![CUPiD Logo](../../images/CUPiD/logo.png)
+![SST Animation](../../images/CUPiD/tos_animation.gif)
+**Goal:** In this tutorial, you'll learn how to make the above animation (and other diagnostic plots).
 
 <div class="alert alert-info">
 <details>
@@ -28,9 +29,6 @@ running all component diagnostics from the same tool as either part of the CIME 
 and sharing python code and a standard conda environment across components.
 
 ## CUPiD for Regional MOM6
-
-![CUPiD Logo](../../images/CUPiD/tos_animation.gif)
-<!-- ![CUPiD Logo](../../images/CUPiD/SSH_animation.gif) -->
 
 CUPiD is a broad package designed to pull many independent tasks together and standardize common parts of the CESM postprocessing workflow.
 For postprocessing, CUPiD is automating the process of converting CESM output to the standard format required for the Coupled Model Intercomparison Project ([CMIP](https://wcrp-cmip.org/)).

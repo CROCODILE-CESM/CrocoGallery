@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/diagnostics/standalone_CUPiD';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Add Components" href="../features/add_components.html" />
+    <link rel="next" title="Output from CUPiD Example" href="CUPiD_output.html" />
     <link rel="prev" title="Installing CUPiD" href="CUPiD_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -213,6 +213,19 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="CUPiD_for_regional_MOM6.html">CUPiD Diagnostics Tutorial</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="CUPiD_intro.html">Installing CUPiD</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Running a CUPiD Example</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="CUPiD_output.html">Output from CUPiD Example</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="cupid_output/Regional_Ocean_Report_Card.html">Regional Ocean: Basic Region and Surface Field Visualization</a></li>
+
+
+
+<li class="toctree-l3"><a class="reference internal" href="cupid_output/Regional_Ocean_Animations.html">Regional Ocean: Animations of Surface Fields</a></li>
+
+
+<li class="toctree-l3"><a class="reference internal" href="cupid_output/Regional_Ocean_Atmospheric_Forcing.html">Regional Ocean: Animations of Surface Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cupid_output/Regional_Ocean_OBC.html">Regional Ocean: Checking Open Boundary Conditions</a></li>
+
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../features/add_components.html">Additional Component Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -584,7 +597,15 @@ From the same <code class="docutils literal notranslate"><span class="pre">${CUP
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cupid-diagnostics<span class="w"> </span>--serial
 </pre></div>
 </div>
-<p>This step might take some time, and we can track the progress with the output to terminal.</p>
+<p>This step might take some time, and we can track the progress with the output to terminal.
+If you notice an error about CUPiD not being able to find the <code class="docutils literal notranslate"><span class="pre">(cupid-analysis)</span></code> environment,
+run the following commands to create a link to the environment and then rerun the diagnostics:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>cupid-analysis
+python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="o">=</span>cupid-analysis
+conda<span class="w"> </span>deactivate<span class="w">  </span><span class="c1"># should bring you back to (cupid-infrastructure)</span>
+cupid-diagnostics<span class="w"> </span>--serial
+</pre></div>
+</div>
 <p>The notebooks will be run in <code class="docutils literal notranslate"><span class="pre">nblibrary</span></code> and then copied to <code class="docutils literal notranslate"><span class="pre">computed_notebooks/ocn</span></code> under the example directory.
 If you want to rerun the notebooks, make sure to manually copy the <code class="docutils literal notranslate"><span class="pre">regional_utils.py</span></code> file with</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>../../nblibrary/ocn/regional_utils.py<span class="w"> </span>computed_notebooks/ocn/
@@ -650,11 +671,11 @@ More options are discussed in the CUPiD documentation for <a class="reference ex
       </div>
     </a>
     <a class="right-next"
-       href="../features/add_components.html"
+       href="CUPiD_output.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Add Components</p>
+        <p class="prev-next-title">Output from CUPiD Example</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

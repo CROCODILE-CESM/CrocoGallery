@@ -213,6 +213,19 @@
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">CUPiD Diagnostics Tutorial</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="CUPiD_intro.html">Installing CUPiD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="standalone_CUPiD.html">Running a CUPiD Example</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="CUPiD_output.html">Output from CUPiD Example</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="cupid_output/Regional_Ocean_Report_Card.html">Regional Ocean: Basic Region and Surface Field Visualization</a></li>
+
+
+
+<li class="toctree-l3"><a class="reference internal" href="cupid_output/Regional_Ocean_Animations.html">Regional Ocean: Animations of Surface Fields</a></li>
+
+
+<li class="toctree-l3"><a class="reference internal" href="cupid_output/Regional_Ocean_Atmospheric_Forcing.html">Regional Ocean: Animations of Surface Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cupid_output/Regional_Ocean_OBC.html">Regional Ocean: Checking Open Boundary Conditions</a></li>
+
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../features/add_components.html">Additional Component Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -448,7 +461,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>CUPiD Diagnostics Tutorial</h1>
+    <h1> CUPiD Diagnostics Tutorial </h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -475,8 +488,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="cupid-diagnostics-tutorial">
-<h1>CUPiD Diagnostics Tutorial<a class="headerlink" href="#cupid-diagnostics-tutorial" title="Link to this heading">#</a></h1>
-<p><img alt="CUPiD Logo" src="../../_images/logo.png" /></p>
+<h1><img alt="CUPiD Logo" src="../../_images/logo.png" /> CUPiD Diagnostics Tutorial <img alt="CUPiD Logo" src="../../_images/logo.png" /><a class="headerlink" href="#cupid-diagnostics-tutorial" title="Link to this heading">#</a></h1>
+<p><img alt="SST Animation" src="../../_images/tos_animation.gif" />
+<strong>Goal:</strong> In this tutorial, you’ll learn how to make the above animation (and other diagnostic plots).</p>
 <div class="alert alert-info">
 <details>
 <summary> <h4 style="margin-top: 0; padding-top: 0; margin-bottom: 0; padding-bottom: 0; display: inline-flex"> &nbsp; Warm up the Engine – Start a JupyterHub Server </h4> </summary>
@@ -502,8 +516,6 @@ and sharing python code and a standard conda environment across components.</p>
 </div></blockquote>
 <section id="cupid-for-regional-mom6">
 <h2>CUPiD for Regional MOM6<a class="headerlink" href="#cupid-for-regional-mom6" title="Link to this heading">#</a></h2>
-<p><img alt="CUPiD Logo" src="../../_images/tos_animation.gif" /></p>
-<!-- ![CUPiD Logo](../../images/CUPiD/SSH_animation.gif) -->
 <p>CUPiD is a broad package designed to pull many independent tasks together and standardize common parts of the CESM postprocessing workflow.
 For postprocessing, CUPiD is automating the process of converting CESM output to the standard format required for the Coupled Model Intercomparison Project (<a class="reference external" href="https://wcrp-cmip.org/">CMIP</a>).</p>
 <p>This tutorial is going to focus on the diagnostic side of CUPiD and tools for accessing and manipulating MOM6 output.

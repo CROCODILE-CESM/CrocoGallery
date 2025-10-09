@@ -1,6 +1,4 @@
-# Advanced CUPiD Tutorial
-
-![CUPiD Logo](../../images/CUPiD/logo.png)
+# ![CUPiD Logo](../../images/CUPiD/logo.png) Advanced CUPiD Tutorial ![CUPiD Logo](../../images/CUPiD/logo.png)
 
 We walked through CUPiD basics and how to use it to analyze specific curated examples.
 It can also be used to [analyze CESM runs](CUPiD_in_CESM_Workflow) directly from the case directory,
