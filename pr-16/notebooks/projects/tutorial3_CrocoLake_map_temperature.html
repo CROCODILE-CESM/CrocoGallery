@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Model-Observation comparison with MOM6 and World Ocean Database" href="tutorial4_MOM6-WOD13-comparison.html" />
-    <link rel="prev" title="Choose your own adventure!" href="choose_your_own_adventure.html" />
+    <link rel="prev" title="Tutorial 2: Model-Observation comparison with MOM6 and a single Argo float from CrocoLake" href="tutorial2_MOM6-CL-comparison-float.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -217,11 +217,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../features/add_tides.html">Add Boundary Tides to the Run</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../features/model-obs_comparison.html">Model-Observation Comparison Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../features/tutorial1_MOM6-CL-comparison.html">Tutorial 1: Model-Observation comparison with MOM6 and CrocoLake</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../features/tutorial2_MOM6-CL-comparison-float.html">Tutorial 2: Model-Observation comparison with MOM6 and a single Argo float from CrocoLake</a></li>
-</ul>
-</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2025 CROCODILE Workshop Projects</span></p>
 <ul class="current nav bd-sidenav">
@@ -237,12 +232,17 @@
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">CrocoLake - Temperature map in the North West Atlantic</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="model-obs_comparison.html">Model-Observation Comparison Tutorials and Projects</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tutorial1_MOM6-CL-comparison.html">Tutorial 1: Model-Observation comparison with MOM6 and CrocoLake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial2_MOM6-CL-comparison-float.html">Tutorial 2: Model-Observation comparison with MOM6 and a single Argo float from CrocoLake</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">CrocoLake - Temperature map in the North West Atlantic</a></li>
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="tutorial4_MOM6-WOD13-comparison.html">Model-Observation comparison with MOM6 and World Ocean Database</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model-obs_your_own_model.html">Model-Observation comparison: use your own MOM6 run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial4_MOM6-WOD13-comparison.html">Model-Observation comparison with MOM6 and World Ocean Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model-obs_your_own_model.html">Model-Observation comparison: use your own MOM6 run</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Use Cases</span></p>
 <ul class="nav bd-sidenav">
@@ -491,7 +491,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">CrocoLake - Temperature map in the North West Atlantic</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-parquet-files">Note on parquet files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-crocolake">“Installing” CrocoLake</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-parquet-files">Note on parquet files</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
 </ul>
 </li>
@@ -521,8 +524,11 @@ document.write(`
 <p>This tutorial shows how to read and manipulate CrocoLake data. CrocoLake is stored in parquet format across multiple files for faster reading operations: we will load into memory only what we need by applying some filters, and we will create a map showing the temperature measurements in the North West Atlantic.</p>
 <p>CrocoLake contains QCed data from different datasets (Argo, GLODAP, Spray Gliders as of today).</p>
 <p>You can find more examples on the <a class="reference external" href="https://github.com/boom-lab/crocolake-python">crocolake-python repository</a>.</p>
+<section id="installing-crocolake">
+<h2>“Installing” CrocoLake<a class="headerlink" href="#installing-crocolake" title="Link to this heading">#</a></h2>
+<p>CrocoLake is not a package but a dataset, thus it does not require any installation per se. To access the data with Python you’ll need the <a class="reference external" href="https://pandas.pydata.org/">pandas</a> and <a class="reference external" href="https://www.dask.org/">dask</a> packages though. If you have installed CrocoCamp in a previous tutorial, you’re already set and you can use the same conda environment you have used before (instructions were provided also <a class="reference external" href="https://github.com/CROCODILE-CESM/CrocoCamp/tree/2025-Crocodile-Workshop">here</a>). If you still have issues, look also at the <a class="reference external" href="https://github.com/boom-lab/crocolake-python">crocolake-python repository</a>, or contact <a class="reference external" href="mailto:enrico&#46;milanese&#37;&#52;&#48;whoi&#46;edu">enrico<span>&#46;</span>milanese<span>&#64;</span>whoi<span>&#46;</span>edu</a>.</p>
 <section id="note-on-parquet-files">
-<h2>Note on parquet files<a class="headerlink" href="#note-on-parquet-files" title="Link to this heading">#</a></h2>
+<h3>Note on parquet files<a class="headerlink" href="#note-on-parquet-files" title="Link to this heading">#</a></h3>
 <p>There are several ways to load parquet files in a dataframe in Python, and this notebook shows two of them:</p>
 <ol class="arabic simple">
 <li><p>pandas + pyarrow: this approach uses the pyarrow package to load the data into a pandas dataframe;</p></li>
@@ -531,6 +537,7 @@ document.write(`
 <p>We will first use pyarrow to load the dataset, so that we can provide a target schema (containing the Argo variable names) and load the data consistently across floats, independently of what variables each float actually has. We will finally convert the dataset to a pandas dataframe for manipulation and plots.</p>
 <p>Other ways to read parquet files are by using pandas (make sure you have pyarrow, fastparquet or some other suitable engine installed), and Dask. Generally speaking, you’ll want to use Dask only if you need a large amount of data at the same time so that you can benefit from its parallelization. You should avoid Dask whenever the data fits in your RAM.</p>
 <p>When reading parquet files with pyarrow (or pandas), you can either specificy the file name(s), or the directory containing all the parquet files. In latter case if you apply any filter, pandas and pyarrow will sort through all the files in the folder, reading into memory only the subsets that satisfy your filter.</p>
+</section>
 </section>
 <section id="getting-started">
 <h2>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
@@ -897,12 +904,12 @@ Note that:</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="choose_your_own_adventure.html"
+       href="tutorial2_MOM6-CL-comparison-float.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Choose your own adventure!</p>
+        <p class="prev-next-title">Tutorial 2: Model-Observation comparison with MOM6 and a single Argo float from CrocoLake</p>
       </div>
     </a>
     <a class="right-next"
@@ -931,7 +938,10 @@ Note that:</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">CrocoLake - Temperature map in the North West Atlantic</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-parquet-files">Note on parquet files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-crocolake">“Installing” CrocoLake</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-parquet-files">Note on parquet files</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
 </ul>
 </li>
