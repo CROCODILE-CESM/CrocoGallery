@@ -565,6 +565,20 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow.parquet</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pq</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># Path to CrocoLake PHY</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">crocolake_path</span> <span class="o">=</span> <span class="s1">&#39;/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoCamp/CrocoLakePHY/&#39;</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pyarrow&#39;
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -882,16 +896,16 @@ Note that:</p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-my-crococamp-2025-py"
+            mode: "python"
         },
         kernelOptions: {
-            name: "conda-env-my-crococamp-2025-py",
+            name: "python3",
             path: "./notebooks/projects"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-my-crococamp-2025-py'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               

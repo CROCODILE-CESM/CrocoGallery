@@ -588,6 +588,24 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>If bathymetry setup fails, rerun this function with write_to_file = True
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Begin regridding bathymetry...
+
+Original bathymetry size: 11.54 Mb
+Regridded size: 3.85 Mb
+Automatic regridding may fail if your domain is too big! If this process hangs or crashes,make sure function argument write_to_file = True and,open a terminal with appropriate computational and resources try calling ESMF directly in the input directory . via
+
+`mpirun -np NUMBER_OF_CPUS ESMF_Regrid -s bathymetry_original.nc -d bathymetry_unfinished.nc -m bilinear --src_var depth --dst_var depth --netcdf4 --src_regional --dst_regional`
+
+For details see https://xesmf.readthedocs.io/en/latest/large_problems_on_HPC.html
+
+Afterwards, we run the &#39;expt.tidy_bathymetry&#39; method to skip the expensive interpolation step, and finishing metadata, encoding and cleanup.
+</pre></div>
+</div>
+</div>
 </div>
 <p><strong>TODO:</strong> when the above topo.interpolate_from_file() method is called with the original GEBCO dataset, the interpolation fails do to large computational demand when run on login nodes. Check if there is a failsafe way, or at least, a means to precaution the user.</p>
 <div class="cell docutils container">

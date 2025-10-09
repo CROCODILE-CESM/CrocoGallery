@@ -526,6 +526,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">crococamp.workflows</span><span class="w"> </span><span class="kn">import</span> <span class="n">WorkflowModelObs</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Create and run workflow to interpolate MOM6 model onto World Ocean Database obs space</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">workflow_crocolake</span> <span class="o">=</span> <span class="n">WorkflowModelObs</span><span class="o">.</span><span class="n">from_config_file</span><span class="p">(</span><span class="s1">&#39;config_tutorial_1.yaml&#39;</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;crococamp&#39;
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="displaying-the-interactive-map">
@@ -610,16 +622,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-my-crococamp-2025-py"
+            mode: "python"
         },
         kernelOptions: {
-            name: "conda-env-my-crococamp-2025-py",
+            name: "python3",
             path: "./notebooks/projects"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-my-crococamp-2025-py'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               

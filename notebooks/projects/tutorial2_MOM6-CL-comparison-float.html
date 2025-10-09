@@ -680,6 +680,19 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 0&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">convert_crocolake_obs</span><span class="w"> </span><span class="kn">import</span> <span class="n">ObsSequence</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># define horizontal region</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">LAT0</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;convert_crocolake_obs&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>The previous cell should have generate one obs_seq file, as the float that we selected recorded data only on one day between 2010-05-01 and 2010-05-10. We will use this generate file in the model-obs comparison in the following.</p>
 </section>
