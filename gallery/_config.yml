@@ -18,11 +18,7 @@ execute:
     - Regional_Ocean_Animations.ipynb
     - Regional_Ocean_Atmospheric_Forcing.ipynb
     - Regional_Ocean_OBC.ipynb
-    # - 'add_grids.ipynb'
-    # - 'add_tides.ipynb'
-    # - 'add_chl.ipynb'
-    # - 'three_*'
-    # - 'subset_global.ipynb'
+    - 'features/*'
 
 
 # Define the name of the latex output file for PDF builds
