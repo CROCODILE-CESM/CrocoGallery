@@ -121,6 +121,15 @@ cupid-diagnostics --serial
 ```
 
 This step might take some time, and we can track the progress with the output to terminal.
+If you notice an error about CUPiD not being able to find the `(cupid-analysis)` environment,
+run the following commands to create a link to the environment and then rerun the diagnostics:
+
+```bash
+conda activate cupid-analysis
+python -m ipykernel install --user --name=cupid-analysis
+conda deactivate  # should bring you back to (cupid-infrastructure)
+cupid-diagnostics --serial
+```
 
 The notebooks will be run in `nblibrary` and then copied to `computed_notebooks/ocn` under the example directory.
 If you want to rerun the notebooks, make sure to manually copy the `regional_utils.py` file with
