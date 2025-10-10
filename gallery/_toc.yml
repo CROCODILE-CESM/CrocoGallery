@@ -12,6 +12,7 @@ parts:
         - file: notebooks/tutorials/cesm_setup
         - file: notebooks/tutorials/minimal_demo_rect
         - file: notebooks/tutorials/input_params
+
     - caption: Feature Tutorials
       chapters:
       - file: notebooks/features/coupling 
@@ -36,11 +37,20 @@ parts:
         - file: notebooks/features/add_runoff_product
         - file: notebooks/features/add_chl
         - file: notebooks/features/add_tides
+
     - caption: 2025 CROCODILE Workshop Projects
       chapters:
-        - file: notebooks/projects/NWA
-        - file: notebooks/projects/CICE
-        - file: notebooks/projects/choose_your_own_adventure
+        - file: notebooks/projects/CrocoDash
+        - file: notebooks/projects/sample_crocodash_projects/sample_crocodash_projects
+          title: Sample CrocoDash Projects
+          sections:
+            - file: notebooks/projects/sample_crocodash_projects/BGC
+            - file: notebooks/projects/sample_crocodash_projects/NWA
+            - file: notebooks/projects/sample_crocodash_projects/CICE_antarctica
+            - file: notebooks/projects/sample_crocodash_projects/CICE_arctic
+            - file: notebooks/projects/sample_crocodash_projects/DROF
+            - file: notebooks/projects/sample_crocodash_projects/Everything
+
         - file: notebooks/projects/model-obs_comparison
           title: Model-Observation Comparison Tutorials and Projects
           sections:
