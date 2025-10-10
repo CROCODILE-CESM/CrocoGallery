@@ -46,7 +46,10 @@ parts:
           sections:
             - file: notebooks/projects/sample_crocodash_projects/BGC
             - file: notebooks/projects/sample_crocodash_projects/NWA
-            - file: notebooks/projects/sample_crocodash_projects/CICE
+            - file: notebooks/projects/sample_crocodash_projects/CICE_antarctica
+            - file: notebooks/projects/sample_crocodash_projects/CICE_arctic
+            - file: notebooks/projects/sample_crocodash_projects/DROF
+            - file: notebooks/projects/sample_crocodash_projects/Everything
 
         - file: notebooks/projects/model-obs_comparison
           title: Model-Observation Comparison Tutorials and Projects
