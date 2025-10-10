@@ -5,7 +5,7 @@ which means you can run CUPiD from a CESM case directory with the familiar `case
 For this exercise, we will run the notebooks Aidan put together on the case you ran with Manish.
 
 <div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
-<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint! </strong> </h4>
+<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color:rgb(31, 0, 14);"> <strong> Checkpoint! </strong> </h4>
 <ol>
 <li> Are the standalone diagnostics from the previous activity done running? </li>
 <li>Do you have a case that successfully ran and produced output from Monday's <strong>Practicum: Using CrocoDash</strong>? </li>
