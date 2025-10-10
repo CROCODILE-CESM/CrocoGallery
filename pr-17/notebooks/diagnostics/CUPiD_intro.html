@@ -544,11 +544,6 @@ so we don’t need include that part of the path in step 2 above.</p>
 <img alt="Jupyter Terminal" src="../../_images/Jupyter_Terminal.png" />
 This will open a terminal with the following prompt:
 <code class="docutils literal notranslate"><span class="pre">USERNAME&#64;crhtcXX:/glade/work/USERNAME/crocodile_2025&gt;</span></code></p>
-<div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
-<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint #2 </strong> </h4>
-<p>At this point you should have an open terminal in JupyterHub,
-and the current working directory should be your <code class="docutils literal notranslate"><span class="pre">crocodile_2025</span></code> workshop directory.</p>
-</div>
 </section>
 </section>
 <section id="task-1-clone-cupid-and-install-environments">
@@ -565,6 +560,12 @@ which you can access by running</p>
 <p>Running the following command will create a subdirectory named <code class="docutils literal notranslate"><span class="pre">CUPiD</span></code> in your current working directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--recurse-submodules<span class="w"> </span>https://github.com/NCAR/CUPiD.git
 </pre></div>
+</div>
+<div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
+<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint #2 </strong> </h4>
+<p>At this point you should have an open terminal in JupyterHub,
+the current working directory should be your <code class="docutils literal notranslate"><span class="pre">crocodile_2025</span></code> workshop directory,
+and you should have successfully cloned the CUPiD repository.</p>
 </div>
 <p>The rest of this tutorial will refer to the location you installed CUPiD as <code class="docutils literal notranslate"><span class="pre">${CUPID_ROOT}</span></code>.
 To be able to copy and paste blocks of commands directly, we need to add the variable to your environment.</p>

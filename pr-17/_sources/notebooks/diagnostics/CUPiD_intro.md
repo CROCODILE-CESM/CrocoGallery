@@ -29,13 +29,6 @@ Open a Terminal instance by scrolling all the way down in the launcher tab and s
 This will open a terminal with the following prompt:
 `USERNAME@crhtcXX:/glade/work/USERNAME/crocodile_2025>`
 
-<div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
-<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint #2 </strong> </h4>
-
-At this point you should have an open terminal in JupyterHub,
-and the current working directory should be your `crocodile_2025` workshop directory.
-</div>
-
 ## Task 1: Clone CUPiD and Install Environments
 
 CUPiD is available from the NCAR organization on [github.com](https://github.com/NCAR/CUPiD).
@@ -54,6 +47,14 @@ Running the following command will create a subdirectory named `CUPiD` in your c
 ```bash
 git clone --recurse-submodules https://github.com/NCAR/CUPiD.git
 ```
+
+<div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
+<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color: #5C0029;"> <strong> Checkpoint #2 </strong> </h4>
+
+At this point you should have an open terminal in JupyterHub,
+the current working directory should be your `crocodile_2025` workshop directory,
+and you should have successfully cloned the CUPiD repository.
+</div>
 
 The rest of this tutorial will refer to the location you installed CUPiD as `${CUPID_ROOT}`.
 To be able to copy and paste blocks of commands directly, we need to add the variable to your environment.
