@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/features/add_tides';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="NWA" href="../projects/NWA.html" />
+    <link rel="next" title="CrocoDash Workshop Project" href="../projects/CrocoDash.html" />
     <link rel="prev" title="Add Chlorophyll Files to the Run" href="add_chl.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -211,7 +211,7 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="add_components.html">Additional Component Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="add_rof.html">Add data runoff from GLOFAS to the Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="add_rof.html">Add data runoff from GLOFAS or JRA to the Run</a></li>
 <li class="toctree-l2"><a class="reference internal" href="add_runoff_product.html">Adding your own runoff product to the CESM (Advanced)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="add_chl.html">Add Chlorophyll Files to the Run</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Add Boundary Tides to the Run</a></li>
@@ -220,18 +220,45 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">2025 CROCODILE Workshop Projects</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../projects/NWA.html">NWA</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../projects/CICE.html">CICE-MOM6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../projects/CrocoDash.html">CrocoDash Workshop Project</a></li>
 
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../projects/choose_your_own_adventure.html">Choose your own adventure!</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../projects/sample_crocodash_projects/sample_crocodash_projects.html">Sample CrocoDash Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../projects/sample_crocodash_projects/BGC.html">BGC Sample Project</a></li>
 
 
 
 
+<li class="toctree-l2"><a class="reference internal" href="../projects/sample_crocodash_projects/NWA.html">NWA12 Sample Project</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../projects/sample_crocodash_projects/CICE_antarctica.html">CICE Antarctic Sample Project</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../projects/sample_crocodash_projects/CICE_arctic.html">CICE Arctic Sample Project</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../projects/sample_crocodash_projects/DROF.html">DROF Sample Project</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../projects/sample_crocodash_projects/Everything.html">BGC-DROF-Tides-Chl-CICE Sample Project</a></li>
+
+
+
+
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../projects/model-obs_comparison.html">Model-Observation Comparison Tutorials and Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../projects/tutorial1_MOM6-CL-comparison.html">Tutorial 1: Model-Observation comparison with MOM6 and CrocoLake</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../projects/tutorial2_MOM6-CL-comparison-float.html">Tutorial 2: Model-Observation comparison with MOM6 and a single Argo float from CrocoLake</a></li>
@@ -511,6 +538,17 @@ There are three parameters in configure forcings and many parameters adjusted in
 </div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you’re working on <strong>Derecho</strong> or <strong>Casper</strong>, you can use the following paths:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">TPXO</span> <span class="n">Elevation</span><span class="p">:</span> <span class="s2">&quot;/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/data/tpxo/h_tpxo9.v1.nc&quot;</span>
+<span class="n">TPXO</span> <span class="n">Velocity</span><span class="p">:</span> <span class="s2">&quot;/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoDash/data/tpxo/u_tpxo9.v1.nc&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -553,11 +591,11 @@ There are three parameters in configure forcings and many parameters adjusted in
       </div>
     </a>
     <a class="right-next"
-       href="../projects/NWA.html"
+       href="../projects/CrocoDash.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">NWA</p>
+        <p class="prev-next-title">CrocoDash Workshop Project</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
