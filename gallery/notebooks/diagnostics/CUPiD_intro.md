@@ -126,7 +126,8 @@ Also, the `\` is a line continuation operator -
 without it, the command would be on a single line and very long.
 1. If you remove the `--yes` flag, `mamba` will ask you to confirm the installation after it determines what packages will be installed.
 
-## CUPiD `config.yml` and `cupid-diagnostics`
+
+## Basic Walkthrough of CUPiD (`cupid-diagnostics` script and directory structure)
 
 While the CUPiD environments install, let's talk about how CUPiD works.
 CUPiD can provide diagnostics for a single run,
@@ -160,13 +161,88 @@ Options:
 
 Notice that `cupid-diagnostics` has a few options to allow you to run a subset of the default diagnostics,
 but the `CONFIG_PATH` argument (which defaults to `config.yml`) is the important argument.
-This YAML file (YAML is a recursive acronym, standing for ["YAML Ain't Markup Language"](https://yaml.org/);
-you have encountered it when dealing with conda environment files as well)
-contains all the details about what CUPiD should do.
+CUPiD provides a set of examples (found in the `examples/` directory),
+each with its own `config.yml` file.
 
 The [Configuration File](https://ncar.github.io/CUPiD/config.html) page of the CUPiD website goes into more detail looking at the `key_metrics` example,
-but in the following subsections we will look at the [`config.yml`](https://github.com/AidanJanney/CUPiD/blob/CROCODILE_Workshop_2025/examples/regional_ocean/config.yml) file associated with the `regional_ocean` example.
+but in the [Running a CUPiD Example](standalone_CUPiD) we will look at the [`config.yml`](https://github.com/AidanJanney/CUPiD/blob/CROCODILE_Workshop_2025/examples/regional_ocean/config.yml) file associated with the `regional_ocean` example.
 
-## File Structure of CUPiD
+### Directory Structure of CUPiD
 
-TBD!!
+Before we dive into the details of how CUPiD works,
+let's take a broader view of the CUPiD directory structure.
+As you can see in the [CUPiD github repository](https://github.com/NCAR/CUPiD),
+CUPiD has a bunch of subdirectories.
+For this walkthrough, we'll talk about on just four of them:
+
+![A list of 11 directories; cupid, environments, examples, and nblibrary are circled](../../images/CUPiD/dir_structure_toplevel.png)
+
+#### `cupid/`
+
+This is the guts of the CUPiD python package that is installed  in `(cupid-infrastructure)`
+(e.g. `cupid-diagnostics` runs `cupid/run_diagnostics.py`).
+Some of the more complex scripts are broken across multiple files:
+`cupid-timeseries` runs `cupid/run_timeseries.py`,
+which imports functions from `cupid/timeseries.py`.
+
+#### `environments/`
+
+The `environments/` directory contains conda environment files for three different environments.
+You are currently installing two of them:
+
+* `environments/cupid-infrastructure.yml`: builds `(cupid-infrastructure)`,
+which provides the actual CUPiD functions, and
+
+* `environments/cupid-analysis.yml`: builds `(cupid-analysis)`,
+which provides an environment for CUPiD to use to run diagnostics notebooks.
+
+There is also
+
+* `environments/docs.yml`, which builds `(cupid-docs)`
+(used to create the CUPiD website).
+It is not needed for most CUPiD users.
+
+#### `examples/`
+
+The `examples/` directory contains subdirectories,
+each with its own `config.yml` file:
+
+![A list of 4 directories: additional_metrics, external_diag_packages, key_metrics, and regional_ocean](../../images/CUPiD/dir_structure_examples.png)
+
+The directory names give a hint as to what the configuration file will provide:
+
+* `key_metrics/` is the workhorse example;
+it aims to give a brief summary of a fully coupled CESM run
+(and comparisons to a baseline case).
+
+* `additional_metrics/` goes into more detail than `key_metrics`.
+As you might imagine, it takes longer to run.
+
+* `external_diag_packages/` pulls some key tables and figures from the output of the AMWG Diagnostic Framework (ADF),
+the land equivalent (LDF),
+and the International Land Model Benchmarking (ILAMB) project,
+and also links to the full output of those packages.
+Note that `cupid-diagnostics` does not run those packages directly,
+it expects the user to do so manually.
+
+* `regional_ocean/` contains four notebooks that look at output from a regional MOM6 CESM case.
+
+**Spoiler alert:** you'll learn a lot more about `regional_ocean` on the next page.
+
+#### `nblibrary/`
+
+CUPiD curates a library of notebooks that can be run by `cupid-diagnostics` if the `config.yml` file requests it.
+It contains subdirectories for each component of CESM:
+
+![A list of 7 directories: atm, glc, ice, infrastructure, lnd, ocn, rof](../../images/CUPiD/dir_structure_nblibrary.png)
+
+And then each subdirectory contains one or more notebooks.
+For example, the `ocn/` directory has:
+
+![A list of 6 files: Global_Ocean_Surface.ipynb,       Regional_Ocean_Atmospheric_Forcing.ipynb,  Regional_Ocean_Report_Card.ipynb, Regional_Ocean_Animations.ipynb, Regional_Ocean_OBC.ipynb, regional_utils.py](../../images/CUPiD/dir_structure_nblibrary_ocn.png)
+
+**Spoiler alert:** you're going to run the four notebooks starting with `Regional_Ocean_`.
+
+If you want to create your own diagnostic notebook
+(we'll talk about how to do that later in the afternoon),
+you would add it to the repository in the appropriate subdirectory.
