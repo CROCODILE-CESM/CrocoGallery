@@ -636,6 +636,7 @@ document.write(`
 <section id="editing-the-topography">
 <h3>Editing the topography<a class="headerlink" href="#editing-the-topography" title="Link to this heading">#</a></h3>
 <p>Regridding topography from GEBCO may result in features we do not necessarily want. The Topo Editor is a tool to edit the bathymetry as wanted. You can do things like erasing basins, opening or closing bays, or adjusting the minimum depth. On JupyterHub, remember we need the ipympl extension, which can be installed as shown on <a class="reference external" href="https://docs.google.com/presentation/d/1ZwM2YKmMumM0kggT9QpgXnizHzCdIaUdO8PBH9TR2ls/edit?slide=id.g38d23f5381c_0_0#slide=id.g38d23f5381c_0_0">this slide.</a></p>
+<p><img alt="topo.depth.plot() before editing" src="../../../_images/CACurrent_topo.png" /></p>
 <p>For this particular case, you will need to mask out two disconnected basins (Gulf of California and part of the Salish Sea that gets landlocked at this resolution).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
