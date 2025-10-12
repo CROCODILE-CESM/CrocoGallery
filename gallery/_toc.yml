@@ -59,6 +59,8 @@ parts:
           - file: notebooks/projects/tutorial3_CrocoLake_map_temperature
           - file: notebooks/projects/tutorial4_MOM6-WOD13-comparison
           - file: notebooks/projects/model-obs_your_own_model
+        - file: notebooks/projects/CARIB12_EKE_TS
+          title: Calculate EKE for CARIB12
     - caption: Use Cases
       chapters:
       - file: notebooks/use_cases/index 
