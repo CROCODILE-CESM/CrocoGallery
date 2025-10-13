@@ -96,12 +96,6 @@ echo $SHELL
 
 </div>
 
-**TEMPORARY EXTRA STEP (until PR is merged)**
-```bash
-git fetch origin pull/294/head:CROCODILE_Workshop_2025
-git checkout CROCODILE_Workshop_2025
-```
-
 ### 1.2: Install two conda environments
 
 CUPiD needs a python environment with specific packages installed to run the CUPiD tools,
