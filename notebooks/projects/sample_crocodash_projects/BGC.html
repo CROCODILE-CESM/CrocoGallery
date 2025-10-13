@@ -579,13 +579,12 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">CrocoDash.grid</span><span class="w"> </span><span class="kn">import</span> <span class="n">Grid</span>
 
 <span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span>
-  <span class="n">resolution</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span> <span class="c1"># in degrees</span>
-  <span class="n">xstart</span> <span class="o">=</span> <span class="mf">278.0</span><span class="p">,</span> <span class="c1"># min longitude in [0, 360]</span>
-  <span class="n">lenx</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">,</span> <span class="c1"># longitude extent in degrees</span>
-  <span class="n">ystart</span> <span class="o">=</span> <span class="mf">7.0</span><span class="p">,</span> <span class="c1"># min latitude in [-90, 90]</span>
-  <span class="n">leny</span> <span class="o">=</span> <span class="mf">3.0</span><span class="p">,</span> <span class="c1"># latitude extent in degrees</span>
-  <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;panama1&quot;</span><span class="p">,</span>
-<span class="p">)</span>
+  <span class="n">resolution</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="c1"># in degrees</span>
+  <span class="n">xstart</span><span class="o">=</span><span class="mf">228.0</span><span class="p">,</span> <span class="c1"># min longitude in [0, 360]</span>
+  <span class="n">lenx</span><span class="o">=</span><span class="mf">16.5</span><span class="p">,</span> <span class="c1"># longitude extent in degrees</span>
+  <span class="n">ystart</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="c1"># min latitude in [-90, 90]</span>
+  <span class="n">leny</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="c1"># latitude extent in degrees</span>
+  <span class="n">name</span><span class="o">=</span><span class="s2">&quot;CAcurrent&quot;</span><span class="p">,</span>
 
 <span class="c1"># Try changing the grid resolution or domain boundaries to model a different region!</span>
 </pre></div>
@@ -637,6 +636,8 @@ document.write(`
 <section id="editing-the-topography">
 <h3>Editing the topography<a class="headerlink" href="#editing-the-topography" title="Link to this heading">#</a></h3>
 <p>Regridding topography from GEBCO may result in features we do not necessarily want. The Topo Editor is a tool to edit the bathymetry as wanted. You can do things like erasing basins, opening or closing bays, or adjusting the minimum depth. On JupyterHub, remember we need the ipympl extension, which can be installed as shown on <a class="reference external" href="https://docs.google.com/presentation/d/1ZwM2YKmMumM0kggT9QpgXnizHzCdIaUdO8PBH9TR2ls/edit?slide=id.g38d23f5381c_0_0#slide=id.g38d23f5381c_0_0">this slide.</a></p>
+<p><img alt="topo.depth.plot() before editing" src="../../../_images/CACurrent_topo.png" /></p>
+<p>For this particular case, you will need to mask out two disconnected basins (Gulf of California and part of the Salish Sea that gets landlocked at this resolution).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> ipympl
@@ -706,10 +707,10 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># CESM case (experiment) name</span>
-<span class="n">casename</span> <span class="o">=</span> <span class="s2">&quot;pan.bgc.1&quot;</span>
+<span class="n">casename</span> <span class="o">=</span> <span class="s2">&quot;CACurrent.001&quot;</span>
 
 <span class="c1"># CESM source root (Update this path accordingly!!!)</span>
-<span class="n">cesmroot</span> <span class="o">=</span><span class="s2">&quot;/glade/work/mlevy/codes/CESM/cesm3_0_alpha07c_CROCO/&quot;</span>
+<span class="n">cesmroot</span> <span class="o">=</span><span class="s2">&quot;/path/to/CROCESM&quot;</span>
 
 <span class="c1"># Place where all your input files go </span>
 <span class="n">inputdir</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span><span class="o">/</span><span class="s2">&quot;scratch&quot;</span> <span class="o">/</span> <span class="s2">&quot;croc_input&quot;</span> <span class="o">/</span> <span class="n">casename</span>
@@ -772,6 +773,7 @@ The <code class="docutils literal notranslate"><span class="pre">caseroot</span>
         <span class="n">data_input_path</span> <span class="o">=</span> <span class="s2">&quot;/glade/campaign/collections/cmip/CMIP6/CESM-HR/FOSI_BGC/HR/g.e22.TL319_t13.G1850ECOIAF_JRA_HR.4p2z.001/ocn/proc/tseries/month_1&quot;</span><span class="p">,</span>
         <span class="n">product_name</span> <span class="o">=</span> <span class="s2">&quot;CESM_OUTPUT&quot;</span><span class="p">,</span>
         <span class="n">marbl_ic_filepath</span> <span class="o">=</span> <span class="s2">&quot;/glade/campaign/collections/gdex/data/d651077/cesmdata/inputdata/ocn/mom/tx0.66v1/ecosys_jan_IC_omip_latlon_1x1_180W_c231221.nc&quot;</span><span class="p">,</span>
+        <span class="n">boundaries</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;south&#39;</span><span class="p">,</span> <span class="s1">&#39;north&#39;</span><span class="p">,</span> <span class="s1">&#39;west&#39;</span><span class="p">],</span>  <span class="c1"># eastern boundary is land-locked!</span>
 <span class="p">)</span>
 </pre></div>
 </div>
