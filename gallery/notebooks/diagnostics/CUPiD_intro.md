@@ -159,7 +159,7 @@ CUPiD provides a set of examples (found in the `examples/` directory),
 each with its own `config.yml` file.
 
 The [Configuration File](https://ncar.github.io/CUPiD/config.html) page of the CUPiD website goes into more detail looking at the `key_metrics` example,
-but in the [Running a CUPiD Example](standalone_CUPiD) we will look at the [`config.yml`](https://github.com/AidanJanney/CUPiD/blob/CROCODILE_Workshop_2025/examples/regional_ocean/config.yml) file associated with the `regional_ocean` example.
+but in the [Running a CUPiD Example](standalone_CUPiD) we will look at the [`config.yml`](https://github.com/NCAR/CUPiD/blob/main/examples/regional_ocean/config.yml) file associated with the `regional_ocean` example.
 
 ### Directory Structure of CUPiD
 
