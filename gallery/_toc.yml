@@ -30,6 +30,20 @@ parts:
         sections:
         - file: notebooks/features/too_much_data
         - file: notebooks/features/add_data_products
+      - file: notebooks/diagnostics/CUPiD_for_regional_MOM6
+        title: CUPiD Diagnostics Tutorial
+        sections:
+        - file: notebooks/diagnostics/CUPiD_intro
+          title: Installing CUPiD
+        - file: notebooks/diagnostics/standalone_CUPiD
+          title: Running a CUPiD Example
+        - file: notebooks/diagnostics/CUPiD_output
+          title: Output from CUPiD Example
+          sections:
+          - file: notebooks/diagnostics/cupid_output/Regional_Ocean_Report_Card
+          - file: notebooks/diagnostics/cupid_output/Regional_Ocean_Animations
+          - file: notebooks/diagnostics/cupid_output/Regional_Ocean_Atmospheric_Forcing
+          - file: notebooks/diagnostics/cupid_output/Regional_Ocean_OBC
       - file: notebooks/features/add_components
         title: Additional Component Tutorials
         sections:
@@ -61,6 +75,13 @@ parts:
           - file: notebooks/projects/model-obs_your_own_model
         - file: notebooks/projects/CARIB12_EKE_TS
           title: Calculate EKE for CARIB12
+        - file: notebooks/diagnostics/CUPiD_projects
+          title: Advanced CUPiD Tutorial
+          sections:
+          - file: notebooks/diagnostics/CUPiD_in_CESM_Workflow
+            title: Running CUPiD within CESM
+          - file: notebooks/diagnostics/contributing_to_CUPiD
+            title: Contributing to CUPiD
     - caption: Use Cases
       chapters:
       - file: notebooks/use_cases/index 

@@ -11,7 +11,10 @@ import sys
 
 def main():
 
-    with open(Path(__file__).parent / "path_to_datasets.json", "r") as f:
+    path_file = Path(__file__).parent / "path_to_datasets_loc.json"
+    if not path_file.is_file():
+        path_file = Path(__file__).parent / "path_to_datasets.json"
+    with open(path_file, "r") as f:
         paths = json.load(f)
 
     setup_glorys_credentials()
@@ -45,9 +48,10 @@ def setup_glorys_credentials():
     glorys_username = os.getenv("GLORYS_USERNAME")
     glorys_password = os.getenv("GLORYS_PASSWORD")
 
-    copernicusmarine.login(
-        username=glorys_username, password=glorys_password, force_overwrite=True
-    )
+    if not copernicusmarine.login(check_credentials_valid=True):
+        copernicusmarine.login(
+            username=glorys_username, password=glorys_password, force_overwrite=True
+        )
 
 
 def checkout_cesm(
@@ -67,15 +71,16 @@ def checkout_cesm(
     set_cesm_path(str(Path(__file__).parent.parent / checkout_dir))
 
 
+
 def set_cesm_path(cesm_path):
     
-    data_path = Path(__file__).parent / "path_to_datasets.json"
+    data_path_in = Path(__file__).parent / "path_to_datasets.json"
+    data_path_out = Path(__file__).parent / "path_to_datasets_loc.json"
 
-
-    with open(data_path) as f:
+    with open(data_path_in) as f:
         data = json.load(f)
     data["CESM"] = cesm_path
-    with open(data_path, "w") as f:
+    with open(data_path_out, "w") as f:
         json.dump(data, f, indent=2)
 if __name__ == "__main__":
     main()
