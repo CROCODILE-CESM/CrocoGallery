@@ -8,17 +8,18 @@ logo: crocodile.png
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: off
   kernel_name: CrocoDash
   exclude_patterns:
     - CICE.ipynb
     - NWA.ipynb
-    - choose_your_own_adventure.ipynb
+    - BGC.ipynb
     - Regional_Ocean_Report_Card.ipynb
     - Regional_Ocean_Animations.ipynb
     - Regional_Ocean_Atmospheric_Forcing.ipynb
     - Regional_Ocean_OBC.ipynb
     - 'features/*'
+    - CrocoDash.ipynb
 
 
 # Define the name of the latex output file for PDF builds

@@ -9,6 +9,6 @@ setup:
 	python code/inject_paths_into_notebooks.py
 
 clean:
-	python code/inject_paths.py --reverse
+	python code/inject_paths_into_notebooks.py --reverse
 	rm -f data_paths_loc.json
 	jupyter-book clean gallery --all

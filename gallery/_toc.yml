@@ -12,6 +12,7 @@ parts:
         - file: notebooks/tutorials/cesm_setup
         - file: notebooks/tutorials/minimal_demo_rect
         - file: notebooks/tutorials/input_params
+
     - caption: Feature Tutorials
       chapters:
       - file: notebooks/features/coupling 
@@ -50,18 +51,20 @@ parts:
         - file: notebooks/features/add_runoff_product
         - file: notebooks/features/add_chl
         - file: notebooks/features/add_tides
+
     - caption: 2025 CROCODILE Workshop Projects
       chapters:
-        - file: notebooks/projects/NWA
-        - file: notebooks/projects/CICE
-        - file: notebooks/diagnostics/CUPiD_projects
-          title: Advanced CUPiD Tutorial
+        - file: notebooks/projects/CrocoDash
+        - file: notebooks/projects/sample_crocodash_projects/sample_crocodash_projects
+          title: Sample CrocoDash Projects
           sections:
-          - file: notebooks/diagnostics/CUPiD_in_CESM_Workflow
-            title: Running CUPiD within CESM
-          - file: notebooks/diagnostics/contributing_to_CUPiD
-            title: Contributing to CUPiD
-        - file: notebooks/projects/choose_your_own_adventure
+            - file: notebooks/projects/sample_crocodash_projects/BGC
+            - file: notebooks/projects/sample_crocodash_projects/NWA
+            - file: notebooks/projects/sample_crocodash_projects/CICE_antarctica
+            - file: notebooks/projects/sample_crocodash_projects/CICE_arctic
+            - file: notebooks/projects/sample_crocodash_projects/DROF
+            - file: notebooks/projects/sample_crocodash_projects/Everything
+
         - file: notebooks/projects/model-obs_comparison
           title: Model-Observation Comparison Tutorials and Projects
           sections:
@@ -70,6 +73,15 @@ parts:
           - file: notebooks/projects/tutorial3_CrocoLake_map_temperature
           - file: notebooks/projects/tutorial4_MOM6-WOD13-comparison
           - file: notebooks/projects/model-obs_your_own_model
+        - file: notebooks/projects/CARIB12_EKE_TS
+          title: Calculate EKE for CARIB12
+        - file: notebooks/diagnostics/CUPiD_projects
+          title: Advanced CUPiD Tutorial
+          sections:
+          - file: notebooks/diagnostics/CUPiD_in_CESM_Workflow
+            title: Running CUPiD within CESM
+          - file: notebooks/diagnostics/contributing_to_CUPiD
+            title: Contributing to CUPiD
     - caption: Use Cases
       chapters:
       - file: notebooks/use_cases/index 

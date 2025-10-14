@@ -11,7 +11,7 @@ CROCODILE has its own fork of the CESM available here: https://github.com/CROCOD
 
 .. code-block:: bash
 
-    git clone https://github.com/CROCODILE-CESM/CESM CROCESM
+    git clone https://github.com/CROCODILE-CESM/CESM CROCESM -b workshop_2025
 
 Step 2: Checkout all the components
 ----------------------------------------
