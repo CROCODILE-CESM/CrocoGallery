@@ -1,0 +1,993 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Regional Ocean: Atmospheric Forcing &#8212; CrocoDash Gallery</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/diagnostics/cupid_output/Regional_Ocean_Atmospheric_Forcing';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Regional Ocean: Checking Open Boundary Conditions" href="Regional_Ocean_OBC.html" />
+    <link rel="prev" title="Regional Ocean: Animations of Surface Fields" href="Regional_Ocean_Animations.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/crocodile.png" class="logo__image only-light" alt="CrocoDash Gallery - Home"/>
+    <script>document.write(`<img src="../../../_static/crocodile.png" class="logo__image only-dark" alt="CrocoDash Gallery - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Welcome to the CrocoDash Gallery!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials/walkthrough.html">Basic CrocoDash Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/cesm_setup.html">CESM Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/minimal_demo_rect.html">Set up a rectangular regional CESM-MOM6 run</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/input_params.html">Input Parameters</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Feature Tutorials</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../features/coupling.html">Coupling Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../features/add_bgc.html">Run a coupled biogeochemistry (MARBL) &amp; ocean (MOM6) model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../features/add_cice.html">Run a coupled sea ice (CICE) &amp; ocean (MOM6) model</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../features/custom_grid.html">Grid Customization Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../features/subset_global.html">Add Global Subset Grids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../features/add_grids.html">Use Custom Pre-Generated Grids</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../features/data_product.html">Data Product Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../features/too_much_data.html">Setup Iterative OBC generation (for Long CESM-MOM6 runs) w/ the  Large Data Workflow (Advanced)</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../features/add_data_products.html">Use different data products w/ the CrocoDash Data Access Module</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../CUPiD_for_regional_MOM6.html">CUPiD Diagnostics Tutorial</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../CUPiD_intro.html">Installing CUPiD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../standalone_CUPiD.html">Running a CUPiD Example</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../CUPiD_output.html">Output from CUPiD Example</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Regional_Ocean_Report_Card.html">Regional Ocean: Basic Region and Surface Field Visualization</a></li>
+
+
+
+
+
+<li class="toctree-l3"><a class="reference internal" href="Regional_Ocean_Animations.html">Regional Ocean: Animations of Surface Fields</a></li>
+
+
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Regional Ocean: Atmospheric Forcing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Regional_Ocean_OBC.html">Regional Ocean: Checking Open Boundary Conditions</a></li>
+
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../features/add_components.html">Additional Component Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../features/add_rof.html">Add data runoff from GLOFAS or JRA to the Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../features/add_runoff_product.html">Adding your own runoff product to the CESM (Advanced)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../features/add_chl.html">Add Chlorophyll Files to the Run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../features/add_tides.html">Add Boundary Tides to the Run</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">2025 CROCODILE Workshop Projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../projects/CrocoDash.html">CrocoDash Workshop Project</a></li>
+
+
+
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../projects/sample_crocodash_projects/sample_crocodash_projects.html">Sample CrocoDash Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../projects/sample_crocodash_projects/BGC.html">BGC Sample Project</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../projects/sample_crocodash_projects/NWA.html">NWA12 Sample Project</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../projects/sample_crocodash_projects/CICE_antarctica.html">CICE Antarctic Sample Project</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../projects/sample_crocodash_projects/CICE_arctic.html">CICE Arctic Sample Project</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../projects/sample_crocodash_projects/DROF.html">DROF Sample Project</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../projects/sample_crocodash_projects/Everything.html">BGC-DROF-Tides-Chl-CICE Sample Project</a></li>
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../projects/model-obs_comparison.html">Model-Observation Comparison Tutorials and Projects</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../projects/tutorial1_MOM6-CL-comparison.html">Tutorial 1: Model-Observation comparison with MOM6 and CrocoLake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../projects/tutorial2_MOM6-CL-comparison-float.html">Tutorial 2: Model-Observation comparison with MOM6 and a single Argo float from CrocoLake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../projects/tutorial3_CrocoLake_map_temperature.html">CrocoLake - Temperature map in the North West Atlantic</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../projects/tutorial4_MOM6-WOD13-comparison.html">Model-Observation comparison with MOM6 and World Ocean Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../projects/model-obs_your_own_model.html">Model-Observation comparison: use your own MOM6 run</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projects/CARIB12_EKE_TS.html">Calculate EKE for CARIB12</a></li>
+
+
+
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../CUPiD_projects.html">Advanced CUPiD Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CUPiD_in_CESM_Workflow.html">Running CUPiD within CESM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing_to_CUPiD.html">Contributing to CUPiD</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use Cases</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../use_cases/index.html">Development Cases</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../use_cases/three_boundary_from_t232.html">Make a lowres domain for DA dev work!</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../use_cases/three_boundary.html">Setup the NWA12 domain through CrocoDash</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../use_cases/mom6_cice_antarctica.html">Set up a rectangular regional CESM-MOM6-CICE coupled run</a></li>
+
+
+
+
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/CROCODILE-CESM/CrocoGallery/main?urlpath=lab/tree/gallery/notebooks/diagnostics/cupid_output/Regional_Ocean_Atmospheric_Forcing.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/CROCODILE-CESM/CrocoGallery" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/CROCODILE-CESM/CrocoGallery/issues/new?title=Issue%20on%20page%20%2Fnotebooks/diagnostics/cupid_output/Regional_Ocean_Atmospheric_Forcing.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/notebooks/diagnostics/cupid_output/Regional_Ocean_Atmospheric_Forcing.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Regional Ocean: Atmospheric Forcing</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-visualization-of-atmospheric-forcing-vs-ocean-variables">Simple Visualization of Atmospheric Forcing vs Ocean Variables</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="regional-ocean-atmospheric-forcing">
+<h1>Regional Ocean: Atmospheric Forcing<a class="headerlink" href="#regional-ocean-atmospheric-forcing" title="Link to this heading">#</a></h1>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.crs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ccrs</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">regional_utils</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">utils</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_parameters tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>  <span class="c1"># &quot;/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/Diagnostics/CESM_Output/&quot;</span>
+<span class="n">CESM_output_dir</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>  <span class="c1"># &quot;CROCODILE_tutorial_nwa12_MARBL&quot;</span>
+
+<span class="c1"># As regional domains vary so much in purpose, simulation length, and extent, we don&#39;t want to assume a minimum duration</span>
+<span class="c1">## Thus, we ignore start and end dates and simply reduce/output over the whole time frame for all of the examples given.</span>
+<span class="n">start_date</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># &quot;0001-01-01&quot;</span>
+<span class="n">end_date</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># &quot;0101-01-01</span>
+
+<span class="n">save_figs</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">fig_output_dir</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="n">lc_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">serial</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="n">atm_variables</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># [&#39;tauuo&#39;, &#39;tauvo&#39;, &#39;hfds&#39;]</span>
+<span class="n">ocn_variables</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># [&#39;uo&#39;, &#39;vo&#39;, &#39;thetao&#39;]</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_injected-parameters docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameters</span>
+<span class="n">case_name</span> <span class="o">=</span> <span class="s2">&quot;CROCODILE_tutorial_nwa12_MARBL&quot;</span>
+<span class="n">CESM_output_dir</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/Diagnostics/CESM_Output/&quot;</span>
+<span class="p">)</span>
+<span class="n">start_date</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">end_date</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">save_figs</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">fig_output_dir</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">lc_kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;threads_per_worker&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="n">serial</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">atm_variables</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;tauuo&quot;</span><span class="p">,</span> <span class="s2">&quot;tauvo&quot;</span><span class="p">,</span> <span class="s2">&quot;hfds&quot;</span><span class="p">]</span>
+<span class="n">ocn_variables</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;uo&quot;</span><span class="p">,</span> <span class="s2">&quot;vo&quot;</span><span class="p">,</span> <span class="s2">&quot;thetao&quot;</span><span class="p">]</span>
+<span class="n">subset_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">product</span> <span class="o">=</span> <span class="s2">&quot;/glade/work/ajanney/crocodile_2025/CUPiD/examples/regional_ocean/computed_notebooks//ocn/Regional_Ocean_Atmospheric_Forcing.ipynb&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">OUTDIR</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">CESM_output_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">case_name</span><span class="si">}</span><span class="s2">/ocn/hist/&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Output directory is:&quot;</span><span class="p">,</span> <span class="n">OUTDIR</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Output directory is: /glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/Diagnostics/CESM_Output//CROCODILE_tutorial_nwa12_MARBL/ocn/hist/
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">case_output_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">CESM_output_dir</span><span class="p">,</span> <span class="n">case_name</span><span class="p">,</span> <span class="s2">&quot;ocn&quot;</span><span class="p">,</span> <span class="s2">&quot;hist&quot;</span><span class="p">)</span>
+
+<span class="c1"># Xarray time decoding things</span>
+<span class="n">time_coder</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">coders</span><span class="o">.</span><span class="n">CFDatetimeCoder</span><span class="p">(</span><span class="n">use_cftime</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1">## Static data includes hgrid, vgrid, bathymetry, land/sea mask</span>
+<span class="n">static_data</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">case_output_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;*static.nc&quot;</span><span class="p">),</span>
+    <span class="n">decode_timedelta</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">decode_times</span><span class="o">=</span><span class="n">time_coder</span><span class="p">,</span>
+    <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;netcdf4&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># ## Surface Data</span>
+<span class="c1"># sfc_data = xr.open_mfdataset(</span>
+<span class="c1">#     os.path.join(case_output_dir, f&quot;*sfc*.nc&quot;),</span>
+<span class="c1">#     decode_timedelta=True,</span>
+<span class="c1">#     decode_times=time_coder,</span>
+<span class="c1">#     engine=&quot;netcdf4&quot;,</span>
+<span class="c1"># )</span>
+
+<span class="c1">## Native Monthly Domain Data (and atm forcing)</span>
+<span class="n">monthly_data</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">case_output_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;*h.z*.nc&quot;</span><span class="p">),</span>
+    <span class="n">decode_timedelta</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">decode_times</span><span class="o">=</span><span class="n">time_coder</span><span class="p">,</span>
+    <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;netcdf4&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1">## Native Monthly Domain Data (and atm forcing)</span>
+<span class="n">native_data</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">case_output_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;*native*.nc&quot;</span><span class="p">),</span>
+    <span class="n">decode_timedelta</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">decode_times</span><span class="o">=</span><span class="n">time_coder</span><span class="p">,</span>
+    <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;netcdf4&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1">## Image/Gif Output Directory</span>
+<span class="k">if</span> <span class="n">fig_output_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">image_output_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="s2">&quot;/glade/derecho/scratch/&quot;</span><span class="p">,</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;USER&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;archive&quot;</span><span class="p">,</span>
+        <span class="n">case_name</span><span class="p">,</span>
+        <span class="s2">&quot;ocn&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;cupid_images&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">image_output_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fig_output_dir</span><span class="p">,</span> <span class="n">case_name</span><span class="p">,</span> <span class="s2">&quot;ocn&quot;</span><span class="p">,</span> <span class="s2">&quot;cupid_images&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">image_output_dir</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">image_output_dir</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Image output directory is:&quot;</span><span class="p">,</span> <span class="n">image_output_dir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Image output directory is: /glade/derecho/scratch/ajanney/archive/CROCODILE_tutorial_nwa12_MARBL/ocn/cupid_images
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Select for only the variables we want to analyze</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">atm_variables</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Selecting only the following surface variables:&quot;</span><span class="p">,</span> <span class="n">atm_variables</span><span class="p">)</span>
+    <span class="n">native_data</span> <span class="o">=</span> <span class="n">native_data</span><span class="p">[</span><span class="n">atm_variables</span><span class="p">]</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ocn_variables</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Selecting only the following monthly variables:&quot;</span><span class="p">,</span> <span class="n">ocn_variables</span><span class="p">)</span>
+    <span class="n">monthly_data</span> <span class="o">=</span> <span class="n">monthly_data</span><span class="p">[</span><span class="n">ocn_variables</span><span class="p">]</span>
+
+<span class="c1">## Apply time boundaries</span>
+<span class="c1">## if they are the right format</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">start_date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">))</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">end_date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">))</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">cftime</span>
+
+    <span class="n">calendar</span> <span class="o">=</span> <span class="n">monthly_data</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">encoding</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;calendar&quot;</span><span class="p">,</span> <span class="s2">&quot;standard&quot;</span><span class="p">)</span>
+
+    <span class="n">calendar_map</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;gregorian&quot;</span><span class="p">:</span> <span class="n">cftime</span><span class="o">.</span><span class="n">DatetimeProlepticGregorian</span><span class="p">,</span>
+        <span class="s2">&quot;noleap&quot;</span><span class="p">:</span> <span class="n">cftime</span><span class="o">.</span><span class="n">DatetimeNoLeap</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="n">CFTime</span> <span class="o">=</span> <span class="n">calendar_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">calendar</span><span class="p">,</span> <span class="n">cftime</span><span class="o">.</span><span class="n">DatetimeGregorian</span><span class="p">)</span>
+    <span class="n">y</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">start_date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)]</span>
+    <span class="n">start_date_time</span> <span class="o">=</span> <span class="n">CFTime</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+    <span class="n">y</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">end_date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)]</span>
+    <span class="n">end_date_time</span> <span class="o">=</span> <span class="n">CFTime</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;Applying time range from start_date: </span><span class="si">{</span><span class="n">start_date_time</span><span class="si">}</span><span class="s2"> and end_date: </span><span class="si">{</span><span class="n">end_date_time</span><span class="si">}</span><span class="s2">.&quot;</span>
+    <span class="p">)</span>
+
+    <span class="n">monthly_data</span> <span class="o">=</span> <span class="n">monthly_data</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start_date_time</span><span class="p">,</span> <span class="n">end_date_time</span><span class="p">))</span>
+    <span class="n">native_data</span> <span class="o">=</span> <span class="n">native_data</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start_date_time</span><span class="p">,</span> <span class="n">end_date_time</span><span class="p">))</span>
+
+<span class="n">native_time_bounds</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">native_data</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
+    <span class="n">native_data</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
+<span class="p">]</span>
+<span class="n">monthly_time_bounds</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">monthly_data</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
+    <span class="n">monthly_data</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">(),</span>
+<span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Surface Data Time Bounds: </span><span class="si">{</span><span class="n">native_time_bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">native_time_bounds</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Monthly Data Time Bounds: </span><span class="si">{</span><span class="n">monthly_time_bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">monthly_time_bounds</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Selecting only the following surface variables: [&#39;tauuo&#39;, &#39;tauvo&#39;, &#39;hfds&#39;]
+Selecting only the following monthly variables: [&#39;uo&#39;, &#39;vo&#39;, &#39;thetao&#39;]
+Surface Data Time Bounds: 2000-01-14 12:00:00 to 2000-11-14 00:00:00
+Monthly Data Time Bounds: 2000-01-14 12:00:00 to 2000-10-14 12:00:00
+</pre></div>
+</div>
+</div>
+</div>
+<section id="simple-visualization-of-atmospheric-forcing-vs-ocean-variables">
+<h2>Simple Visualization of Atmospheric Forcing vs Ocean Variables<a class="headerlink" href="#simple-visualization-of-atmospheric-forcing-vs-ocean-variables" title="Link to this heading">#</a></h2>
+<p>This notebook is short and sweet, designed to just show how we might access the atmospheric forcing variables. Pay particular attention to the meta data for the different variables!</p>
+<p><strong>Note:</strong> Native output can be weird, be wary and ask questions!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">coord</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">static_data</span><span class="o">.</span><span class="n">variables</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s2">&quot;geolon&quot;</span> <span class="ow">in</span> <span class="n">coord</span> <span class="ow">or</span> <span class="s2">&quot;geolat&quot;</span> <span class="ow">in</span> <span class="n">coord</span><span class="p">:</span>
+        <span class="n">native_data</span> <span class="o">=</span> <span class="n">native_data</span><span class="o">.</span><span class="n">assign_coords</span><span class="p">({</span><span class="n">coord</span><span class="p">:</span> <span class="n">static_data</span><span class="p">[</span><span class="n">coord</span><span class="p">]})</span>
+        <span class="n">monthly_data</span> <span class="o">=</span> <span class="n">monthly_data</span><span class="o">.</span><span class="n">assign_coords</span><span class="p">({</span><span class="n">coord</span><span class="p">:</span> <span class="n">static_data</span><span class="p">[</span><span class="n">coord</span><span class="p">]})</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">var</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">atm_variables</span><span class="p">):</span>
+    <span class="n">field</span> <span class="o">=</span> <span class="n">native_data</span><span class="p">[</span><span class="n">var</span><span class="p">]</span>
+    <span class="n">sfc_var</span> <span class="o">=</span> <span class="n">ocn_variables</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="c1"># assuming order matches, it may not</span>
+    <span class="n">sfc_field</span> <span class="o">=</span> <span class="n">monthly_data</span><span class="p">[</span><span class="n">sfc_var</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">z_l</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">geocoords</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">chooseGeoCoords</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
+    <span class="n">lon</span> <span class="o">=</span> <span class="n">geocoords</span><span class="p">[</span><span class="s2">&quot;longitude&quot;</span><span class="p">]</span>
+    <span class="n">lat</span> <span class="o">=</span> <span class="n">geocoords</span><span class="p">[</span><span class="s2">&quot;latitude&quot;</span><span class="p">]</span>
+
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">chooseColorMap</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+
+    <span class="n">transform</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()</span>
+    <span class="n">subplot_kwargs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;projection&quot;</span><span class="p">:</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">Mercator</span><span class="p">(),</span>
+    <span class="p">}</span>
+
+    <span class="n">map_extent</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="nb">float</span><span class="p">(</span><span class="n">field</span><span class="p">[</span><span class="n">lon</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()),</span>
+        <span class="nb">float</span><span class="p">(</span><span class="n">field</span><span class="p">[</span><span class="n">lon</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()),</span>
+        <span class="nb">float</span><span class="p">(</span><span class="n">field</span><span class="p">[</span><span class="n">lat</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()),</span>
+        <span class="nb">float</span><span class="p">(</span><span class="n">field</span><span class="p">[</span><span class="n">lat</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()),</span>
+    <span class="p">]</span>
+
+    <span class="c1"># Plot atmospheric variable for each month</span>
+    <span class="n">g1</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">lon</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">lat</span><span class="p">,</span>
+        <span class="n">col</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span>
+        <span class="n">col_wrap</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+        <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+        <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span>
+        <span class="n">subplot_kws</span><span class="o">=</span><span class="n">subplot_kwargs</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Atmosphere: </span><span class="si">{</span><span class="n">var</span><span class="si">}</span><span class="s2"> monthly fields&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">g1</span><span class="o">.</span><span class="n">axs</span><span class="o">.</span><span class="n">flat</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">map_extent</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="s2">&quot;50m&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">save_figs</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">image_output_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">var</span><span class="si">}</span><span class="s2">_monthly_grid.png&quot;</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="c1"># Plot ocean surface variable for each month</span>
+    <span class="n">g2</span> <span class="o">=</span> <span class="n">sfc_field</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">lon</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">lat</span><span class="p">,</span>
+        <span class="n">col</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span>
+        <span class="n">col_wrap</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+        <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+        <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span>
+        <span class="n">subplot_kws</span><span class="o">=</span><span class="n">subplot_kwargs</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ocean: </span><span class="si">{</span><span class="n">sfc_var</span><span class="si">}</span><span class="s2"> monthly fields&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">g2</span><span class="o">.</span><span class="n">axs</span><span class="o">.</span><span class="n">flat</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">map_extent</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="s2">&quot;50m&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">save_figs</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">image_output_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sfc_var</span><span class="si">}</span><span class="s2">_monthly_grid.png&quot;</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/9011ea05061341be8cdacd2aad561af0a001deaa38d43abfcb32ea1cf9ca3595.png" src="../../../_images/9011ea05061341be8cdacd2aad561af0a001deaa38d43abfcb32ea1cf9ca3595.png" />
+<img alt="../../../_images/59872aa8f5d47a0fe69a0b1faeaadcc0da4430f65bcb6b3174814c898668eb3c.png" src="../../../_images/59872aa8f5d47a0fe69a0b1faeaadcc0da4430f65bcb6b3174814c898668eb3c.png" />
+<img alt="../../../_images/acd8bf6e5f90184d02265ec45e5de88fcad53525088d60ed78b3b999dfc3f306.png" src="../../../_images/acd8bf6e5f90184d02265ec45e5de88fcad53525088d60ed78b3b999dfc3f306.png" />
+<img alt="../../../_images/7a500d0db78975dc040182868d059138fe3cc7488961b0733ca9fe5bb5368f52.png" src="../../../_images/7a500d0db78975dc040182868d059138fe3cc7488961b0733ca9fe5bb5368f52.png" />
+<img alt="../../../_images/bc77791c6728b4ff261fb129cc4e30bf00d7e00f4d7ba56d81ad4f034b15285d.png" src="../../../_images/bc77791c6728b4ff261fb129cc4e30bf00d7e00f4d7ba56d81ad4f034b15285d.png" />
+<img alt="../../../_images/e613a820ad529d196331f925adb82cd33ba123c4a2d0432329bd46c8c28911a0.png" src="../../../_images/e613a820ad529d196331f925adb82cd33ba123c4a2d0432329bd46c8c28911a0.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "cupid-analysis"
+        },
+        kernelOptions: {
+            name: "cupid-analysis",
+            path: "./notebooks/diagnostics/cupid_output"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'cupid-analysis'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Regional_Ocean_Animations.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Regional Ocean: Animations of Surface Fields</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Regional_Ocean_OBC.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Regional Ocean: Checking Open Boundary Conditions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-visualization-of-atmospheric-forcing-vs-ocean-variables">Simple Visualization of Atmospheric Forcing vs Ocean Variables</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By CROCODILE-CESM
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
