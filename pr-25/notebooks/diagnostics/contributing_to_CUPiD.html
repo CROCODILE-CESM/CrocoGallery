@@ -517,10 +517,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cupid-structure">CUPiD Structure</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-sub-project-for-the-2025-crocodash-workshop">Making a (Sub)-Project for the 2025 CrocoDash Workshop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cupid-structure">CUPiD Structure</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advice-for-contributors">Advice for Contributors</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miscellanous-notes">Miscellanous Notes:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-notebook-specific-parameters">Adding Notebook Specific Parameters</a></li>
@@ -556,14 +555,23 @@ New diagnostics notebooks can become part of an existing diagnostics workflow (s
 <li><p>Add a cell for parameters that CUPiD will inject (see <a class="reference external" href="https://ncar.github.io/CUPiD/addingnotebookstocollection.html">how to add new notebooks</a>). These are flexible, but variables can be tricky to add within the CUPiD workflow so be mindful.</p></li>
 <li><p>Create/modify a <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> file to populate and run your new notebook(s)!</p></li>
 </ol>
+</section>
+<section id="making-a-sub-project-for-the-2025-crocodash-workshop">
+<h2>Making a (Sub)-Project for the 2025 CrocoDash Workshop<a class="headerlink" href="#making-a-sub-project-for-the-2025-crocodash-workshop" title="Link to this heading">#</a></h2>
+<p>If you want to work with CUPiD and diagnostics as part of your 2025 Workshop project, let us know! You’ll be making so many cool regional models, and you might need new cool metrics and visualizations to look at them! Here are a couple resources that might help get you started on ideas:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://mom6-tools.readthedocs.io/examples.html">MOM6-Tools</a> - this python package is designed and maintained by Gustavo Marques at NCAR (extra points if you talk to him this week)! It primarily hosts tools for global ocean models; maybe they could also work for regional models?</p></li>
+<li><p><a class="reference external" href="https://mom6-analysiscookbook.readthedocs.io/en/latest/">MOM6 Analysis Cookbook</a> - from COSIMA, our collaborators in Australia! This notebook provides some more specialized tools/techniques for working with MOM6 data like xgcm and <strong>budgets</strong>.</p></li>
+<li><p><a class="reference internal" href="../projects/CARIB12_EKE_TS.html"><span class="std std-doc">EKE Calculation</span></a> - from Giovanni Seijo-Ellis (look for him at the workshop!). This notebook calculates Eddy Kinetic Energy, specifically for a region in the Caribbean. How could we generalize this? What other metrics could we calculate?</p></li>
+</ul>
+</section>
 <section id="cupid-structure">
-<h3>CUPiD Structure<a class="headerlink" href="#cupid-structure" title="Link to this heading">#</a></h3>
+<h2>CUPiD Structure<a class="headerlink" href="#cupid-structure" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">nblibrary</span></code>: where new notebooks will go. They are categorized by component (e.g. ocean - ocn and atmosphere - atm). Notebooks are run here by CUPiD then copied to the path from <code class="docutils literal notranslate"><span class="pre">run_dir</span></code> in the config file.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">examples</span></code>: config files for different workflows. The config files determine which notebooks are run and what parameters are passed in.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">helper_scripts</span></code>: infrastructure that translates CESM variables/settings to CUPiD config information and parameters. You will need to edit this if your workflow/notebook is designed to run immediately after a CESM run.</p></li>
 </ul>
-</section>
 </section>
 <section id="advice-for-contributors">
 <h2>Advice for Contributors<a class="headerlink" href="#advice-for-contributors" title="Link to this heading">#</a></h2>
@@ -666,10 +674,9 @@ The input directory is not available through the CESM output directory, but the 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cupid-structure">CUPiD Structure</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-sub-project-for-the-2025-crocodash-workshop">Making a (Sub)-Project for the 2025 CrocoDash Workshop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cupid-structure">CUPiD Structure</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advice-for-contributors">Advice for Contributors</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miscellanous-notes">Miscellanous Notes:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-notebook-specific-parameters">Adding Notebook Specific Parameters</a></li>
