@@ -517,14 +517,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3">Task 3:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-1-moving-to-derecho-and-navigating-to-your-cesm-case">Task 3.1: Moving to Derecho and Navigating to your CESM case</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-to-derecho">Moving to Derecho</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-to-cesm-case">Navigating to CESM Case</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-2-explore-how-cupid-is-incorporated-in-a-cesm-case">Task 3.2: Explore how CUPiD is Incorporated in a CESM Case</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-3-configure-and-run-cupid">Task 3.3: Configure and Run CUPiD</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-log-on-to-derecho-and-navigate-to-your-cesm-case">Step 1: Log on to Derecho and Navigate to your CESM case</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-explore-how-cupid-is-incorporated-in-a-cesm-case">Step 2: Explore how CUPiD is Incorporated in a CESM Case</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-configure-and-run-cupid">Step 3: Configure and Run CUPiD</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#side-quest-how-does-cupid-tie-in-to-cesm">Side Quest: How Does CUPiD Tie in to CESM?</a></li>
@@ -543,50 +539,26 @@ document.write(`
 <h1>Running CUPiD within CESM<a class="headerlink" href="#running-cupid-within-cesm" title="Link to this heading">#</a></h1>
 <p>CUPiD has been included in the CESM workflow,
 which means you can run CUPiD from a CESM case directory with the familiar <code class="docutils literal notranslate"><span class="pre">case.submit</span></code> command.
-For this exercise, we will run the notebooks Aidan put together on the case you ran with Manish.</p>
-<div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
-<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color:rgb(31, 0, 14);"> <strong> Checkpoint! </strong> </h4>
-<ol>
-<li> Are the standalone diagnostics from the previous activity done running? </li>
-<li>Do you have a case that successfully ran and produced output from Monday's <strong>Practicum: Using CrocoDash</strong>? </li>
-</ol>
-<p>Let us know if you need any help!</p>
-</div>
-<section id="task-3">
-<h2>Task 3:<a class="headerlink" href="#task-3" title="Link to this heading">#</a></h2>
-<section id="task-3-1-moving-to-derecho-and-navigating-to-your-cesm-case">
-<h3>Task 3.1: Moving to Derecho and Navigating to your CESM case<a class="headerlink" href="#task-3-1-moving-to-derecho-and-navigating-to-your-cesm-case" title="Link to this heading">#</a></h3>
-<p>We have been working on NCAR’s Casper machine, which is very useful for diagnostics, data analysis, and visualization. The CESM case that we made in Monday’s practicum, <strong>Using CrocoDash</strong>, was set up to run on Derecho. CESM is picky about what machine it runs one bcause it tailors the configuration and run accordingly, so we need to move to Derecho for this next step.</p>
-<section id="moving-to-derecho">
-<h4>Moving to Derecho<a class="headerlink" href="#moving-to-derecho" title="Link to this heading">#</a></h4>
-<p>There are two options for this step:</p>
-<div class="alert alert-info">
-<details>
-<summary>A. Access Derecho through our current JupyterHub instance with <code>ssh</code>.</summary><br>
-Casper is on the same network as Derecho, so in a new terminal you can simply type:
-<pre> ssh USERNAME@derecho </pre>
-<p>You will be prompted to enter your password and authenticate with DUO, and then you will be connected to a login node on Derecho.</p>
-</div>
-<div class="alert alert-info">
-<details>
-<summary>B. Access Derecho through a separate terminal with <code>ssh</code>.</summary><br>
-You can directly login to Derecho through any terminal using <code>ssh</code>. Run the command:
-<pre> ssh USERNAME@derecho.hpc.ucar.edu </pre>
-<p>You will be prompted to enter your password and authenticate with DUO, and then you will be connected to a login node on Derecho.</p>
-</div>
-<p>Look for the prompt on your terminal to say <code class="docutils literal notranslate"><span class="pre">USERNAME&#64;derecho#:~&gt;</span></code>.</p>
+For this project, we will run the notebooks Aidan put together to analyze a case you ran yourself.</p>
+<section id="background">
+<h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
+<p>This notebook originated as a third task in the <a class="reference internal" href="CUPiD_for_regional_MOM6.html"><span class="doc std std-doc">CUPiD Diagnostics Tutorial</span></a>.
+It still uses some of the same structure as the tutorial pages.</p>
+<section id="step-1-log-on-to-derecho-and-navigate-to-your-cesm-case">
+<h3>Step 1: Log on to Derecho and Navigate to your CESM case<a class="headerlink" href="#step-1-log-on-to-derecho-and-navigate-to-your-cesm-case" title="Link to this heading">#</a></h3>
+<p>For the tutorial, we ran CUPiD on NCAR’s Casper machine, which is very useful for diagnostics, data analysis, and visualization.
+The CESM case that we made in Monday’s practicum, <strong>Using CrocoDash</strong>, was set up to run on Derecho.
+CESM is picky about what machine it runs on because it tailors the configuration and run accordingly.
+Even though Derecho and Casper share a file system, they have very different hardware (and provide users with different modules).</p>
+<p>You can either log in to Derecho directly from JupyterHub,
+or log in to Casper through the JupyterHub and then ssh to Derecho from a terminal.</p>
+<p>Once you are on derecho, change into the directory for the case you want to analyze.
+The path to this directory might vary, but it will likely be located under the same <code class="docutils literal notranslate"><span class="pre">crocodile_2025</span></code> directory we have been working in so far.</p>
 </section>
-<section id="navigating-to-cesm-case">
-<h4>Navigating to CESM Case<a class="headerlink" href="#navigating-to-cesm-case" title="Link to this heading">#</a></h4>
-<p>Change into the directory for your case from Monday’s practicum. The path to this directory might vary, but it will likely be located in the same <code class="docutils literal notranslate"><span class="pre">crocodile_2025</span></code> directory we have been working in so far. You will likely run a command like:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/glade/work/USERNAME/crocodile_2025/CASENAME
-</pre></div>
-</div>
-</section>
-</section>
-<section id="task-3-2-explore-how-cupid-is-incorporated-in-a-cesm-case">
-<h3>Task 3.2: Explore how CUPiD is Incorporated in a CESM Case<a class="headerlink" href="#task-3-2-explore-how-cupid-is-incorporated-in-a-cesm-case" title="Link to this heading">#</a></h3>
-<p>As you saw in previous tutorials, CESM uses XML files to manage the environment in which your case is run.
+<section id="step-2-explore-how-cupid-is-incorporated-in-a-cesm-case">
+<h3>Step 2: Explore how CUPiD is Incorporated in a CESM Case<a class="headerlink" href="#step-2-explore-how-cupid-is-incorporated-in-a-cesm-case" title="Link to this heading">#</a></h3>
+<p>As you are likely familiar with at this point,
+CESM uses XML files to manage the environment in which your case is run.
 Each file contains variables pertaining to a different phase of the case generation process:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>env_archive.xml
 env_batch.xml
@@ -599,13 +571,12 @@ env_run.xml
 env_workflow.xml
 </pre></div>
 </div>
-<p><strong>Note:</strong> run <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-1</span> <span class="pre">env_*</span></code> inside your CESM installation if you want to produce this output.</p>
 <p>We are interested in the CUPiD variables,
 which are all defined in <code class="docutils literal notranslate"><span class="pre">env_postprocessing.xml</span></code>.
-XML variables are all in plain-text files so we could inspect them directly,
-but let’s use the provided <code class="docutils literal notranslate"><span class="pre">xmlquery</span></code> tool instead.</p>
+XML files are plain-text so we can inspect them directly,
+but we’ll use CIME’s <code class="docutils literal notranslate"><span class="pre">xmlquery</span></code> tool instead.</p>
 <div class="alert alert-warning">
-🚨 <strong>POP QUIZ #1!</strong> 🚨
+🚨 <strong>POP QUIZ!</strong> 🚨
 <p>How do you use <code class="docutils literal notranslate"><span class="pre">xmlquery</span></code> to see all the variables that contain <code class="docutils literal notranslate"><span class="pre">CUPID</span></code> in their name (along with their values)?</p>
 <details>
 <summary>Solution</summary><br>
@@ -647,31 +618,22 @@ Results in group cupid_run_components
 </details>
 </div>
 </section>
-<section id="task-3-3-configure-and-run-cupid">
-<h3>Task 3.3: Configure and Run CUPiD<a class="headerlink" href="#task-3-3-configure-and-run-cupid" title="Link to this heading">#</a></h3>
+<section id="step-3-configure-and-run-cupid">
+<h3>Step 3: Configure and Run CUPiD<a class="headerlink" href="#step-3-configure-and-run-cupid" title="Link to this heading">#</a></h3>
 <p>The first variable to talk about is <code class="docutils literal notranslate"><span class="pre">CUPID_ROOT</span></code>.
 CUPiD is distributed with CESM in the <code class="docutils literal notranslate"><span class="pre">tools/CUPiD</span></code> subdirectory,
 but you may wish to use a more recent version of CUPiD.
 This could be handy if, for example,
-you are taking a tutorial and the first exercises were cloning CUPiD,
+you are attending a workshop where you took a CUPiD diagnostic and the first exercises were cloning CUPiD,
 installing environments from this clone and then running a few examples.
 In that case, you want to run</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./xmlchange<span class="w"> </span><span class="nv">CUPID_ROOT</span><span class="o">=</span><span class="si">${</span><span class="nv">CUPID_ROOT</span><span class="si">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./xmlchange<span class="w"> </span><span class="nv">CUPID_ROOT</span><span class="o">=</span>&lt;/path/to/CUPiD&gt;
 </pre></div>
 </div>
-<p>We also want to run the <code class="docutils literal notranslate"><span class="pre">regional_ocean</span></code> example and use 10 GB of memory.
-These are set by the <code class="docutils literal notranslate"><span class="pre">CUPID_EXAMPLE</span></code> and <code class="docutils literal notranslate"><span class="pre">CUPID_MEM_PER_TASK</span></code> variables, respectively.</p>
-<div class="alert alert-warning">
-🚨 <strong>POP QUIZ #2!</strong> 🚨
-<p>How do we set <code class="docutils literal notranslate"><span class="pre">CUPID_EXAMPLE</span> <span class="pre">=</span> <span class="pre">regional_ocean</span></code>?
-How can we check the value of <code class="docutils literal notranslate"><span class="pre">CUPID_MEM_PER_TASK</span></code> to make sure we have enough memory?</p>
-<details>
-<summary>Solution</summary><br>
+<p>We also want to run the <code class="docutils literal notranslate"><span class="pre">regional_ocean</span></code> example,
+which is set by the <code class="docutils literal notranslate"><span class="pre">CUPID_EXAMPLE</span></code> variable.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./xmlchange<span class="w"> </span><span class="nv">CUPID_EXAMPLE</span><span class="o">=</span>regional_ocean
-./xmlquery<span class="w"> </span>CUPID_MEM_PER_TASK
 </pre></div>
-</div>
-</details>
 </div>
 <p>Lastly, we don’t need to generate time series files or build a webpage</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./xmlchange<span class="w"> </span><span class="nv">CUPID_GEN_TIMESERIES</span><span class="o">=</span>FALSE,CUPID_GEN_HTML<span class="o">=</span>FALSE
@@ -846,14 +808,10 @@ In the next task we will make sure these XML variables are set correctly and the
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3">Task 3:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-1-moving-to-derecho-and-navigating-to-your-cesm-case">Task 3.1: Moving to Derecho and Navigating to your CESM case</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#moving-to-derecho">Moving to Derecho</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-to-cesm-case">Navigating to CESM Case</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-2-explore-how-cupid-is-incorporated-in-a-cesm-case">Task 3.2: Explore how CUPiD is Incorporated in a CESM Case</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-3-configure-and-run-cupid">Task 3.3: Configure and Run CUPiD</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background">Background</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-log-on-to-derecho-and-navigate-to-your-cesm-case">Step 1: Log on to Derecho and Navigate to your CESM case</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-explore-how-cupid-is-incorporated-in-a-cesm-case">Step 2: Explore how CUPiD is Incorporated in a CESM Case</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-configure-and-run-cupid">Step 3: Configure and Run CUPiD</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#side-quest-how-does-cupid-tie-in-to-cesm">Side Quest: How Does CUPiD Tie in to CESM?</a></li>
