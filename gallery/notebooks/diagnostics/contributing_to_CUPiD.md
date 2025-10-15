@@ -16,7 +16,13 @@ The structure of CUPiD can be confusing, but contributing is easy! Here are the 
 3. Add a cell for parameters that CUPiD will inject (see [how to add new notebooks](https://ncar.github.io/CUPiD/addingnotebookstocollection.html)). These are flexible, but variables can be tricky to add within the CUPiD workflow so be mindful.
 4. Create/modify a `config.yml` file to populate and run your new notebook(s)!
 
-### CUPiD Structure
+## Making a (Sub)-Project for the 2025 CrocoDash Workshop
+If you want to work with CUPiD and diagnostics as part of your 2025 Workshop project, let us know! You'll be making so many cool regional models, and you might need new cool metrics and visualizations to look at them! Here are a couple resources that might help get you started on ideas:
+- [MOM6-Tools](https://mom6-tools.readthedocs.io/examples.html) - this python package is designed and maintained by Gustavo Marques at NCAR (extra points if you talk to him this week)! It primarily hosts tools for global ocean models; maybe they could also work for regional models?
+- [MOM6 Analysis Cookbook](https://mom6-analysiscookbook.readthedocs.io/en/latest/) - from COSIMA, our collaborators in Australia! This notebook provides some more specialized tools/techniques for working with MOM6 data like xgcm and **budgets**.
+- [EKE Calculation](../projects/CARIB12_EKE_TS.ipynb) - from Giovanni Seijo-Ellis (look for him at the workshop!). This notebook calculates Eddy Kinetic Energy, specifically for a region in the Caribbean. How could we generalize this? What other metrics could we calculate?
+
+## CUPiD Structure
 - `nblibrary`: where new notebooks will go. They are categorized by component (e.g. ocean - ocn and atmosphere - atm). Notebooks are run here by CUPiD then copied to the path from `run_dir` in the config file.
 - `examples`: config files for different workflows. The config files determine which notebooks are run and what parameters are passed in.
 - `helper_scripts`: infrastructure that translates CESM variables/settings to CUPiD config information and parameters. You will need to edit this if your workflow/notebook is designed to run immediately after a CESM run.
@@ -51,5 +57,3 @@ These handle the translation of information from the CESM case to CUPiD config s
 >       my_dict["compute_notebooks"]["ocn"]["Regional_Ocean_OBC"]["parameter_groups"]["none"]["case_root"] = case_root
 > ```
 >
-
-

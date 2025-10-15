@@ -2,54 +2,30 @@
 
 CUPiD has been included in the CESM workflow,
 which means you can run CUPiD from a CESM case directory with the familiar `case.submit` command.
-For this exercise, we will run the notebooks Aidan put together on the case you ran with Manish.
+For this project, we will run the notebooks Aidan put together to analyze a case you ran yourself.
 
-<div class="alert" role="alert" style="background-color:rgb(255,126,185); color: #5C0029; border-color:rgb(255,126,185);">
-<h4 style="margin-top: 0; padding-top: 0; display: inline-flex; color:rgb(31, 0, 14);"> <strong> Checkpoint! </strong> </h4>
-<ol>
-<li> Are the standalone diagnostics from the previous activity done running? </li>
-<li>Do you have a case that successfully ran and produced output from Monday's <strong>Practicum: Using CrocoDash</strong>? </li>
-</ol>
+## Background
 
-Let us know if you need any help!
-</div>
+This notebook originated as a third task in the [CUPiD Diagnostics Tutorial](CUPiD_for_regional_MOM6).
+It still uses some of the same structure as the tutorial pages.
 
-## Task 3:
+### Step 1: Log on to Derecho and Navigate to your CESM case
 
-### Task 3.1: Moving to Derecho and Navigating to your CESM case
-We have been working on NCAR's Casper machine, which is very useful for diagnostics, data analysis, and visualization. The CESM case that we made in Monday's practicum, **Using CrocoDash**, was set up to run on Derecho. CESM is picky about what machine it runs one bcause it tailors the configuration and run accordingly, so we need to move to Derecho for this next step.
+For the tutorial, we ran CUPiD on NCAR's Casper machine, which is very useful for diagnostics, data analysis, and visualization.
+The CESM case that we made in Monday's practicum, **Using CrocoDash**, was set up to run on Derecho.
+ CESM is picky about what machine it runs on because it tailors the configuration and run accordingly.
+ Even though Derecho and Casper share a file system, they have very different hardware (and provide users with different modules).
 
-#### Moving to Derecho
-There are two options for this step:
-<div class="alert alert-info">
-<details>
-<summary>A. Access Derecho through our current JupyterHub instance with <code>ssh</code>.</summary><br>
-Casper is on the same network as Derecho, so in a new terminal you can simply type:
-<pre> ssh USERNAME@derecho </pre>
+You can either log in to Derecho directly from JupyterHub,
+or log in to Casper through the JupyterHub and then ssh to Derecho from a terminal.
 
-You will be prompted to enter your password and authenticate with DUO, and then you will be connected to a login node on Derecho.
-</div>
+Once you are on derecho, change into the directory for the case you want to analyze.
+The path to this directory might vary, but it will likely be located under the same `crocodile_2025` directory we have been working in so far.
 
-<div class="alert alert-info">
-<details>
-<summary>B. Access Derecho through a separate terminal with <code>ssh</code>.</summary><br>
-You can directly login to Derecho through any terminal using <code>ssh</code>. Run the command:
-<pre> ssh USERNAME@derecho.hpc.ucar.edu </pre>
+### Step 2: Explore how CUPiD is Incorporated in a CESM Case
 
-You will be prompted to enter your password and authenticate with DUO, and then you will be connected to a login node on Derecho.
-</div>
-
-Look for the prompt on your terminal to say `USERNAME@derecho#:~>`.
-
-#### Navigating to CESM Case
-Change into the directory for your case from Monday's practicum. The path to this directory might vary, but it will likely be located in the same `crocodile_2025` directory we have been working in so far. You will likely run a command like:
-```bash
-cd /glade/work/USERNAME/crocodile_2025/CASENAME
-```
-
-### Task 3.2: Explore how CUPiD is Incorporated in a CESM Case
-
-As you saw in previous tutorials, CESM uses XML files to manage the environment in which your case is run.
+As you are likely familiar with at this point,
+CESM uses XML files to manage the environment in which your case is run.
 Each file contains variables pertaining to a different phase of the case generation process:
 
 ```bash
@@ -63,15 +39,14 @@ env_postprocessing.xml
 env_run.xml
 env_workflow.xml
 ```
-**Note:** run `ls -1 env_*` inside your CESM installation if you want to produce this output.
 
 We are interested in the CUPiD variables,
 which are all defined in `env_postprocessing.xml`.
-XML variables are all in plain-text files so we could inspect them directly,
-but let's use the provided `xmlquery` tool instead.
+XML files are plain-text so we can inspect them directly,
+but we'll use CIME's `xmlquery` tool instead.
 
 <div class="alert alert-warning">
-🚨 <strong>POP QUIZ #1!</strong> 🚨
+🚨 <strong>POP QUIZ!</strong> 🚨
 
 How do you use `xmlquery` to see all the variables that contain `CUPID` in their name (along with their values)?
 <details>
@@ -116,38 +91,26 @@ Results in group cupid_run_components
 </details>
 </div>
 
-### Task 3.3: Configure and Run CUPiD
+### Step 3: Configure and Run CUPiD
 
 The first variable to talk about is `CUPID_ROOT`.
 CUPiD is distributed with CESM in the `tools/CUPiD` subdirectory,
 but you may wish to use a more recent version of CUPiD.
 This could be handy if, for example,
-you are taking a tutorial and the first exercises were cloning CUPiD,
+you are attending a workshop where you took a CUPiD diagnostic and the first exercises were cloning CUPiD,
 installing environments from this clone and then running a few examples.
 In that case, you want to run
 
 ```bash
-./xmlchange CUPID_ROOT=${CUPID_ROOT}
+./xmlchange CUPID_ROOT=</path/to/CUPiD>
 ```
 
-We also want to run the `regional_ocean` example and use 10 GB of memory.
-These are set by the `CUPID_EXAMPLE` and `CUPID_MEM_PER_TASK` variables, respectively.
-
-<div class="alert alert-warning">
-🚨 <strong>POP QUIZ #2!</strong> 🚨
-
-How do we set `CUPID_EXAMPLE = regional_ocean`?
-How can we check the value of `CUPID_MEM_PER_TASK` to make sure we have enough memory?
-<details>
-
-<summary>Solution</summary><br>
+We also want to run the `regional_ocean` example,
+which is set by the `CUPID_EXAMPLE` variable. 
 
 ```bash
 ./xmlchange CUPID_EXAMPLE=regional_ocean
-./xmlquery CUPID_MEM_PER_TASK
 ```
-</details>
-</div>
 
 Lastly, we don't need to generate time series files or build a webpage
 
