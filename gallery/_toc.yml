@@ -90,3 +90,4 @@ parts:
           - file: notebooks/use_cases/three_boundary_from_t232
           - file: notebooks/use_cases/three_boundary
           - file: notebooks/use_cases/mom6_cice_antarctica
+          - file: notebooks/use_cases/cesm_large_ensemble
