@@ -21,6 +21,7 @@ env:
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   GLORYS_USERNAME: ${{ secrets.GLORYS_USERNAME }}
   GLORYS_PASSWORD: ${{ secrets.GLORYS_PASSWORD }}
+  BASE_URL: /${{ github.event.repository.name }}
 
 jobs:
   build_book:
