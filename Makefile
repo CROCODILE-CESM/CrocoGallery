@@ -13,4 +13,5 @@ setup:
 clean:
 	python code/inject_paths_into_notebooks.py --reverse
 	rm -f data_paths_loc.json
+	cd gallery
 	jupyter-book clean gallery --all
