@@ -6,6 +6,8 @@ on:
   push:
     # Runs on pushes targeting the default branch
     branches: [main]
+  pull_request:
+    branches: [**]
 env:
   # `BASE_URL` determines, relative to the root of the domain, the URL that your site is served from.
   # E.g., if your site lives at `https://mydomain.org/myproject`, set `BASE_URL=/myproject`.
@@ -41,10 +43,25 @@ jobs:
         run: |
           cd gallery 
           jupyter-book build --html 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload files PR
+        if: github.event_name == 'pull_request'
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: './gallery/_build/html'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: gallery/_build/html
+          destination_dir: pr-${{ github.event.number }}
+      - name: Comment PR with preview link
+        if: github.event_name == 'pull_request'
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          message: |
+            📄 Preview your docs here:
+            👉 https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/pr-${{ github.event.number }}/index.html
+      - name: Upload files Main
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: gallery/_build/html
