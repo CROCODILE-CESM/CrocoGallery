@@ -1,1 +1,1 @@
-import{a}from"/CrocoGallery/build/_shared/chunk-YEB6T6UV.js";import"/CrocoGallery/build/_shared/chunk-GHA6ELD7.js";import"/CrocoGallery/build/_shared/chunk-J3PKFMLQ.js";import"/CrocoGallery/build/_shared/chunk-OZE3FFNP.js";export default a();
+import{a}from"/CrocoGallery/pr-28/build/_shared/chunk-YEB6T6UV.js";import"/CrocoGallery/pr-28/build/_shared/chunk-GHA6ELD7.js";import"/CrocoGallery/pr-28/build/_shared/chunk-J3PKFMLQ.js";import"/CrocoGallery/pr-28/build/_shared/chunk-OZE3FFNP.js";export default a();
