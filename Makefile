@@ -1,7 +1,9 @@
 .PHONY: build clean setup
 
 build: setup
-	jupyter-book build gallery
+	cd gallery
+	jupyter-book build --html
+	cd ../
 	python code/inject_paths_into_notebooks.py --reverse
 
 setup:
