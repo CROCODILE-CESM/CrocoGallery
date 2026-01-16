@@ -1,6 +1,6 @@
 version: 1
 project:
-  title: CrocoDash Gallery
+  title: CROCODILE Gallery
   github: CROCODILE-CESM/CrocoGallery
   bibliography:
     - references.bib
@@ -10,31 +10,35 @@ project:
       output: exports/book.pdf
   toc:
     - file: intro.md
-    - title: Introduction
+    - title: Basic CrocoDash Tutorial
       children:
-        - file: notebooks/tutorials/walkthrough.md
-          title: Basic CrocoDash Tutorial
-          children:
-            - file: notebooks/tutorials/cesm_setup.md
-            - file: notebooks/tutorials/minimal_demo_rect.ipynb
-            - file: notebooks/tutorials/input_params.md
-    - title: Feature Tutorials
+        - file: notebooks/tutorials/cesm_setup.md
+        - file: notebooks/tutorials/minimal_demo_rect.ipynb
+        - file: notebooks/tutorials/input_params.md
+    - title: CROCODILE Features
       children:
-        - file: notebooks/features/coupling.md
-          title: Coupling Tutorials
+        - title: CrocoDash Features
           children:
-            - file: notebooks/features/add_bgc.ipynb
-            - file: notebooks/features/add_cice.ipynb
-        - file: notebooks/features/custom_grid.md
-          title: Grid Customization Tutorials
-          children:
-            - file: notebooks/features/subset_global.ipynb
-            - file: notebooks/features/add_grids.ipynb
-        - file: notebooks/features/data_product.md
-          title: Data Product Tutorials
-          children:
-            - file: notebooks/features/too_much_data.ipynb
-            - file: notebooks/features/add_data_products.ipynb
+            - title: Coupling Tutorials
+              children:
+                - file: notebooks/features/add_bgc.ipynb
+                - file: notebooks/features/add_cice.ipynb
+            - title: Grid Customization Tutorials
+              children:
+                - file: notebooks/features/subset_global.ipynb
+                - file: notebooks/features/add_grids.ipynb
+            - title: Data Product Tutorials
+              children:
+                - file: notebooks/features/too_much_data.ipynb
+                - file: notebooks/features/add_data_products.ipynb
+            - title: Additional Component Tutorials
+              children:
+                - file: notebooks/features/add_rof.ipynb
+                - file: notebooks/features/add_runoff_product.ipynb
+                - file: notebooks/features/add_chl.ipynb
+                - file: notebooks/features/add_tides.ipynb
+
+
         - file: notebooks/diagnostics/CUPiD_for_regional_MOM6.md
           title: CUPiD Diagnostics Tutorial
           children:
@@ -45,26 +49,16 @@ project:
             - file: notebooks/diagnostics/CUPiD_output.md
               title: Output from CUPiD Example
               children:
-                - file: >-
-                    notebooks/diagnostics/cupid_output/Regional_Ocean_Report_Card.ipynb
-                - file: >-
-                    notebooks/diagnostics/cupid_output/Regional_Ocean_Animations.ipynb
-                - file: >-
-                    notebooks/diagnostics/cupid_output/Regional_Ocean_Atmospheric_Forcing.ipynb
+                - file: notebooks/diagnostics/cupid_output/Regional_Ocean_Report_Card.ipynb
+                - file: notebooks/diagnostics/cupid_output/Regional_Ocean_Animations.ipynb
+                - file: notebooks/diagnostics/cupid_output/Regional_Ocean_Atmospheric_Forcing.ipynb
                 - file: notebooks/diagnostics/cupid_output/Regional_Ocean_OBC.ipynb
-        - file: notebooks/features/add_components.md
-          title: Additional Component Tutorials
-          children:
-            - file: notebooks/features/add_rof.ipynb
-            - file: notebooks/features/add_runoff_product.ipynb
-            - file: notebooks/features/add_chl.ipynb
-            - file: notebooks/features/add_tides.ipynb
+
+
     - title: 2025 CROCODILE Workshop Projects
       children:
         - file: notebooks/projects/CrocoDash.ipynb
-        - file: >-
-            notebooks/projects/sample_crocodash_projects/sample_crocodash_projects.md
-          title: Sample CrocoDash Projects
+        - title: Sample CrocoDash Projects
           children:
             - file: notebooks/projects/sample_crocodash_projects/BGC.ipynb
             - file: notebooks/projects/sample_crocodash_projects/NWA.ipynb
