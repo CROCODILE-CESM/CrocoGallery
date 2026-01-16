@@ -1,7 +1,9 @@
-# Welcome to the CrocoGallery for version 1! We're still figuring out how to be prettier!
+# Welcome to the *in-progress* CrocoGallery! 🐊✨
 
-CrocoGallery is a repository of notebook tutorials, features, & use-cases for CROCODILE packages, hosted on Github Pages using jupyter-book. Please see the book here: https://crocodile-cesm.github.io/CrocoGallery.
+Yes, it’s still a bit rough around the edges. Think of it like a baby crocodile: adorable, slightly scary, and learning to swim.  
 
-To get used to CROCODILE projects, we provide a set of tutorials, features, & use cases that showcase the basic and advanced features of the projects. 
+CrocoGallery is a collection of notebook tutorials, features, and use cases for **CROCODILE** packages, hosted via **GitHub Pages** with **Jupyter Book**.  
 
-To use these notebooks, install the relevant CROCODILE package, and clone this repo.
+Whether you’re just dipping your toes or diving headfirst into the deep end, these guided notebooks show off what CROCODILE can do for regional ocean modeling — and how to make it do the heavy lifting for you.
+
+Start with the tutorials on the sidebar and explore at your own pace!
