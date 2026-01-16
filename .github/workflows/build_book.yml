@@ -27,57 +27,19 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
+    container:
+      image: ghcr.io/crocodile-cesm/crocodash:nightly
     steps:
-      # Check out the CESM
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          repository: CROCODILE-CESM/CESM
-          path: CESM
-      # Run git-fleximod
-      - name: Run Git Fleximod
-        env:
-          GIT_CLONE_PROTECTION_ACTIVE: false
+          node-version: 18.x
+      - name: Install Jupyter Book (via myst)
+        run: npm install -g jupyter-book
+      - name: Build HTML Assets
         run: |
-          cd $CESMROOT
-          ./bin/git-fleximod update
-
-      - uses: actions/checkout@v4
-        with:
-            repository: CROCODILE-CESM/CrocoDash
-            submodules: recursive
-            path: CrocoDash
-            fetch-depth: 0
-      - name: Checkout submodule to specific branch
-        run: |
-            cd CrocoDash/CrocoDash/rm6
-            git fetch origin
-            git checkout -b s3_zarr origin/s3_zarr
-      - uses: actions/setup-python@v5
-      - uses: conda-incubator/setup-miniconda@v3
-        with:
-          activate-environment: CrocoDash
-          environment-file: CrocoDash/environment.yml
-
-      - uses: actions/checkout@v4
-        with:
-            path: CrocoGallery
-      - name: Install extra Python packages for zarr access (some conflicts with copernicusmarine)
-        run: |
-          source $(conda info --base)/etc/profile.d/conda.sh
-          conda activate CrocoDash
-          pip install -r CrocoGallery/requirements.txt
-      - name: Update CESM path in path_to_datasets.json
-        run: |
-            source $(conda info --base)/etc/profile.d/conda.sh
-            conda activate CrocoDash
-            cd CrocoGallery/code
-            python -c "from setup_credentials_and_cesm import set_cesm_path; import os; set_cesm_path(os.environ['CESMROOT'])"
-      - name: Build book with Makefile
-        run: |
-            source $(conda info --base)/etc/profile.d/conda.sh
-            conda activate CrocoDash
-            cd CrocoGallery
-            make build
+          cd gallery 
+          jupyter-book build --html 
       - name: Upload files PR
         if: github.event_name == 'pull_request'
         uses: peaceiris/actions-gh-pages@v3
