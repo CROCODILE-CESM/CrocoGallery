@@ -1,90 +1,54 @@
-name: Build CrocoGallery Book
+# This file was created automatically with `jupyter-book init --gh-pages` 🪄 💚
+# Ensure your GitHub Pages settings for this repository are set to deploy with **GitHub Actions**.
 
+name: Jupyter Book (via myst) GitHub Pages Deploy
 on:
   push:
     branches: [main]
   workflow_dispatch:
   pull_request:
     branches: ["**"]
-    
+env:
+  # `BASE_URL` determines, relative to the root of the domain, the URL that your site is served from.
+  # E.g., if your site lives at `https://mydomain.org/myproject`, set `BASE_URL=/myproject`.
+  # If, instead, your site lives at the root of the domain, at `https://mydomain.org`, set `BASE_URL=''`.
+  BASE_URL: ${{ github.event_name == 'pull_request' && format('/{0}/pr-{1}', github.event.repository.name, github.event.number) || format('/{0}/latest', github.event.repository.name) }}
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: write
   pages: write
   id-token: write
   pull-requests: write
-env:
-  CESMROOT: ${{ github.workspace }}/CESM/ # See the checkout step below for the path
-  CIME_MACHINE: ubuntu-latest
-  DIN_LOC_ROOT: ${{ github.workspace }}
-  CIME_OUTPUT_ROOT: ${{ github.workspace }}
-  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  GLORYS_USERNAME: ${{ secrets.GLORYS_USERNAME }}
-  GLORYS_PASSWORD: ${{ secrets.GLORYS_PASSWORD }}
-
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
 jobs:
-  build_book:
-    runs-on: ubuntu-latest
+  deploy:
     environment:
       name: github-pages
+    runs-on: ubuntu-latest
     steps:
-      # Check out the CESM
       - uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - uses: actions/setup-node@v4
         with:
-          repository: CROCODILE-CESM/CESM
-          path: CESM
-      # Run git-fleximod
-      - name: Run Git Fleximod
-        env:
-          GIT_CLONE_PROTECTION_ACTIVE: false
+          node-version: 18.x
+      - name: Install Jupyter Book (via myst)
+        run: npm install -g jupyter-book
+      - name: Build HTML Assets
         run: |
-          cd $CESMROOT
-          ./bin/git-fleximod update
-
-      - uses: actions/checkout@v4
-        with:
-            repository: CROCODILE-CESM/CrocoDash
-            submodules: recursive
-            path: CrocoDash
-            fetch-depth: 0
-      - name: Checkout submodule to specific branch
-        run: |
-            cd CrocoDash/CrocoDash/rm6
-            git fetch origin
-            git checkout -b s3_zarr origin/s3_zarr
-      - uses: actions/setup-python@v5
-      - uses: conda-incubator/setup-miniconda@v3
-        with:
-          activate-environment: CrocoDash
-          environment-file: CrocoDash/environment.yml
-
-      - uses: actions/checkout@v4
-        with:
-            path: CrocoGallery
-      - name: Install extra Python packages for zarr access (some conflicts with copernicusmarine)
-        run: |
-          source $(conda info --base)/etc/profile.d/conda.sh
-          conda activate CrocoDash
-          pip install -r CrocoGallery/requirements.txt
-      - name: Update CESM path in path_to_datasets.json
-        run: |
-            source $(conda info --base)/etc/profile.d/conda.sh
-            conda activate CrocoDash
-            cd CrocoGallery/code
-            python -c "from setup_credentials_and_cesm import set_cesm_path; import os; set_cesm_path(os.environ['CESMROOT'])"
-      - name: Build book with Makefile
-        run: |
-            source $(conda info --base)/etc/profile.d/conda.sh
-            conda activate CrocoDash
-            cd CrocoGallery
-            make build
+          cd gallery 
+          jupyter-book build --html 
       - name: Upload files PR
         if: github.event_name == 'pull_request'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: CrocoGallery/gallery/_build/html
+          publish_dir: gallery/_build/html
           destination_dir: pr-${{ github.event.number }}
       - name: Comment PR with preview link
         if: github.event_name == 'pull_request'
@@ -93,10 +57,11 @@ jobs:
           message: |
             📄 Preview your docs here:
             👉 https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/pr-${{ github.event.number }}/index.html
-      - name: Upload files Main
+      - name: Upload files to main
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: CrocoGallery/gallery/_build/html
+          publish_dir: gallery/_build/html
+          destination_dir: latest

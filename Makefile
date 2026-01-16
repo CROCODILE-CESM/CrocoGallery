@@ -1,7 +1,9 @@
 .PHONY: build clean setup
 
 build: setup
-	jupyter-book build gallery
+	cd gallery
+	jupyter-book build --html
+	cd ../
 	python code/inject_paths_into_notebooks.py --reverse
 
 setup:
@@ -11,4 +13,5 @@ setup:
 clean:
 	python code/inject_paths_into_notebooks.py --reverse
 	rm -f data_paths_loc.json
+	cd gallery
 	jupyter-book clean gallery --all
