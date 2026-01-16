@@ -2,6 +2,9 @@ version: 1
 project:
   title: CROCODILE Gallery
   github: CROCODILE-CESM/CrocoGallery
+  parts:
+    banner: |
+      📢 **Announcement:** Looking for the old CrocoGallery? [Click here!](https://crocodile-cesm.github.io/CrocoGallery/workshop_2025)
   bibliography:
     - references.bib
   exports:
