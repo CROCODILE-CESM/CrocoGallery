@@ -27,8 +27,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-    container:
-      image: ghcr.io/crocodile-cesm/crocodash:nightly
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
