@@ -4,7 +4,11 @@ project:
   github: CROCODILE-CESM/CrocoGallery
   parts:
     banner: |
-      📢 **Announcement:** Looking for the old CrocoGallery? [Click here!](https://crocodile-cesm.github.io/CrocoGallery/workshop_2025)
+      <strong>Looking for the old CrocoGallery?</strong>
+      No worries — the 2025 CROCODILE workshop site is
+      <a href="https://crocodile-cesm.github.io/CrocoGallery/workshop_2025">
+      right here →
+      </a>
   bibliography:
     - references.bib
   exports:
