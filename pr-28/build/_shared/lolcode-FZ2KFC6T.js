@@ -1,1 +1,1 @@
-import{a}from"/build/_shared/chunk-ZRNYTZNQ.js";import"/build/_shared/chunk-OZE3FFNP.js";export default a();
+import{a}from"/CrocoGallery/build/_shared/chunk-ZRNYTZNQ.js";import"/CrocoGallery/build/_shared/chunk-OZE3FFNP.js";export default a();
