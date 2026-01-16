@@ -63,45 +63,40 @@ project:
                 - file: notebooks/features/add_chl.ipynb
                 - file: notebooks/features/add_tides.ipynb
 
-
-
-
-    - title: Older Material
+    - title: 2025 CROCODILE Workshop Projects
       children:
-        - title: 2025 CROCODILE Workshop Projects
+        - file: notebooks/projects/CrocoDash.ipynb
+        - title: Sample CrocoDash Projects
           children:
-            - file: notebooks/projects/CrocoDash.ipynb
-            - title: Sample CrocoDash Projects
-              children:
-                - file: notebooks/projects/sample_crocodash_projects/BGC.ipynb
-                - file: notebooks/projects/sample_crocodash_projects/NWA.ipynb
-                - file: >-
-                    notebooks/projects/sample_crocodash_projects/CICE_antarctica.ipynb
-                - file: notebooks/projects/sample_crocodash_projects/CICE_arctic.ipynb
-                - file: notebooks/projects/sample_crocodash_projects/DROF.ipynb
-                - file: notebooks/projects/sample_crocodash_projects/Everything.ipynb
-            - file: notebooks/projects/model-obs_comparison.md
-              title: Model-Observation Comparison Tutorials and Projects
-              children:
-                - file: notebooks/projects/tutorial1_MOM6-CL-comparison.ipynb
-                - file: notebooks/projects/tutorial2_MOM6-CL-comparison-float.ipynb
-                - file: notebooks/projects/tutorial3_CrocoLake_map_temperature.ipynb
-                - file: notebooks/projects/tutorial4_MOM6-WOD13-comparison.ipynb
-                - file: notebooks/projects/model-obs_your_own_model.ipynb
-            - file: notebooks/projects/CARIB12_EKE_TS.ipynb
-              title: Calculate EKE for CARIB12
-            - file: notebooks/diagnostics/CUPiD_projects.md
-              title: Advanced CUPiD Tutorial
-              children:
-                - file: notebooks/diagnostics/CUPiD_in_CESM_Workflow.md
-                  title: Running CUPiD within CESM
-                - file: notebooks/diagnostics/contributing_to_CUPiD.md
-                  title: Contributing to CUPiD
-        - title: Developmental Use Cases
+            - file: notebooks/projects/sample_crocodash_projects/BGC.ipynb
+            - file: notebooks/projects/sample_crocodash_projects/NWA.ipynb
+            - file: >-
+                notebooks/projects/sample_crocodash_projects/CICE_antarctica.ipynb
+            - file: notebooks/projects/sample_crocodash_projects/CICE_arctic.ipynb
+            - file: notebooks/projects/sample_crocodash_projects/DROF.ipynb
+            - file: notebooks/projects/sample_crocodash_projects/Everything.ipynb
+        - file: notebooks/projects/model-obs_comparison.md
+          title: Model-Observation Comparison Tutorials and Projects
           children:
-            - file: notebooks/use_cases/three_boundary_from_t232.ipynb
-            - file: notebooks/use_cases/three_boundary.ipynb
-            - file: notebooks/use_cases/mom6_cice_antarctica.ipynb
+            - file: notebooks/projects/tutorial1_MOM6-CL-comparison.ipynb
+            - file: notebooks/projects/tutorial2_MOM6-CL-comparison-float.ipynb
+            - file: notebooks/projects/tutorial3_CrocoLake_map_temperature.ipynb
+            - file: notebooks/projects/tutorial4_MOM6-WOD13-comparison.ipynb
+            - file: notebooks/projects/model-obs_your_own_model.ipynb
+        - file: notebooks/projects/CARIB12_EKE_TS.ipynb
+          title: Calculate EKE for CARIB12
+        - file: notebooks/diagnostics/CUPiD_projects.md
+          title: Advanced CUPiD Tutorial
+          children:
+            - file: notebooks/diagnostics/CUPiD_in_CESM_Workflow.md
+              title: Running CUPiD within CESM
+            - file: notebooks/diagnostics/contributing_to_CUPiD.md
+              title: Contributing to CUPiD
+    - title: Developmental Use Cases
+      children:
+        - file: notebooks/use_cases/three_boundary_from_t232.ipynb
+        - file: notebooks/use_cases/three_boundary.ipynb
+        - file: notebooks/use_cases/mom6_cice_antarctica.ipynb
 site:
   options:
     logo: crocodile.png
