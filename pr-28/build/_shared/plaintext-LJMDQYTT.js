@@ -1,1 +1,1 @@
-import{c as e}from"/CrocoGallery/build/_shared/chunk-OZE3FFNP.js";var n=e((l,t)=>{function a(i){return{name:"Plain text",aliases:["text","txt"],disableAutodetect:!0}}t.exports=a});export default n();
+import{c as e}from"/CrocoGallery/pr-28/build/_shared/chunk-OZE3FFNP.js";var n=e((l,t)=>{function a(i){return{name:"Plain text",aliases:["text","txt"],disableAutodetect:!0}}t.exports=a});export default n();
