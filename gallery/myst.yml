@@ -102,6 +102,6 @@ project:
         - file: notebooks/use_cases/mom6_cice_antarctica.ipynb
 site:
   options:
-    logo: crocodile.png
+    logo: long_crocodile.png
     folders: true
   template: book-theme
