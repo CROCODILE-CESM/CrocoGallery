@@ -50,6 +50,27 @@
     <loc>http://localhost:3000/notebooks/use-cases/mom6-cice-antarctica</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/notebooks/projects/crocodash</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/notebooks/projects/sample-crocodash-projects/bgc</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/notebooks/projects/sample-crocodash-projects/nwa</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/notebooks/projects/sample-crocodash-projects/cice-antarctica</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/notebooks/projects/sample-crocodash-projects/cice-arctic</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/notebooks/projects/sample-crocodash-projects/drof</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/notebooks/projects/sample-crocodash-projects/everything</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/diagnostics-index</loc>
   </url>
   <url>
@@ -86,28 +107,10 @@
     <loc>http://localhost:3000/notebooks/diagnostics/contributing-to-cupid</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/notebooks/projects/carib12-eke-ts</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/crococamp-index</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/notebooks/projects/crocodash</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/notebooks/projects/sample-crocodash-projects/bgc</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/notebooks/projects/sample-crocodash-projects/nwa</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/notebooks/projects/sample-crocodash-projects/cice-antarctica</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/notebooks/projects/sample-crocodash-projects/cice-arctic</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/notebooks/projects/sample-crocodash-projects/drof</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/notebooks/projects/sample-crocodash-projects/everything</loc>
   </url>
   <url>
     <loc>http://localhost:3000/notebooks/projects/model-obs-comparison</loc>
@@ -126,8 +129,5 @@
   </url>
   <url>
     <loc>http://localhost:3000/notebooks/projects/model-obs-your-own-model</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/notebooks/projects/carib12-eke-ts</loc>
   </url>
 </urlset>
