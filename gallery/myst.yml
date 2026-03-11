@@ -18,94 +18,86 @@ project:
   toc:
     - file: intro.md
 
-    - title: CrocoDash
+    - file: crocodash_index.md
       children:
-        - file: crocodash_index.md
+        - file: notebooks/tutorials/crocodash_tutorial.ipynb
+          title: Getting Started
+        - title: Features
           children:
-            - file: notebooks/tutorials/crocodash_tutorial.ipynb
-              title: Getting Started
-            - title: Features
+            - title: Coupling
               children:
-                - title: Coupling
-                  children:
-                    - file: notebooks/features/add_bgc.ipynb
-                    - file: notebooks/features/add_cice.ipynb
-                - title: Grid Customization
-                  children:
-                    - file: notebooks/features/subset_global.ipynb
-                    - file: notebooks/features/add_grids.ipynb
-                - title: Data Products
-                  children:
-                    - file: notebooks/features/too_much_data.ipynb
-                    - file: notebooks/features/add_data_products.ipynb
-                - title: Additional Components
-                  children:
-                    - file: notebooks/features/add_rof.ipynb
-                    - file: notebooks/features/add_runoff_product.ipynb
-                    - file: notebooks/features/add_chl.ipynb
-                    - file: notebooks/features/add_tides.ipynb
-            - title: Use Cases
+                - file: notebooks/features/add_bgc.ipynb
+                - file: notebooks/features/add_cice.ipynb
+            - title: Grid Customization
               children:
-                - file: notebooks/use_cases/three_boundary_from_t232.ipynb
-                - file: notebooks/use_cases/three_boundary.ipynb
-                - file: notebooks/use_cases/mom6_cice_antarctica.ipynb
+                - file: notebooks/features/subset_global.ipynb
+                - file: notebooks/features/add_grids.ipynb
+            - title: Data Products
+              children:
+                - file: notebooks/features/too_much_data.ipynb
+                - file: notebooks/features/add_data_products.ipynb
+            - title: Additional Components
+              children:
+                - file: notebooks/features/add_rof.ipynb
+                - file: notebooks/features/add_runoff_product.ipynb
+                - file: notebooks/features/add_chl.ipynb
+                - file: notebooks/features/add_tides.ipynb
+        - title: Use Cases
+          children:
+            - file: notebooks/use_cases/three_boundary_from_t232.ipynb
+            - file: notebooks/use_cases/three_boundary.ipynb
+            - file: notebooks/use_cases/mom6_cice_antarctica.ipynb
+        - file: notebooks/projects/CrocoDash.ipynb
+          title: CrocoDash at Camp
+        - title: Sample Projects
+          children:
+            - file: notebooks/projects/sample_crocodash_projects/BGC.ipynb
+            - file: notebooks/projects/sample_crocodash_projects/NWA.ipynb
+            - file: >-
+                notebooks/projects/sample_crocodash_projects/CICE_antarctica.ipynb
+            - file: notebooks/projects/sample_crocodash_projects/CICE_arctic.ipynb
+            - file: notebooks/projects/sample_crocodash_projects/DROF.ipynb
+            - file: notebooks/projects/sample_crocodash_projects/Everything.ipynb
 
-    - title: Diagnostics
+    - file: diagnostics_index.md
       children:
-        - file: diagnostics_index.md
+        - file: notebooks/diagnostics/CUPiD_for_regional_MOM6.md
+          title: CUPiD Diagnostics Tutorial
           children:
-            - file: notebooks/diagnostics/CUPiD_for_regional_MOM6.md
-              title: CUPiD Diagnostics Tutorial
+            - file: notebooks/diagnostics/CUPiD_intro.md
+              title: Installing CUPiD
+            - file: notebooks/diagnostics/standalone_CUPiD.md
+              title: Running a CUPiD Example
+            - file: notebooks/diagnostics/CUPiD_output.md
+              title: Output from CUPiD Example
               children:
-                - file: notebooks/diagnostics/CUPiD_intro.md
-                  title: Installing CUPiD
-                - file: notebooks/diagnostics/standalone_CUPiD.md
-                  title: Running a CUPiD Example
-                - file: notebooks/diagnostics/CUPiD_output.md
-                  title: Output from CUPiD Example
-                  children:
-                    - file: notebooks/diagnostics/cupid_output/Regional_Ocean_Report_Card.ipynb
-                    - file: notebooks/diagnostics/cupid_output/Regional_Ocean_Animations.ipynb
-                    - file: notebooks/diagnostics/cupid_output/Regional_Ocean_Atmospheric_Forcing.ipynb
-                    - file: notebooks/diagnostics/cupid_output/Regional_Ocean_OBC.ipynb
-            - file: notebooks/diagnostics/CUPiD_projects.md
-              title: Advanced CUPiD
-              children:
-                - file: notebooks/diagnostics/CUPiD_in_CESM_Workflow.md
-                  title: Running CUPiD within CESM
-                - file: notebooks/diagnostics/contributing_to_CUPiD.md
-                  title: Contributing to CUPiD
+                - file: notebooks/diagnostics/cupid_output/Regional_Ocean_Report_Card.ipynb
+                - file: notebooks/diagnostics/cupid_output/Regional_Ocean_Animations.ipynb
+                - file: notebooks/diagnostics/cupid_output/Regional_Ocean_Atmospheric_Forcing.ipynb
+                - file: notebooks/diagnostics/cupid_output/Regional_Ocean_OBC.ipynb
+        - file: notebooks/diagnostics/CUPiD_projects.md
+          title: Advanced CUPiD
+          children:
+            - file: notebooks/diagnostics/CUPiD_in_CESM_Workflow.md
+              title: Running CUPiD within CESM
+            - file: notebooks/diagnostics/contributing_to_CUPiD.md
+              title: Contributing to CUPiD
+        - file: notebooks/projects/CARIB12_EKE_TS.ipynb
+          title: CARIB12 EKE Analysis
 
-    - title: CrocoCamp
+    - file: crococamp_index.md
       children:
-        - file: crococamp_index.md
+        - file: notebooks/projects/model-obs_comparison.md
+          title: Model-Observation Comparison
           children:
-            - file: notebooks/projects/CrocoDash.ipynb
-              title: CrocoDash at Camp
-            - title: Sample Projects
-              children:
-                - file: notebooks/projects/sample_crocodash_projects/BGC.ipynb
-                - file: notebooks/projects/sample_crocodash_projects/NWA.ipynb
-                - file: >-
-                    notebooks/projects/sample_crocodash_projects/CICE_antarctica.ipynb
-                - file: notebooks/projects/sample_crocodash_projects/CICE_arctic.ipynb
-                - file: notebooks/projects/sample_crocodash_projects/DROF.ipynb
-                - file: notebooks/projects/sample_crocodash_projects/Everything.ipynb
-            - file: notebooks/projects/model-obs_comparison.md
-              title: Model-Observation Comparison
-              children:
-                - file: notebooks/projects/tutorial1_MOM6-CL-comparison.ipynb
-                - file: notebooks/projects/tutorial2_MOM6-CL-comparison-float.ipynb
-                - file: notebooks/projects/tutorial3_CrocoLake_map_temperature.ipynb
-                - file: notebooks/projects/tutorial4_MOM6-WOD13-comparison.ipynb
-                - file: notebooks/projects/model-obs_your_own_model.ipynb
-            - file: notebooks/projects/CARIB12_EKE_TS.ipynb
-              title: CARIB12 EKE Analysis
+            - file: notebooks/projects/tutorial1_MOM6-CL-comparison.ipynb
+            - file: notebooks/projects/tutorial2_MOM6-CL-comparison-float.ipynb
+            - file: notebooks/projects/tutorial3_CrocoLake_map_temperature.ipynb
+            - file: notebooks/projects/tutorial4_MOM6-WOD13-comparison.ipynb
+            - file: notebooks/projects/model-obs_your_own_model.ipynb
 
 site:
   options:
     logo: long_crocodile.png
     folders: true
-    html_css_files:
-      - custom.css
   template: book-theme
