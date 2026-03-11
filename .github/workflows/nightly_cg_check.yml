@@ -4,6 +4,7 @@ on:
   schedule:
     - cron: '0 8 * * *'  
   workflow_dispatch:      # allow manual trigger too
+  push:
 
 jobs:
   check-notebooks:
@@ -15,4 +16,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run signature checks
-        run: python .github/scripts/check_notebook_signatures.py gallery/notebooks
+        run: python .github/scripts/check_cg_notebook_signatures.py gallery/notebooks
