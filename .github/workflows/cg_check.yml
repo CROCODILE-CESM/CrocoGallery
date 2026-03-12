@@ -1,4 +1,4 @@
-name: Nightly CrocoGallery Notebook Check
+name: CrocoGallery Notebook Check # Checks if the notebooks are correctly called CrocoDash functions (signature checks)
 
 on:
   schedule:

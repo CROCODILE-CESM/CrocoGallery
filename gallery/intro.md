@@ -1,9 +1,33 @@
-# Welcome to the *in-progress* CrocoGallery! 🐊✨
+<div>
+  <h1>CrocoGallery (In Development)</h1>
+  <p>
+    Notebooks, tutorials, and showcases for the CROCODILE ecosystem — regional ocean modeling with MOM6 in CESM.
+  </p>
+</div>
 
-Yes, it’s still a bit rough around the edges. Think of it like a baby crocodile: adorable, slightly scary, and learning to swim.  
-
-CrocoGallery is a collection of notebook tutorials, features, and use cases for **CROCODILE** packages, hosted via **GitHub Pages** with **Jupyter Book**.  
-
-Whether you’re just dipping your toes or diving headfirst into the deep end, these guided notebooks show off what CROCODILE can do for regional ocean modeling — and how to make it do the heavy lifting for you.
-
-Start with the tutorials on the sidebar and explore at your own pace!
+<div class="croco-hub__grid">
+  <a class="croco-hub-card" href="crocodash_index">
+    <div class="croco-hub-card__icon">🐊</div>
+    <h3 class="croco-hub-card__title">CrocoDash</h3>
+    <p class="croco-hub-card__desc">
+      Configure and deploy regional MOM6 ocean models. Grid generation, boundary conditions, forcing data, and coupling through the CESM — all in one Python toolkit.
+    </p>
+    <span class="croco-hub-card__cta">Tutorials, features, use cases →</span>
+  </a>
+  <a class="croco-hub-card" href="diagnostics_index">
+    <div class="croco-hub-card__icon">📊</div>
+    <h3 class="croco-hub-card__title">Diagnostics</h3>
+    <p class="croco-hub-card__desc">
+      CUPiD-powered diagnostics and analysis for regional MOM6 output. Standardized report cards, animations, and forcing diagnostics.
+    </p>
+    <span class="croco-hub-card__cta">Explore diagnostics →</span>
+  </a>
+  <a class="croco-hub-card" href="crococamp_index">
+    <div class="croco-hub-card__icon">🏕️</div>
+    <h3 class="croco-hub-card__title">CrocoCamp</h3>
+    <p class="croco-hub-card__desc">
+      Model–observation comparisons via CrocoLake, a cloud-optimized Parquet observational database for fast access to data.
+    </p>
+    <span class="croco-hub-card__cta">Explore comparisons →</span>
+  </a>
+</div>
