@@ -15,15 +15,29 @@
 /* ---- Hub landing (intro.md) ---- */
 
 .croco-hub__hero {
+  background: linear-gradient(135deg, var(--croco-teal-dark) 0%, var(--croco-teal) 65%, #4ecdc4 100%);
+  border-radius: 16px;
+  padding: 3rem 2.5rem 3rem;
+  margin: 0.5rem 0 2.5rem;
+  color: white;
   text-align: center;
-  padding: 1.5rem 1rem 2.5rem;
+}
+
+.croco-hub__hero h1 {
+  font-size: 2.4rem !important;
+  font-weight: 800 !important;
+  color: white !important;
+  margin-bottom: 1rem !important;
+  line-height: 1.2 !important;
 }
 
 .croco-hub__tagline {
-  font-size: 1.1rem;
-  color: #555;
+  font-size: 1.05rem;
+  opacity: 0.9;
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.6;
+  color: white;
 }
 
 .croco-hub__grid {
@@ -337,3 +351,29 @@
   padding: 0.5rem 0.75rem;
   font-style: italic;
 }
+
+/* ---- Dark mode overrides ---- */
+
+html.dark .croco-hub-card {
+  background: #1e2a2a;
+  border-color: #2a3a3a;
+}
+
+html.dark .croco-hub-card__title { color: var(--croco-teal); }
+html.dark .croco-hub-card__desc  { color: #aaa; }
+html.dark .croco-hub-card__cta   { color: var(--croco-teal); }
+
+html.dark .cd-feature {
+  background: rgba(43, 181, 200, 0.1);
+}
+
+html.dark .cd-feature h3 { color: var(--croco-teal); }
+html.dark .cd-feature p  { color: #bbb; }
+
+html.dark .cd-nav-card {
+  background: #1e2a2a;
+  border-color: rgba(43, 181, 200, 0.2);
+}
+
+html.dark .cd-nav-card h3 { color: var(--croco-teal); }
+html.dark .cd-nav-card p  { color: #aaa; }
