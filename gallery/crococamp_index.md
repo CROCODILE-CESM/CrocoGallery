@@ -1,5 +1,6 @@
 ---
 title: CrocoCamp
+description: Model–observation comparisons for regional MOM6 using CrocoLake, a cloud-optimized Parquet observational database for fast access to observational data.
 ---
 
 <div class="croco-subspace-header croco-subspace-header--camp">

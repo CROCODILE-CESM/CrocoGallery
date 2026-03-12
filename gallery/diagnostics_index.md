@@ -1,5 +1,6 @@
 ---
 title: Diagnostics
+description: CUPiD-powered diagnostics and analysis for regional MOM6 ocean models. Standardized report cards, animations, and forcing diagnostics.
 ---
 
 <div class="croco-subspace-header croco-subspace-header--diagnostics">
