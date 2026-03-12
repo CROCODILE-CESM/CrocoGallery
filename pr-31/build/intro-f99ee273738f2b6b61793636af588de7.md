@@ -10,7 +10,7 @@ title: CrocoGallery
 </div>
 
 <div class="croco-hub__grid">
-  <a class="croco-hub-card croco-hub-card--featured" href="crocodash_index">
+  <a class="croco-hub-card" href="crocodash_index">
     <div class="croco-hub-card__icon">🐊</div>
     <h3 class="croco-hub-card__title">CrocoDash</h3>
     <p class="croco-hub-card__desc">
