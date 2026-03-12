@@ -1,5 +1,6 @@
 ---
 title: CrocoDash
+description: The Python toolkit for configuring and deploying regional MOM6 ocean models in CESM. Grid generation, boundary conditions, forcing data, and coupling — all in one place.
 ---
 
 <div class="cd-hero">
