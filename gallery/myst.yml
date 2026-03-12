@@ -103,5 +103,6 @@ site:
     logo: long_crocodile.png
     folders: true
     favicon: crocodile.png
+    style: _static/custom.css
   template: book-theme
 
