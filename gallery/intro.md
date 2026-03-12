@@ -1,7 +1,3 @@
----
-title: CrocoGallery
----
-
 <div class="croco-hub__hero">
   <h1>CrocoGallery</h1>
   <p class="croco-hub__tagline">
