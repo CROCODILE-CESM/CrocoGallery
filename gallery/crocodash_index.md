@@ -28,15 +28,15 @@ title: CrocoDash
   </div>
   <div class="cd-showcase-item">
     <img src="images/CrocoDash/SSH_speed.png" alt="Sea surface height and speed model output" />
-    <p>Regional SSH & Speed output</p>
+    <p>Model runs</p>
   </div>
   <div class="cd-showcase-item">
     <img src="images/CrocoDash/obc_forcing.png" alt="Open boundary condition forcing" />
-    <p>Boundary condition forcing</p>
+    <p>Boundary conditions</p>
   </div>
 </div>
 
-## What CrocoDash Can Do
+## What CrocoDash Can Do (Beyond General Setup)
 
 <div class="cd-features-grid">
   <div class="cd-feature">
@@ -52,12 +52,12 @@ title: CrocoDash
   <div class="cd-feature">
     <div class="cd-feature__icon">📦</div>
     <h3>Data Products</h3>
-    <p>Manage boundary conditions, initial conditions, and forcing data from multiple sources.</p>
+    <p>Manage boundary conditions, initial conditions, and forcing data from a variety of data sources.</p>
   </div>
   <div class="cd-feature">
     <div class="cd-feature__icon">🌊</div>
     <h3>Additional Physics</h3>
-    <p>Add tides, runoff, chlorophyll, and other model components with a single function call.</p>
+    <p>Add tides, runoff, chlorophyll, and other components with a single function call.</p>
   </div>
 </div>
 
