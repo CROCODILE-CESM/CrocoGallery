@@ -6,7 +6,7 @@ title: CrocoDash
   <div class="cd-hero__eyebrow">CROCODILE Ecosystem</div>
   <h1 class="cd-hero__title">CrocoDash</h1>
   <p class="cd-hero__desc">
-    The Python toolkit for configuring, customizing, and deploying regional MOM6 ocean models in CESM.
+    The Python toolkit for configuring, customizing, and setting up regional MOM6 ocean models in CESM.
     From grid generation to boundary conditions — all in one place.
   </p>
   <div class="cd-hero__actions">
@@ -20,19 +20,19 @@ title: CrocoDash
 <div class="cd-showcase-grid">
   <div class="cd-showcase-item">
     <img src="images/CrocoDash/grid_example.png" alt="Regional grid generation" />
-    <p>Regional grid generation</p>
+    <p>Regional Grid Generation</p>
   </div>
   <div class="cd-showcase-item">
     <img src="images/CrocoDash/bathymetry.png" alt="Bathymetry and topography" />
-    <p>Bathymetry editing</p>
-  </div>
-  <div class="cd-showcase-item">
-    <img src="images/CrocoDash/SSH_speed.png" alt="Sea surface height and speed model output" />
-    <p>Model runs</p>
+    <p>Git-Logged Bathymetry Editing</p>
   </div>
   <div class="cd-showcase-item">
     <img src="images/CrocoDash/obc_forcing.png" alt="Open boundary condition forcing" />
-    <p>Boundary conditions</p>
+    <p>Boundary Condition Generation</p>
+  </div>
+  <div class="cd-showcase-item">
+    <img src="images/CrocoDash/SSH_speed.png" alt="Sea surface height and speed model output" />
+    <p>Model Output</p>
   </div>
 </div>
 
