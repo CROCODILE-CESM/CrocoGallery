@@ -2,11 +2,11 @@
 title: CrocoDash
 ---
 
-CrocoDash is the Python toolkit for configuring, customizing, and deploying regional MOM6 ocean models in CESM.
+CrocoDash is the Python toolkit for configuring, customizing, and setting up regional MOM6 ocean models in CESM.
 
 **[Get Started →](notebooks/tutorials/crocodash_tutorial)** | **[GitHub ↗](https://github.com/CROCODILE-CESM/CrocoDash)**
 
-## What CrocoDash Can Do
+## What CrocoDash Can Do (Beyond General Setup)
 
 - **Coupling** — Add BGC and CICE coupled components to your regional configuration
 - **Grid Customization** — Subset global grids or build custom regional grids for any ocean domain

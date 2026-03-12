@@ -1,6 +1,6 @@
 version: 1
 project:
-  title: CROCODILE Gallery
+  title: CROCOGallery
   github: CROCODILE-CESM/CrocoGallery
   parts:
     banner: |
@@ -48,7 +48,7 @@ project:
             - file: notebooks/use_cases/three_boundary.ipynb
             - file: notebooks/use_cases/mom6_cice_antarctica.ipynb
         - file: notebooks/projects/CrocoDash.ipynb
-          title: CrocoDash at Camp
+          title: CrocoDash Workshop Project
         - title: Sample Projects
           children:
             - file: notebooks/projects/sample_crocodash_projects/BGC.ipynb
@@ -88,12 +88,14 @@ project:
     - file: crococamp_index.md
       children:
         - file: notebooks/projects/model-obs_comparison.md
-          title: Model-Observation Comparison
+          title: Tutorials for Model-Observation Comparison
           children:
             - file: notebooks/projects/tutorial1_MOM6-CL-comparison.ipynb
             - file: notebooks/projects/tutorial2_MOM6-CL-comparison-float.ipynb
             - file: notebooks/projects/tutorial3_CrocoLake_map_temperature.ipynb
             - file: notebooks/projects/tutorial4_MOM6-WOD13-comparison.ipynb
+        - title: Model-Observation Comparison Examples
+          children:
             - file: notebooks/projects/model-obs_your_own_model.ipynb
 
 site:
