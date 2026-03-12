@@ -1,6 +1,6 @@
-<div class="croco-hub__hero">
+<div>
   <h1>CrocoGallery (In Development)</h1>
-  <p class="croco-hub__tagline">
+  <p>
     Notebooks, tutorials, and showcases for the CROCODILE ecosystem — regional ocean modeling with MOM6 in CESM.
   </p>
 </div>
