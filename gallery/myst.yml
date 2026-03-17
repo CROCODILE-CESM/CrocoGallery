@@ -24,40 +24,40 @@ project:
           title: Getting Started
         - title: Features
           children:
-            - title: Coupling
-              children:
-                - file: notebooks/features/add_bgc.ipynb
-                - file: notebooks/features/add_cice.ipynb
             - title: Grid Customization
               children:
-                - file: notebooks/features/subset_global.ipynb
-                - file: notebooks/features/add_grids.ipynb
+                - file: notebooks/CrocoDash/features/grids/subset_global.ipynb
+                - file: notebooks/CrocoDash/features/grids/add_grids.ipynb
+            - title: Coupling
+              children:
+                - file: notebooks/CrocoDash/features/coupling/add_bgc.ipynb
+                - file: notebooks/CrocoDash/features/coupling/add_cice.ipynb
             - title: Data Products
               children:
-                - file: notebooks/features/too_much_data.ipynb
-                - file: notebooks/features/add_data_products.ipynb
+                - file: notebooks/CrocoDash/features/data_handling/too_much_data.ipynb
+                - file: notebooks/CrocoDash/features/data_handling/add_data_products.ipynb
             - title: Additional Components
               children:
-                - file: notebooks/features/add_rof.ipynb
-                - file: notebooks/features/add_runoff_product.ipynb
-                - file: notebooks/features/add_chl.ipynb
-                - file: notebooks/features/add_tides.ipynb
+                - file: notebooks/CrocoDash/features/add_rof.ipynb
+                - file: notebooks/CrocoDash/features/add_runoff_product.ipynb
+                - file: notebooks/CrocoDash/features/add_chl.ipynb
+                - file: notebooks/CrocoDash/features/add_tides.ipynb
         - title: Use Cases
           children:
-            - file: notebooks/use_cases/three_boundary_from_t232.ipynb
-            - file: notebooks/use_cases/three_boundary.ipynb
-            - file: notebooks/use_cases/mom6_cice_antarctica.ipynb
+            - file: notebooks/CrocoDash/use_cases/three_boundary_from_t232.ipynb
+            - file: notebooks/CrocoDash/use_cases/three_boundary.ipynb
+            - file: notebooks/CrocoDash/use_cases/mom6_cice_antarctica.ipynb
         - file: notebooks/projects/CrocoDash.ipynb
           title: CrocoDash Workshop Project
         - title: Sample Projects
           children:
-            - file: notebooks/projects/sample_crocodash_projects/BGC.ipynb
-            - file: notebooks/projects/sample_crocodash_projects/NWA.ipynb
+            - file: notebooks/CrocoDash/projects/sample_crocodash_projects/BGC.ipynb
+            - file: notebooks/CrocoDash/projects/sample_crocodash_projects/NWA.ipynb
             - file: >-
-                notebooks/projects/sample_crocodash_projects/CICE_antarctica.ipynb
-            - file: notebooks/projects/sample_crocodash_projects/CICE_arctic.ipynb
-            - file: notebooks/projects/sample_crocodash_projects/DROF.ipynb
-            - file: notebooks/projects/sample_crocodash_projects/Everything.ipynb
+                notebooks/CrocoDash/projects/sample_crocodash_projects/CICE_antarctica.ipynb
+            - file: notebooks/CrocoDash/projects/sample_crocodash_projects/CICE_arctic.ipynb
+            - file: notebooks/CrocoDash/projects/sample_crocodash_projects/DROF.ipynb
+            - file: notebooks/CrocoDash/projects/sample_crocodash_projects/Everything.ipynb
 
     - file: diagnostics_index.md
       children:
