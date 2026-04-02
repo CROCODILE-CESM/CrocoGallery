@@ -8,67 +8,61 @@
     <loc>http://localhost:3000/crocodash-index</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/tutorials/crocodash-tutorial</loc>
+    <loc>http://localhost:3000/notebooks/crocodash/features/grids/subset-global</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/features/add-bgc</loc>
+    <loc>http://localhost:3000/notebooks/crocodash/features/grids/add-grids</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/features/add-cice</loc>
+    <loc>http://localhost:3000/notebooks/crocodash/features/coupling/add-bgc</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/features/subset-global</loc>
+    <loc>http://localhost:3000/notebooks/crocodash/features/coupling/add-cice</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/features/add-grids</loc>
+    <loc>http://localhost:3000/notebooks/crocodash/features/data-handling/too-much-data</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/features/too-much-data</loc>
+    <loc>http://localhost:3000/notebooks/crocodash/features/data-handling/add-data-products</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/features/add-data-products</loc>
+    <loc>http://localhost:3000/notebooks/crocodash/features/add-rof</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/features/add-rof</loc>
+    <loc>http://localhost:3000/notebooks/crocodash/features/add-runoff-product</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/features/add-runoff-product</loc>
+    <loc>http://localhost:3000/notebooks/crocodash/features/add-chl</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/features/add-chl</loc>
+    <loc>http://localhost:3000/notebooks/crocodash/features/add-tides</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/features/add-tides</loc>
+    <loc>http://localhost:3000/notebooks/crocodash/use-cases/three-boundary-from-t232</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/use-cases/three-boundary-from-t232</loc>
+    <loc>http://localhost:3000/notebooks/crocodash/use-cases/three-boundary</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/use-cases/three-boundary</loc>
+    <loc>http://localhost:3000/notebooks/crocodash/use-cases/mom6-cice-antarctica</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/use-cases/mom6-cice-antarctica</loc>
+    <loc>http://localhost:3000/notebooks/crocodash/projects/sample-crocodash-projects/bgc</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/projects/crocodash</loc>
+    <loc>http://localhost:3000/notebooks/crocodash/projects/sample-crocodash-projects/nwa</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/projects/sample-crocodash-projects/bgc</loc>
+    <loc>http://localhost:3000/notebooks/crocodash/projects/sample-crocodash-projects/cice-antarctica</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/projects/sample-crocodash-projects/nwa</loc>
+    <loc>http://localhost:3000/notebooks/crocodash/projects/sample-crocodash-projects/cice-arctic</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/projects/sample-crocodash-projects/cice-antarctica</loc>
+    <loc>http://localhost:3000/notebooks/crocodash/projects/sample-crocodash-projects/drof</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/notebooks/projects/sample-crocodash-projects/cice-arctic</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/notebooks/projects/sample-crocodash-projects/drof</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/notebooks/projects/sample-crocodash-projects/everything</loc>
+    <loc>http://localhost:3000/notebooks/crocodash/projects/sample-crocodash-projects/everything</loc>
   </url>
   <url>
     <loc>http://localhost:3000/diagnostics-index</loc>
