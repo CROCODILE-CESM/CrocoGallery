@@ -5,7 +5,7 @@ import nbformat
 import argparse
 
 
-def main(reverse=False):
+def main(reverse=False, inject_setup = "cirrus"):
 
     with open(Path(__file__).parent / "path_to_datasets_loc.json", "r") as f:
         paths = json.load(f)
@@ -25,7 +25,7 @@ def main(reverse=False):
             for cell in nb.cells:
                 if cell.cell_type in ("code", "Python"):
                     original_source = cell.source
-                    for key, real_path in paths.items():
+                    for key, real_path in paths[inject_setup].items():
                         full_str = "<" + key + ">"
                         if not reverse:
                             if full_str in cell.source:
