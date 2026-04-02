@@ -7,7 +7,7 @@ import argparse
 
 def main(reverse=False, inject_setup = "cirrus"):
 
-    with open(Path(__file__).parent / "path_to_datasets_loc.json", "r") as f:
+    with open(Path(__file__).parent / "path_to_datasets.json", "r") as f:
         paths = json.load(f)
     notebooks_path = Path(__file__).parent.parent / "gallery" / "notebooks"
 
@@ -55,5 +55,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "--reverse", action="store_true", help="Reverse the path injection."
     )
+    parser.add_argument(
+        "--inject_setup", default="cirrus", help="Which inject setup to use (default: cirrus)."
+    )
     args = parser.parse_args()
-    main(reverse=args.reverse)
+    main(reverse=args.reverse, inject_setup=args.inject_setup)
