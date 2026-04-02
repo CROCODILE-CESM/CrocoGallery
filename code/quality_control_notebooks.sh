@@ -2,9 +2,10 @@
 
 # Exceptions for /glade paths
 GLADE_EXCEPTIONS=(
+  "gallery/notebooks/CrocoDash/projects"
   "gallery/notebooks/projects"
-  "gallery/notebooks/features"   
-  "gallery/notebooks/tutorials"
+  "gallery/notebooks/CrocoDash/features"   
+  "gallery/notebooks/CrocoDash/tutorials"
   "gallery/notebooks/diagnostics/cupid_output"
 )
 
