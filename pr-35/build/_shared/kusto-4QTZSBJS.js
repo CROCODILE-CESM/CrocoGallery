@@ -1,0 +1,6 @@
+import {
+  require_kusto
+} from "/CrocoGallery/pr-35/build/_shared/chunk-6WUVP4O5.js";
+import "/CrocoGallery/pr-35/build/_shared/chunk-CGOEG7L2.js";
+export default require_kusto();
+//# sourceMappingURL=/CrocoGallery/pr-35/build/_shared/kusto-4QTZSBJS.js.map
