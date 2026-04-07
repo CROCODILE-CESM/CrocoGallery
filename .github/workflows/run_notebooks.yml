@@ -64,7 +64,7 @@ jobs:
 
       - uses: actions/checkout@v4
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4 # Get the newest code to ensure we have the latest notebooks
         with:
           repository: crocodile-cesm/CrocoDash
           submodules: recursive
