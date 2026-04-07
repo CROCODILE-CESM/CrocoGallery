@@ -12,4 +12,12 @@ jobs:
 
         - name: Run Quality Control
           run: |
-            ci_code/quality_control_notebooks.sh
+            .github/scripts/quality_control_notebooks.sh
+  check-notebook-coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Check all notebooks (except exclusions) are in run_notebooks.yml matrix
+        run: |
+          bash .github/scripts/check_notebook_coverage.sh
