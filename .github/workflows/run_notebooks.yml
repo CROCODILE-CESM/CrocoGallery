@@ -64,6 +64,17 @@ jobs:
 
       - uses: actions/checkout@v4
 
+      - uses: actions/checkout@v4
+        with:
+          repository: crocodile-cesm/CrocoDash
+          submodules: recursive
+          path: CrocoDash
+
+      - name: Copy CrocoDash into container workdir
+        run: |
+          rm -rf $WORKDIR/CrocoDash
+          cp -r $GITHUB_WORKSPACE/CrocoDash $WORKDIR/
+
       - name: Set CI case paths
         run: |
           sed -i "s|\"fill_in_id\"|\"$WORKDIR/ci_input\"|g" ci_code/path_to_datasets.json
