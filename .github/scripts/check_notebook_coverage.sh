@@ -1,11 +1,11 @@
 #!/bin/bash
-# Checks that all notebooks under demos/gallery/notebooks/CrocoDash/ (except BGC.ipynb)
+# Checks that all notebooks under gallery/notebooks/CrocoDash/ (except BGC.ipynb)
 # are listed in the run_notebooks.yml matrix. Exits non-zero if any are missing.
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 
-NOTEBOOK_DIR="$REPO_ROOT/demos/gallery/notebooks/CrocoDash"
+NOTEBOOK_DIR="$REPO_ROOT/gallery/notebooks/CrocoDash"
 WORKFLOW_FILE="$REPO_ROOT/.github/workflows/run_notebooks.yml"
 
 # Find all notebooks, excluding .ipynb_checkpoints and others
@@ -27,7 +27,7 @@ mapfile -t MATRIX_NOTEBOOKS < <(
 
 MISSING=()
 for nb in "${ALL_NOTEBOOKS[@]}"; do
-  rel_path="${nb#"$REPO_ROOT"/demos/}"
+  rel_path="${nb#"$REPO_ROOT"/}"
   found=false
   for matrix_nb in "${MATRIX_NOTEBOOKS[@]}"; do
     if [[ "$matrix_nb" == "$rel_path" ]]; then
