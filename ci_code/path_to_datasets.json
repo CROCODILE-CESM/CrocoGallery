@@ -1,0 +1,26 @@
+{
+  "cirrus": {
+    "GEBCO": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/gebco/GEBCO_2024.nc",
+    "TPXO_H": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/tpxo/h_tpxo9.v1.nc",
+    "TPXO_U": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/tpxo/u_tpxo9.v1.nc",
+    "CESM": "Checkout",
+    "inputdir": "fill_in_id",
+    "casedir": "fill_in_cd",
+    "HGRID_221123": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/grids/ocean_hgrid_221123.nc",
+    "HGRID_TRIMMED": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/grids/ocean_hgrid_trimmed.nc",
+    "BATHY_FILE": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/grids/ocean_topog_little_nwa12_5d22b5.nc",
+    "CHL": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/chl/data/SeaWIFS.L3m.MC.CHL.chlor_a.0.25deg.nc",
+    "GLOFAS_MESH": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/rof/glofas/dis24/GLOFAS_esmf_mesh_v4.nc",
+    "RIVER_NUTRIENTS": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/rof/river_nutrients/river_nutrients.GNEWS_GNM.glofas.20250916.64bit.nc",
+    "MARBL_IC": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/bgc/ecosys_jan_IC_omip_latlon_1x1_180W_c231221.nc",
+    "CICE_ARCTIC_HGRID": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/grids/cice_grids/replica_grid_3413.nc",
+    "CICE_ARCTIC_BATHY": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/grids/cice_grids/bathy_3413.nc",
+    "CICE_ANTARCTIC_HGRID": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/grids/cice_grids/replica_grid_3031.nc",
+    "CICE_ANTARCTIC_BATHY": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/grids/cice_grids/bathy_3031.nc",
+    "NWA_HGRID": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/grids/nwa/ocean_hgrid.nc",
+    "NWA_BATHY": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/grids/nwa/ocean_topo.nc",
+    "NWA_VGRID": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/grids/nwa/vgrid_75_2m.nc",
+    "JRA_ESMF_MESH": "/glade/campaign/cesm/cesmdata/inputdata/lnd/dlnd7/JRA55/JRA.v1.4.runoff.1958_ESMFmesh_cdf5_20201020.nc"
+  }
+  
+}

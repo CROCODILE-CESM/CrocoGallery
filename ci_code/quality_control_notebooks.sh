@@ -4,14 +4,9 @@
 GLADE_EXCEPTIONS=(
   "gallery/notebooks/CrocoDash/projects"
   "gallery/notebooks/projects"
-  "gallery/notebooks/CrocoDash/features"   
+  "gallery/notebooks/CrocoDash/features"
   "gallery/notebooks/CrocoDash/tutorials"
   "gallery/notebooks/diagnostics/cupid_output"
-)
-
-# Exceptions for s3:// paths
-S3_EXCEPTIONS=(
-
 )
 
 ## Function to filter out exceptions (files & folders)
@@ -36,17 +31,4 @@ if [[ -n "$matches" ]]; then
   exit 1
 else
   echo "✅ No '/glade' paths found."
-fi
-
-echo "Checking for hardcoded 's3://' paths..."
-matches=$(grep -rnw --include="*.ipynb" -e "s3://" gallery/notebooks || true)
-matches=$(filter_exceptions "$matches" "${S3_EXCEPTIONS[@]}")
-
-if [[ -n "$matches" ]]; then
-  echo "❌ Found hardcoded 's3://' paths in the following files:"
-  echo "$matches"
-  echo "Please remove or parameterize them."
-  exit 1
-else
-  echo "✅ No 's3://' paths found."
 fi

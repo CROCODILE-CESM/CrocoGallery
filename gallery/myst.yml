@@ -20,7 +20,7 @@ project:
 
     - file: crocodash_index.md
       children:
-        - file: notebooks/tutorials/crocodash_tutorial.ipynb
+        - file: notebooks/CrocoDash/tutorials/crocodash_tutorial.ipynb
           title: Getting Started
         - title: Features
           children:
@@ -47,7 +47,7 @@ project:
             - file: notebooks/CrocoDash/use_cases/three_boundary_from_t232.ipynb
             - file: notebooks/CrocoDash/use_cases/three_boundary.ipynb
             - file: notebooks/CrocoDash/use_cases/mom6_cice_antarctica.ipynb
-        - file: notebooks/projects/CrocoDash.ipynb
+        - file: notebooks/CrocoDash/projects/CrocoDash.ipynb
           title: CrocoDash Workshop Project
         - title: Sample Projects
           children:
