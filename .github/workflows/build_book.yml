@@ -38,6 +38,17 @@ jobs:
           node-version: 18.x
       - name: Install Jupyter Book (via myst)
         run: npm install -g jupyter-book
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install nbconvert
+        run: pip install nbconvert
+      - name: Clear outputs from selected notebooks
+        run: |
+          jupyter nbconvert --clear-output --inplace \
+            gallery/notebooks/CrocoDash/tutorials/*.ipynb \
+            gallery/notebooks/CrocoDash/projects/sample_crocodash_projects/*.ipynb \
+            gallery/notebooks/CrocoDash/use_cases/*.ipynb
       - name: Build HTML Assets
         run: |
           cd gallery 
