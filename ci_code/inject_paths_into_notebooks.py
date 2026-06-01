@@ -29,7 +29,7 @@ def process_notebook(notebook_path, paths, inject_setup, reverse):
         print(f"  Saved updated notebook: {notebook_path}")
 
 
-def main(reverse=False, inject_setup = "cirrus"):
+def main(reverse=False, inject_setup="cirrus"):
 
     with open(Path(__file__).parent / "path_to_datasets.json", "r") as f:
         paths = json.load(f)
@@ -57,7 +57,9 @@ if __name__ == "__main__":
         "--reverse", action="store_true", help="Reverse the path injection."
     )
     parser.add_argument(
-        "--inject_setup", default="cirrus", help="Which inject setup to use (default: cirrus)."
+        "--inject_setup",
+        default="cirrus",
+        help="Which inject setup to use (default: cirrus).",
     )
     args = parser.parse_args()
     main(reverse=args.reverse, inject_setup=args.inject_setup)
