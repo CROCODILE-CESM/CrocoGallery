@@ -1,6 +1,0 @@
-import {
-  require_kumir
-} from "/CrocoGallery/latest/build/_shared/chunk-55TNJROC.js";
-import "/CrocoGallery/latest/build/_shared/chunk-CGOEG7L2.js";
-export default require_kumir();
-//# sourceMappingURL=/CrocoGallery/latest/build/_shared/kumir-5C3FKZA5.js.map
