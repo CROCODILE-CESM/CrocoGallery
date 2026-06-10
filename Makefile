@@ -1,17 +1,15 @@
-.PHONY: build clean setup
+.PHONY: build clean inject reverse
 
-build: setup
-	cd gallery
-	jupyter-book build --html
-	cd ../
-	python code/inject_paths_into_notebooks.py --reverse
+inject:
+	python -m crocogallery
 
-setup:
-	python code/setup_credentials_and_cesm.py
-	python code/inject_paths_into_notebooks.py
+reverse:
+	python -m crocogallery --reverse
+
+build: inject
+	cd gallery && jupyter-book build --html
+	python -m crocogallery --reverse
 
 clean:
-	python code/inject_paths_into_notebooks.py --reverse
-	rm -f data_paths_loc.json
-	cd gallery
-	jupyter-book clean gallery --all
+	python -m crocogallery --reverse
+	cd gallery && jupyter-book clean . --all

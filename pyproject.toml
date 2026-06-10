@@ -1,0 +1,12 @@
+[project]
+name = "crocogallery"
+version = "0.1.0"
+description = "Path injection utilities for CrocoGallery notebooks"
+dependencies = ["nbformat"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["crocogallery*"]
+
+[tool.setuptools.package-data]
+crocogallery = ["known_paths.json"]
