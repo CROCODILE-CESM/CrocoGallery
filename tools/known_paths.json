@@ -1,5 +1,5 @@
 {
-  "cirrus": {
+  "derecho": {
     "GEBCO": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/gebco/GEBCO_2024.nc",
     "TPXO_H": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/tpxo/h_tpxo9.v1.nc",
     "TPXO_U": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/tpxo/u_tpxo9.v1.nc",
@@ -22,5 +22,4 @@
     "NWA_VGRID": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/grids/nwa/vgrid_75_2m.nc",
     "JRA_ESMF_MESH": "/glade/campaign/cesm/cesmdata/inputdata/lnd/dlnd7/JRA55/JRA.v1.4.runoff.1958_ESMFmesh_cdf5_20201020.nc"
   }
-  
 }
