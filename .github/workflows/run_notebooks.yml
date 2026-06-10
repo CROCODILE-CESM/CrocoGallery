@@ -76,13 +76,13 @@ jobs:
 
       - name: Set CI case paths
         run: |
-          sed -i "s|\"fill_in_id\"|\"$WORKDIR/ci_input\"|g" tools/known_paths.json
-          sed -i "s|\"fill_in_cd\"|\"$WORKDIR/ci_cases\"|g" tools/known_paths.json
-          sed -i "s|\"Checkout\"|\"$CESMROOT\"|g" tools/known_paths.json
+          sed -i "s|\"fill_in_id\"|\"$WORKDIR/ci_input\"|g" crocogallery/known_paths.json
+          sed -i "s|\"fill_in_cd\"|\"$WORKDIR/ci_cases\"|g" crocogallery/known_paths.json
+          sed -i "s|\"Checkout\"|\"$CESMROOT\"|g" crocogallery/known_paths.json
 
       - name: Inject paths into notebooks
         run: |
-          conda run -n CrocoDash python tools/inject_paths.py
+          conda run -n CrocoDash python -m crocogallery
 
       - name: Create CI case
         run: |

@@ -5,8 +5,15 @@ import nbformat
 import argparse
 
 
-def load_paths(json_path, machine):
-    """Return the path dict for the given machine key from known_paths.json."""
+def load_paths(machine, json_path=None):
+    """Return the path dict for the given machine key.
+
+    json_path defaults to the bundled known_paths.json in this package.
+    """
+    if json_path is None:
+        from importlib.resources import files
+
+        json_path = files("crocogallery") / "known_paths.json"
     with open(json_path) as f:
         db = json.load(f)
     if machine not in db:
@@ -49,11 +56,12 @@ def process_notebook(notebook_path, paths, reverse):
 
 
 def main(reverse=False, machine="derecho"):
-    json_path = Path(__file__).parent / "known_paths.json"
-    paths = load_paths(json_path, machine)
+    paths = load_paths(machine)
+    # gallery/notebooks/ is sibling to this package directory
     notebooks_path = Path(__file__).parent.parent / "gallery" / "notebooks"
+    # ci_case_setup.ipynb lives in tools/ alongside the package
+    ci_notebook = Path(__file__).parent.parent / "tools" / "ci_case_setup.ipynb"
 
-    ci_notebook = Path(__file__).parent / "ci_case_setup.ipynb"
     if ci_notebook.exists():
         process_notebook(ci_notebook, paths, reverse)
 
