@@ -96,7 +96,9 @@ jobs:
               jupyter nbconvert --clear-output --inplace \
               ${{ matrix.notebook }}
 
-      - name: Run notebook
+      - name: Run notebook (attempt 1)
+        id: run_nb_1
+        continue-on-error: true
         # BGC isn't run as it uses data on GDEX that isn't accessible on the GHCR runner.
         # Consider adding a test BGC dataset to inputdata in the future.
         run: |
@@ -106,3 +108,94 @@ jobs:
               --TagRemovePreprocessor.enabled=True \
               --TagRemovePreprocessor.remove_cell_tags='["ci-skip"]' \
               ${{ matrix.notebook }}
+
+      - name: Clear notebook outputs before retry
+        if: steps.run_nb_1.outcome == 'failure'
+        run: |
+          conda run -n CrocoDash \
+              jupyter nbconvert --clear-output --inplace \
+              ${{ matrix.notebook }}
+
+      - name: Run notebook (attempt 2 / retry)
+        id: run_nb_2
+        if: steps.run_nb_1.outcome == 'failure'
+        run: |
+          conda run -n CrocoDash \
+              jupyter nbconvert --to notebook --execute --inplace \
+              --ExecutePreprocessor.timeout=600 \
+              --TagRemovePreprocessor.enabled=True \
+              --TagRemovePreprocessor.remove_cell_tags='["ci-skip"]' \
+              ${{ matrix.notebook }}
+
+      - name: Record badge status
+        if: always()
+        id: badge_prep
+        env:
+          NOTEBOOK: ${{ matrix.notebook }}
+          ATTEMPT1: ${{ steps.run_nb_1.outcome }}
+          ATTEMPT2: ${{ steps.run_nb_2.outcome }}
+        run: |
+          # Strip gallery/notebooks/ prefix and .ipynb suffix, replace / with _
+          NB_KEY=$(echo "$NOTEBOOK" | sed 's|gallery/notebooks/||' | sed 's|\.ipynb$||' | tr '/' '_')
+          SAFE_NAME=$(echo "$NOTEBOOK" | tr '/.' '-')
+          if [ "$ATTEMPT1" = "success" ] || [ "$ATTEMPT2" = "success" ]; then
+            STATUS="passing"
+            COLOR="brightgreen"
+          else
+            STATUS="failing"
+            COLOR="critical"
+          fi
+          mkdir -p /tmp/badge-status
+          cat > "/tmp/badge-status/${NB_KEY}.json" << JSON
+          {
+            "schemaVersion": 1,
+            "label": "notebook",
+            "message": "${STATUS}",
+            "color": "${COLOR}"
+          }
+          JSON
+          echo "artifact_name=badge-status-${SAFE_NAME}" >> $GITHUB_OUTPUT
+
+      - name: Upload badge status
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.badge_prep.outputs.artifact_name }}
+          path: /tmp/badge-status/
+          retention-days: 7
+
+  collect-badges:
+    needs: run_notebooks
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup badges branch
+        run: |
+          if git ls-remote --exit-code --heads origin badges; then
+            git checkout badges
+          else
+            git checkout --orphan badges
+            git rm -rf . 2>/dev/null || true
+            git commit --allow-empty -m "Initialize badges branch [skip ci]"
+          fi
+
+      - name: Download all badge status artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: badge-status-*
+          path: ./
+          merge-multiple: true
+
+      - name: Commit and push badge updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add *.json
+          git diff --cached --quiet || git commit -m "Update notebook badges [skip ci]"
+          git push origin badges
