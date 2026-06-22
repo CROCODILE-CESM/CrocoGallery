@@ -18,6 +18,7 @@ run:
   - gallery/notebooks/CrocoDash/projects/sample_crocodash_projects/DROF.ipynb
   - gallery/notebooks/CrocoDash/projects/sample_crocodash_projects/NWA.ipynb
   - gallery/notebooks/CrocoDash/use_cases/three_boundary_from_t232.ipynb
+  - gallery/notebooks/CrocoDash/projects/sample_crocodash_projects/CICE_antarctica.ipynb
 
 skip:
   - path: gallery/notebooks/CrocoDash/features/grids/subset_global.ipynb
