@@ -3,6 +3,13 @@ title: CrocoDash
 description: The Python toolkit for configuring and deploying regional MOM6 ocean models in CESM. Grid generation, boundary conditions, forcing data, and coupling — all in one place.
 ---
 
+<div class="cd-dev-banner">
+  <strong>🚧 This page is under active development.</strong>
+  Some features shown here may not be reproducible with the latest tagged release of CrocoDash,
+  but can be found on branches in the
+  <a href="https://github.com/CROCODILE-CESM/CrocoDash">CrocoDash GitHub repository ↗</a>.
+</div>
+
 <div class="cd-hero">
   <div class="cd-hero__eyebrow">CROCODILE Ecosystem</div>
   <h1 class="cd-hero__title">CrocoDash</h1>
