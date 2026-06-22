@@ -63,18 +63,17 @@ case:
   # job_queue: main
   # job_wallclock_time: "01:00:00"
 
-# ── Forcings (optional) ───────────────────────────────────────────────────────
-# Remove this section entirely for NYF (no-year forcing) compsets.
-# forcings:
-#   date_range: ["2020-01-01 00:00:00", "2020-12-31 00:00:00"]
-#   boundaries: [north, south, east, west]
-#   product_name: GLORYS
-#   function_name: get_glorys_data_from_rda
-#
-#   # Tidal forcing (optional):
-#   # tidal_constituents: [M2, S2, K1, O1]
-#   # tpxo_elevation_filepath: <TPXO_H>
-#   # tpxo_velocity_filepath: <TPXO_U>
-#
-#   # BGC initial conditions (optional):
-#   # marbl_ic_filepath: <MARBL_IC>
+# ── Forcings ───────────────────────────────────────────────────────
+forcings:
+  date_range: ["2020-01-01 00:00:00", "2020-12-31 00:00:00"]
+  boundaries: [north, south, east, west]
+  product_name: GLORYS
+  function_name: get_glorys_data_from_rda
+
+  # Tidal forcing (optional):
+  # tidal_constituents: [M2, S2, K1, O1]
+  # tpxo_elevation_filepath: <TPXO_H>
+  # tpxo_velocity_filepath: <TPXO_U>
+
+  # BGC initial conditions (optional):
+  # marbl_ic_filepath: <MARBL_IC>

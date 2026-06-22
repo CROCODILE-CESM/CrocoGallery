@@ -1,6 +1,7 @@
 {
   "derecho": {
     "GEBCO": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/gebco/GEBCO_2024.nc",
+    "GEBCO_LOWRES": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/gebco/GEBCO_2024_coarse_x8.nc",
     "TPXO_H": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/tpxo/h_tpxo9.v1.nc",
     "TPXO_U": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/tpxo/u_tpxo9.v1.nc",
     "CESM": "Checkout",
