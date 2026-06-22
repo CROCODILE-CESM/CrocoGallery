@@ -16,7 +16,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 CONFIG_FILE = REPO_ROOT / ".github" / "notebooks.yml"
-INDEX_FILE = REPO_ROOT / "gallery" / "crocodash_index.md"
+INDEX_FILE = REPO_ROOT / "gallery" / "notebook_status.md"
 
 REPO = "CROCODILE-CESM/CrocoGallery"
 RAW_BASE = f"https://raw.githubusercontent.com/{REPO}/badges"
