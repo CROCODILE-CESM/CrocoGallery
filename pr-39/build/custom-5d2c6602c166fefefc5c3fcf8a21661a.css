@@ -352,6 +352,40 @@
   font-style: italic;
 }
 
+/* ---- Dev warning banner ---- */
+
+.cd-dev-banner {
+  background: #FFF8E1;
+  border: 1px solid var(--croco-amber);
+  border-left: 4px solid var(--croco-amber-dark);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 0 1.5rem;
+  font-size: 0.9rem;
+  color: #5a3e00;
+  line-height: 1.5;
+}
+
+.cd-dev-banner a {
+  color: var(--croco-amber-dark);
+  font-weight: 600;
+}
+
+.cd-dev-banner a:hover {
+  text-decoration: underline;
+}
+
+html.dark .cd-dev-banner {
+  background: rgba(240, 168, 48, 0.1);
+  border-color: var(--croco-amber);
+  border-left-color: var(--croco-amber);
+  color: #f0c96a;
+}
+
+html.dark .cd-dev-banner a {
+  color: var(--croco-amber);
+}
+
 /* ---- Dark mode overrides ---- */
 
 html.dark .croco-hub-card {
