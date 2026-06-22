@@ -11,6 +11,9 @@
     <loc>http://localhost:3000/notebooks/crocodash/tutorials/crocodash-tutorial</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/notebooks/crocodash/tutorials/cli-workflow</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/notebooks/crocodash/features/grids/subset-global</loc>
   </url>
   <url>
