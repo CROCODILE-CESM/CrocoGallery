@@ -41,8 +41,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install nbconvert
-        run: pip install nbconvert
+      - name: Install build dependencies
+        run: pip install nbconvert pyyaml
+      - name: Generate notebook badge table
+        run: python3 .github/scripts/generate_badge_table.py
       - name: Clear outputs from selected notebooks
         run: |
           jupyter nbconvert --clear-output --inplace \
