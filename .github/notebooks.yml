@@ -20,20 +20,6 @@ run:
   - gallery/notebooks/CrocoDash/projects/sample_crocodash_projects/NWA.ipynb
   - gallery/notebooks/CrocoDash/use_cases/three_boundary_from_t232.ipynb
 
-# Display names for the badge table. Paths not listed here get an auto-derived
-# name (filename stem, underscores → spaces, title-cased).
-names:
-  gallery/notebooks/CrocoDash/tutorials/crocodash_tutorial.ipynb: "CrocoDash Tutorial"
-  gallery/notebooks/CrocoDash/features/add_chl.ipynb: "Add Chlorophyll"
-  gallery/notebooks/CrocoDash/features/add_rof.ipynb: "Add Runoff"
-  gallery/notebooks/CrocoDash/features/coupling/add_cice.ipynb: "Add CICE"
-  gallery/notebooks/CrocoDash/projects/CrocoDash.ipynb: "CrocoDash Projects"
-  gallery/notebooks/CrocoDash/projects/sample_crocodash_projects/CICE_antarctica.ipynb: "CICE Antarctica Project"
-  gallery/notebooks/CrocoDash/projects/sample_crocodash_projects/CICE_arctic.ipynb: "CICE Arctic Project"
-  gallery/notebooks/CrocoDash/projects/sample_crocodash_projects/DROF.ipynb: "DROF Project"
-  gallery/notebooks/CrocoDash/projects/sample_crocodash_projects/NWA.ipynb: "NWA Project"
-  gallery/notebooks/CrocoDash/use_cases/three_boundary_from_t232.ipynb: "Three Boundary from T232"
-
 skip:
   - path: gallery/notebooks/CrocoDash/features/grids/subset_global.ipynb
     reason: OOM on CI runner; needs smaller test data pointed at by known_paths.json
