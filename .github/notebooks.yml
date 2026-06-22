@@ -22,7 +22,7 @@ run:
 skip:
   - path: gallery/notebooks/CrocoDash/features/grids/subset_global.ipynb
     reason: OOM on CI runner; needs smaller test data pointed at by known_paths.json
-  - path: gallery/notebooks/CrocoDash/projects/sample_crocodash_projects/CICE_antarctica.ipynb
+  - path: gallery/notebooks/CrocoDash/use_cases/mom6_cice_antarctica.ipynb
     reason: Bathymetry regridding OOM; needs ci-skip cell tags added first
   - path: gallery/notebooks/CrocoDash/features/coupling/add_bgc.ipynb
     reason: BGC data on GDEX not accessible from CI runner
