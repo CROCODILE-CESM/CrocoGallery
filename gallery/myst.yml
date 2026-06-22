@@ -22,6 +22,8 @@ project:
       children:
         - file: notebooks/CrocoDash/tutorials/crocodash_tutorial.ipynb
           title: Getting Started
+        - file: notebooks/CrocoDash/tutorials/cli_workflow.md
+          title: CLI Workflow
         - title: Features
           children:
             - title: Grid Customization
