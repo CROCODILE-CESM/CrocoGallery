@@ -14,7 +14,6 @@ run:
   - gallery/notebooks/CrocoDash/features/data_handling/too_much_data.ipynb
   - gallery/notebooks/CrocoDash/features/grids/add_grids.ipynb
   - gallery/notebooks/CrocoDash/projects/CrocoDash.ipynb
-  - gallery/notebooks/CrocoDash/projects/sample_crocodash_projects/CICE_antarctica.ipynb
   - gallery/notebooks/CrocoDash/projects/sample_crocodash_projects/CICE_arctic.ipynb
   - gallery/notebooks/CrocoDash/projects/sample_crocodash_projects/DROF.ipynb
   - gallery/notebooks/CrocoDash/projects/sample_crocodash_projects/NWA.ipynb
