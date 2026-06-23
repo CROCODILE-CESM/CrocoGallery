@@ -18,6 +18,12 @@ project:
   toc:
     - file: README.md
 
+    - file: workshop_2026/index.md
+      title: Workshop 2026
+      children:
+        - file: workshop_2026/crocodash_tutorial.ipynb
+          title: "Session 1: CrocoDash Case Setup"
+
     - file: crocodash_index.md
       children:
         - file: crocodash/tutorials/crocodash_tutorial.ipynb
@@ -26,27 +32,14 @@ project:
           title: CLI Workflow
         - title: Features
           children:
-            - title: Grid Customization
-              children:
-                - file: crocodash/features/subset_global.ipynb
-                - file: crocodash/features/add_grids.ipynb
-            - title: Coupling
-              children:
-                - file: crocodash/features/add_bgc.ipynb
-                - file: crocodash/features/add_cice.ipynb
-            - title: Data Products
-              children:
-                - file: crocodash/features/too_much_data.ipynb
-                - file: crocodash/features/add_data_products.ipynb
-            - title: Additional Components
-              children:
-                - file: crocodash/features/add_rof.ipynb
-                - file: crocodash/features/add_runoff_product.ipynb
-                - file: crocodash/features/add_chl.ipynb
-                - file: crocodash/features/add_tides.ipynb
-            - title: New Projections
-              children:
-                - file: crocodash/features/new_projections.ipynb
+            - file: crocodash/features/custom_grids.ipynb
+            - file: crocodash/features/new_projections.ipynb
+            - file: crocodash/features/coupling.ipynb
+            - file: crocodash/features/add_tides.ipynb
+            - file: crocodash/features/add_runoff.ipynb
+            - file: crocodash/features/add_chl.ipynb
+            - file: crocodash/features/add_data_products.ipynb
+            - file: crocodash/features/too_much_data.ipynb
         - title: Use Cases
           children:
             - file: crocodash/use_cases/three_boundary_from_t232.ipynb
