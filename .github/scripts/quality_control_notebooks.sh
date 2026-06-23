@@ -9,6 +9,7 @@ GLADE_EXCEPTIONS=(
   "crocodash/use_cases"
   "diagnostics/cupid_output"
   "workshop_2026"
+  "crococamp"          # CrocoCamp notebooks are NCAR-specific; /glade paths are expected
 )
 
 filter_exceptions() {
