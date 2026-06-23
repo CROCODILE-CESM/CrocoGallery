@@ -5,6 +5,12 @@
     <loc>http://localhost:3000</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/workshop-2026</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/workshop-2026/crocodash-tutorial</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/crocodash-index</loc>
   </url>
   <url>
@@ -14,37 +20,28 @@
     <loc>http://localhost:3000/crocodash/tutorials/cli-workflow</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/crocodash/features/subset-global</loc>
+    <loc>http://localhost:3000/crocodash/features/custom-grids</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/crocodash/features/add-grids</loc>
+    <loc>http://localhost:3000/crocodash/features/new-projections</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/crocodash/features/add-bgc</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/crocodash/features/add-cice</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/crocodash/features/too-much-data</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/crocodash/features/add-data-products</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/crocodash/features/add-rof</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/crocodash/features/add-runoff-product</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/crocodash/features/add-chl</loc>
+    <loc>http://localhost:3000/crocodash/features/coupling</loc>
   </url>
   <url>
     <loc>http://localhost:3000/crocodash/features/add-tides</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/crocodash/features/new-projections</loc>
+    <loc>http://localhost:3000/crocodash/features/add-runoff</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/crocodash/features/add-chl</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/crocodash/features/add-data-products</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/crocodash/features/too-much-data</loc>
   </url>
   <url>
     <loc>http://localhost:3000/crocodash/use-cases/three-boundary-from-t232</loc>
