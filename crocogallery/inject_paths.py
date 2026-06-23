@@ -1,7 +1,6 @@
 import json
 from pathlib import Path
 import os
-import nbformat
 import argparse
 
 
@@ -37,6 +36,7 @@ def reverse_inject_text(text, paths):
 
 
 def process_notebook(notebook_path, paths, reverse):
+    import nbformat
     print(f"Processing: {notebook_path}")
     nb = nbformat.read(notebook_path, as_version=4)
     changed = False
