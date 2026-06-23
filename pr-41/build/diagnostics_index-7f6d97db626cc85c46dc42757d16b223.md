@@ -41,27 +41,27 @@ description: CUPiD-powered diagnostics and analysis for regional MOM6 ocean mode
 ## Explore the Notebooks
 
 <div class="cd-nav-cards">
-  <a class="cd-nav-card" href="notebooks/diagnostics/CUPiD_intro">
+  <a class="cd-nav-card" href="diagnostics/CUPiD_intro">
     <h3>CUPiD Introduction</h3>
     <p>Overview of CUPiD and how it fits into the regional MOM6 diagnostics workflow.</p>
   </a>
-  <a class="cd-nav-card" href="notebooks/diagnostics/CUPiD_for_regional_MOM6">
+  <a class="cd-nav-card" href="diagnostics/CUPiD_for_regional_MOM6">
     <h3>CUPiD for Regional MOM6</h3>
     <p>Applying CUPiD diagnostics specifically to regional MOM6 model output.</p>
   </a>
-  <a class="cd-nav-card" href="notebooks/diagnostics/CUPiD_in_CESM_Workflow">
+  <a class="cd-nav-card" href="diagnostics/CUPiD_in_CESM_Workflow">
     <h3>CUPiD in the CESM Workflow</h3>
     <p>Integrating CUPiD into your end-to-end CESM case post-processing pipeline.</p>
   </a>
-  <a class="cd-nav-card" href="notebooks/diagnostics/standalone_CUPiD">
+  <a class="cd-nav-card" href="diagnostics/standalone_CUPiD">
     <h3>Standalone CUPiD</h3>
     <p>Running CUPiD outside of CESM for standalone MOM6 or custom configurations.</p>
   </a>
-  <a class="cd-nav-card" href="notebooks/diagnostics/CUPiD_output">
+  <a class="cd-nav-card" href="diagnostics/CUPiD_output">
     <h3>Understanding CUPiD Output</h3>
     <p>A guide to reading and interpreting CUPiD diagnostic output files and plots.</p>
   </a>
-  <a class="cd-nav-card" href="notebooks/diagnostics/contributing_to_CUPiD">
+  <a class="cd-nav-card" href="diagnostics/contributing_to_CUPiD">
     <h3>Contributing to CUPiD</h3>
     <p>How to add new diagnostics, notebooks, or datasets to the CUPiD framework.</p>
   </a>

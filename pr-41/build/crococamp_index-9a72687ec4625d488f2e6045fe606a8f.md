@@ -10,7 +10,7 @@ description: Model–observation comparisons for regional MOM6 using CrocoLake, 
     Model–observation comparisons for regional MOM6 using CrocoLake — a cloud-optimized,
     Parquet-based observational database for fast access to observational data.
   </p>
-  <a class="cd-btn cd-btn--outline" href="notebooks/projects/model-obs_comparison">Get Started →</a>
+  <a class="cd-btn cd-btn--outline" href="crococamp/model-obs_comparison">Get Started →</a>
 </div>
 
 ## What's Here
@@ -29,7 +29,7 @@ description: Model–observation comparisons for regional MOM6 using CrocoLake, 
 </div>
 
 <div class="cd-nav-cards">
-  <a class="cd-nav-card" href="notebooks/projects/model-obs_comparison">
+  <a class="cd-nav-card" href="crococamp/model-obs_comparison">
     <h3>Model–Obs Comparison</h3>
     <p>End-to-end walkthrough: query CrocoLake, collocate with model output, and visualize the comparison.</p>
   </a>
