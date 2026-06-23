@@ -8,7 +8,7 @@ tutorial or notebook in the gallery — no separate install needed.
 
 <!-- Replace the src URL with: File → Share → Publish to web → Embed → copy URL -->
 <iframe
-  src="https://docs.google.com/document/d/PLACEHOLDER/pub?embedded=true"
+  src="https://docs.google.com/document/d/e/2PACX-1vTT0OYZkaimKQAfdpB2u5OyqLKdJ2TrB2trDu4bbHAFC2lPGYzZJ9fAzOYYVsdIFBHqRizsZwa1MMFe/pub?embedded=true"
   width="100%"
   height="520"
   frameborder="0"
