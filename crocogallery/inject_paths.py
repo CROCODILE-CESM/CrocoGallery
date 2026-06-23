@@ -1,7 +1,6 @@
 import json
 from pathlib import Path
 import os
-import nbformat
 import argparse
 
 
@@ -37,6 +36,7 @@ def reverse_inject_text(text, paths):
 
 
 def process_notebook(notebook_path, paths, reverse):
+    import nbformat
     print(f"Processing: {notebook_path}")
     nb = nbformat.read(notebook_path, as_version=4)
     changed = False
@@ -57,19 +57,17 @@ def process_notebook(notebook_path, paths, reverse):
 
 def main(reverse=False, machine="derecho"):
     paths = load_paths(machine)
-    # gallery/notebooks/ is sibling to this package directory
-    notebooks_path = Path(__file__).parent.parent / "gallery" / "notebooks"
-    # ci_case_setup.ipynb lives in tools/ alongside the package
-    ci_notebook = Path(__file__).parent.parent / "tools" / "ci_case_setup.ipynb"
+    gallery_root = Path(__file__).parent.parent
+    ci_notebook = gallery_root / "tools" / "ci_case_setup.ipynb"
 
     if ci_notebook.exists():
         process_notebook(ci_notebook, paths, reverse)
 
-    for root, _, files in os.walk(notebooks_path):
-        for name in files:
-            if not name.endswith(".ipynb"):
-                continue
-            process_notebook(Path(root) / name, paths, reverse)
+    skip = {".ipynb_checkpoints", "_build", "__pycache__"}
+    for nb_path in sorted(gallery_root.rglob("*.ipynb")):
+        if any(part in skip for part in nb_path.parts):
+            continue
+        process_notebook(nb_path, paths, reverse)
 
 
 if __name__ == "__main__":

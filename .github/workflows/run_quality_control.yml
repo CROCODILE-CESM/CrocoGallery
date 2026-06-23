@@ -18,6 +18,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install pyyaml -e .
       - name: Check all notebooks (except exclusions) are in run_notebooks.yml matrix
         run: |
           bash .github/scripts/check_notebook_coverage.sh

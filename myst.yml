@@ -1,0 +1,101 @@
+version: 1
+project:
+  title: CROCOGallery
+  github: CROCODILE-CESM/CrocoGallery
+  parts:
+    banner: |
+      <strong>Looking for the old CrocoGallery?</strong>
+      No worries — the 2025 CROCODILE workshop site is
+      <a href="https://crocodile-cesm.github.io/CrocoGallery/workshop_2025">
+      right here →
+      </a>
+  bibliography:
+    - references.bib
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/book.pdf
+  toc:
+    - file: README.md
+
+    - file: crocodash_index.md
+      children:
+        - file: crocodash/tutorials/crocodash_tutorial.ipynb
+          title: Getting Started
+        - file: crocodash/tutorials/cli_workflow.md
+          title: CLI Workflow
+        - title: Features
+          children:
+            - title: Grid Customization
+              children:
+                - file: crocodash/features/subset_global.ipynb
+                - file: crocodash/features/add_grids.ipynb
+            - title: Coupling
+              children:
+                - file: crocodash/features/add_bgc.ipynb
+                - file: crocodash/features/add_cice.ipynb
+            - title: Data Products
+              children:
+                - file: crocodash/features/too_much_data.ipynb
+                - file: crocodash/features/add_data_products.ipynb
+            - title: Additional Components
+              children:
+                - file: crocodash/features/add_rof.ipynb
+                - file: crocodash/features/add_runoff_product.ipynb
+                - file: crocodash/features/add_chl.ipynb
+                - file: crocodash/features/add_tides.ipynb
+            - title: New Projections
+              children:
+                - file: crocodash/features/new_projections.ipynb
+        - title: Use Cases
+          children:
+            - file: crocodash/use_cases/three_boundary_from_t232.ipynb
+            - file: crocodash/use_cases/three_boundary.ipynb
+            - file: crocodash/use_cases/mom6_cice_antarctica.ipynb
+
+    - file: diagnostics_index.md
+      children:
+        - file: diagnostics/CUPiD_for_regional_MOM6.md
+          title: CUPiD Diagnostics Tutorial
+          children:
+            - file: diagnostics/CUPiD_intro.md
+              title: Installing CUPiD
+            - file: diagnostics/standalone_CUPiD.md
+              title: Running a CUPiD Example
+            - file: diagnostics/CUPiD_output.md
+              title: Output from CUPiD Example
+              children:
+                - file: diagnostics/cupid_output/Regional_Ocean_Report_Card.ipynb
+                - file: diagnostics/cupid_output/Regional_Ocean_Animations.ipynb
+                - file: diagnostics/cupid_output/Regional_Ocean_Atmospheric_Forcing.ipynb
+                - file: diagnostics/cupid_output/Regional_Ocean_OBC.ipynb
+        - file: diagnostics/CUPiD_projects.md
+          title: Advanced CUPiD
+          children:
+            - file: diagnostics/CUPiD_in_CESM_Workflow.md
+              title: Running CUPiD within CESM
+            - file: diagnostics/contributing_to_CUPiD.md
+              title: Contributing to CUPiD
+        - file: crococamp/CARIB12_EKE_TS.ipynb
+          title: CARIB12 EKE Analysis
+
+    - file: crococamp_index.md
+      children:
+        - file: crococamp/model-obs_comparison.md
+          title: Tutorials for Model-Observation Comparison
+          children:
+            - file: crococamp/tutorial1_MOM6-CL-comparison.ipynb
+            - file: crococamp/tutorial2_MOM6-CL-comparison-float.ipynb
+            - file: crococamp/tutorial3_CrocoLake_map_temperature.ipynb
+            - file: crococamp/tutorial4_MOM6-WOD13-comparison.ipynb
+        - title: Model-Observation Comparison Examples
+          children:
+            - file: crococamp/model-obs_your_own_model.ipynb
+
+site:
+  options:
+    logo: long_crocodile.png
+    folders: true
+    favicon: crocodile.png
+    style: _static/custom.css
+  template: book-theme
