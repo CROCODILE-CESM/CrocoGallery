@@ -6,23 +6,18 @@
 run:
   - crocodash/tutorials/crocodash_tutorial.ipynb
   - crocodash/features/add_chl.ipynb
-  - crocodash/features/add_rof.ipynb
-  - crocodash/features/add_runoff_product.ipynb
+  - crocodash/features/add_runoff.ipynb
   - crocodash/features/add_tides.ipynb
-  - crocodash/features/add_cice.ipynb
+  - crocodash/features/coupling.ipynb        # BGC cells tagged ci-skip; CICE section runs
+  - crocodash/features/custom_grids.ipynb    # Section B regridding tagged ci-skip
   - crocodash/features/add_data_products.ipynb
   - crocodash/features/too_much_data.ipynb
-  - crocodash/features/add_grids.ipynb
   - crocodash/use_cases/three_boundary_from_t232.ipynb
 
 skip:
-  - path: crocodash/features/subset_global.ipynb
-    reason: OOM on CI runner; needs smaller test data pointed at by known_paths.json
   - path: crocodash/features/new_projections.ipynb
     reason: Uses GridCreator interactive widget; not runnable headlessly
   - path: crocodash/use_cases/mom6_cice_antarctica.ipynb
     reason: Bathymetry regridding OOM; needs ci-skip cell tags added first
-  - path: crocodash/features/add_bgc.ipynb
-    reason: BGC data on GDEX not accessible from CI runner
   - path: crocodash/use_cases/three_boundary.ipynb
     reason: Superseded by three_boundary_from_t232.ipynb for CI; too expensive to run both

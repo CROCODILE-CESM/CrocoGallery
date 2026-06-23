@@ -1,15 +1,16 @@
 #!/bin/bash
+# Checks that notebooks do not contain hardcoded /glade paths.
+# Paths that legitimately contain /glade (e.g. Derecho-specific note cells)
+# are listed in GLADE_EXCEPTIONS below.
 
-# Exceptions for /glade paths
 GLADE_EXCEPTIONS=(
-  "gallery/notebooks/CrocoDash/projects"
-  "gallery/notebooks/projects"
-  "gallery/notebooks/CrocoDash/features"
-  "gallery/notebooks/CrocoDash/tutorials"
-  "gallery/notebooks/diagnostics/cupid_output"
+  "crocodash/features"
+  "crocodash/tutorials"
+  "crocodash/use_cases"
+  "diagnostics/cupid_output"
+  "workshop_2026"
 )
 
-## Function to filter out exceptions (files & folders)
 filter_exceptions() {
   local matches="$1"
   shift
@@ -21,7 +22,8 @@ filter_exceptions() {
 }
 
 echo "Checking for hardcoded '/glade' paths..."
-matches=$(grep -rnw --include="*.ipynb" -e "/glade" gallery/notebooks || true)
+matches=$(grep -rnw --include="*.ipynb" -e "/glade" \
+  crocodash/ crococamp/ diagnostics/ tools/ workshop_2026/ 2>/dev/null || true)
 matches=$(filter_exceptions "$matches" "${GLADE_EXCEPTIONS[@]}")
 
 if [[ -n "$matches" ]]; then
@@ -30,5 +32,5 @@ if [[ -n "$matches" ]]; then
   echo "Please remove or parameterize them."
   exit 1
 else
-  echo "✅ No '/glade' paths found."
+  echo "✅ No unexpected '/glade' paths found."
 fi
