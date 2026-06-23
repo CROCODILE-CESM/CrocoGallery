@@ -13,7 +13,7 @@ tutorial or notebook in the gallery — no separate install needed.
   height="520"
   frameborder="0"
   style="border:1px solid #e0e0e0; border-radius:4px;">
-  <a href="https://docs.google.com/document/d/PLACEHOLDER">
+  <a href="https://docs.google.com/document/d/1zLcMDwWS8vMNpXOzU1JkSlXAePDdutCHVwG48DkeLNA/edit?usp=sharing">
     Workshop Agenda (Google Doc)
   </a>
 </iframe>
