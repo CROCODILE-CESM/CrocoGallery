@@ -22,7 +22,7 @@ project:
       title: Workshop 2026
       children:
         - file: workshop_2026/crocodash_tutorial.ipynb
-          title: "Session 1: CrocoDash Case Setup"
+
 
     - file: crocodash_index.md
       children:
