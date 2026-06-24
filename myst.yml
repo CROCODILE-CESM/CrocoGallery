@@ -19,10 +19,7 @@ project:
     - file: README.md
 
     - file: workshop_2026/index.md
-      title: Workshop 2026
-      children:
-        - file: workshop_2026/crocodash_tutorial.ipynb
-
+      title: 2026 Crocodile Workshop
 
     - file: crocodash_index.md
       children:
@@ -48,31 +45,33 @@ project:
 
     - file: diagnostics_index.md
       children:
-        - file: diagnostics/CUPiD_for_regional_MOM6.md
-          title: CUPiD Diagnostics Tutorial
+        - file: diagnostics/mom6_tools.md
+          title: mom6-tools
+        - title: CUPiD (Legacy)
           children:
-            - file: diagnostics/CUPiD_intro.md
-              title: Installing CUPiD
-            - file: diagnostics/standalone_CUPiD.md
-              title: Running a CUPiD Example
-            - file: diagnostics/CUPiD_output.md
-              title: Output from CUPiD Example
+            - file: diagnostics/CUPiD_for_regional_MOM6.md
+              title: CUPiD Diagnostics Tutorial
               children:
-                - file: diagnostics/cupid_output/Regional_Ocean_Report_Card.ipynb
-                - file: diagnostics/cupid_output/Regional_Ocean_Animations.ipynb
-                - file: diagnostics/cupid_output/Regional_Ocean_Atmospheric_Forcing.ipynb
-                - file: diagnostics/cupid_output/Regional_Ocean_OBC.ipynb
-        - file: diagnostics/CUPiD_projects.md
-          title: Advanced CUPiD
-          children:
-            - file: diagnostics/CUPiD_in_CESM_Workflow.md
-              title: Running CUPiD within CESM
-            - file: diagnostics/contributing_to_CUPiD.md
-              title: Contributing to CUPiD
-        - file: crococamp/CARIB12_EKE_TS.ipynb
-          title: CARIB12 EKE Analysis
+                - file: diagnostics/CUPiD_intro.md
+                  title: Installing CUPiD
+                - file: diagnostics/standalone_CUPiD.md
+                  title: Running a CUPiD Example
+                - file: diagnostics/CUPiD_output.md
+                  title: Output from CUPiD Example
+                  children:
+                    - file: diagnostics/cupid_output/Regional_Ocean_Report_Card.ipynb
+                    - file: diagnostics/cupid_output/Regional_Ocean_Animations.ipynb
+                    - file: diagnostics/cupid_output/Regional_Ocean_Atmospheric_Forcing.ipynb
+                    - file: diagnostics/cupid_output/Regional_Ocean_OBC.ipynb
+            - file: diagnostics/CUPiD_projects.md
+              title: Advanced CUPiD
+              children:
+                - file: diagnostics/CUPiD_in_CESM_Workflow.md
+                  title: Running CUPiD within CESM
+                - file: diagnostics/contributing_to_CUPiD.md
+                  title: Contributing to CUPiD
 
-    - file: crococamp_index.md
+    - file: model2obs_index.md
       children:
         - file: crococamp/model-obs_comparison.md
           title: Tutorials for Model-Observation Comparison
@@ -84,6 +83,8 @@ project:
         - title: Model-Observation Comparison Examples
           children:
             - file: crococamp/model-obs_your_own_model.ipynb
+            - file: crococamp/CARIB12_EKE_TS.ipynb
+              title: CARIB12 EKE Analysis
 
 site:
   options:

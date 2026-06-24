@@ -1,23 +1,23 @@
 # Model-Observations Comparison
 
-These tutorials and projects all use [CrocoCamp](https://github.com/CROCODILE-CESM/CrocoCamp/tree/2025-Crocodile-Workshop), and are expected to run on NCAR's Casper machine. If you want to run them outside of Casper, see [below](#CrocoCamp-outside-of-Casper).
+These tutorials and projects all use [model2obs](https://github.com/CROCODILE-CESM/model2obs), and are expected to run on NCAR's Casper machine. If you want to run them outside of Casper, see [below](#model2obs-outside-of-Casper).
 
-## Installing CrocoCamp
+## Installing model2obs
 
-To install CrocoCamp, open a terminal session and run
+To install model2obs, open a terminal session and run
 
 ```
-git clone https://github.com/CROCODILE-CESM/CrocoCamp.git --branch 2025-Crocodile-Workshop --single-branch
-cd CrocoCamp
+git clone https://github.com/CROCODILE-CESM/model2obs.git
+cd model2obs
 ./install.sh
-conda activate crococamp-2025
+conda activate model2obs
 ```
 
-Note that the [CrocoLake's project](tutorial3_CrocoLake_map_temperature.ipynb) does not *need* CrocoCamp: CrocoLake is a dataset, not a python package, and installing dask, cartopy, and matplotlib is sufficient to read it and make maps. However, CrocoCamp comes with those packages, so if you have installed it already during the workshop, you can directly use the `crococamp-2025` environment to run CrocoLake's project too.
+Note that the [CrocoLake's project](tutorial3_CrocoLake_map_temperature.ipynb) does not *need* model2obs: CrocoLake is a dataset, not a python package, and installing dask, cartopy, and matplotlib is sufficient to read it and make maps. However, model2obs comes with those packages, so if you have installed it already during the workshop, you can directly use the `model2obs` environment to run CrocoLake's project too.
 
-## CrocoCamp outside of Casper
+## model2obs outside of Casper
 
-CrocoCamp uses DART under the hood, and for this workshop we have set up a DART executable on Casper. If you need to run CrocoCamp outside of Casper, you basically need to compile DART on the machine where you want to run it.
+model2obs uses DART under the hood, and for this workshop we have set up a DART executable on Casper. If you need to run model2obs outside of Casper, you basically need to compile DART on the machine where you want to run it.
 
 #### On Derecho
 
@@ -57,4 +57,4 @@ or the path you chose.
 
 Installing DART differs from machine to machine and we refer you to DART's installation guide.
 
-Once you installed DART succesfully, you can set `perfect_model_obs_dir` in your config file to point to `models/MOM6/work/` from the DART root directory. 
+Once you installed DART succesfully, you can set `perfect_model_obs_dir` in your config file to point to `models/MOM6/work/` from the DART root directory.
