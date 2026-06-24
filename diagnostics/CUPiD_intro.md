@@ -25,7 +25,7 @@ so we don't need include that part of the path in step 2 above.
 
 ### 0.2 Open a terminal
 Open a Terminal instance by scrolling all the way down in the launcher tab and selecting **Terminal**.
-![Jupyter Terminal](../../images/CUPiD/Jupyter_Terminal.png)
+![Jupyter Terminal](../images/CUPiD/Jupyter_Terminal.png)
 This will open a terminal with the following prompt:
 `USERNAME@crhtcXX:/glade/work/USERNAME/crocodile_2025>`
 
@@ -169,7 +169,7 @@ As you can see in the [CUPiD github repository](https://github.com/NCAR/CUPiD),
 CUPiD has a bunch of subdirectories.
 For this walkthrough, we'll talk about on just four of them:
 
-![A list of 11 directories; cupid, environments, examples, and nblibrary are circled](../../images/CUPiD/dir_structure_toplevel.png)
+![A list of 11 directories; cupid, environments, examples, and nblibrary are circled](../images/CUPiD/dir_structure_toplevel.png)
 
 #### `cupid/`
 
@@ -201,7 +201,7 @@ It is not needed for most CUPiD users.
 The `examples/` directory contains subdirectories,
 each with its own `config.yml` file:
 
-![A list of 4 directories: additional_metrics, external_diag_packages, key_metrics, and regional_ocean](../../images/CUPiD/dir_structure_examples.png)
+![A list of 4 directories: additional_metrics, external_diag_packages, key_metrics, and regional_ocean](../images/CUPiD/dir_structure_examples.png)
 
 The directory names give a hint as to what the configuration file will provide:
 
@@ -228,12 +228,12 @@ it expects the user to do so manually.
 CUPiD curates a library of notebooks that can be run by `cupid-diagnostics` if the `config.yml` file requests it.
 It contains subdirectories for each component of CESM:
 
-![A list of 7 directories: atm, glc, ice, infrastructure, lnd, ocn, rof](../../images/CUPiD/dir_structure_nblibrary.png)
+![A list of 7 directories: atm, glc, ice, infrastructure, lnd, ocn, rof](../images/CUPiD/dir_structure_nblibrary.png)
 
 And then each subdirectory contains one or more notebooks.
 For example, the `ocn/` directory has:
 
-![A list of 6 files: Global_Ocean_Surface.ipynb,       Regional_Ocean_Atmospheric_Forcing.ipynb,  Regional_Ocean_Report_Card.ipynb, Regional_Ocean_Animations.ipynb, Regional_Ocean_OBC.ipynb, regional_utils.py](../../images/CUPiD/dir_structure_nblibrary_ocn.png)
+![A list of 6 files: Global_Ocean_Surface.ipynb,       Regional_Ocean_Atmospheric_Forcing.ipynb,  Regional_Ocean_Report_Card.ipynb, Regional_Ocean_Animations.ipynb, Regional_Ocean_OBC.ipynb, regional_utils.py](../images/CUPiD/dir_structure_nblibrary_ocn.png)
 
 **Spoiler alert:** you're going to run the four notebooks starting with `Regional_Ocean_`.
 

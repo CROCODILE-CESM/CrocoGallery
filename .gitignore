@@ -4,7 +4,7 @@ path_to_datasets_loc.json
 *_temp/
 .DS_Store
 .vscode/
-
+_build/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

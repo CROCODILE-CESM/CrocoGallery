@@ -117,7 +117,7 @@ While we're waiting for CUPiD, let's revisit the famous `config.yml` file. It's 
 
 The first section in the `config.yml` file is `data_sources`:
 
-![data sources section of config.yml](../../images/CUPiD/data_sources.png)
+![data sources section of config.yml](../images/CUPiD/data_sources.png)
 
 This typically does not need to be edited by the user,
 and may be removed in favor of command-line arguments to the `cupid-diagnostics` script.
@@ -131,7 +131,7 @@ this section typically does not need to be modified by users and may turn into c
 It provides the name of the conda environment to run notebooks in by default (users can specify different environments for individual notebooks),
 and it also sets logging information:
 
-![computational configuration section of config.yml](../../images/CUPiD/computation_config.png)
+![computational configuration section of config.yml](../images/CUPiD/computation_config.png)
 
 ### `global_params` Section
 
@@ -140,7 +140,7 @@ These are typically variables associated with the runs being compared
 (things like CESM case names, location of data, length of the run, and so on).
 For `regional_ocean`, there are some parameters we want to pass to every ocean notebook and they are included here as well:
 
-![global parameters section of config.yml](../../images/CUPiD/global_params.png)
+![global parameters section of config.yml](../images/CUPiD/global_params.png)
 
 ### `time_series` Section
 
@@ -150,7 +150,7 @@ The notebooks provided for this tutorial read history files,
 and the interface for this section is still under development,
 so we won't spend much time discussing it.
 
-![time series generation section of config.yml](../../images/CUPiD/timeseries.png)
+![time series generation section of config.yml](../images/CUPiD/timeseries.png)
 
 <div class="alert alert-warning">
 <details>
@@ -183,7 +183,7 @@ and CUPiD will look in `nblibrary/{component}` for that file.
 In this example, CUPiD will run `nblibrary/atm/Regional_Ocean_Report_Card.ipynb`.
 You can provide more than one notebook per component.
 
-![compute notebooks section of config.yml](../../images/CUPiD/compute_notebooks.png)
+![compute notebooks section of config.yml](../images/CUPiD/compute_notebooks.png)
 
 ### `book_toc` Section
 
@@ -197,7 +197,7 @@ Our examples organize the pages by component,
 but in other cases it may make sense to group notebooks differently
 (e.g. global surface plots in one section, time series plots of global means in another).
 
-![jupyter book table of contents section of config.yml](../../images/CUPiD/book_toc.png)
+![jupyter book table of contents section of config.yml](../images/CUPiD/book_toc.png)
 
 ### `book_config_keys` Section
 
@@ -205,7 +205,7 @@ This section is used to set the title of the Jupyter Book webpage.
 It should probable be combined with the `book_toc` section,
 or maybe it should be a command line argument instead.
 
-![jupyter book configuration section of config.yml](../../images/CUPiD/book_config_keys.png)
+![jupyter book configuration section of config.yml](../images/CUPiD/book_config_keys.png)
 
 ### Where are my notebooks?
 Remember that the notebooks all run in `nblibrary`, but after `cupid-diagnostics` has finished, the notebooks are all copied over the the `run_dir` in the config file (in this case the same directory as the config). This primarily matters for re-running notebooks when we would need to copy over any dependencies (e.g. `nblibrary/regional_ocean.utils.py`) and be aware of relative paths.

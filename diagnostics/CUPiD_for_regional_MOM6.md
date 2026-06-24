@@ -1,6 +1,6 @@
-# ![CUPiD Logo](../../images/CUPiD/logo.png) CUPiD Diagnostics Tutorial ![CUPiD Logo](../../images/CUPiD/logo.png)
+# ![CUPiD Logo](../images/CUPiD/logo.png) CUPiD Diagnostics Tutorial ![CUPiD Logo](../images/CUPiD/logo.png)
 
-![SST Animation](../../images/CUPiD/tos_animation.gif)
+![SST Animation](../images/CUPiD/tos_animation.gif)
 **Goal:** In this tutorial, you'll learn how to make the above animation (and other diagnostic plots).
 
 <div class="alert alert-info">

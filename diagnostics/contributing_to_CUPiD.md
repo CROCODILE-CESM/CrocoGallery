@@ -20,7 +20,7 @@ The structure of CUPiD can be confusing, but contributing is easy! Here are the 
 If you want to work with CUPiD and diagnostics as part of your 2025 Workshop project, let us know! You'll be making so many cool regional models, and you might need new cool metrics and visualizations to look at them! Here are a couple resources that might help get you started on ideas:
 - [MOM6-Tools](https://mom6-tools.readthedocs.io/examples.html) - this python package is designed and maintained by Gustavo Marques at NCAR (extra points if you talk to him this week)! It primarily hosts tools for global ocean models; maybe they could also work for regional models?
 - [MOM6 Analysis Cookbook](https://mom6-analysiscookbook.readthedocs.io/en/latest/) - from COSIMA, our collaborators in Australia! This notebook provides some more specialized tools/techniques for working with MOM6 data like xgcm and **budgets**.
-- [EKE Calculation](../projects/CARIB12_EKE_TS.ipynb) - from Giovanni Seijo-Ellis (look for him at the workshop!). This notebook calculates Eddy Kinetic Energy, specifically for a region in the Caribbean. How could we generalize this? What other metrics could we calculate?
+- [EKE Calculation](../crococamp/CARIB12_EKE_TS.ipynb) - from Giovanni Seijo-Ellis (look for him at the workshop!). This notebook calculates Eddy Kinetic Energy, specifically for a region in the Caribbean. How could we generalize this? What other metrics could we calculate?
 
 ## CUPiD Structure
 - `nblibrary`: where new notebooks will go. They are categorized by component (e.g. ocean - ocn and atmosphere - atm). Notebooks are run here by CUPiD then copied to the path from `run_dir` in the config file.

@@ -352,6 +352,30 @@
   font-style: italic;
 }
 
+/* ---- Coming Soon badge ---- */
+
+.cd-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  padding: 2px 8px;
+  border-radius: 20px;
+  vertical-align: middle;
+  margin-left: 0.4rem;
+}
+
+.cd-badge--coming-soon {
+  background: var(--croco-amber);
+  color: #fff;
+}
+
+html.dark .cd-badge--coming-soon {
+  background: var(--croco-amber-dark);
+  color: #fff;
+}
+
 /* ---- Dev warning banner ---- */
 
 .cd-dev-banner {
