@@ -18,13 +18,13 @@
     <div class="croco-hub-card__icon">📊</div>
     <h3 class="croco-hub-card__title">Diagnostics</h3>
     <p class="croco-hub-card__desc">
-      CUPiD-powered diagnostics and analysis for regional MOM6 output. Standardized report cards, animations, and forcing diagnostics.
+      mom6-tools powered diagnostics and analysis for regional MOM6 output. Time-series, surface fields, OBC diagnostics, and budget analysis.
     </p>
     <span class="croco-hub-card__cta">Explore diagnostics →</span>
   </a>
-  <a class="croco-hub-card" href="crococamp_index">
-    <div class="croco-hub-card__icon">🏕️</div>
-    <h3 class="croco-hub-card__title">CrocoCamp</h3>
+  <a class="croco-hub-card" href="model2obs_index">
+    <div class="croco-hub-card__icon">🔬</div>
+    <h3 class="croco-hub-card__title">model2obs</h3>
     <p class="croco-hub-card__desc">
       Model–observation comparisons via CrocoLake, a cloud-optimized Parquet observational database for fast access to data.
     </p>

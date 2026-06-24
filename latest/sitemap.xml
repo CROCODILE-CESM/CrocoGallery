@@ -8,9 +8,6 @@
     <loc>http://localhost:3000/workshop-2026</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/workshop-2026/crocodash-tutorial</loc>
-  </url>
-  <url>
     <loc>http://localhost:3000/crocodash-index</loc>
   </url>
   <url>
@@ -56,6 +53,9 @@
     <loc>http://localhost:3000/diagnostics-index</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/diagnostics/mom6-tools</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/diagnostics/cupid-for-regional-mom6</loc>
   </url>
   <url>
@@ -89,10 +89,7 @@
     <loc>http://localhost:3000/diagnostics/contributing-to-cupid</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/crococamp/carib12-eke-ts</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/crococamp-index</loc>
+    <loc>http://localhost:3000/model2obs-index</loc>
   </url>
   <url>
     <loc>http://localhost:3000/crococamp/model-obs-comparison</loc>
@@ -111,5 +108,8 @@
   </url>
   <url>
     <loc>http://localhost:3000/crococamp/model-obs-your-own-model</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/crococamp/carib12-eke-ts</loc>
   </url>
 </urlset>

@@ -1,16 +1,16 @@
 ---
 title: Diagnostics
-description: CUPiD-powered diagnostics and analysis for regional MOM6 ocean models. Standardized report cards, animations, and forcing diagnostics.
+description: Diagnostics and analysis for regional MOM6 ocean models using mom6-tools.
 ---
 
 <div class="croco-subspace-header croco-subspace-header--diagnostics">
   <div class="croco-subspace-header__icon">📊</div>
   <h1>Diagnostics</h1>
   <p>
-    CUPiD-powered diagnostics and analysis for regional MOM6 ocean models.
-    Run standardized report cards, animations, and forcing diagnostics on your model output.
+    Analyze and visualize regional MOM6 model output using mom6-tools — the recommended
+    diagnostics package for the CROCODILE ecosystem.
   </p>
-  <a class="cd-btn cd-btn--outline" href="https://cupid.readthedocs.io">CUPiD Docs ↗</a>
+  <a class="cd-btn cd-btn--outline" href="https://github.com/NCAR/mom6-tools">mom6-tools on GitHub ↗</a>
 </div>
 
 ## What You Can Do
@@ -18,27 +18,41 @@ description: CUPiD-powered diagnostics and analysis for regional MOM6 ocean mode
 <div class="cd-features-grid">
   <div class="cd-feature">
     <div class="cd-feature__icon">📋</div>
-    <h3>Report Cards</h3>
-    <p>Standardized diagnostic report cards that summarize model performance across key oceanographic metrics.</p>
+    <h3>Time-Series Diagnostics</h3>
+    <p>Track volume-mean temperature, salinity, and scalar metrics over the course of your model run.</p>
   </div>
   <div class="cd-feature">
-    <div class="cd-feature__icon">🎞️</div>
-    <h3>Animations</h3>
-    <p>Generate time-series animations of model output fields to visually assess model behavior and drift.</p>
-  </div>
-  <div class="cd-feature">
-    <div class="cd-feature__icon">🌬️</div>
-    <h3>Forcing Diagnostics</h3>
-    <p>Diagnose boundary condition and atmospheric forcing quality before and after a model run.</p>
+    <div class="cd-feature__icon">🌊</div>
+    <h3>Surface & Layer Fields</h3>
+    <p>Diagnose SSH, SST, MLD, and other surface and layer fields from MOM6 output.</p>
   </div>
   <div class="cd-feature">
     <div class="cd-feature__icon">🔗</div>
-    <h3>CESM Workflow Integration</h3>
-    <p>Run CUPiD diagnostics as part of your standard CESM post-processing workflow.</p>
+    <h3>OBC Diagnostics</h3>
+    <p>Inspect open boundary condition quality and variability to evaluate forcing inputs.</p>
+  </div>
+  <div class="cd-feature">
+    <div class="cd-feature__icon">📐</div>
+    <h3>Budget Analysis</h3>
+    <p>Heat and salt budget diagnostics for your regional domain.</p>
   </div>
 </div>
 
 ## Explore the Notebooks
+
+<div class="cd-nav-cards">
+  <a class="cd-nav-card" href="diagnostics/mom6_tools">
+    <h3>Getting Started with mom6-tools</h3>
+    <p>Install mom6-tools and run your first diagnostics on regional MOM6 output.</p>
+  </a>
+</div>
+
+## Legacy: CUPiD Diagnostics
+
+CUPiD was the previous diagnostics framework used in this project. It is no longer actively developed for regional MOM6 use, but the documentation is preserved below for reference.
+
+<details>
+<summary>CUPiD documentation (legacy)</summary>
 
 <div class="cd-nav-cards">
   <a class="cd-nav-card" href="diagnostics/CUPiD_intro">
@@ -66,3 +80,5 @@ description: CUPiD-powered diagnostics and analysis for regional MOM6 ocean mode
     <p>How to add new diagnostics, notebooks, or datasets to the CUPiD framework.</p>
   </a>
 </div>
+
+</details>

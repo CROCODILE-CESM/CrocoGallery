@@ -76,7 +76,7 @@ description: The Python toolkit for configuring and deploying regional MOM6 ocea
     <h3>Tutorial</h3>
     <p>End-to-end walkthrough from installation to a running regional model.</p>
   </a>
-  <a class="cd-nav-card" href="crocodash/features/add_bgc">
+  <a class="cd-nav-card" href="crocodash/features/add_chl">
     <h3>Feature Notebooks</h3>
     <p>Deep dives into specific CrocoDash capabilities — BGC, CICE, tides, runoff, and more.</p>
   </a>
