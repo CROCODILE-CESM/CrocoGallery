@@ -44,7 +44,7 @@
 
 .croco-hub__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   margin-top: 1rem;
 }
@@ -297,6 +297,11 @@
 
 .croco-subspace-header--camp {
   background: linear-gradient(135deg, #5D4037 0%, #A0692A 100%);
+  color: white;
+}
+
+.croco-subspace-header--dart {
+  background: linear-gradient(135deg, #1B5E20 0%, #388E3C 100%);
   color: white;
 }
 

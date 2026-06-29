@@ -112,4 +112,10 @@
   <url>
     <loc>http://localhost:3000/crococamp/carib12-eke-ts</loc>
   </url>
+  <url>
+    <loc>http://localhost:3000/dart-index</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/dart/dart-cesm-tutorial</loc>
+  </url>
 </urlset>

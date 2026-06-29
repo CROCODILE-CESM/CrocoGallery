@@ -30,4 +30,12 @@
     </p>
     <span class="croco-hub-card__cta">Explore comparisons →</span>
   </a>
+  <a class="croco-hub-card" href="dart_index">
+    <div class="croco-hub-card__icon">🎯</div>
+    <h3 class="croco-hub-card__title">DART Data Assimilation</h3>
+    <p class="croco-hub-card__desc">
+      Ensemble data assimilation for regional MOM6 in CESM using DART. Observation preparation, filter configuration, assimilation cycling, and diagnostics.
+    </p>
+    <span class="croco-hub-card__cta">Run DART with CESM-MOM6 →</span>
+  </a>
 </div>
