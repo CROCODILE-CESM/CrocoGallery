@@ -24,7 +24,11 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git commit -m "Clean up preview for PR #${{ github.event.number }}"
-            git push
+            for i in 1 2 3; do
+              git pull --rebase && git push && break
+              echo "Push attempt $i failed, retrying..."
+              sleep 5
+            done
           else
             echo "No preview directory found for PR #${{ github.event.number }}, skipping."
           fi
