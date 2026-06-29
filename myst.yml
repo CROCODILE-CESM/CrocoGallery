@@ -86,6 +86,11 @@ project:
             - file: crococamp/CARIB12_EKE_TS.ipynb
               title: CARIB12 EKE Analysis
 
+    - file: dart_index.md
+      children:
+        - file: dart/dart_cesm_tutorial.ipynb
+          title: Running DART with CESM-MOM6
+
 site:
   options:
     logo: long_crocodile.png

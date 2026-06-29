@@ -24,7 +24,7 @@ filter_exceptions() {
 
 echo "Checking for hardcoded '/glade' paths..."
 matches=$(grep -rnw --include="*.ipynb" -e "/glade" \
-  crocodash/ crococamp/ diagnostics/ tools/ workshop_2026/ 2>/dev/null || true)
+  crocodash/ crococamp/ diagnostics/ tools/ workshop_2026/ dart/ 2>/dev/null || true)
 matches=$(filter_exceptions "$matches" "${GLADE_EXCEPTIONS[@]}")
 
 if [[ -n "$matches" ]]; then
