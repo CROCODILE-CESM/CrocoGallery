@@ -21,6 +21,8 @@
     "NWA_HGRID": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/grids/nwa/ocean_hgrid.nc",
     "NWA_BATHY": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/grids/nwa/ocean_topo.nc",
     "NWA_VGRID": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/grids/nwa/vgrid_75_2m.nc",
-    "JRA_ESMF_MESH": "/glade/campaign/cesm/cesmdata/inputdata/lnd/dlnd7/JRA55/JRA.v1.4.runoff.1958_ESMFmesh_cdf5_20201020.nc"
+    "JRA_ESMF_MESH": "/glade/campaign/cesm/cesmdata/inputdata/lnd/dlnd7/JRA55/JRA.v1.4.runoff.1958_ESMFmesh_cdf5_20201020.nc",
+    "DART_CESMROOT": "/glade/derecho/scratch/hkershaw/workshop26_tests/CESM_DA",
+    "DART_WORKDIR": "/glade/work/hkershaw/crocodile_2026"
   }
 }
