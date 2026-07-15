@@ -88,8 +88,12 @@ project:
 
     - file: dart_index.md
       children:
-        - file: dart/dart_cesm_tutorial.ipynb
-          title: Running DART with CESM-MOM6
+        - file: dart/tutorial1_real_observations.ipynb
+          title: 1. Creating Observations
+        - file: dart/tutorial2_synthetic_observations.ipynb
+          title: 2. Synthetic Observations
+        - file: dart/tutorial3_cycling_dart_cesm.ipynb
+          title: 3. Cycling DART-CESM
 
 site:
   options:
