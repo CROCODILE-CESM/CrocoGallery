@@ -116,6 +116,12 @@
     <loc>http://localhost:3000/dart-index</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/dart/dart-cesm-tutorial</loc>
+    <loc>http://localhost:3000/dart/tutorial1-real-observations</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/dart/tutorial2-synthetic-observations</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/dart/tutorial3-cycling-dart-cesm</loc>
   </url>
 </urlset>

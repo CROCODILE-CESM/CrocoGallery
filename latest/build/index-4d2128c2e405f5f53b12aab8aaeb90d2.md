@@ -20,5 +20,5 @@ Welcome to the 2026 CROCODILE Workshop!
 1. CrocoDash - Setting up your regional ocean model: [CrocoDash Tutorial](../crocodash/tutorials/crocodash_tutorial.ipynb)
 2. mom6-tools - Diagnosing your regional ocean model: COMING SOON
 3. model2obs - Observation Model Comparisons: COMING SOON
-4. DART - Data Assimilation with MOM6 in the CESM: COMING SOON
+4. DART - Data Assimilation with MOM6 in CESM: [DART Tutorial Series](../dart_index.md)
 
