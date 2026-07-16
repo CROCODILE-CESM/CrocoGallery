@@ -89,11 +89,11 @@ project:
     - file: dart_index.md
       children:
         - file: dart/tutorial1_real_observations.ipynb
-          title: 1. Creating Observations
+          title: Preparing Real Observations
         - file: dart/tutorial2_synthetic_observations.ipynb
-          title: 2. Synthetic Observations
+          title: Creating Synthetic Observations
         - file: dart/tutorial3_cycling_dart_cesm.ipynb
-          title: 3. Cycling DART-CESM
+          title: Cycling DART-CESM
 
 site:
   options:
