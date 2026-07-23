@@ -1,5 +1,15 @@
 # Running CrocoDash from the CLI
 
+```{caution}
+This tutorial describes CLI commands that are still in development on the
+`cli-workflow` branch and aren't in a released CrocoDash version yet.
+`create`, `dump`, `bundle`, `fork`, and `duplicate` exist there and are close
+to merging. `template` (this page's step 1) has no working implementation on
+that branch — its only prototype is on a separate, stale branch and its exact
+flags may still change. Check back once `cli-workflow` merges before relying
+on this page.
+```
+
 CrocoDash cases can be set up entirely from the command line using a YAML config file — no Python scripting required.
 
 The workflow is three steps:

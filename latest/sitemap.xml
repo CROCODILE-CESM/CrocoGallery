@@ -41,6 +41,9 @@
     <loc>http://localhost:3000/crocodash/features/too-much-data</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/crocodash/features/interior-obc-segments</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/crocodash/use-cases/three-boundary-from-t232</loc>
   </url>
   <url>
