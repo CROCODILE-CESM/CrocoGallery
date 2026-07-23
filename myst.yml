@@ -37,6 +37,7 @@ project:
             - file: crocodash/features/add_chl.ipynb
             - file: crocodash/features/add_data_products.ipynb
             - file: crocodash/features/too_much_data.ipynb
+            - file: crocodash/features/interior_obc_segments.ipynb
         - title: Use Cases
           children:
             - file: crocodash/use_cases/three_boundary_from_t232.ipynb

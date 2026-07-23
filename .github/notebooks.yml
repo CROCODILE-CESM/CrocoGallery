@@ -12,6 +12,7 @@ run:
   - crocodash/features/custom_grids.ipynb    # Section B regridding tagged ci-skip
   - crocodash/features/add_data_products.ipynb
   - crocodash/features/too_much_data.ipynb
+  - crocodash/features/interior_obc_segments.ipynb
   - crocodash/use_cases/three_boundary_from_t232.ipynb
 
 skip:
