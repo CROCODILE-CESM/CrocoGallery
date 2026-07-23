@@ -22,3 +22,10 @@ skip:
     reason: Bathymetry regridding OOM; needs ci-skip cell tags added first
   - path: crocodash/use_cases/three_boundary.ipynb
     reason: Superseded by three_boundary_from_t232.ipynb for CI; too expensive to run both
+  - path: crocodash/features/nesting_demo.ipynb
+    reason: >-
+      Hardcodes a personal /glade/derecho/scratch GEBCO path; the
+      visualization step depends on ~/scratch/archive/gibraltar_* output from
+      a prior manual 3-domain run, not reproducible headlessly. Needs
+      known_paths.json entries and a rewritten visualization step (or
+      pre-staged CI fixtures) before it can run in CI.
