@@ -18,7 +18,7 @@ description: The Python toolkit for configuring and deploying regional MOM6 ocea
     From grid generation to boundary conditions — all in one place.
   </p>
   <div class="cd-hero__actions">
-    <a class="cd-btn cd-btn--primary" href="crocodash/tutorials/crocodash_tutorial">Get Started →</a>
+    <a class="cd-btn cd-btn--primary" href="crocodash/crocodash_tutorial">Get Started →</a>
     <a class="cd-btn cd-btn--outline" href="https://github.com/CROCODILE-CESM/CrocoDash">GitHub ↗</a>
   </div>
 </div>
@@ -72,13 +72,13 @@ description: The Python toolkit for configuring and deploying regional MOM6 ocea
 ## Explore the Content
 
 <div class="cd-nav-cards">
-  <a class="cd-nav-card" href="crocodash/tutorials/crocodash_tutorial">
+  <a class="cd-nav-card" href="crocodash/crocodash_tutorial">
     <h3>Tutorial</h3>
     <p>End-to-end walkthrough from installation to a running regional model.</p>
   </a>
-  <a class="cd-nav-card" href="crocodash/features/add_chl">
-    <h3>Feature Notebooks</h3>
-    <p>Deep dives into specific CrocoDash capabilities — BGC, CICE, tides, runoff, and more.</p>
+  <a class="cd-nav-card" href="crocodash/configure_forcings">
+    <h3>Step-by-Step Notebooks</h3>
+    <p>Deep dives into each workflow step — grids, bathymetry, case setup, forcings, and coupling (BGC, CICE).</p>
   </a>
   <a class="cd-nav-card" href="crocodash/use_cases/three_boundary">
     <h3>Use Cases</h3>

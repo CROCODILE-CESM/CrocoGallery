@@ -23,22 +23,18 @@ project:
 
     - file: crocodash_index.md
       children:
-        - file: crocodash/tutorials/crocodash_tutorial.ipynb
+        - file: crocodash/crocodash_tutorial.ipynb
           title: Getting Started
-        - file: crocodash/tutorials/cli_workflow.md
-          title: CLI Workflow
-        - title: Features
+        - file: crocodash/grids.ipynb
+        - file: crocodash/bathymetry.ipynb
+        - file: crocodash/case_setup.ipynb
+        - file: crocodash/configure_forcings.ipynb
+        - file: crocodash/process_forcings.ipynb
+        - title: Advanced
           children:
-            - file: crocodash/features/custom_grids.ipynb
-            - file: crocodash/features/new_projections.ipynb
-            - file: crocodash/features/coupling.ipynb
-            - file: crocodash/features/add_tides.ipynb
-            - file: crocodash/features/add_runoff.ipynb
-            - file: crocodash/features/add_chl.ipynb
-            - file: crocodash/features/add_data_products.ipynb
-            - file: crocodash/features/too_much_data.ipynb
-            - file: crocodash/features/interior_obc_segments.ipynb
-            - file: crocodash/features/nesting_demo.ipynb
+            - file: crocodash/advanced/nesting_demo.ipynb
+            - file: crocodash/advanced/interior_obc_segments.ipynb
+            - file: crocodash/advanced/cli_workflow.md
         - title: Use Cases
           children:
             - file: crocodash/use_cases/three_boundary_from_t232.ipynb

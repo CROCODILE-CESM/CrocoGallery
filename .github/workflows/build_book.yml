@@ -46,7 +46,7 @@ jobs:
       - name: Clear outputs from selected notebooks
         run: |
           jupyter nbconvert --clear-output --inplace \
-            crocodash/tutorials/*.ipynb \
+            crocodash/*.ipynb \
             crocodash/use_cases/*.ipynb
       - name: Build HTML Assets
         run: jupyter-book build --html

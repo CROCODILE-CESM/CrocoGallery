@@ -4,8 +4,8 @@
 # are listed in GLADE_EXCEPTIONS below.
 
 GLADE_EXCEPTIONS=(
-  "crocodash/features"
-  "crocodash/tutorials"
+  "crocodash/configure_forcings.ipynb"   # Derecho-specific note cells (TPXO/CHL/GLOFAS/MARBL default paths)
+  "crocodash/advanced/nesting_demo.ipynb"
   "crocodash/use_cases"
   "diagnostics/cupid_output"
   "workshop_2026"
