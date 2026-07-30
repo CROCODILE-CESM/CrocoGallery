@@ -58,10 +58,10 @@ Edit the output and re-run with `crocodash create --config my_case.yaml --overri
 ## Submitting forcing extraction to a PBS queue
 
 Forcing extraction (`crocodash process`) can be slow enough that it shouldn't run
-on a login node. Get a starter PBS submission script the same way:
+on a login node. Get a starter PBS submission script with `--kind pbs`:
 
 ```bash
-crocodash template --output submit_forcings.pbs --machine derecho
+crocodash template --output submit_forcings.pbs --kind pbs --machine derecho
 ```
 
 Fill in your project code and caseroot, then `qsub submit_forcings.pbs`.
@@ -72,7 +72,7 @@ Fill in your project code and caseroot, then `qsub submit_forcings.pbs`.
 
 | Command | Purpose |
 |---|---|
-| `crocodash template` | Write a starter config (`.yaml`), notebook (`.ipynb`), script (`.py`), or PBS submission script (`.pbs`) |
+| `crocodash template` | Write a starter case file (`--kind case`, default: `.yaml` config, `.ipynb` notebook, or `.py` script) or a PBS submission script (`--kind pbs`) |
 | `crocodash create` | Create a case from a YAML config |
 | `crocodash dump` | Reconstruct YAML from an existing case |
 | `crocodash bundle` | Package a case for sharing |
