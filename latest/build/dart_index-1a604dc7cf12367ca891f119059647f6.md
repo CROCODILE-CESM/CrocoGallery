@@ -52,7 +52,7 @@ You can skip synthetic observations if you are only interested in real observati
 
 <div class="cd-nav-cards">
   <a class="cd-nav-card" href="dart/tutorial1_real_observations">
-    <h3>1. Creating Observations</h3>
+    <h3>1. Working with Real Observations</h3>
     <p>Turn real Argo profiles from CrocoLake into DART obs_seq files with dartobsgen,
     and trim them to your CrocoDash model domain. You leave with a directory of
     observations ready to assimilate.</p>
