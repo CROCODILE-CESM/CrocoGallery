@@ -14,20 +14,22 @@ description: Ensemble data assimilation for regional MOM6 in CESM using DART (Da
   <a class="cd-btn cd-btn--outline" href="dart/tutorial1_real_observations">Get Started →</a>
 </div>
 
-# What You Can Do With DART
+# What You Can Do
+
 
 <div class="cd-features-grid">
+  <div class="cd-feature">
+    <div class="cd-feature__icon">📡</div>
+    <h3>Observation Preparation</h3>
+    <p>Convert CrocoLake observations (Argo, GLODAP) into DART's
+    obs_sequence.
+    Or create synthetic observations for Observation System Simulation Experiments</p>
+  </div>
   <div class="cd-feature">
     <div class="cd-feature__icon">🔢</div>
     <h3>Ensemble Filter</h3>
     <p>Configure DART's Ensemble Filters, adaptive inflation and
     localization for regional ocean domains.</p>
-  </div>
-  <div class="cd-feature">
-    <div class="cd-feature__icon">📡</div>
-    <h3>Observation Preparation</h3>
-    <p>Convert SST, SSH, Argo T/S profiles and sea-ice observations into DART's
-    obs_sequence format using the built-in observation converters.</p>
   </div>
   <div class="cd-feature">
     <div class="cd-feature__icon">🔄</div>
