@@ -425,7 +425,7 @@ html.dark .croco-hub-card {
   border-color: #2a3a3a;
 }
 
-/* must follow `html.dark .croco-hub-card` — that rule outranks the
+/* must follow `html.dark .croco-hub-card`: that rule outranks the
    single-class .croco-hub-card--featured and would flatten the gradient */
 html.dark .croco-hub-card--featured {
   background: linear-gradient(135deg, #1e2a2a 0%, rgba(43, 181, 200, 0.14) 100%);

@@ -1,7 +1,7 @@
 <div>
   <h1>CrocoGallery</h1>
   <p>
-    Notebooks, tutorials, and showcases for the CROCODILE ecosystem — regional ocean modeling with MOM6 in CESM.
+    Notebooks, tutorials, and showcases for the CROCODILE ecosystem: regional ocean modeling with MOM6 in CESM.
   </p>
 </div>
 
@@ -19,7 +19,7 @@
     <div class="croco-hub-card__icon">🐊</div>
     <h2 class="croco-hub-card__title">CrocoDash</h2>
     <p class="croco-hub-card__desc">
-      Configure and deploy regional MOM6 ocean models. Grid generation, boundary conditions, forcing data, and coupling through the CESM — all in one Python toolkit.
+      Configure and deploy regional MOM6 ocean models. Grid generation, boundary conditions, forcing data, and coupling through the CESM. All in one Python toolkit.
     </p>
     <span class="croco-hub-card__cta">Tutorials, features, use cases →</span>
   </a>

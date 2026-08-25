@@ -7,7 +7,7 @@ description: Model–observation comparisons for regional MOM6 using CrocoLake, 
   <div class="croco-subspace-header__icon">🔬</div>
   <h1>model2obs</h1>
   <p>
-    Model–observation comparisons for regional MOM6 using CrocoLake — a cloud-optimized,
+    Model–observation comparisons for regional MOM6 using CrocoLake, a cloud-optimized,
     Parquet-based observational database for fast access to observational data.
   </p>
   <a class="cd-btn cd-btn--outline" href="https://github.com/CROCODILE-CESM/model2obs">model2obs on GitHub ↗</a>

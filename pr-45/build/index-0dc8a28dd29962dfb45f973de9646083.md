@@ -43,33 +43,12 @@ Stuck? Open an issue on
 [Bask](https://github.com/CROCODILE-CESM/Bask/issues) and we'll sort it before day one.
 :::
 
-## Practicums
-
-::::{grid} 1 1 2 2
-:::{card} 🐊 CrocoDash
-:link: ../crocodash/index.md
-Grids, bathymetry, forcing, and CESM case setup
-:::
-:::{card} 📊 Diagnostics
-:link: ../diagnostics/index.md
-mom6-tools and CUPiD: report cards, animations, OBC diagnostics.
-:::
-:::{card} 🔬 model2obs
-:link: ../model2obs/index.md
-Compare your run against CrocoLake observations.
-:::
-:::{card} 🎯 DART
-:link: ../dart/index.md
-Ensemble data assimilation for regional MOM6.
-:::
-::::
-
 (agenda)=
 ## Agenda
 
 <div class="ws-agenda">
   <div class="ws-agenda__bar">
-    <span>📅 Workshop Agenda — live document, updated as we go</span>
+    <span>📅 Workshop Agenda (live document, updated as we go)</span>
     <a href="https://docs.google.com/document/d/1zLcMDwWS8vMNpXOzU1JkSlXAePDdutCHVwG48DkeLNA/edit?usp=sharing"
        target="_blank" rel="noopener">Open in Google Docs ↗</a>
   </div>
