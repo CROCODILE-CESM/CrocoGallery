@@ -5,7 +5,7 @@ project:
   parts:
     # Retire after the workshop by commenting this block out (as the 2025 one was).
     banner: |
-      <strong>🐊 2026 CROCODILE Workshop — Sept 28 – Oct 3, NCAR Mesa Lab.</strong>
+      <strong>🐊 2026 CROCODILE Workshop,Sept 28 – Oct 3, NCAR Mesa Lab.</strong>
       [Agenda &amp; practicums →](workshop_2026/index.md)
   bibliography:
     - references.bib
