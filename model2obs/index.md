@@ -1,16 +1,16 @@
 ---
-title: CrocoCamp
+title: model2obs
 description: Model–observation comparisons for regional MOM6 using CrocoLake, a cloud-optimized Parquet observational database for fast access to observational data.
 ---
 
 <div class="croco-subspace-header croco-subspace-header--camp">
-  <div class="croco-subspace-header__icon">🏕️</div>
-  <h1>CrocoCamp</h1>
+  <div class="croco-subspace-header__icon">🔬</div>
+  <h1>model2obs</h1>
   <p>
     Model–observation comparisons for regional MOM6 using CrocoLake — a cloud-optimized,
     Parquet-based observational database for fast access to observational data.
   </p>
-  <a class="cd-btn cd-btn--outline" href="crococamp/model-obs_comparison">Get Started →</a>
+  <a class="cd-btn cd-btn--outline" href="https://github.com/CROCODILE-CESM/model2obs">model2obs on GitHub ↗</a>
 </div>
 
 ## What's Here
@@ -29,7 +29,7 @@ description: Model–observation comparisons for regional MOM6 using CrocoLake, 
 </div>
 
 <div class="cd-nav-cards">
-  <a class="cd-nav-card" href="crococamp/model-obs_comparison">
+  <a class="cd-nav-card" href="model-obs_comparison.md">
     <h3>Model–Obs Comparison</h3>
     <p>End-to-end walkthrough: query CrocoLake, collocate with model output, and visualize the comparison.</p>
   </a>

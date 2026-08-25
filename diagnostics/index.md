@@ -41,7 +41,7 @@ description: Diagnostics and analysis for regional MOM6 ocean models using mom6-
 ## Explore the Notebooks
 
 <div class="cd-nav-cards">
-  <a class="cd-nav-card" href="diagnostics/mom6_tools">
+  <a class="cd-nav-card" href="mom6_tools.md">
     <h3>Getting Started with mom6-tools <span class="cd-badge cd-badge--coming-soon">Coming Soon</span></h3>
     <p>Install mom6-tools and run your first diagnostics on regional MOM6 output.</p>
   </a>
@@ -49,4 +49,4 @@ description: Diagnostics and analysis for regional MOM6 ocean models using mom6-
 
 ---
 
-Looking for the old CUPiD documentation? It's preserved [here](diagnostics/CUPiD_for_regional_MOM6).
+Looking for the old CUPiD documentation? It's preserved [here](CUPiD_for_regional_MOM6.md).

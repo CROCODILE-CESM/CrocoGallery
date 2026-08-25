@@ -11,7 +11,7 @@ description: The Python toolkit for configuring and deploying regional MOM6 ocea
     From grid generation to boundary conditions — all in one place.
   </p>
   <div class="cd-hero__actions">
-    <a class="cd-btn cd-btn--primary" href="crocodash/crocodash_tutorial">Get Started →</a>
+    <a class="cd-btn cd-btn--primary" href="crocodash_tutorial.ipynb">Get Started →</a>
     <a class="cd-btn cd-btn--outline" href="https://github.com/CROCODILE-CESM/CrocoDash">GitHub ↗</a>
   </div>
 </div>
@@ -20,19 +20,19 @@ description: The Python toolkit for configuring and deploying regional MOM6 ocea
 
 <div class="cd-showcase-grid">
   <div class="cd-showcase-item">
-    <img src="images/CrocoDash/grid_example.png" alt="Regional grid generation" />
+    <img src="../images/CrocoDash/grid_example.png" alt="Regional grid generation" />
     <p>Regional Grid Generation</p>
   </div>
   <div class="cd-showcase-item">
-    <img src="images/CrocoDash/bathymetry.png" alt="Bathymetry and topography" />
+    <img src="../images/CrocoDash/bathymetry.png" alt="Bathymetry and topography" />
     <p>Git-Logged Bathymetry Editing</p>
   </div>
   <div class="cd-showcase-item">
-    <img src="images/CrocoDash/obc_forcing.png" alt="Open boundary condition forcing" />
+    <img src="../images/CrocoDash/obc_forcing.png" alt="Open boundary condition forcing" />
     <p>Boundary Condition Generation</p>
   </div>
   <div class="cd-showcase-item">
-    <img src="images/CrocoDash/SSH_speed.png" alt="Sea surface height and speed model output" />
+    <img src="../images/CrocoDash/SSH_speed.png" alt="Sea surface height and speed model output" />
     <p>Model Output</p>
   </div>
 </div>
@@ -65,15 +65,15 @@ description: The Python toolkit for configuring and deploying regional MOM6 ocea
 ## Explore the Content
 
 <div class="cd-nav-cards">
-  <a class="cd-nav-card" href="crocodash/crocodash_tutorial">
+  <a class="cd-nav-card" href="crocodash_tutorial.ipynb">
     <h3>Tutorial</h3>
     <p>End-to-end walkthrough from installation to a running regional model.</p>
   </a>
-  <a class="cd-nav-card" href="crocodash/configure_forcings">
+  <a class="cd-nav-card" href="configure_forcings.ipynb">
     <h3>Step-by-Step Notebooks</h3>
     <p>Deep dives into each workflow step — grids, bathymetry, case setup, forcings, and coupling (BGC, CICE).</p>
   </a>
-  <a class="cd-nav-card" href="crocodash/use_cases/three_boundary">
+  <a class="cd-nav-card" href="use_cases/three_boundary.ipynb">
     <h3>Use Cases</h3>
     <p>Real-world configurations and advanced setups for specific ocean regions.</p>
   </a>

@@ -15,7 +15,7 @@
     </p>
     <span class="croco-hub-card__cta">Agenda &amp; practicums →</span>
   </a>
-  <a class="croco-hub-card" href="crocodash_index">
+  <a class="croco-hub-card" href="crocodash/index.md">
     <div class="croco-hub-card__icon">🐊</div>
     <h2 class="croco-hub-card__title">CrocoDash</h2>
     <p class="croco-hub-card__desc">
@@ -23,7 +23,7 @@
     </p>
     <span class="croco-hub-card__cta">Tutorials, features, use cases →</span>
   </a>
-  <a class="croco-hub-card" href="diagnostics_index">
+  <a class="croco-hub-card" href="diagnostics/index.md">
     <div class="croco-hub-card__icon">📊</div>
     <h2 class="croco-hub-card__title">Diagnostics</h2>
     <p class="croco-hub-card__desc">
@@ -31,7 +31,7 @@
     </p>
     <span class="croco-hub-card__cta">Explore diagnostics →</span>
   </a>
-  <a class="croco-hub-card" href="model2obs_index">
+  <a class="croco-hub-card" href="model2obs/index.md">
     <div class="croco-hub-card__icon">🔬</div>
     <h2 class="croco-hub-card__title">model2obs</h2>
     <p class="croco-hub-card__desc">
@@ -39,7 +39,7 @@
     </p>
     <span class="croco-hub-card__cta">Explore comparisons →</span>
   </a>
-  <a class="croco-hub-card" href="dart_index">
+  <a class="croco-hub-card" href="dart/index.md">
     <div class="croco-hub-card__icon">🎯</div>
     <h2 class="croco-hub-card__title">DART Data Assimilation</h2>
     <p class="croco-hub-card__desc">
