@@ -70,6 +70,7 @@
 }
 
 .croco-hub-card--featured {
+  grid-column: 1 / -1;
   border-color: var(--croco-teal);
   background: linear-gradient(135deg, #fff 0%, var(--croco-teal-light) 100%);
 }
@@ -422,6 +423,13 @@ html.dark .croco-hub-card {
   border-color: #2a3a3a;
 }
 
+/* must follow `html.dark .croco-hub-card` — that rule outranks the
+   single-class .croco-hub-card--featured and would flatten the gradient */
+html.dark .croco-hub-card--featured {
+  background: linear-gradient(135deg, #1e2a2a 0%, rgba(43, 181, 200, 0.14) 100%);
+  border-color: var(--croco-teal);
+}
+
 html.dark .croco-hub-card__title { color: var(--croco-teal); }
 html.dark .croco-hub-card__desc  { color: #aaa; }
 html.dark .croco-hub-card__cta   { color: var(--croco-teal); }
@@ -440,3 +448,106 @@ html.dark .cd-nav-card {
 
 html.dark .cd-nav-card h3 { color: var(--croco-teal); }
 html.dark .cd-nav-card p  { color: #aaa; }
+
+/* ---- 2026 Workshop page ---- */
+
+.ws-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--croco-teal-dark) 0%, var(--croco-teal) 55%, var(--croco-amber) 145%);
+  border-radius: 16px;
+  padding: 3rem 2.5rem;
+  margin: 0.5rem 0 2rem;
+  color: #fff;
+}
+
+/* soft glow so the gradient reads as a scene, not a swatch */
+.ws-hero::after {
+  content: "";
+  position: absolute;
+  top: -45%; right: -8%;
+  width: 420px; height: 420px;
+  background: radial-gradient(circle, rgba(255,255,255,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.ws-hero > * { position: relative; }
+
+.ws-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin: 0 0 2.5rem;
+}
+
+.ws-stat {
+  background: var(--croco-teal-light);
+  border-left: 4px solid var(--croco-teal);
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+}
+
+.ws-stat__label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--croco-teal-dark);
+  margin-bottom: 0.25rem;
+}
+
+.ws-stat__value {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--croco-dark);
+  line-height: 1.35;
+}
+
+.ws-agenda {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(26, 42, 42, 0.08);
+  margin: 1.25rem 0 2rem;
+}
+
+.ws-agenda__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.6rem 1rem;
+  background: var(--croco-teal-dark);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.ws-agenda__bar a {
+  color: #fff !important;
+  text-decoration: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.ws-agenda__bar a:hover { background: rgba(255, 255, 255, 0.15); }
+
+.ws-agenda iframe {
+  display: block;
+  width: 100%;
+  height: 85vh;
+  min-height: 600px;
+  border: 0;
+}
+
+
+html.dark .ws-stat { background: rgba(43, 181, 200, 0.1); }
+html.dark .ws-stat__label { color: var(--croco-teal); }
+html.dark .ws-stat__value { color: #e6e6e6; }
+html.dark .ws-agenda { border-color: #2a3a3a; box-shadow: none; }

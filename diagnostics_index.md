@@ -13,11 +13,6 @@ description: Diagnostics and analysis for regional MOM6 ocean models using mom6-
   <a class="cd-btn cd-btn--outline" href="https://github.com/NCAR/mom6-tools">mom6-tools on GitHub ↗</a>
 </div>
 
-<div class="cd-dev-banner">
-  <strong>🚧 This section is under active development.</strong>
-  mom6-tools tutorials and notebooks for regional MOM6 are coming soon.
-</div>
-
 ## What You Can Do <span class="cd-badge cd-badge--coming-soon">Coming Soon</span>
 
 <div class="cd-features-grid">

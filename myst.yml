@@ -3,12 +3,10 @@ project:
   title: CROCOGallery
   github: CROCODILE-CESM/CrocoGallery
   parts:
+    # Retire after the workshop by commenting this block out (as the 2025 one was).
     banner: |
-      <strong>Looking for the old CrocoGallery?</strong>
-      No worries — the 2025 CROCODILE workshop site is
-      <a href="https://crocodile-cesm.github.io/CrocoGallery/workshop_2025">
-      right here →
-      </a>
+      <strong>🐊 2026 CROCODILE Workshop — Sept 28 – Oct 3, NCAR Mesa Lab.</strong>
+      [Agenda &amp; practicums →](workshop_2026/index.md)
   bibliography:
     - references.bib
   exports:
@@ -19,7 +17,7 @@ project:
     - file: README.md
 
     - file: workshop_2026/index.md
-      title: 2026 Crocodile Workshop
+      title: Welcome to the 2026 CROCODILE Workshop!
 
     - file: crocodash_index.md
       children:

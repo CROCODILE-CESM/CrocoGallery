@@ -14,7 +14,7 @@ description: Ensemble data assimilation for regional MOM6 in CESM using DART (Da
   <a class="cd-btn cd-btn--outline" href="dart/tutorial1_real_observations">Get Started →</a>
 </div>
 
-# What You Can Do
+## What You Can Do
 
 
 <div class="cd-features-grid">
@@ -47,7 +47,7 @@ description: Ensemble data assimilation for regional MOM6 in CESM using DART (Da
 
 <p>&nbsp;</p>
 
-# The Tutorial Series
+## The Tutorial Series
 
 Three notebooks, designed to be run in order - each one's output feeds the next.
 You can skip synthetic observations if you are only interested in real observations.
