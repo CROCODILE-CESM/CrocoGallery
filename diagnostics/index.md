@@ -7,7 +7,7 @@ description: Diagnostics and analysis for regional MOM6 ocean models using mom6-
   <div class="croco-subspace-header__icon">📊</div>
   <h1>Diagnostics</h1>
   <p>
-    Analyze and visualize regional MOM6 model output using mom6-tools — the recommended
+    Analyze and visualize regional MOM6 model output using mom6-tools, the recommended
     diagnostics package for the CROCODILE ecosystem.
   </p>
   <a class="cd-btn cd-btn--outline" href="https://github.com/NCAR/mom6-tools">mom6-tools on GitHub ↗</a>
