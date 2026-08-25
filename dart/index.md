@@ -11,10 +11,10 @@ description: Ensemble data assimilation for regional MOM6 in CESM using DART (Da
     Research Testbed from NSF NCAR. Constrain your model with observations
     to produce improved ocean state estimates.
   </p>
-  <a class="cd-btn cd-btn--outline" href="dart/tutorial1_real_observations">Get Started →</a>
+  <a class="cd-btn cd-btn--outline" href="tutorial1_real_observations.ipynb">Get Started →</a>
 </div>
 
-# What You Can Do
+## What You Can Do
 
 
 <div class="cd-features-grid">
@@ -47,24 +47,24 @@ description: Ensemble data assimilation for regional MOM6 in CESM using DART (Da
 
 <p>&nbsp;</p>
 
-# The Tutorial Series
+## The Tutorial Series
 
 Three notebooks, designed to be run in order - each one's output feeds the next.
 You can skip synthetic observations if you are only interested in real observations.
 
 <div class="cd-nav-cards">
-  <a class="cd-nav-card" href="dart/tutorial1_real_observations">
+  <a class="cd-nav-card" href="tutorial1_real_observations.ipynb">
     <h3>1. Working with Real Observations</h3>
     <p>Turn real Argo profiles from CrocoLake into DART obs_seq files with dartobsgen,
     and trim them to your CrocoDash model domain. You leave with a directory of
     observations ready to assimilate.</p>
   </a>
-  <a class="cd-nav-card" href="dart/tutorial2_synthetic_observations">
+  <a class="cd-nav-card" href="tutorial2_synthetic_observations.ipynb">
     <h3>2. Synthetic Observations</h3>
     <p>Sample a model state with DART's perfect_model_obs at the Tutorial 1 locations
     plus random ones you design. You leave with a synthetic observing network for an OSSE.</p>
   </a>
-  <a class="cd-nav-card" href="dart/tutorial3_cycling_dart_cesm">
+  <a class="cd-nav-card" href="tutorial3_cycling_dart_cesm.ipynb">
     <h3>3. Cycling DART–CESM</h3>
     <p>Build a multi-instance regional MOM6 ensemble in CESM, assimilate your
     observations every six hours, and diagnose the results. You leave with a running DA

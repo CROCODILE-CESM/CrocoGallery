@@ -3,12 +3,10 @@ project:
   title: CROCOGallery
   github: CROCODILE-CESM/CrocoGallery
   parts:
+    # Retire after the workshop by commenting this block out (as the 2025 one was).
     banner: |
-      <strong>Looking for the old CrocoGallery?</strong>
-      No worries — the 2025 CROCODILE workshop site is
-      <a href="https://crocodile-cesm.github.io/CrocoGallery/workshop_2025">
-      right here →
-      </a>
+      <strong>🐊 2026 CROCODILE Workshop,Sept 28 – Oct 3, NCAR Mesa Lab.</strong>
+      [Agenda &amp; practicums →](workshop_2026/index.md)
   bibliography:
     - references.bib
   exports:
@@ -19,9 +17,9 @@ project:
     - file: README.md
 
     - file: workshop_2026/index.md
-      title: 2026 Crocodile Workshop
+      title: Welcome to the 2026 CROCODILE Workshop!
 
-    - file: crocodash_index.md
+    - file: crocodash/index.md
       children:
         - file: crocodash/crocodash_tutorial.ipynb
           title: Getting Started
@@ -41,7 +39,7 @@ project:
             - file: crocodash/use_cases/three_boundary.ipynb
             - file: crocodash/use_cases/mom6_cice_antarctica.ipynb
 
-    - file: diagnostics_index.md
+    - file: diagnostics/index.md
       children:
         - file: diagnostics/mom6_tools.md
           title: mom6-tools
@@ -69,22 +67,22 @@ project:
                 - file: diagnostics/contributing_to_CUPiD.md
                   title: Contributing to CUPiD
 
-    - file: model2obs_index.md
+    - file: model2obs/index.md
       children:
-        - file: crococamp/model-obs_comparison.md
+        - file: model2obs/model-obs_comparison.md
           title: Tutorials for Model-Observation Comparison
           children:
-            - file: crococamp/tutorial1_MOM6-CL-comparison.ipynb
-            - file: crococamp/tutorial2_MOM6-CL-comparison-float.ipynb
-            - file: crococamp/tutorial3_CrocoLake_map_temperature.ipynb
-            - file: crococamp/tutorial4_MOM6-WOD13-comparison.ipynb
+            - file: model2obs/tutorial1_MOM6-CL-comparison.ipynb
+            - file: model2obs/tutorial2_MOM6-CL-comparison-float.ipynb
+            - file: model2obs/tutorial3_CrocoLake_map_temperature.ipynb
+            - file: model2obs/tutorial4_MOM6-WOD13-comparison.ipynb
         - title: Model-Observation Comparison Examples
           children:
-            - file: crococamp/model-obs_your_own_model.ipynb
-            - file: crococamp/CARIB12_EKE_TS.ipynb
+            - file: model2obs/model-obs_your_own_model.ipynb
+            - file: model2obs/CARIB12_EKE_TS.ipynb
               title: CARIB12 EKE Analysis
 
-    - file: dart_index.md
+    - file: dart/index.md
       children:
         - file: dart/tutorial1_real_observations.ipynb
           title: Preparing Real Observations
