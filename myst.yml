@@ -40,13 +40,6 @@ project:
             - file: crocodash/use_cases/mom6_cice_antarctica.ipynb
         - file: crocodash/projects/index.md
           title: Projects
-          children:
-            - file: crocodash/projects/design_your_domain.md
-            - file: crocodash/projects/forcing_experiments.md
-            - file: crocodash/projects/resolution_study.md
-            - file: crocodash/projects/make_it_stable.md
-            - file: crocodash/projects/add_a_component.md
-            - file: crocodash/projects/share_and_reproduce.md
 
     - file: diagnostics/index.md
       children:
