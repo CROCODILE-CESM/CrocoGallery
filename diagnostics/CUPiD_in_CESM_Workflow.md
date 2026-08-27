@@ -53,7 +53,7 @@ How do you use `xmlquery` to see all the variables that contain `CUPID` in their
 
 <summary>Solution</summary><br>
 
-```
+```console
 $ ./xmlquery -p CUPID
 Results in group cupid_analysis
 	CUPID_BASELINE_CASE: b.e23_alpha17f.BLT1850.ne30_t232.092

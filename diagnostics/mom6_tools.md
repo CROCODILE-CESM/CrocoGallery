@@ -25,11 +25,11 @@ pip install -e .
 
 ## What mom6-tools Provides
 
-- **Time-series diagnostics** — volume-mean temperature, salinity, and other scalar metrics over the model run
-- **Surface and layer diagnostics** — SSH, SST, MLD, and other surface fields
-- **OBC diagnostics** — inspect open boundary condition quality and variability
-- **Vertical structure** — analyze temperature/salinity profiles and stratification
-- **Budget diagnostics** — heat and salt budget analysis for regional domains
+- **Time-series diagnostics**: volume-mean temperature, salinity, and other scalar metrics over the model run
+- **Surface and layer diagnostics**: SSH, SST, MLD, and other surface fields
+- **OBC diagnostics**: inspect open boundary condition quality and variability
+- **Vertical structure**: analyze temperature/salinity profiles and stratification
+- **Budget diagnostics**: heat and salt budget analysis for regional domains
 
 ## Links
 
