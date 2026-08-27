@@ -2,9 +2,22 @@ from pathlib import Path
 
 from .inject_paths import (
     load_paths,
+    resolve_paths,
+    inject,
     inject_into_text,
     reverse_inject_text,
     process_notebook,
+    iter_notebooks,
+)
+from .template import (
+    write_template,
+    render_notebook,
+    render_script,
+    render_asset,
+    template_paths,
+    find_template_asset,
+    DEFAULT_TEMPLATE_NOTEBOOK_ID,
+    NON_PATH_KEYS,
 )
 
 # Root of the gallery repo (parent of this package directory).
@@ -38,14 +51,23 @@ def get_notebook_path(notebook_id: str) -> Path:
     notebooks = list_notebooks()
     if notebook_id not in notebooks:
         available = "\n  ".join(sorted(notebooks))
-        raise KeyError(
-            f"Unknown notebook {notebook_id!r}. Available:\n  {available}"
-        )
+        raise KeyError(f"Unknown notebook {notebook_id!r}. Available:\n  {available}")
     return notebooks[notebook_id]
 
 
 __all__ = [
     "load_paths",
+    "resolve_paths",
+    "inject",
+    "iter_notebooks",
+    "write_template",
+    "render_notebook",
+    "render_script",
+    "render_asset",
+    "template_paths",
+    "find_template_asset",
+    "DEFAULT_TEMPLATE_NOTEBOOK_ID",
+    "NON_PATH_KEYS",
     "inject_into_text",
     "reverse_inject_text",
     "process_notebook",

@@ -64,7 +64,7 @@ jobs:
 
       - name: Inject paths into notebooks
         run: |
-          conda run -n CrocoDash python -m crocogallery
+          conda run -n CrocoDash python -m crocogallery inject
 
       - name: Create CI case
         run: |
