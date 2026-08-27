@@ -1,23 +1,21 @@
 ---
-title: Projects
-description: Standalone CrocoDash projects. The tutorials teach the tools; each project is one problem to solve on a region of your own.
+title: CROCODILE 2026 Workshop Projects
+description: Standalone CrocoDash projects. The tutorials teach the tools; each project is one sample problem to solve on a region of your own.
 ---
 
-# Projects
+# CROCODILE 2026 Workshop Projects
 
-The tutorials walk you through CrocoDash step by step. A project gives you a problem
-instead, on a region you pick, and expects you to go back to the tutorials for the how.
+Let's get hacking! Here are some projects to get you started, whether you arrived with a
+research question or are still looking for one. Each project stands on its own — start anywhere.
 
-Each project stands on its own — start anywhere.
+| Project | What it's useful for |
+|---|---|
+| CICE | Adding sea ice to a regional case — high-latitude domains where ice cover sets the surface fluxes |
+| WW3 | Coupling surface waves |
+| MARBL | Adding ocean biogeochemistry |
+| KitchenSink | Running everything |
 
-| Project | The problem | Builds on |
-|---|---|---|
-| Design your domain | Get a region you care about from a bounding box to a case that runs | [grids](../grids.ipynb), [bathymetry](../bathymetry.ipynb), [case setup](../case_setup.ipynb), [forcings](../process_forcings.ipynb) |
-| Force it differently | Change what drives the boundaries and surface, and show what it did to the solution | [configure forcings](../configure_forcings.ipynb) |
-| Resolution study | Run one region at two resolutions and defend a choice with evidence | [grids](../grids.ipynb) |
-| Make it stable | Find out why a case blows up and fix the cause, not the timestep | [bathymetry](../bathymetry.ipynb), [interior OBC segments](../advanced/interior_obc_segments.ipynb) |
-| Add a component | Couple sea ice, waves, or BGC to a working ocean-only case | [MOM6 + CICE](../use_cases/mom6_cice_antarctica.ipynb) |
-| Share and reproduce | Bundle your case, run someone else's, find where portability breaks | [CLI workflow](../advanced/cli_workflow.md) |
-
+:::{tip}
 Keep the domain small — a few degrees on a side, a few days of simulation. A region you
 can force and run beats one you can only describe.
+:::
