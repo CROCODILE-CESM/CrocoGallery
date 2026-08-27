@@ -8,7 +8,7 @@ project:
       <strong>🐊 2026 CROCODILE Workshop,Sept 28 – Oct 3, NCAR Mesa Lab.</strong>
       [Agenda &amp; practicums →](workshop_2026/index.md)
   bibliography:
-    - references.bib
+    - _static/references.bib
   exports:
     - format: pdf
       template: plain_latex_book
@@ -40,6 +40,8 @@ project:
             - file: crocodash/use_cases/mom6_cice_antarctica.ipynb
         - file: crocodash/projects/index.md
           title: Projects
+          children:
+        - file: crocodash/projects/ocean_only.ipynb
 
     - file: diagnostics/index.md
       children:
@@ -95,8 +97,8 @@ project:
 
 site:
   options:
-    logo: long_crocodile.png
+    logo: _static/long_crocodile.png
     folders: true
-    favicon: crocodile.png
+    favicon: _static/crocodile.png
     style: _static/custom.css
   template: book-theme
