@@ -21,7 +21,7 @@ project:
 
     - file: crocodash/index.md
       children:
-        - file: crocodash/crocodash_tutorial.ipynb
+        - file: crocodash/tutorial.ipynb
           title: Getting Started
         - file: crocodash/grids.ipynb
         - file: crocodash/bathymetry.ipynb

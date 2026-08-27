@@ -4,7 +4,7 @@
 # The run_notebooks.yml CI matrix is generated dynamically from 'run'.
 
 run:
-  - crocodash/crocodash_tutorial.ipynb
+  - crocodash/tutorial.ipynb
   - crocodash/grids.ipynb                    # widget + polar-projection cells tagged ci-skip
   - crocodash/bathymetry.ipynb               # TopoEditor widget cell tagged ci-skip
   - crocodash/case_setup.ipynb               # Case() construction cells tagged ci-skip; registry-discovery cells run
