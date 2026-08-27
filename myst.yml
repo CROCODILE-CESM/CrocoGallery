@@ -21,7 +21,7 @@ project:
 
     - file: crocodash/index.md
       children:
-        - file: crocodash/crocodash_tutorial.ipynb
+        - file: crocodash/tutorial.ipynb
           title: Getting Started
         - file: crocodash/grids.ipynb
         - file: crocodash/bathymetry.ipynb
@@ -38,6 +38,8 @@ project:
             - file: crocodash/use_cases/three_boundary_from_t232.ipynb
             - file: crocodash/use_cases/three_boundary.ipynb
             - file: crocodash/use_cases/mom6_cice_antarctica.ipynb
+        - file: crocodash/projects/index.md
+          title: Projects
 
     - file: diagnostics/index.md
       children:
