@@ -4,6 +4,9 @@ version = "0.1.0"
 description = "Path injection utilities for CrocoGallery notebooks"
 dependencies = ["nbformat"]
 
+[project.scripts]
+crocogallery = "crocogallery.cli:main"
+
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["crocogallery*"]
