@@ -28,20 +28,58 @@ def load_paths(machine, json_path=None):
     return db[machine]
 
 
+def substitute(text, paths, reverse=False):
+    """Substitute in `text`, returning (new_text, {key: n_replacements}).
+
+    Counts are taken as each replacement happens rather than by scanning the
+    original text, so overlapping values (a case dir and a file inside it)
+    are attributed to whichever key actually consumed them.
+    """
+    counts = {}
+    if reverse:
+        # Longest values first so a path that is a prefix of another does not
+        # get half-replaced.
+        items = sorted(paths.items(), key=lambda kv: len(kv[1]), reverse=True)
+        for key, val in items:
+            n = text.count(val)
+            if n:
+                text = text.replace(val, f"<{key}>")
+                counts[key] = counts.get(key, 0) + n
+    else:
+        for key, val in paths.items():
+            needle = f"<{key}>"
+            n = text.count(needle)
+            if n:
+                text = text.replace(needle, val)
+                counts[key] = counts.get(key, 0) + n
+    return text, counts
+
+
 def inject_into_text(text, paths):
     """Replace <KEY> placeholders in a plain string."""
-    for key, val in paths.items():
-        text = text.replace(f"<{key}>", val)
-    return text
+    return substitute(text, paths, reverse=False)[0]
 
 
 def reverse_inject_text(text, paths):
     """Replace real paths with <KEY> placeholders (reverse of inject_into_text)."""
-    # Longest values first so a path that is a prefix of another (e.g. a case
-    # dir and a file inside it) does not get half-replaced.
-    for key, val in sorted(paths.items(), key=lambda kv: len(kv[1]), reverse=True):
-        text = text.replace(val, f"<{key}>")
-    return text
+    return substitute(text, paths, reverse=True)[0]
+
+
+def format_substitutions(counts, paths, reverse=False, indent="    "):
+    """Render a {key: n} tally as aligned 'from -> to' lines."""
+    if not counts:
+        return []
+    pairs = []
+    for key in sorted(counts):
+        placeholder, real = f"<{key}>", paths[key]
+        pairs.append((real, placeholder) if reverse else (placeholder, real))
+    # Pad on whatever is actually in the left column, which swaps with reverse.
+    width = max(len(src) for src, _ in pairs)
+    lines = []
+    for (src, dst), key in zip(pairs, sorted(counts)):
+        times = "" if counts[key] == 1 else f"  ({counts[key]}x)"
+        lines.append(f"{indent}{src:<{width}} -> {dst}{times}")
+    return lines
 
 
 def process_notebook(notebook_path, paths, reverse, dry_run=False):
@@ -51,17 +89,19 @@ def process_notebook(notebook_path, paths, reverse, dry_run=False):
     print(f"Processing: {notebook_path}")
     nb = nbformat.read(notebook_path, as_version=4)
     changed = False
+    totals = {}
     for cell in nb.cells:
         if cell.cell_type in ("code", "Python"):
-            original_source = cell.source
-            if not reverse:
-                cell.source = inject_into_text(cell.source, paths)
-            else:
-                cell.source = reverse_inject_text(cell.source, paths)
-            if original_source != cell.source:
+            cell.source, counts = substitute(cell.source, paths, reverse)
+            for key, n in counts.items():
+                totals[key] = totals.get(key, 0) + n
+            if counts:
                 changed = True
-                verb = "Would modify" if dry_run else "Modified"
-                print(f"  {verb} cell in {notebook_path.name}")
+    if totals:
+        verb = "Would substitute" if dry_run else "Substituted"
+        print(f"  {verb}:")
+        for line in format_substitutions(totals, paths, reverse):
+            print(line)
     if changed and not dry_run:
         nbformat.write(nb, notebook_path)
         print(f"  Saved updated notebook: {notebook_path}")
