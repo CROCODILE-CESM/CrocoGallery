@@ -50,24 +50,6 @@
     <loc>http://localhost:3000/crocodash/projects</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/crocodash/projects/design-your-domain</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/crocodash/projects/forcing-experiments</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/crocodash/projects/resolution-study</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/crocodash/projects/make-it-stable</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/crocodash/projects/add-a-component</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/crocodash/projects/share-and-reproduce</loc>
-  </url>
-  <url>
     <loc>http://localhost:3000/diagnostics</loc>
   </url>
   <url>
