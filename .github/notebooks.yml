@@ -14,6 +14,11 @@ run:
   - crocodash/use_cases/three_boundary_from_t232.ipynb
 
 skip:
+  - path: crocodash/projects/ocean_only.ipynb
+    reason: >-
+      Workshop project brief, still being written. Markdown-only today, but it
+      grows into a full grid/case/forcing walkthrough; move it to 'run' (with
+      ci-skip tags on the expensive cells) once it's finished.
   - path: crocodash/use_cases/mom6_cice_antarctica.ipynb
     reason: Bathymetry regridding OOM; needs ci-skip cell tags added first
   - path: crocodash/use_cases/three_boundary.ipynb

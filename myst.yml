@@ -41,7 +41,7 @@ project:
         - file: crocodash/projects/index.md
           title: Projects
           children:
-        - file: crocodash/projects/ocean_only.ipynb
+            - file: crocodash/projects/ocean_only.ipynb
 
     - file: diagnostics/index.md
       children:
