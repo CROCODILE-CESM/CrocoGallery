@@ -11,7 +11,7 @@ description: The Python toolkit for configuring and deploying regional MOM6 ocea
     From grid generation to boundary conditions, all in one place.
   </p>
   <div class="cd-hero__actions">
-    <a class="cd-btn cd-btn--primary" href="crocodash_tutorial.ipynb">Get Started →</a>
+    <a class="cd-btn cd-btn--primary" href="tutorial.ipynb">Get Started →</a>
     <a class="cd-btn cd-btn--outline" href="https://github.com/CROCODILE-CESM/CrocoDash">GitHub ↗</a>
   </div>
 </div>
@@ -41,7 +41,7 @@ description: The Python toolkit for configuring and deploying regional MOM6 ocea
 ## Explore the Content
 
 <div class="cd-nav-cards">
-  <a class="cd-nav-card" href="crocodash_tutorial.ipynb">
+  <a class="cd-nav-card" href="tutorial.ipynb">
     <h3>Tutorial</h3>
     <p>End-to-end walkthrough from installation to a running regional model.</p>
   </a>
@@ -52,5 +52,9 @@ description: The Python toolkit for configuring and deploying regional MOM6 ocea
   <a class="cd-nav-card" href="use_cases/three_boundary.ipynb">
     <h3>Use Cases</h3>
     <p>Real-world configurations and advanced setups for specific ocean regions.</p>
+  </a>
+  <a class="cd-nav-card" href="projects/index.md">
+    <h3>Projects</h3>
+    <p>Open-ended, self-directed briefs for the workshop: your region, your configuration, your result.</p>
   </a>
 </div>

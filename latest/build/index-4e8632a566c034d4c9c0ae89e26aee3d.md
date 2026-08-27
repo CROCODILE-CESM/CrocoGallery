@@ -10,7 +10,7 @@ title: Welcome to the 2026 CROCODILE Workshop!
   </p>
   <div class="cd-hero__actions">
     <a class="cd-btn cd-btn--primary" href="#agenda">View the agenda ↓</a>
-    <a class="cd-btn cd-btn--outline" href="../crocodash/crocodash_tutorial">Start the tutorials</a>
+    <a class="cd-btn cd-btn--outline" href="../crocodash/tutorial">Start the tutorials</a>
   </div>
 </div>
 
