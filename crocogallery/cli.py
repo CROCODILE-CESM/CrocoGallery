@@ -47,8 +47,10 @@ def _inject(args):
         json_path=args.paths_json,
         extra_paths=_parse_set(args.sets),
         use_defaults=not args.no_defaults,
+        dry_run=args.dry_run,
     )
-    print(f"{len(changed)} notebook(s) modified.")
+    verb = "would be modified" if args.dry_run else "modified"
+    print(f"{len(changed)} notebook(s) {verb}.")
 
 
 def _template(args):
@@ -100,6 +102,12 @@ def build_parser():
         "--reverse",
         action="store_true",
         help="Reverse the path injection (real paths back to <KEY>).",
+    )
+    inject_parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        dest="dry_run",
+        help="Report which notebooks would change without writing anything.",
     )
     _add_path_args(inject_parser)
     inject_parser.set_defaults(func=_inject)

@@ -44,7 +44,7 @@ def reverse_inject_text(text, paths):
     return text
 
 
-def process_notebook(notebook_path, paths, reverse):
+def process_notebook(notebook_path, paths, reverse, dry_run=False):
     import nbformat
 
     notebook_path = Path(notebook_path)
@@ -60,10 +60,13 @@ def process_notebook(notebook_path, paths, reverse):
                 cell.source = reverse_inject_text(cell.source, paths)
             if original_source != cell.source:
                 changed = True
-                print(f"  Modified cell in {notebook_path.name}")
-    if changed:
+                verb = "Would modify" if dry_run else "Modified"
+                print(f"  {verb} cell in {notebook_path.name}")
+    if changed and not dry_run:
         nbformat.write(nb, notebook_path)
         print(f"  Saved updated notebook: {notebook_path}")
+    elif changed:
+        print(f"  Would update (dry run, not written): {notebook_path}")
     return changed
 
 
@@ -127,12 +130,17 @@ def inject(
     json_path=None,
     extra_paths=None,
     use_defaults=True,
+    dry_run=False,
 ):
-    """Inject (or reverse-inject) paths into notebooks. Returns the list changed."""
+    """Inject (or reverse-inject) paths into notebooks. Returns the list changed.
+
+    With dry_run, nothing is written -- the returned list is what *would*
+    have changed.
+    """
     paths = resolve_paths(machine, json_path, extra_paths, use_defaults)
     changed = []
     for nb_path in iter_notebooks(targets):
-        if process_notebook(nb_path, paths, reverse):
+        if process_notebook(nb_path, paths, reverse, dry_run):
             changed.append(nb_path)
     return changed
 
