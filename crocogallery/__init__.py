@@ -9,6 +9,16 @@ from .inject_paths import (
     process_notebook,
     iter_notebooks,
 )
+from .template import (
+    write_template,
+    render_notebook,
+    render_script,
+    render_asset,
+    template_paths,
+    find_template_asset,
+    DEFAULT_TEMPLATE_NOTEBOOK_ID,
+    NON_PATH_KEYS,
+)
 
 # Root of the gallery repo (parent of this package directory).
 # Works for editable installs where the source tree is on sys.path directly.
@@ -50,6 +60,14 @@ __all__ = [
     "resolve_paths",
     "inject",
     "iter_notebooks",
+    "write_template",
+    "render_notebook",
+    "render_script",
+    "render_asset",
+    "template_paths",
+    "find_template_asset",
+    "DEFAULT_TEMPLATE_NOTEBOOK_ID",
+    "NON_PATH_KEYS",
     "inject_into_text",
     "reverse_inject_text",
     "process_notebook",
