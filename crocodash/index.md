@@ -53,4 +53,8 @@ description: The Python toolkit for configuring and deploying regional MOM6 ocea
     <h3>Use Cases</h3>
     <p>Real-world configurations and advanced setups for specific ocean regions.</p>
   </a>
+  <a class="cd-nav-card" href="projects/index.md">
+    <h3>Projects</h3>
+    <p>Open-ended, self-directed briefs for the workshop: your region, your configuration, your result.</p>
+  </a>
 </div>
