@@ -53,6 +53,18 @@
     <loc>http://localhost:3000/crocodash/projects/ocean-only</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/crocodash/projects/cice</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/crocodash/projects/ww3</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/crocodash/projects/marbl</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/crocodash/projects/kitchensink</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/diagnostics</loc>
   </url>
   <url>
