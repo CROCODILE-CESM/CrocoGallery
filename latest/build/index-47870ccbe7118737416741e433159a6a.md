@@ -20,19 +20,19 @@ description: The Python toolkit for configuring and deploying regional MOM6 ocea
 
 <div class="cd-showcase-grid">
   <div class="cd-showcase-item">
-    <img src="../images/CrocoDash/grid_example.png" alt="Regional grid generation" />
+    <img src="../static/CrocoDash/grid_example.png" alt="Regional grid generation" />
     <p>Regional Grid Generation</p>
   </div>
   <div class="cd-showcase-item">
-    <img src="../images/CrocoDash/bathymetry.png" alt="Bathymetry and topography" />
+    <img src="../static/CrocoDash/bathymetry.png" alt="Bathymetry and topography" />
     <p>Git-Logged Bathymetry Editing</p>
   </div>
   <div class="cd-showcase-item">
-    <img src="../images/CrocoDash/obc_forcing.png" alt="Open boundary condition forcing" />
+    <img src="../static/CrocoDash/obc_forcing.png" alt="Open boundary condition forcing" />
     <p>Boundary Condition Generation</p>
   </div>
   <div class="cd-showcase-item">
-    <img src="../images/CrocoDash/SSH_speed.png" alt="Sea surface height and speed model output" />
+    <img src="../static/CrocoDash/SSH_speed.png" alt="Sea surface height and speed model output" />
     <p>Model Ready Inputs</p>
   </div>
 </div>
