@@ -19,6 +19,11 @@ skip:
       Workshop project brief, still being written. Markdown-only today, but it
       grows into a full grid/case/forcing walkthrough; move it to 'run' (with
       ci-skip tags on the expensive cells) once it's finished.
+  - path: crocodash/projects/cice.ipynb
+    reason: >-
+      Workshop project brief, still being written. The case paths are not
+      filled in yet (no true inputdir/casedir), so it cannot run headlessly;
+      move it to 'run' once the paths are parameterized.
   - path: crocodash/use_cases/mom6_cice_antarctica.ipynb
     reason: Bathymetry regridding OOM; needs ci-skip cell tags added first
   - path: crocodash/use_cases/three_boundary.ipynb
