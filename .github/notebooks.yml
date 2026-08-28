@@ -24,6 +24,21 @@ skip:
       Workshop project brief, still being written. The case paths are not
       filled in yet (no true inputdir/casedir), so it cannot run headlessly;
       move it to 'run' once the paths are parameterized.
+  - path: crocodash/projects/ww3.ipynb
+    reason: >-
+      Workshop project brief, still being written. The case paths are not
+      filled in yet (no true inputdir/casedir), so it cannot run headlessly;
+      move it to 'run' once the paths are parameterized.
+  - path: crocodash/projects/marbl.ipynb
+    reason: >-
+      Workshop project brief, still being written. The case paths are not
+      filled in yet (no true inputdir/casedir), so it cannot run headlessly;
+      move it to 'run' once the paths are parameterized.
+  - path: crocodash/projects/KitchenSink.ipynb
+    reason: >-
+      Workshop project brief, still being written. The case paths are not
+      filled in yet (no true inputdir/casedir), so it cannot run headlessly;
+      move it to 'run' once the paths are parameterized.
   - path: crocodash/use_cases/mom6_cice_antarctica.ipynb
     reason: Bathymetry regridding OOM; needs ci-skip cell tags added first
   - path: crocodash/use_cases/three_boundary.ipynb

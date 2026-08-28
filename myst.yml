@@ -42,6 +42,10 @@ project:
           title: Projects
           children:
             - file: crocodash/projects/ocean_only.ipynb
+            - file: crocodash/projects/cice.ipynb
+            - file: crocodash/projects/ww3.ipynb
+            - file: crocodash/projects/marbl.ipynb
+            - file: crocodash/projects/KitchenSink.ipynb
 
     - file: diagnostics/index.md
       children:
