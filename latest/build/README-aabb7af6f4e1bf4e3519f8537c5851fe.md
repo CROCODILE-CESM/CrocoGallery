@@ -23,13 +23,13 @@
     </p>
     <span class="croco-hub-card__cta">Tutorials, features, use cases →</span>
   </a>
-  <a class="croco-hub-card" href="diagnostics/index.md">
+  <a class="croco-hub-card" href="mom6_tools.md">
     <div class="croco-hub-card__icon">📊</div>
-    <h2 class="croco-hub-card__title">Diagnostics</h2>
+    <h2 class="croco-hub-card__title">mom6-tools</h2>
     <p class="croco-hub-card__desc">
-      mom6-tools powered diagnostics and analysis for regional MOM6 output. Time-series, surface fields, OBC diagnostics, and budget analysis.
+      Diagnostics and analysis for regional MOM6 output. Time-series, surface fields, OBC diagnostics, and budget analysis.
     </p>
-    <span class="croco-hub-card__cta">Explore diagnostics →</span>
+    <span class="croco-hub-card__cta">Explore mom6-tools →</span>
   </a>
   <a class="croco-hub-card" href="model2obs/index.md">
     <div class="croco-hub-card__icon">🔬</div>

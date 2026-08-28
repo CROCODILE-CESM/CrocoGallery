@@ -65,43 +65,7 @@
     <loc>http://localhost:3000/crocodash/projects/kitchensink</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/diagnostics</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/diagnostics/mom6-tools</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/diagnostics/cupid-for-regional-mom6</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/diagnostics/cupid-intro</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/diagnostics/standalone-cupid</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/diagnostics/cupid-output</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/diagnostics/cupid-output/regional-ocean-report-card</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/diagnostics/cupid-output/regional-ocean-animations</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/diagnostics/cupid-output/regional-ocean-atmospheric-forcing</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/diagnostics/cupid-output/regional-ocean-obc</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/diagnostics/cupid-projects</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/diagnostics/cupid-in-cesm-workflow</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/diagnostics/contributing-to-cupid</loc>
+    <loc>http://localhost:3000/mom6-tools</loc>
   </url>
   <url>
     <loc>http://localhost:3000/model2obs</loc>
