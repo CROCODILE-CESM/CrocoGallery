@@ -10,12 +10,13 @@ research question or are still looking for one. Each project stands on its own �
 
 | Project | What it's useful for |
 |---|---|
-| CICE | Adding sea ice to a regional case — high-latitude domains where ice cover sets the surface fluxes |
-| WW3 | Coupling surface waves |
-| MARBL | Adding ocean biogeochemistry |
-| KitchenSink | Running everything |
+| [Ocean only](ocean_only.ipynb) | A plain regional MOM6 case — the baseline the other projects build on |
+| [CICE](cice.ipynb) | Adding sea ice to a regional case — high-latitude domains where ice cover sets the surface fluxes |
+| [WW3](ww3.ipynb) | Coupling surface waves |
+| [MARBL](marbl.ipynb) | Adding ocean biogeochemistry |
+| [Kitchen sink](KitchenSink.ipynb) | Running everything |
 
 :::{tip}
 Keep the domain small — a few degrees on a side, a few days of simulation. A region you
-can force and run beats one you can only describe.
+can force and iterate on beats one you can only run one time or just describe.
 :::

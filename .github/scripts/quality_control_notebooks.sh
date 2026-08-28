@@ -6,6 +6,7 @@
 GLADE_EXCEPTIONS=(
   "crocodash/configure_forcings.ipynb"   # Derecho-specific note cells (TPXO/CHL/GLOFAS/MARBL default paths)
   "crocodash/advanced/nesting_demo.ipynb"
+  "crocodash/projects"   # Workshop project briefs; participant-specific /glade paths are expected
   "crocodash/use_cases"
   "diagnostics/cupid_output"
   "workshop_2026"
