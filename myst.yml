@@ -8,7 +8,7 @@ project:
       <strong>🐊 2026 CROCODILE Workshop,Sept 28 – Oct 3, NCAR Mesa Lab.</strong>
       [Agenda &amp; practicums →](workshop_2026/index.md)
   bibliography:
-    - _static/references.bib
+    - static/references.bib
   exports:
     - format: pdf
       template: plain_latex_book
@@ -97,8 +97,8 @@ project:
 
 site:
   options:
-    logo: _static/long_crocodile.png
+    logo: static/long_crocodile.png
     folders: true
-    favicon: _static/crocodile.png
-    style: _static/custom.css
+    favicon: static/crocodile.png
+    style: static/custom.css
   template: book-theme
