@@ -37,7 +37,7 @@ title: Welcome to the 2026 CROCODILE Workshop!
 If you have the time, please try to do these ahead of the workshop so the first practicum goes smoothly:
 
 1. Make sure you can log in to Derecho / JupyterHub with your NCAR account. You should have gotten an email with the setup steps. 
-2. Create your own repository for the workshop from the template [Bask](https://github.com/CROCODILE-CESM/Bask) respository. You can do this by clicking the ['Use this template -> Create a new repository'](https://github.com/new?template_name=BaskTemplate&template_owner=CROCODILE-CESM) in the top right corner.
+2. Create your own repository for the workshop from the template [Bask](https://github.com/CROCODILE-CESM/Bask) respository. You can do this by clicking the ['Use this template -> Create a new repository'](https://github.com/new?template_name=Bask&template_owner=CROCODILE-CESM) in the top right corner.
 
 Stuck? [Open an issue](https://github.com/CROCODILE-CESM/Bask/issues) on
 Bask and we'll sort it before day one.
