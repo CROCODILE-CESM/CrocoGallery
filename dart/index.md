@@ -22,7 +22,7 @@ description: Ensemble data assimilation for regional MOM6 in CESM using DART (Da
     <div class="cd-feature__icon">📡</div>
     <h3>Observation Preparation</h3>
     <p>Convert CrocoLake observations (Argo, GLODAP) into DART's
-    obs_sequence.
+    obs_sequence format.
     Or create synthetic observations for Observation System Simulation Experiments</p>
   </div>
   <div class="cd-feature">
