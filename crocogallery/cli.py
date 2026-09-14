@@ -8,7 +8,7 @@ so it should never be what a bare, mistyped invocation does.
 import argparse
 import sys
 
-from .inject_paths import _parse_set, inject
+from .inject_paths import DEFAULT_MACHINE, _parse_set, inject
 from .template import DEFAULT_TEMPLATE_NOTEBOOK_ID, uses_notebook, write_template
 
 
@@ -17,7 +17,7 @@ def _add_path_args(parser):
     parser.add_argument(
         "--machine",
         default=None,
-        help="Which machine's paths to use (e.g. derecho).",
+        help=f"Which machine's paths to use (e.g. {DEFAULT_MACHINE}).",
     )
     parser.add_argument(
         "--paths-json",
@@ -43,7 +43,7 @@ def _inject(args):
     changed = inject(
         targets=args.targets,
         reverse=args.reverse,
-        machine=args.machine or "derecho",
+        machine=args.machine or DEFAULT_MACHINE,
         json_path=args.paths_json,
         extra_paths=_parse_set(args.sets),
         use_defaults=not args.no_defaults,
@@ -82,7 +82,10 @@ def _template(args):
     )
     print(f"Template written to: {output}")
     if args.machine is None and args.paths_json is None and not args.sets:
-        print("Tip: rerun with --machine derecho to pre-fill known dataset paths.")
+        print(
+            f"Tip: rerun with --machine {DEFAULT_MACHINE} to pre-fill "
+            "known dataset paths."
+        )
 
 
 def build_parser():

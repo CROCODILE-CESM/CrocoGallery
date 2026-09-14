@@ -5,6 +5,10 @@ import argparse
 
 _SKIP_DIRS = {".ipynb_checkpoints", "_build", "__pycache__"}
 
+# Machine key used when the caller does not name one. Must match a top-level
+# key in known_paths.json.
+DEFAULT_MACHINE = "glade"
+
 
 def load_paths(machine, json_path=None):
     """Return the path dict for the given machine key.
@@ -138,7 +142,7 @@ def iter_notebooks(targets=None):
 
 
 def resolve_paths(
-    machine="derecho", json_path=None, extra_paths=None, use_defaults=True
+    machine=DEFAULT_MACHINE, json_path=None, extra_paths=None, use_defaults=True
 ):
     """Build the {KEY: path} mapping used for (reverse-)injection.
 
@@ -166,7 +170,7 @@ def resolve_paths(
 def inject(
     targets=None,
     reverse=False,
-    machine="derecho",
+    machine=DEFAULT_MACHINE,
     json_path=None,
     extra_paths=None,
     use_defaults=True,
@@ -198,7 +202,7 @@ def _parse_set(items):
 
 def main(
     reverse=False,
-    machine="derecho",
+    machine=DEFAULT_MACHINE,
     targets=None,
     json_path=None,
     extra_paths=None,
@@ -231,8 +235,8 @@ def build_parser():
     )
     parser.add_argument(
         "--machine",
-        default="derecho",
-        help="Which machine's paths to use (default: derecho).",
+        default=DEFAULT_MACHINE,
+        help=f"Which machine's paths to use (default: {DEFAULT_MACHINE}).",
     )
     parser.add_argument(
         "--paths-json",

@@ -15,10 +15,10 @@ vim my_case.yaml
 crocodash create --config my_case.yaml
 ```
 
-Add `--machine derecho` to `template` to pre-fill known dataset paths for Derecho/GLADE:
+Add `--machine glade` to `template` to pre-fill known dataset paths for GLADE (Derecho/Casper):
 
 ```bash
-crocodash template --output my_case.yaml --machine derecho
+crocodash template --output my_case.yaml --machine glade
 ```
 
 ---

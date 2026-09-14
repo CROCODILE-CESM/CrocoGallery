@@ -19,7 +19,7 @@ from .template import (
     template_paths,
     find_template_asset,
     DEFAULT_TEMPLATE_NOTEBOOK_ID,
-    NON_PATH_KEYS,
+    SENTINEL_VALUES,
 )
 
 # Root of the gallery repo (parent of this package directory).
@@ -69,7 +69,7 @@ __all__ = [
     "template_paths",
     "find_template_asset",
     "DEFAULT_TEMPLATE_NOTEBOOK_ID",
-    "NON_PATH_KEYS",
+    "SENTINEL_VALUES",
     "inject_into_text",
     "substitute",
     "format_substitutions",
