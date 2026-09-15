@@ -34,36 +34,42 @@ title: Welcome to the 2026 CROCODILE Workshop!
 </div>
 
 :::{important} Before you arrive
-The first thing we're doing at the workshop is setting up all the tools for CROCODILE. If you have the time, please try to do these ahead of the workshop so the first practicum goes smoothly:
+The first thing we'll do at the workshop is set up all the CROCODILE tools together. If you have time beforehand, working through these three steps will help the first practicum go smoothly.
 
-1. `Make sure you can log in to the super computer:` 
-  a. Go to `OnDemand`: [https://ondemand.hpc.ucar.edu/] and log in with your NCAR account. You should have gotten an email with the setup steps. 
-  b. Click on "Interactive Apps" -> and select "Jupyter"
-  c. Select the following options in the portal. "Casper PBS Batch" "10GB" "2 hours"
+1. **Log in to the supercomputer.** Go to [OnDemand](https://ondemand.hpc.ucar.edu/) and log in with your NCAR account (you should have received an email with setup instructions). Click **Interactive Apps → Jupyter**, and launch a session with queue `Casper PBS Batch`, memory `10GB`, walltime `2 hours`.
 
+   🖼️ *Screenshot: OnDemand's "Interactive Apps" menu → the Jupyter launch form with the three settings filled in*
 
-2. `Let's create a version controlled workspace for CROCODILE tools:` We've setup a template git repository to use for CROCODILE tools. Create your own repository for the workshop from our template [CrocodileWorkspace](https://github.com/CROCODILE-CESM/Bask): [https://github.com/CROCODILE-CESM/CrocodileWorkspace]. 
-  a. Cick the green ['Use this template -> Create a new repository'](https://github.com/new?template_name=CrocodileWorkspace&template_owner=CROCODILE-CESM) button in the top right corner. 
-  b. Select the name of your repo, we recommend "Bask", which is the name for a group of crocodiles. That's what we'll use for the tutorial names. My repo is [https://github.com/manishvenu/Bask]
-  c. Keep it Public & Click the "Create Repository" option
+2. **Create a version-controlled workspace.** We've set up a template repository, [CrocodileWorkspace](https://github.com/CROCODILE-CESM/CrocodileWorkspace), with everything you'll need for the workshop.
+   - Click the green ["Use this template → Create a new repository"](https://github.com/new?template_name=CrocodileWorkspace&template_owner=CROCODILE-CESM) button in the top right corner.
+   - Name your repo — we recommend `Bask` (the name for a group of crocodiles), since that's what we'll use for the tutorial names. For reference, the instructor's copy is at [github.com/manishvenu/Bask](https://github.com/manishvenu/Bask).
+   - Keep it **Public** and click **Create Repository**.
 
-3. `Let's install the CROCODILE tools:` Let's use our new repo to install CROCODILE tools!
-  a. As supercomputer users, we get access to 2 TB of space on our $WORK directories on the NCAR supercomputer. We recommend installing the repository in your work directory. But first, we need to open a terminal. Click into your OnDemand "My Interactive Sessions" area from Step 1, start your session with the green button. 
-  b. Once you open the session, scroll to the bottom of the page, and click the "Terminal" card.
-  c. Now, the terminal session should be open! Let's install the CROCODILE tools, find a folder you want to put the tools in, we recommend your work directory, so:
-  ```
-  $ cd $WORK
-  ```
-  d. We then need to copy our workspace onto our computer, which we can do with the common git command "git clone". This allows us to version our workspace, which means, we can push out regional models back from this workspace to Github. They'll be reproducible and online! Here's my git command, replace it with your username and repo name!
-  ```
-  $ git clone https://github.com/manishvenu/Bask
-  $ git clone https://github.com/<YOUR USERNAME>/<YOUR WORKSPACE NAME>
-  ```
-  e. The last step is to install the packages and environments we need to run everything. Inside of the CROCODILE workspace, there is an install script "./install.sh" that install everything you need with command line flags. You can manage several different things, like installing only crocodash, our regional setup tool, with "./install.sh --crocodash" or the CESM, with "./install.sh --CESM". You can look at all the available flags with "./install.sh -h". However, since we want to setup the whole system with some special workshop paths, we have a special flag for the workshop, which installs everything:
-  ```
-  $ cd $WORK/<YOUR WORKSPACE DIRECTORY NAME>
-  $ ./install.sh --workshop 
-  ```
+   🖼️ *Screenshot: GitHub's "Use this template" button, and the repo creation form filled in*
+
+3. **Install the CROCODILE tools.**
+   - Open a terminal: from your OnDemand session (Step 1), go to **My Interactive Sessions**, start it with the green button, then click the **Terminal** card at the bottom of the page.
+   - Move to your `$WORK` directory — supercomputer users get 2 TB of space there, which is a good place to install:
+
+     ```
+     cd $WORK
+     ```
+   - Clone your new workspace repo. This keeps it version-controlled, so you can push your regional models back to GitHub — reproducible and online:
+
+     ```
+     git clone https://github.com/<YOUR USERNAME>/<YOUR WORKSPACE NAME>
+
+     # e.g.
+     git clone https://github.com/manishvenu/Bask
+     ```
+   - Run the installer. `install.sh` takes flags for installing individual pieces (`--crocodash` for our regional setup tool, `--CESM` for CESM itself — run `./install.sh -h` for the full list), but for the workshop, one flag installs everything you'll need:
+
+     ```
+     cd $WORK/<YOUR WORKSPACE DIRECTORY NAME>
+     ./install.sh --workshop
+     ```
+
+   🖼️ *Screenshot: terminal output of "./install.sh --workshop" completing successfully*
 
 Stuck? [Open an issue](https://github.com/CROCODILE-CESM/CrocodileWorkspace/issues) on
 CrocodileWorkspace and we'll sort it before day one.
