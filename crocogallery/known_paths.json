@@ -17,6 +17,10 @@
     "NWA_BATHY": "/glade/campaign/cesm/cesmdata/inputdata/ocn/mom/croc/crocogallerydata/grids/nwa/ocean_topo.nc",
     "JRA_ESMF_MESH": "/glade/campaign/cesm/cesmdata/inputdata/lnd/dlnd7/JRA55/JRA.v1.4.runoff.1958_ESMFmesh_cdf5_20201020.nc",
     "CROCOLAKE": "/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoCamp/CrocoLakePHY",
-    "CROC_DART_OBS": "/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2026/dart_obs"
+    "CROC_DART_OBS": "/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2026/dart_obs",
+    "TX2_3V3_GRID": "/glade/campaign/cesm/community/omwg/grids/tx2_3v3_grid.nc",
+    "CICE_RESTART": "/glade/u/home/dbailey/b.e30_alpha09b.B1850C_MTso.ne30_t233_wgx3.360.cice.r.0201-01-01-00000.nc",
+    "CARIB12_RUN": "/glade/derecho/scratch/gseijo/FROM_CHEYENNE/CARIB_012.SMAG.001/run",
+    "WOD13": "/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/CrocoCamp/tutorial_3/in_WOD13"
   }
 }
