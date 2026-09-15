@@ -38,14 +38,14 @@ The first thing we'll do at the workshop is set up all the CROCODILE tools toget
 
 1. **Log in to the supercomputer.** Go to [OnDemand](https://ondemand.hpc.ucar.edu/) and log in with your NCAR account (you should have received an email with setup instructions). Click **Interactive Apps → Jupyter**, and launch a session with queue `Casper PBS Batch`, memory `10GB`, walltime `2 hours`.
 
-   🖼️ *Screenshot: OnDemand's "Interactive Apps" menu → the Jupyter launch form with the three settings filled in*
+   ![OnDemand's Interactive Apps menu and Jupyter launch form with Casper PBS Batch, 10GB, and 2 hours filled in](../static/workshop_2026/ondemand-launch-form.png)
 
 2. **Create a version-controlled workspace.** We've set up a template repository, [CrocodileWorkspace](https://github.com/CROCODILE-CESM/CrocodileWorkspace), with everything you'll need for the workshop.
    - Click the green ["Use this template → Create a new repository"](https://github.com/new?template_name=CrocodileWorkspace&template_owner=CROCODILE-CESM) button in the top right corner.
    - Name your repo — we recommend `Bask` (the name for a group of crocodiles), since that's what we'll use for the tutorial names. For reference, the instructor's copy is at [github.com/manishvenu/Bask](https://github.com/manishvenu/Bask).
    - Keep it **Public** and click **Create Repository**.
 
-   🖼️ *Screenshot: GitHub's "Use this template" button, and the repo creation form filled in*
+   ![GitHub's "Use this template" button and the repo creation form filled in](../static/workshop_2026/github-template-repo.png)
 
 3. **Install the CROCODILE tools.**
    - Open a terminal: from your OnDemand session (Step 1), go to **My Interactive Sessions**, start it with the green button, then click the **Terminal** card at the bottom of the page.
@@ -69,7 +69,7 @@ The first thing we'll do at the workshop is set up all the CROCODILE tools toget
      ./install.sh --workshop
      ```
 
-   🖼️ *Screenshot: terminal output of "./install.sh --workshop" completing successfully*
+   ![Terminal output of ./install.sh --workshop completing successfully](../static/workshop_2026/install-workshop-terminal.png)
 
 Stuck? [Open an issue](https://github.com/CROCODILE-CESM/CrocodileWorkspace/issues) on
 CrocodileWorkspace and we'll sort it before day one.
