@@ -3,7 +3,7 @@
 # PBS batch submission script for CrocoDash forcing extraction.
 #
 # Get a copy with:
-#   crocodash template --output submit_forcings.pbs --machine derecho
+#   crocodash template --output submit_forcings.pbs --machine glade
 #
 # Submit with:
 #   qsub submit_forcings.pbs

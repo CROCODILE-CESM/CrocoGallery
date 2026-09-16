@@ -10,6 +10,7 @@ import re
 from pathlib import Path
 
 from .inject_paths import (
+    DEFAULT_MACHINE,
     gallery_root,
     inject_into_text,
     resolve_paths,
@@ -17,10 +18,13 @@ from .inject_paths import (
 
 DEFAULT_TEMPLATE_NOTEBOOK_ID = "crocodash.tutorial"
 
-# known_paths.json keys that hold placeholder tokens rather than real dataset
-# paths -- injecting them would swap an obvious <KEY> for something equally
-# uninformative (e.g. "Checkout"), so they are always left for hand editing.
-NON_PATH_KEYS = {"CESM", "inputdir", "casedir"}
+# known_paths.json *values* that are stand-ins rather than real paths -- a
+# machine that has not filled in its checkout/case/input locations. Injecting
+# one would swap an obvious <KEY> for something equally uninformative, so those
+# entries are left for hand editing. Filtering on the value rather than the key
+# matters: a machine that does give CESM/inputdir/casedir real values (or CI,
+# which seds these sentinels into real directories) gets them injected.
+SENTINEL_VALUES = {"Checkout", "fill_in_id", "fill_in_cd"}
 
 # Loose template files that live in the gallery next to the notebooks.
 TEMPLATE_ASSETS = {"pbs": "submit_forcings.pbs", "yaml": "starter_case.yaml"}
@@ -53,12 +57,12 @@ def template_paths(machine=None, json_path=None, extra_paths=None):
     if machine is None and json_path is None and not extra_paths:
         return {}
     paths = resolve_paths(
-        machine=machine or "derecho",
+        machine=machine or DEFAULT_MACHINE,
         json_path=json_path,
         extra_paths=extra_paths,
         use_defaults=machine is not None,
     )
-    return {k: v for k, v in paths.items() if k not in NON_PATH_KEYS}
+    return {k: v for k, v in paths.items() if v not in SENTINEL_VALUES}
 
 
 def comment_out_magics(source):
