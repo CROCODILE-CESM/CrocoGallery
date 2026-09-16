@@ -34,22 +34,26 @@ title: Welcome to the 2026 CROCODILE Workshop!
 </div>
 
 :::{important} Before you arrive
-The first thing we'll do at the workshop is set up all the CROCODILE tools together. If you have time beforehand, working through these three steps will help the first practicum go smoothly. If you get stuck on anything below, don't spend more than a few minutes fighting it, jump to the note at the end of this list for how to get help and open an issue before day one.
+The first thing we'll do at the workshop is set up all the CROCODILE tools. If you have time beforehand, working through these three steps will help the first practicum go smoothly. It should take about 30 minutes. If you get stuck on anything, don't spend more than a few minutes, jump to the note at the end for how to get help and open an issue before day one.
 
-1. **Log in to the supercomputer.** Go to [OnDemand](https://ondemand.hpc.ucar.edu/) — NCAR's web portal for the HPC systems — and log in with your NCAR account. Check your inbox for an NCAR account setup email if you haven't logged in before. Click **Interactive Apps → Jupyter**. In the launch form, select the `Casper PBS Batch` queue — this is the compute pool interactive sessions run on — with `10GB` memory and a `2 hours` walltime. Click **Launch** and wait for the session to start; this submits a real batch job to a compute node, so it can take a minute or two while it waits on the scheduler.
+1. **Log in to the supercomputer.** Go to [OnDemand](https://ondemand.hpc.ucar.edu/), NCAR's web portal for the supercomputer, and log in with your NCAR account. Check your inbox for an NCAR account setup email if you haven't logged in before. Click **Interactive Apps → Jupyter**. In the launch form, select the `Casper PBS Batch` queue — this is the compute pool interactive sessions run on — with `10GB` memory and a `2 hours` walltime. Click **Launch** and wait for the session to start; this submits a real batch job to a compute node, so it can take a minute or two while it waits on the scheduler.
 
-   ![OnDemand's Interactive Apps menu and Jupyter launch form with Casper PBS Batch, 10GB, and 2 hours filled in](../static/workshop_2026/ondemand-launch-form.png)
+   ![OnDemand's Interactive Apps menu and Jupyter launch form with Casper PBS Batch, 10GB, and 2 hours filled in](../static/workshop_2026/OnDemandJupyterClick.png)
+   ![OnDemand's Interactive Apps menu and Jupyter launch form with Casper PBS Batch, 10GB, and 2 hours filled in](../static/workshop_2026/OnDemandLaunchForm.png)
 
 2. **Create a version-controlled workspace.** We've set up a template repository, [CrocodileWorkspace](https://github.com/CROCODILE-CESM/CrocodileWorkspace), with everything you'll need for the workshop.
    - Click the green ["Use this template → Create a new repository"](https://github.com/new?template_name=CrocodileWorkspace&template_owner=CROCODILE-CESM) button in the top right corner.
-   - Name your repo — we recommend `Bask` (the name for a group of crocodiles), since that's what we'll use for the tutorial names. For reference, the instructor's copy is at [github.com/manishvenu/Bask](https://github.com/manishvenu/Bask).
+   - Name your repo — we recommend `Bask` (the name for a group of crocodiles), since that's what we'll use for the tutorial names. For reference, a copy is at [github.com/manishvenu/Bask](https://github.com/manishvenu/Bask).
    - Keep it **Public** and click **Create Repository**. It needs to be public so the supercomputer can clone it in the next step without setting up SSH keys or a personal access token.
 
-   ![GitHub's "Use this template" button and the repo creation form filled in](../static/workshop_2026/github-template-repo.png)
+   ![GitHub's "Use this template" button and the repo creation form filled in](../static/workshop_2026/TemplateCreate.png)
+   ![GitHub's "Use this template" button and the repo creation form filled in](../static/workshop_2026/TemplateSpecify.png)
 
 3. **Install the CROCODILE tools.**
-   - Open a terminal: from your OnDemand session (Step 1), go to **My Interactive Sessions**, start it with the green button, then click the **Terminal** card at the bottom of the page.
-   - Move to your `$WORK` directory — supercomputer users get 2 TB of space there, which is a good place to install:
+   - Open a terminal: from your OnDemand session (Step 1), go to **My Interactive Sessions**, enter the session with the green button, then click the **Terminal** card at the bottom of the page.
+
+   ![OnDemand's Terminal Layout](../static/workshop_2026/TerminalLayout.png)
+   - Go to the terminal and move to your `$WORK` directory.  We get 2 TB of space there, which is a good place to install:
 
      ```
      cd $WORK
@@ -62,7 +66,7 @@ The first thing we'll do at the workshop is set up all the CROCODILE tools toget
      # e.g.
      git clone https://github.com/manishvenu/Bask
      ```
-   - Run the installer. `install.sh` sets up everything the workshop needs: CESM, MOM6, and the conda environments for CrocoDash and the other CROCODILE tools. It takes about 10-15 minutes, so start it as soon as you get here rather than waiting — you'll know it's done when the terminal returns to a normal prompt with no errors in the output. (It also takes flags for installing pieces individually — `--crocodash`, `--CESM`, run `./install.sh -h` for the full list — but for the workshop, one flag installs everything):
+   - Run the installer. `install.sh` sets up everything the workshop needs: CESM, model2obs, and the conda environments for CrocoDash and the other CROCODILE tools. It takes about 10-15 minutes, you'll know it's done when the terminal returns to a normal prompt with no errors in the output. (It also takes flags for installing pieces individually — `--crocodash`, `--CESM`, run `./install.sh -h` for the full list — but for the workshop, one flag down below installs everything):
 
      ```
      cd $WORK/<YOUR WORKSPACE DIRECTORY NAME>
