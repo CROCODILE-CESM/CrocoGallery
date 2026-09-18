@@ -54,9 +54,9 @@ project:
       children:
         - file: model2obs/tutorial_MOM6-CL-comparison-Hawaii.ipynb
           title: Comparing MOM6 output to in-situ observations (small domain, serial)
-        - file: model2obs/tutorial1_MOM6-CL-comparison-parallel.ipynb
+        - file: model2obs/tutorial_MOM6-CL-comparison-NWA-parallel.ipynb
           title: Comparing MOM6 output to in-situ observations (large domain, parallel)
-        - file: model2obs/tutorial3_CrocoLake_map_temperature.ipynb
+        - file: model2obs/tutorial_CrocoLake_map_temperature.ipynb
           title: Visualizing CrocoLake and working with larger-than-memory datasets
         - title: Model-Observation Comparison Examples
           children:

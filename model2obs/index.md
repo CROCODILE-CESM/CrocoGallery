@@ -58,12 +58,12 @@ If you don't remember how to get started with the packages installation, see the
     observations. You leave knowing the basic model2obs workflow and how to plot the
     results on an interactive map.</p>
   </a>
-  <a class="cd-nav-card" href="tutorial1_MOM6-CL-comparison-parallel.ipynb">
+  <a class="cd-nav-card" href="tutorial_MOM6-CL-comparison-NWA-parallel.ipynb">
     <h3>2. Large Domain, Parallel</h3>
     <p>Run the same workflow but in parallel, on a larger NorthWest Atlantic domain. You leave able to compare large-domain runs against
     observations efficiently.</p>
   </a>
-  <a class="cd-nav-card" href="tutorial3_CrocoLake_map_temperature.ipynb">
+  <a class="cd-nav-card" href="tutorial_CrocoLake_map_temperature.ipynb">
     <h3>3. Exploring CrocoLake</h3>
     <p>Read and filter CrocoLake's Parquet files with pandas and dask, and map
     temperature measurements in the North West Atlantic. You leave able to handle
