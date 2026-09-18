@@ -13,7 +13,7 @@ cd model2obs
 conda activate model2obs
 ```
 
-Note that the [CrocoLake's project](tutorial3_CrocoLake_map_temperature.ipynb) does not *need* model2obs: CrocoLake is a dataset, not a python package, and installing dask, cartopy, and matplotlib is sufficient to read it and make maps. However, model2obs comes with those packages, so if you have installed it already during the workshop, you can directly use the `model2obs` environment to run CrocoLake's project too.
+Note that the [CrocoLake's project](tutorial_CrocoLake_map_temperature.ipynb) does not *need* model2obs: CrocoLake is a dataset, not a python package, and installing dask, cartopy, and matplotlib is sufficient to read it and make maps. However, model2obs comes with those packages, so if you have installed it already during the workshop, you can directly use the `model2obs` environment to run CrocoLake's project too.
 
 (model2obs-outside-casper)=
 ## model2obs outside of Casper
