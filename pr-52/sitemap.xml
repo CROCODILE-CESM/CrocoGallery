@@ -74,10 +74,10 @@
     <loc>http://localhost:3000/model2obs/tutorial-mom6-cl-comparison-hawaii</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/model2obs/tutorial1-mom6-cl-comparison-parallel</loc>
+    <loc>http://localhost:3000/model2obs/tutorial-mom6-cl-comparison-nwa-parallel</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/model2obs/tutorial3-crocolake-map-temperature</loc>
+    <loc>http://localhost:3000/model2obs/tutorial-crocolake-map-temperature</loc>
   </url>
   <url>
     <loc>http://localhost:3000/model2obs/carib12-eke-ts</loc>
