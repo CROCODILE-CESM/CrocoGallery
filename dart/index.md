@@ -14,6 +14,40 @@ description: Ensemble data assimilation for regional MOM6 in CESM using DART (Da
   <a class="cd-btn cd-btn--outline" href="tutorial1_real_observations.ipynb">Get Started →</a>
 </div>
 
+
+# CESM-DART Tutorial
+
+Build a regional CESM-DART data assimilation experiment for Hawaii, from preparing observations
+through ensemble cycling and diagnostics.
+
+This tutorial series includes three notebooks, designed to be worked through in order.
+Each notebook builds on the work from the previous one. 
+
+Want to work only with real observations? 
+Skip the synthetic observations notebook and jump from Tutorial 1 directly to cycling DART-CESM.
+
+<div class="cd-nav-cards">
+  <a class="cd-nav-card" href="tutorial1_real_observations.ipynb">
+    <h3>1. Working with Real Observations</h3>
+    <p>Turn real Argo profiles from CrocoLake into DART obs_seq files with dartobsgen.
+     You leave with a directory of observations ready to assimilate.</p>
+  </a>
+  <a class="cd-nav-card" href="tutorial2_synthetic_observations.ipynb">
+    <h3>2. Synthetic Observations</h3>
+    <p>Sample a model state with DART's perfect_model_obs at the Tutorial 1 locations
+    plus random ones you design. You leave with a synthetic observing network for an OSSE.</p>
+  </a>
+  <a class="cd-nav-card" href="tutorial3_cycling_dart_cesm.ipynb">
+    <h3>3. Cycling DART–CESM</h3>
+    <p>Build a multi-instance regional MOM6 ensemble in CESM, assimilate your
+    observations every 24 hours, and diagnose the results. You leave with a running DA
+    experiment. </p>
+  </a>
+</div>
+
+<p>&nbsp;</p>
+
+
 ## What You Can Do
 
 
@@ -45,29 +79,5 @@ description: Ensemble data assimilation for regional MOM6 in CESM using DART (Da
   </div>
 </div>
 
-<p>&nbsp;</p>
 
-## The Tutorial Series
 
-This tutorial series includes three notebooks, designed to be worked through in order.
-Each notebook's output feeds into the next. Only interested in real observations? 
-Feel free to skip the synthetic observations notebook and jump straight to cycling DART-CESM.
-
-<div class="cd-nav-cards">
-  <a class="cd-nav-card" href="tutorial1_real_observations.ipynb">
-    <h3>1. Working with Real Observations</h3>
-    <p>Turn real Argo profiles from CrocoLake into DART obs_seq files with dartobsgen.
-     You leave with a directory of observations ready to assimilate.</p>
-  </a>
-  <a class="cd-nav-card" href="tutorial2_synthetic_observations.ipynb">
-    <h3>2. Synthetic Observations</h3>
-    <p>Sample a model state with DART's perfect_model_obs at the Tutorial 1 locations
-    plus random ones you design. You leave with a synthetic observing network for an OSSE.</p>
-  </a>
-  <a class="cd-nav-card" href="tutorial3_cycling_dart_cesm.ipynb">
-    <h3>3. Cycling DART–CESM</h3>
-    <p>Build a multi-instance regional MOM6 ensemble in CESM, assimilate your
-    observations every 24 hours, and diagnose the results. You leave with a running DA
-    experiment. </p>
-  </a>
-</div>
