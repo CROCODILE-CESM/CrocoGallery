@@ -65,6 +65,7 @@ Fill in your project code and caseroot, then `qsub submit_forcings.pbs`.
 | `crocodash template` | Write a starter case file (`--kind case`, default: `.yaml` config, `.ipynb` notebook, or `.py` script) or a PBS submission script (`--kind pbs`) |
 | `crocodash create` | Create a case from a YAML config |
 | `crocodash dump` | Reconstruct YAML from an existing case |
+| `crocodash process` | Run the forcing extraction for an existing case (`--all`, or per-component flags) |
 | `crocodash bundle` | Package a case for sharing |
 | `crocodash fork` | Create a new case from a bundle with guided editing |
 | `crocodash duplicate` | Copy an existing case to a new location |
