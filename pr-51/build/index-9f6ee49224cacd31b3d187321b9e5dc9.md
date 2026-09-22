@@ -66,9 +66,9 @@ The first thing we'll do at the workshop is set up all the CROCODILE tools. If y
    :align: center
    :::
 
-2. **Create a version-controlled workspace.** We've set up a template repository, [CrocodileWorkspace](https://github.com/CROCODILE-CESM/CrocodileWorkspace), with everything you'll need for the workshop.
-   - Click the ["Use this template → Create a new repository"](https://github.com/new?template_name=CrocodileWorkspace&template_owner=CROCODILE-CESM) button in the top right corner, shown below.
-   - Name your repo — we recommend `Bask` (the name for a group of crocodiles), since that's what we'll use for the tutorial names. For reference, a copy is at [github.com/manishvenu/Bask](https://github.com/manishvenu/Bask).
+2. **Create a version-controlled workspace.** We've set up a template repository, [CROCODILEWorkspace](https://github.com/CROCODILE-CESM/CROCODILEWorkspace), with everything you'll need for the workshop.
+   - Click the ["Use this template → Create a new repository"](https://github.com/new?template_name=CROCODILEWorkspace&template_owner=CROCODILE-CESM) button in the top right corner, shown below.
+   - Name your repo — we recommend `crocodile2026`, since that's what we'll use for the tutorial names. For reference, a copy is at [github.com/manishvenu/crocodile2026](https://github.com/manishvenu/crocodile2026).
    - Keep it **Public** and click **Create Repository**, as in the second screenshot below. It needs to be public so the supercomputer can clone it in the next step without setting up SSH keys or a personal access token.
 
    :::{image} ../static/workshop_2026/TemplateCreate.png
@@ -101,7 +101,7 @@ The first thing we'll do at the workshop is set up all the CROCODILE tools. If y
      ```bash
      git clone https://github.com/<YOUR USERNAME>/<YOUR WORKSPACE NAME>
 
-     # e.g.  git clone https://github.com/manishvenu/Bask
+     # e.g.  git clone https://github.com/manishvenu/crocodile2026
      ```
    - Run the installer. `install.sh` sets up everything the workshop needs: CESM, model2obs, and the conda environments for CrocoDash and the other CROCODILE tools. It takes about 10-15 minutes, you'll know it's done when the terminal returns to a normal prompt with no errors in the output, as in the screenshot below. (It also takes flags for installing pieces individually — `--crocodash`, `--CESM`, run `./install.sh -h` for the full list — but for the workshop, one flag down below installs everything):
 
@@ -116,6 +116,6 @@ The first thing we'll do at the workshop is set up all the CROCODILE tools. If y
    :align: center
    :::
 
-Stuck? [Open an issue](https://github.com/CROCODILE-CESM/CrocodileWorkspace/issues) on
-CrocodileWorkspace and we'll sort it before day one.
+Stuck? [Open an issue](https://github.com/CROCODILE-CESM/CROCODILEWorkspace/issues) on
+CROCODILEWorkspace and we'll sort it before day one.
 ::::
