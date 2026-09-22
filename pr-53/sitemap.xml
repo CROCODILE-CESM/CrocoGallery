@@ -80,22 +80,7 @@
     <loc>http://localhost:3000/model2obs/tutorial-crocolake-map-temperature</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/model2obs/model-obs-comparison</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/model2obs/model-obs-your-own-model</loc>
-  </url>
-  <url>
     <loc>http://localhost:3000/model2obs/carib12-eke-ts</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/model2obs/tutorial1-mom6-cl-comparison</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/model2obs/tutorial2-mom6-cl-comparison-float</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/model2obs/tutorial4-mom6-wod13-comparison</loc>
   </url>
   <url>
     <loc>http://localhost:3000/dart</loc>
