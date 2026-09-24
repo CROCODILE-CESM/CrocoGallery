@@ -1,4 +1,5 @@
 import json
+import re
 from pathlib import Path
 import os
 import argparse
@@ -41,13 +42,28 @@ def substitute(text, paths, reverse=False):
     """
     counts = {}
     if reverse:
+        # A value several keys share (e.g. every walltime tier at 01:00:00)
+        # cannot be mapped back to one of them, so it is left alone.
+        owners = {}
+        for key, val in paths.items():
+            owners.setdefault(val, []).append(key)
         # Longest values first so a path that is a prefix of another does not
         # get half-replaced.
         items = sorted(paths.items(), key=lambda kv: len(kv[1]), reverse=True)
         for key, val in items:
-            n = text.count(val)
+            if len(owners[val]) > 1:
+                continue
+            if "/" in val:
+                n = text.count(val)
+                if n:
+                    text = text.replace(val, f"<{key}>")
+            else:
+                # Short non-path values ("main", "01:00:00") also turn up
+                # inside ordinary words and dates ("domain"), so only swap
+                # them back where they are a whole quoted string.
+                pattern = re.compile(r"""(["'])""" + re.escape(val) + r"\1")
+                text, n = pattern.subn(lambda m: f"{m[1]}<{key}>{m[1]}", text)
             if n:
-                text = text.replace(val, f"<{key}>")
                 counts[key] = counts.get(key, 0) + n
     else:
         for key, val in paths.items():
