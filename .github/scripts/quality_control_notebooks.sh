@@ -10,7 +10,7 @@ GLADE_EXCEPTIONS=(
   "crocodash/use_cases"
   "workshop_2026"
   "crococamp"          # CrocoCamp notebooks are NCAR-specific; /glade paths are expected
-  "dart/tutorial1_real_observations.ipynb"   # Derecho-specific DART build path in the setup cell
+  "dart"               # DART tutorials run on Derecho against staged workshop data; /glade paths are expected
 )
 
 filter_exceptions() {

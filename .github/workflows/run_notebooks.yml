@@ -10,6 +10,9 @@ env:
   SCRATCH: /workspace
   CIME_OUTPUT_ROOT: /workspace
   USER: ${{ github.actor }}
+  # The image's CrocoDash env is an editable install rooted here. Dockerfile
+  # WORKDIR is not exported as an env var, so it has to be set explicitly.
+  WORKDIR: /workspace
 jobs:
   setup:
     runs-on: ubuntu-latest
@@ -56,15 +59,9 @@ jobs:
           rm -rf $WORKDIR/CrocoDash
           cp -r $GITHUB_WORKSPACE/CrocoDash $WORKDIR/
 
-      - name: Set CI case paths
-        run: |
-          sed -i "s|\"fill_in_id\"|\"$WORKDIR/ci_input\"|g" crocogallery/known_paths.json
-          sed -i "s|\"fill_in_cd\"|\"$WORKDIR/ci_cases\"|g" crocogallery/known_paths.json
-          sed -i "s|\"Checkout\"|\"$CESMROOT\"|g" crocogallery/known_paths.json
-
       - name: Inject paths into notebooks
         run: |
-          conda run -n CrocoDash python -m crocogallery inject
+          conda run -n CrocoDash python -m crocogallery inject --machine cirrus
 
       - name: Create CI case
         run: |
