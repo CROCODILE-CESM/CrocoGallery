@@ -16,7 +16,7 @@ from .inject_paths import (
     resolve_paths,
 )
 
-DEFAULT_TEMPLATE_NOTEBOOK_ID = "crocodash.tutorial"
+DEFAULT_TEMPLATE_NOTEBOOK_ID = "crocodash.tutorial-ocn"
 
 # known_paths.json *values* that are stand-ins rather than real paths -- a
 # machine that has not filled in its checkout/case/input locations. Injecting

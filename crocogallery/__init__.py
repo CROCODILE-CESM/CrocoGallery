@@ -33,7 +33,7 @@ def list_notebooks() -> dict:
     """Return {notebook_id: Path} for every .ipynb in the gallery.
 
     ID format: dot-separated path relative to the gallery root, no extension.
-    Example: "crocodash.tutorial"
+    Example: "crocodash.tutorial-ocn"
     """
     result = {}
     for nb_path in sorted(_GALLERY_ROOT.rglob("*.ipynb")):
