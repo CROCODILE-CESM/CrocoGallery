@@ -82,10 +82,11 @@ def _read_notebook(notebook_id):
 
 
 def render_notebook(notebook_id, paths):
-    """Return an nbformat notebook with paths injected into code cells."""
+    """Return an nbformat notebook with paths injected into code and markdown
+    cells (markdown carries shell commands, e.g. `qcmd -A <PROJECT>`)."""
     nb = _read_notebook(notebook_id)
     for cell in nb.cells:
-        if cell.cell_type == "code":
+        if cell.cell_type in ("code", "markdown"):
             cell.source = inject_into_text(cell.source, paths)
     return nb
 
@@ -99,8 +100,9 @@ def render_script(notebook_id, paths):
             code = comment_out_magics(inject_into_text(cell.source, paths))
             blocks.append("# %%\n" + code)
         elif cell.cell_type == "markdown":
+            source = inject_into_text(cell.source, paths)
             commented = "\n".join(
-                f"# {line}" if line else "#" for line in cell.source.split("\n")
+                f"# {line}" if line else "#" for line in source.split("\n")
             )
             blocks.append("# %% [markdown]\n" + commented)
     return "\n\n".join(blocks)
