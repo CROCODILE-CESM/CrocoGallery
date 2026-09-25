@@ -36,7 +36,7 @@
     "inputdir": "fill_in_id",
     "casedir": "fill_in_cd",
     "JOB_QUEUE": "tutorial",
-    "PROJECT": "UESM0009",
+    "PROJECT": "UCGD0009",
     "WALLCLOCK_1H": "01:00:00",
     "WALLCLOCK_2H": "02:00:00",
     "WALLCLOCK_3H": "03:00:00",
