@@ -1,0 +1,109 @@
+# ==========================================
+# model2obs Configuration for Tutorial 1 - Hawaii
+# ==========================================
+# Model-observation comparison between the local CESM-MOM6 `hawaii_pmo` run
+# (3 daily snapshots: 2023-06-16, 2023-06-17, 2023-06-18) and CrocoLake
+# observations, which the companion notebook generates as obs_seq files.
+# Structure follows config_templates/config_template_MOM6.yaml.
+#
+# NOTE: Paths below are relative to $TUTORIAL_DATA_PATH, the tutorial data folder
+# set by install/envpaths*.sh. On NCAR HPC systems install_NCAR.sh populates it
+# from the shared campaign dataset via install/tutorials_setup_NCAR.sh; elsewhere
+# install.sh downloads it from Zenodo via install/tutorials_download.sh. If
+# running somewhere else, either export TUTORIAL_DATA_PATH to your own copy of
+# the data or edit the paths below.
+
+# Ocean model to use (required)
+# Supported values: MOM6, ROMS_Rutgers
+ocean_model: MOM6
+
+####### INPUT FILES #######
+# Directory containing model output files (.nc format) that you want to
+# compare with observations
+model_files_folder: $TUTORIAL_DATA_PATH/tutorial_Hawaii/in_mom6/
+
+# Model configuration files (all must be .nc files from your model simulation)
+# template_file: Any one of your model output files (used to read grid structure and time info)
+# static_file: Model static file containing time-invariant grid information
+# ocean_geometry: Model ocean geometry file containing grid cell areas, volumes, etc.
+template_file: $TUTORIAL_DATA_PATH/tutorial_Hawaii/in_mom6/hawaii_pmo.mom6.h.daily.2023-06-16.nc
+static_file: $TUTORIAL_DATA_PATH/tutorial_Hawaii/in_mom6_ref/hawaii_pmo.mom6.h.static.nc
+ocean_geometry:  $TUTORIAL_DATA_PATH/tutorial_Hawaii/in_mom6_ref/hawaii_pmo.mom6.h.ocean_geometry.nc
+
+# Directory containing observation files in DART observation sequence format.
+# The companion notebook creates this folder and fills it with one obs_seq file
+# per model snapshot. NOTE: model2obs globs this folder with '*', so it must
+# contain ONLY obs_seq files (remove any leftover .tmp from an interrupted run).
+obs_seq_in_folder: $TUTORIAL_DATA_PATH/tutorial_Hawaii/in_CrocoLake/
+
+####### OUTPUT FILES #######
+# Output directories for processed files (will be created automatically if they don't exist)
+# output_folder: Where perfect_model_obs results will be stored (obs_seq.out files)
+# input_nml_bck: Backup location for DART input.nml configuration files
+# trimmed_obs_folder: Location for observation files trimmed to model grid boundaries
+# parquet_folder: Final output location for processed model-observation comparison data
+# tmp_folder: Folder to store temporary files
+output_folder: $TUTORIAL_DATA_PATH/output/tutorial_Hawaii/out_obs_seq_in/
+input_nml_bck: $TUTORIAL_DATA_PATH/output/tutorial_Hawaii/input_bckp/
+trimmed_obs_folder: $TUTORIAL_DATA_PATH/output/tutorial_Hawaii/out_trimmed_obs_seq_in/
+parquet_folder: $TUTORIAL_DATA_PATH/output/tutorial_Hawaii/out_parquet/
+tmp_folder: $TUTORIAL_DATA_PATH/output/tutorial_Hawaii/tmp/
+
+####### LOGGING #######
+# model2obs writes concise progress to screen and detailed diagnostics to a run log.
+# Per-pair logs (perfect_model_obs_*.log, pair_summary_*.log) are stored in the same logs folder.
+# NOTE: the key is a flat top-level `log_file` and it is REQUIRED -- utils/logging_utils.py
+# reads config["log_file"] with no default, so run() raises KeyError if it is missing.
+# (The template documents a nested `logging: run_log_file:` instead, but nothing reads that.)
+log_file: $TUTORIAL_DATA_PATH/output/tutorial_Hawaii/logs/model2obs.log
+
+####### DART CONFIGURATION #######
+# Path to DART's perfect_model_obs executable directory: it should point to your
+# compiled DART/models/<MODEL>/work directory (e.g., MOM6 or ROMS_rutgers)
+
+perfect_model_obs_dir: $DART_ROOT_PATH/models/MOM6/work  #CASPER
+
+# Observation types to include in the comparison
+# You can use specific types (e.g., FLOAT_TEMPERATURE) or groups (e.g.,
+# ALL_TEMPERATURE); the ALL_ syntax automatically includes all observation types
+# for that quantity
+use_these_obs:
+   - ALL_TEMPERATURE           # Includes ALL temperature observation types (Argo, CTD, XBT, etc.)
+   - ALL_SALINITY              # Includes ALL salinity observation types
+   # Other examples:
+   # - ARGO_TEMPERATURE        # Include only Argo float temperature measurements
+   # - ARGO_SALINITY           # Include only Argo float salinity measurements
+
+# Time window for matching observations to model output
+# This determines how close in time observations need to be to model output for interpolation.
+# The window is CENTERED on the model snapshot time, and an obs_seq file is accepted
+# only if its whole time range fits inside it. The hawaii_pmo daily snapshots are
+# stamped at 00:00, so a 1-day window ([-12h, +12h]) could never contain a full day
+# of observations: use 2 days. (Tutorial 1's NWA12 demo file is stamped at noon,
+# hence days: 1 there.)
+time_window:
+  days: 2        # Primary time window in days
+  hours: 0       # Additional hours
+  minutes: 0     # Additional minutes
+  seconds: 0     # Additional seconds
+  weeks: 0       # Additional weeks
+  months: 0      # Additional months (30 days/month)
+  years: 0       # Additional years (365 days/year)
+
+####### MOM6 CONFIGURATION #######
+# MOM6 state variables to include in DART interpolation.
+# Format: <model_variable_name>: <DART_quantity>
+# Add 'h: QTY_LAYER_THICKNESS' here and set use_pseudo_depth to false
+# if you want DART to use true layer-thickness-based vertical coordinates.
+model_state_variables:
+  so: QTY_SALINITY
+  thetao: QTY_POTENTIAL_TEMPERATURE
+
+# Use pseudo-depth for vertical interpolation (required when layer thickness 'h'
+# is not included in model_state_variables; set to false only if you explicitly
+# add 'h: QTY_LAYER_THICKNESS' to model_state_variables above).
+# The hawaii_pmo daily files carry no 'h' variable, so this must stay true.
+use_pseudo_depth: true
+
+# Name of the layer coordinate variable in MOM6 output files (typically 'zl')
+layer_name: zl
