@@ -15,6 +15,7 @@ research question or are still looking for one. Each project stands on its own â
 | [WW3](ww3.ipynb) | Coupling surface waves |
 | [MARBL](marbl.ipynb) | Adding ocean biogeochemistry |
 | [Kitchen sink](KitchenSink.ipynb) | Running everything |
+| [Bering Sea diagnostics](bering_diagnostics.ipynb) | Looking at the output of a coupled MOM6 + CICE + WW3 run: ice edge, wave field, floe size distribution |
 
 :::{tip}
 Keep the domain small â€” a few degrees on a side, a few days of simulation. A region you
