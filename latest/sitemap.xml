@@ -71,6 +71,9 @@
     <loc>http://localhost:3000/crocodash/projects/kitchensink</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/crocodash/projects/bering-diagnostics</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/mom6-tools</loc>
   </url>
   <url>
