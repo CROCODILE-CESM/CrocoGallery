@@ -51,6 +51,8 @@ project:
             - file: crocodash/projects/ww3.ipynb
             - file: crocodash/projects/marbl.ipynb
             - file: crocodash/projects/KitchenSink.ipynb
+            - file: crocodash/projects/bering_diagnostics.ipynb
+              title: Bering Sea Diagnostics
 
     - file: mom6_tools.md
       title: mom6-tools

@@ -52,3 +52,8 @@ skip:
       a prior manual 3-domain run, not reproducible headlessly. Needs
       known_paths.json entries and a rewritten visualization step (or
       pre-staged CI fixtures) before it can run in CI.
+  - path: crocodash/projects/bering_diagnostics.ipynb
+    reason: >-
+      Analysis of the archived history output of a completed
+      tutorial-ocn-wav-ice run (MOM6 + CICE + WW3); CI never builds or runs
+      that case, so there is no output to read.
