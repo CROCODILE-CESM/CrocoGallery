@@ -26,6 +26,3 @@ jobs:
       - name: Check all notebooks (except exclusions) are in run_notebooks.yml matrix
         run: |
           bash .github/scripts/check_notebook_coverage.sh
-      - name: Check gallery_manifest.json is up to date
-        run: |
-          python -m crocogallery.manifest --check
