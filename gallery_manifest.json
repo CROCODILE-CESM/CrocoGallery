@@ -1,0 +1,40 @@
+{
+  "notebooks": {
+    "crocodash.advanced.interior_obc_segments": "crocodash/advanced/interior_obc_segments.ipynb",
+    "crocodash.advanced.nesting_demo": "crocodash/advanced/nesting_demo.ipynb",
+    "crocodash.bathymetry": "crocodash/bathymetry.ipynb",
+    "crocodash.case_setup": "crocodash/case_setup.ipynb",
+    "crocodash.configure_forcings": "crocodash/configure_forcings.ipynb",
+    "crocodash.grids": "crocodash/grids.ipynb",
+    "crocodash.process_forcings": "crocodash/process_forcings.ipynb",
+    "crocodash.projects.KitchenSink": "crocodash/projects/KitchenSink.ipynb",
+    "crocodash.projects.bering_diagnostics": "crocodash/projects/bering_diagnostics.ipynb",
+    "crocodash.projects.cice": "crocodash/projects/cice.ipynb",
+    "crocodash.projects.marbl": "crocodash/projects/marbl.ipynb",
+    "crocodash.projects.ocean_only": "crocodash/projects/ocean_only.ipynb",
+    "crocodash.projects.ww3": "crocodash/projects/ww3.ipynb",
+    "crocodash.tutorial-ocn": "crocodash/tutorial-ocn.ipynb",
+    "crocodash.tutorial-ocn-wav": "crocodash/tutorial-ocn-wav.ipynb",
+    "crocodash.tutorial-ocn-wav-ice": "crocodash/tutorial-ocn-wav-ice.ipynb",
+    "crocodash.use_cases.mom6_cice_antarctica": "crocodash/use_cases/mom6_cice_antarctica.ipynb",
+    "crocodash.use_cases.three_boundary": "crocodash/use_cases/three_boundary.ipynb",
+    "crocodash.use_cases.three_boundary_from_t232": "crocodash/use_cases/three_boundary_from_t232.ipynb",
+    "dart.tutorial1_real_observations": "dart/tutorial1_real_observations.ipynb",
+    "dart.tutorial2_synthetic_observations": "dart/tutorial2_synthetic_observations.ipynb",
+    "dart.tutorial3_cycling_dart_cesm": "dart/tutorial3_cycling_dart_cesm.ipynb",
+    "model2obs.CARIB12_EKE_TS": "model2obs/CARIB12_EKE_TS.ipynb",
+    "model2obs.model-obs_your_own_model": "model2obs/model-obs_your_own_model.ipynb",
+    "model2obs.tutorial1_MOM6-CL-comparison": "model2obs/tutorial1_MOM6-CL-comparison.ipynb",
+    "model2obs.tutorial2_MOM6-CL-comparison-float": "model2obs/tutorial2_MOM6-CL-comparison-float.ipynb",
+    "model2obs.tutorial4_MOM6-WOD13-comparison": "model2obs/tutorial4_MOM6-WOD13-comparison.ipynb",
+    "model2obs.tutorial_CrocoLake_map_temperature": "model2obs/tutorial_CrocoLake_map_temperature.ipynb",
+    "model2obs.tutorial_MOM6-CL-comparison-Hawaii": "model2obs/tutorial_MOM6-CL-comparison-Hawaii.ipynb",
+    "model2obs.tutorial_MOM6-CL-comparison-NWA-parallel": "model2obs/tutorial_MOM6-CL-comparison-NWA-parallel.ipynb",
+    "tools.ci_case_setup": "tools/ci_case_setup.ipynb"
+  },
+  "assets": {
+    "starter_case.yaml": "crocodash/advanced/starter_case.yaml",
+    "submit_forcings.pbs": "crocodash/advanced/submit_forcings.pbs"
+  },
+  "known_paths": "crocogallery/known_paths.json"
+}
