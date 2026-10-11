@@ -53,6 +53,10 @@ project:
             - file: crocodash/projects/KitchenSink.ipynb
             - file: crocodash/projects/bering_diagnostics.ipynb
               title: Bering Sea Diagnostics
+        - title: Experimental
+          children:
+            - file: crocodash/experimental/unstructured-ww3.ipynb
+              title: WW3 on an Unstructured Mesh
 
     - file: mom6_tools.md
       title: mom6-tools
