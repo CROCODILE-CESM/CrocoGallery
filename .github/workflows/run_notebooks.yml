@@ -69,6 +69,18 @@ jobs:
             --ExecutePreprocessor.timeout=600 \
             tools/ci_case_setup.ipynb
 
+      - name: Run prerequisite notebook
+        # tutorial-ocn-wav-ice reads its grid, topography and vertical grid from
+        # tutorial-ocn-wav's input directory, so that tutorial has to run first.
+        if: matrix.notebook == 'crocodash/tutorial-ocn-wav-ice.ipynb'
+        run: |
+          conda run -n CrocoDash \
+              jupyter nbconvert --to notebook --execute --inplace \
+              --ExecutePreprocessor.timeout=600 \
+              --TagRemovePreprocessor.enabled=True \
+              --TagRemovePreprocessor.remove_cell_tags='["ci-skip"]' \
+              crocodash/tutorial-ocn-wav.ipynb
+
       - name: Clear notebook outputs
         run: |
           conda run -n CrocoDash \
