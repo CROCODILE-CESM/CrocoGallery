@@ -6,16 +6,20 @@
 run:
   - crocodash/tutorial-ocn.ipynb             # process_forcings() cell tagged ci-skip
   - crocodash/tutorial-ocn-wav.ipynb         # process_forcings() cell tagged ci-skip
-  - crocodash/tutorial-ocn-wav-ice.ipynb     # process_forcings() cell tagged ci-skip
+  - crocodash/tutorial-ocn-wav-ice.ipynb     # process_forcings() cell tagged ci-skip; CI runs tutorial-ocn-wav first for its grid
   - crocodash/grids.ipynb                    # widget + polar-projection cells tagged ci-skip
   - crocodash/bathymetry.ipynb               # TopoEditor widget cell tagged ci-skip
   - crocodash/case_setup.ipynb               # Case() construction cells tagged ci-skip; registry-discovery cells run
   - crocodash/configure_forcings.ipynb       # configure_forcings() calls tagged ci-skip; ProductRegistry cells run
   - crocodash/process_forcings.ipynb         # process_forcings() cells tagged ci-skip; Section 2 is markdown-only
-  - crocodash/advanced/interior_obc_segments.ipynb
   - crocodash/use_cases/three_boundary_from_t232.ipynb
 
 skip:
+  - path: crocodash/advanced/interior_obc_segments.ipynb
+    reason: >-
+      Passes Segment objects in configure_forcings' boundaries, which CrocoDash
+      main rejects until CrocoDash PR #269 (interior-obc-new) merges. Move it
+      back to 'run' then.
   - path: crocodash/projects/ocean_only.ipynb
     reason: >-
       Workshop project: a full grid/case/forcing walkthrough that creates a real
