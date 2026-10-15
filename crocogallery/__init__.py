@@ -57,7 +57,15 @@ def get_notebook_path(notebook_id: str) -> Path:
     return notebooks[notebook_id]
 
 
+def rule_files() -> list:
+    """The CrocoDash rule files, in crocodash/rules: rules.geojson first, then
+    any others such as rules_claude.geojson. Read them together with
+    queryearth.Registry.from_file(*rule_files())."""
+    return sorted((_GALLERY_ROOT / "crocodash" / "rules").glob("*.geojson"))
+
+
 __all__ = [
+    "rule_files",
     "load_paths",
     "resolve_paths",
     "inject",
