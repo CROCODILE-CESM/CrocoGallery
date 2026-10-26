@@ -8,12 +8,17 @@ The workflow is three steps:
 # 1. Get a starter config
 crocodash template --output my_case.yaml
 
-# 2. Edit it (fill in paths, domain, compset, etc.)
+# 2. Edit it (fill in paths, grid files, compset, etc.)
 vim my_case.yaml
 
 # 3. Create the case
 crocodash create --config my_case.yaml
 ```
+
+The config names the case's grid files rather than describing the grid: write them
+once with CrocoDash's `Grid`, `Topo` and `VGrid` (the starter config shows how), or
+reuse another case's. Leave out the `forcings:` section and `create` asks for the
+forcings on a terminal: first which optional ones to add, then each input.
 
 Add `--machine glade` to `template` to pre-fill known dataset paths for GLADE (Derecho/Casper):
 
@@ -43,6 +48,14 @@ crocodash dump --caseroot /path/to/my_case > my_case.yaml
 
 Edit the output and re-run with `crocodash create --config my_case.yaml --override`.
 
+To copy a case instead, `crocodash create --from /path/to/my_case` (a caseroot or a
+bundle) asks for the new case's caseroot, inputdir, machine and so on, offering the old
+case's. The new case keeps your own changes to the old one and reuses its forcing files
+where they still match.
+
+To change only the forcings of an existing case, `crocodash configure --caseroot
+/path/to/my_case` asks for them again, offering the current values.
+
 ---
 
 ## Submitting forcing extraction to a PBS queue
@@ -63,9 +76,8 @@ Fill in your project code and caseroot, then `qsub submit_forcings.pbs`.
 | Command | Purpose |
 |---|---|
 | `crocodash template` | Write a starter case file (`--kind case`, default: `.yaml` config, `.ipynb` notebook, or `.py` script) or a PBS submission script (`--kind pbs`) |
-| `crocodash create` | Create a case from a YAML config |
+| `crocodash create` | Create a case from a YAML config (`--config`), or from another case or a bundle (`--from`) |
 | `crocodash dump` | Reconstruct YAML from an existing case |
+| `crocodash configure` | Configure an existing case's forcings again |
 | `crocodash process` | Run the forcing extraction for an existing case (`--all`, or per-component flags) |
-| `crocodash bundle` | Package a case for sharing |
-| `crocodash fork` | Create a new case from a bundle with guided editing |
-| `crocodash duplicate` | Copy an existing case to a new location |
+| `crocodash bundle` | Package a case for sharing; `crocodash create --from` reads it |
