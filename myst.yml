@@ -4,7 +4,7 @@ project:
   github: CROCODILE-CESM/CrocoGallery
   parts:
     banner: |
-      <strong>🐊 Using CROCODILE tools?</strong> Tell us about your project in a
+      <strong>Using CROCODILE tools?</strong> Tell us about your project in a
       [2-minute form](https://forms.gle/UsgxpqCTyHGn4sLJ9).
   bibliography:
     - static/references.bib
