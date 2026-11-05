@@ -5,7 +5,7 @@ project:
   parts:
     banner: |
       <strong>🐊 Using CROCODILE tools?</strong> Tell us about your project in a
-      [2-minute form](https://forms.gle/UsgxpqCTyHGn4sLJ9). Knowing who uses them keeps them funded.
+      [2-minute form](https://forms.gle/UsgxpqCTyHGn4sLJ9).
   bibliography:
     - static/references.bib
   exports:
