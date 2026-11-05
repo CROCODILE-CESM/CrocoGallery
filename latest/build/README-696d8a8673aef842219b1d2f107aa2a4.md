@@ -11,7 +11,8 @@
     <div class="croco-hub-card__icon">🐊</div>
     <h2 class="croco-hub-card__title">Using CROCODILE tools? Tell us!</h2>
     <p class="croco-hub-card__desc">
-      Share your region, your configuration, and what you're using it for.
+      Share your region, your configuration, and what you're using it for. It helps us show
+      the tools are being used!
     </p>
     <span class="croco-hub-card__cta">Fill out the form →</span>
   </a>
