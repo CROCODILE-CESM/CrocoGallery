@@ -11,8 +11,7 @@
     <div class="croco-hub-card__icon">🐊</div>
     <h2 class="croco-hub-card__title">Using CROCODILE tools? Tell us!</h2>
     <p class="croco-hub-card__desc">
-      Share your region, your configuration, and what you're using it for. Knowing who uses
-      CrocoDash and its sibling tools keeps them funded and decides what we build next.
+      Share your region, your configuration, and what you're using it for.
     </p>
     <span class="croco-hub-card__cta">Fill out the form →</span>
   </a>
