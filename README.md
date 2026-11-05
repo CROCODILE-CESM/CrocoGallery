@@ -6,14 +6,15 @@
 </div>
 
 <div class="croco-hub__grid">
-  <a class="croco-hub-card croco-hub-card--featured" href="workshop_2026/index.md">
-    <span class="croco-hub-card__badge">Sept 28 – Oct 3</span>
+  <a class="croco-hub-card croco-hub-card--featured" href="https://forms.gle/UsgxpqCTyHGn4sLJ9" target="_blank" rel="noopener">
+    <span class="croco-hub-card__badge">2 minutes</span>
     <div class="croco-hub-card__icon">🐊</div>
-    <h2 class="croco-hub-card__title">2026 CROCODILE Workshop</h2>
+    <h2 class="croco-hub-card__title">Using CROCODILE tools? Tell us!</h2>
     <p class="croco-hub-card__desc">
-      Agenda, practicums, and everything you need to have ready before day one.
+      Share your region, your configuration, and what you're using it for. Knowing who uses
+      CrocoDash and its sibling tools keeps them funded and decides what we build next.
     </p>
-    <span class="croco-hub-card__cta">Agenda &amp; practicums →</span>
+    <span class="croco-hub-card__cta">Fill out the form →</span>
   </a>
   <a class="croco-hub-card" href="crocodash/index.md">
     <div class="croco-hub-card__icon">🐊</div>
@@ -48,3 +49,7 @@
     <span class="croco-hub-card__cta">Run DART with CESM-MOM6 →</span>
   </a>
 </div>
+
+Materials from past CROCODILE workshops are archived as they were on the day:
+[2025](https://crocodile-cesm.github.io/CrocoGallery/workshop_2025/) ·
+[2026](https://crocodile-cesm.github.io/CrocoGallery/workshop_2026/workshop-2026/)

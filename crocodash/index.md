@@ -55,6 +55,6 @@ description: The Python toolkit for configuring and deploying regional MOM6 ocea
   </a>
   <a class="cd-nav-card" href="projects/index.md">
     <h3>Projects</h3>
-    <p>Open-ended, self-directed briefs for the workshop: your region, your configuration, your result.</p>
+    <p>Open-ended, self-directed briefs: your region, your configuration, your result.</p>
   </a>
 </div>

@@ -9,7 +9,6 @@ GLADE_EXCEPTIONS=(
   "crocodash/tutorial-ocn-wav-ice.ipynb"   # Commented-out example CICE restart/grid paths on GLADE
   "crocodash/projects"   # Workshop project briefs; participant-specific /glade paths are expected
   "crocodash/use_cases"
-  "workshop_2026"
   "crococamp"          # CrocoCamp notebooks are NCAR-specific; /glade paths are expected
   "dart"               # DART tutorials run on Derecho against staged workshop data; /glade paths are expected
 )
@@ -26,7 +25,7 @@ filter_exceptions() {
 
 echo "Checking for hardcoded '/glade' paths..."
 matches=$(grep -rnw --include="*.ipynb" -e "/glade" \
-  crocodash/ crococamp/ tools/ workshop_2026/ dart/ 2>/dev/null || true)
+  crocodash/ crococamp/ tools/ dart/ 2>/dev/null || true)
 matches=$(filter_exceptions "$matches" "${GLADE_EXCEPTIONS[@]}")
 
 if [[ -n "$matches" ]]; then

@@ -49,7 +49,7 @@ description: Model–observation comparisons for regional MOM6 using CrocoLake, 
 
 This tutorial series includes three notebooks. The first two notebooks show how to interpolate MOM6 output onto CrocoLake observations' space using model2obs: start small and serial to learn the machinery (first notebook), then scale up to a parallel, large-domain run (second notebook). The third notebook guides you through how to use CrocoLake-like datasets which are larger-than-memory.
 
-If you don't remember how to get started with the packages installation, see the [Before you arrive instructions](../workshop_2026/index.md).
+If you don't remember how to get started with the packages installation, see the [CROCODILEWorkspace installation instructions](https://github.com/CROCODILE-CESM/CROCODILEWorkspace#installation).
 
 <div class="cd-nav-cards">
   <a class="cd-nav-card" href="tutorial_MOM6-CL-comparison-Hawaii.ipynb">

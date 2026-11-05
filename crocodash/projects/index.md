@@ -1,12 +1,12 @@
 ---
-title: CROCODILE 2026 Workshop Projects
+title: CrocoDash Projects
 description: Standalone CrocoDash projects. The tutorials teach the tools; each project is one sample problem to solve on a region of your own.
 ---
 
-# CROCODILE 2026 Workshop Projects
+# CrocoDash Projects
 
-Let's get hacking! Here are some projects to get you started, whether you arrived with a
-research question or are still looking for one. Each project stands on its own — start anywhere.
+Let's get hacking! Here are some projects to get you started, whether you have a
+research question in mind or are still looking for one. Each project stands on its own — start anywhere.
 
 | Project | What it's useful for |
 |---|---|

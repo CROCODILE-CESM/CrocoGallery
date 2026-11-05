@@ -22,27 +22,27 @@ skip:
       back to 'run' then.
   - path: crocodash/projects/ocean_only.ipynb
     reason: >-
-      Workshop project: a full grid/case/forcing walkthrough that creates a real
+      Project: a full grid/case/forcing walkthrough that creates a real
       CESM case. Move it to 'run' once its Case() and process_forcings() cells
       carry ci-skip tags.
   - path: crocodash/projects/cice.ipynb
     reason: >-
-      Workshop project: creates a real CESM case and runs process_forcings for
+      Project: creates a real CESM case and runs process_forcings for
       its extra components, too heavy for the nightly matrix. Move it to 'run'
       once those cells carry ci-skip tags.
   - path: crocodash/projects/ww3.ipynb
     reason: >-
-      Workshop project: creates a real CESM case and runs process_forcings for
+      Project: creates a real CESM case and runs process_forcings for
       its extra components, too heavy for the nightly matrix. Move it to 'run'
       once those cells carry ci-skip tags.
   - path: crocodash/projects/marbl.ipynb
     reason: >-
-      Workshop project: creates a real CESM case and runs process_forcings for
+      Project: creates a real CESM case and runs process_forcings for
       its extra components, too heavy for the nightly matrix. Move it to 'run'
       once those cells carry ci-skip tags.
   - path: crocodash/projects/KitchenSink.ipynb
     reason: >-
-      Workshop project: creates a real CESM case and runs process_forcings for
+      Project: creates a real CESM case and runs process_forcings for
       its extra components, too heavy for the nightly matrix. Move it to 'run'
       once those cells carry ci-skip tags.
   - path: crocodash/use_cases/mom6_cice_antarctica.ipynb
