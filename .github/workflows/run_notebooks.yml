@@ -61,11 +61,11 @@ jobs:
 
       - name: Inject paths into notebooks
         run: |
-          conda run -n CrocoDash python -m crocogallery inject --machine cirrus
+          micromamba run -n CrocoDash python -m crocogallery inject --machine cirrus
 
       - name: Create CI case
         run: |
-          conda run -n CrocoDash jupyter nbconvert --to notebook --execute --inplace \
+          micromamba run -n CrocoDash jupyter nbconvert --to notebook --execute --inplace \
             --ExecutePreprocessor.timeout=600 \
             tools/ci_case_setup.ipynb
 
@@ -74,7 +74,7 @@ jobs:
         # tutorial-ocn-wav's input directory, so that tutorial has to run first.
         if: matrix.notebook == 'crocodash/tutorial-ocn-wav-ice.ipynb'
         run: |
-          conda run -n CrocoDash \
+          micromamba run -n CrocoDash \
               jupyter nbconvert --to notebook --execute --inplace \
               --ExecutePreprocessor.timeout=600 \
               --TagRemovePreprocessor.enabled=True \
@@ -83,7 +83,7 @@ jobs:
 
       - name: Clear notebook outputs
         run: |
-          conda run -n CrocoDash \
+          micromamba run -n CrocoDash \
               jupyter nbconvert --clear-output --inplace \
               ${{ matrix.notebook }}
 
@@ -93,7 +93,7 @@ jobs:
         # BGC isn't run as it uses data on GDEX that isn't accessible on the GHCR runner.
         # Consider adding a test BGC dataset to inputdata in the future.
         run: |
-          conda run -n CrocoDash \
+          micromamba run -n CrocoDash \
               jupyter nbconvert --to notebook --execute --inplace \
               --ExecutePreprocessor.timeout=600 \
               --TagRemovePreprocessor.enabled=True \
@@ -103,7 +103,7 @@ jobs:
       - name: Clear notebook outputs before retry
         if: steps.run_nb_1.outcome == 'failure'
         run: |
-          conda run -n CrocoDash \
+          micromamba run -n CrocoDash \
               jupyter nbconvert --clear-output --inplace \
               ${{ matrix.notebook }}
 
@@ -111,7 +111,7 @@ jobs:
         id: run_nb_2
         if: steps.run_nb_1.outcome == 'failure'
         run: |
-          conda run -n CrocoDash \
+          micromamba run -n CrocoDash \
               jupyter nbconvert --to notebook --execute --inplace \
               --ExecutePreprocessor.timeout=600 \
               --TagRemovePreprocessor.enabled=True \
